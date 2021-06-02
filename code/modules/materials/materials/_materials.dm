@@ -45,9 +45,9 @@ var/list/name_to_material
 
 //mostly for convenience
 /obj/proc/get_material_name()
-	var/datum/material/material = get_material()
-	if(material)
-		return material.name
+	var/datum/material/material_legacy = get_material()
+	if(material_legacy)
+		return material_legacy.name
 
 // Builds the datum list above.
 /proc/populate_material_list(force_remake=0)
@@ -67,9 +67,9 @@ var/list/name_to_material
 	return name_to_material[name]
 
 /proc/material_display_name(name)
-	var/datum/material/material = get_material_by_name(name)
-	if(material)
-		return material.display_name
+	var/datum/material/material_legacy = get_material_by_name(name)
+	if(material_legacy)
+		return material_legacy.display_name
 	return null
 
 // Material definition and procs follow.

@@ -252,8 +252,11 @@
 
 // Previously this was defined both on /obj/ and /turf/ seperately.  And that's bad.
 /atom/proc/update_icon()
-	return
+//	SHOULD_CALL_PARENT(TRUE) // Someday...
+	on_update_icon(arglist(args))
 
+/atom/proc/on_update_icon()
+	return
 
 /atom/proc/hitby(atom/movable/AM as mob|obj)
 	if (density)

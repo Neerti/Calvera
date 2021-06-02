@@ -27,7 +27,7 @@
 			if(istype(T, /turf/simulated/wall))
 				var/turf/simulated/wall/WT = T
 
-				if(WT.material.conductive)
+				if(WT.material_legacy.conductive)
 					conductive = TRUE
 				else if(WT.girder_material.conductive)
 					conductive = TRUE

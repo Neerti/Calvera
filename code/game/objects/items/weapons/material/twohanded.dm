@@ -47,9 +47,9 @@
 /obj/item/weapon/material/twohanded/update_force()
 	base_name = name
 	if(sharp || edge)
-		force_wielded = material.get_edge_damage()
+		force_wielded = material_legacy.get_edge_damage()
 	else
-		force_wielded = material.get_blunt_damage()
+		force_wielded = material_legacy.get_blunt_damage()
 	force_wielded = round(force_wielded*force_divisor)
 	force_unwielded = round(force_wielded*unwielded_force_divisor)
 	force = force_unwielded
@@ -170,7 +170,7 @@
 	force_divisor = 0.05 //Required in order for the X attacks Y message to pop up.
 	unwielded_force_divisor = 1 // One here, too.
 	applies_material_colour = 1
-	unbreakable = 1
+	unbreakable_legacy = 1
 	base_icon = "riding_crop"
 	icon_state = "riding_crop0"
 	attack_verb = list("cropped","spanked","swatted","smacked","peppered")

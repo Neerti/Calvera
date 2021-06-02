@@ -138,8 +138,8 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 		return 1
 
 	var/obj/item/stack/material/S = O
-	if(!(S.material.name in materials))
-		to_chat(user, "<span class='warning'>The [src] doesn't accept [S.material]!</span>")
+	if(!(S.material_legacy.name in materials))
+		to_chat(user, "<span class='warning'>The [src] doesn't accept [S.material_legacy]!</span>")
 		return
 
 	busy = 1
@@ -149,14 +149,14 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 	for(var/mat in materials)
 		max_res_amount -= materials[mat]
 
-	if(materials[S.material.name] + amnt <= max_res_amount)
+	if(materials[S.material_legacy.name] + amnt <= max_res_amount)
 		if(S && S.get_amount() >= 1)
 			var/count = 0
 			overlays += "fab-load-metal"
 			spawn(10)
 				overlays -= "fab-load-metal"
-			while(materials[S.material.name] + amnt <= max_res_amount && S.get_amount() >= 1)
-				materials[S.material.name] += amnt
+			while(materials[S.material_legacy.name] + amnt <= max_res_amount && S.get_amount() >= 1)
+				materials[S.material_legacy.name] += amnt
 				S.use(1)
 				count++
 			to_chat(user, "You insert [count] [sname] into the fabricator.")

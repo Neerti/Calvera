@@ -121,7 +121,7 @@
 			if(!O) return
 			if(istype(O,/obj/item/stack/material))
 				var/obj/item/stack/material/S = O
-				var/matname = S.material.name
+				var/matname = S.material_legacy.name
 				if(!isnull(stack_storage[matname]))
 					stack_storage[matname] += S.amount
 					qdel(S)

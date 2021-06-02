@@ -9,7 +9,7 @@
 	var/burning = FALSE
 	var/next_fuel_consumption = 0 // world.time of when next item in fuel list gets eatten to sustain the fire.
 	var/grill = FALSE
-	var/datum/material/material
+	var/datum/material/material_legacy
 	var/set_temperature = T0C + 30	//K
 	var/heating_power = 80000
 
@@ -17,11 +17,11 @@
 	..(newloc)
 	if(!material_name)
 		material_name = MAT_WOOD
-	material = get_material_by_name("[material_name]")
-	if(!material)
+	material_legacy = get_material_by_name("[material_name]")
+	if(!material_legacy)
 		qdel(src)
 		return
-	color = material.icon_colour
+	color = material_legacy.icon_colour
 
 // Blue wood.
 /obj/structure/bonfire/sifwood/New(newloc, material_name)
@@ -79,7 +79,7 @@
 		user.visible_message("[user] starts dismantling \the [src].", "You start dismantling \the [src].")
 		if(do_after(user, 5 SECONDS))
 			for(var/i = 1 to 5)
-				material.place_dismantled_product(get_turf(src))
+				material_legacy.place_dismantled_product(get_turf(src))
 			user.visible_message("[user] dismantles down \the [src].", "You dismantle \the [src].")
 			qdel(src)
 	else

@@ -14,7 +14,7 @@
 	item_state = "shard-glass"
 	attack_verb = list("stabbed", "slashed", "sliced", "cut")
 	default_material = "glass"
-	unbreakable = 1 //It's already broken.
+	unbreakable_legacy = 1 //It's already broken.
 	drops_debris = 0
 
 /obj/item/weapon/material/shard/suicide_act(mob/user)
@@ -25,17 +25,17 @@
 
 /obj/item/weapon/material/shard/set_material(var/new_material)
 	..(new_material)
-	if(!istype(material))
+	if(!istype(material_legacy))
 		return
 
-	icon_state = "[material.shard_icon][pick("large", "medium", "small")]"
+	icon_state = "[material_legacy.shard_icon][pick("large", "medium", "small")]"
 	randpixel_xy()
 	update_icon()
 
-	if(material.shard_type)
-		name = "[material.display_name] [material.shard_type]"
-		desc = "A small piece of [material.display_name]. It looks sharp, you wouldn't want to step on it barefoot. Could probably be used as ... a throwing weapon?"
-		switch(material.shard_type)
+	if(material_legacy.shard_type)
+		name = "[material_legacy.display_name] [material_legacy.shard_type]"
+		desc = "A small piece of [material_legacy.display_name]. It looks sharp, you wouldn't want to step on it barefoot. Could probably be used as ... a throwing weapon?"
+		switch(material_legacy.shard_type)
 			if(SHARD_SPLINTER, SHARD_SHRAPNEL)
 				gender = PLURAL
 			else
@@ -44,19 +44,19 @@
 		qdel(src)
 
 /obj/item/weapon/material/shard/update_icon()
-	if(material)
-		color = material.icon_colour
+	if(material_legacy)
+		color = material_legacy.icon_colour
 		// 1-(1-x)^2, so that glass shards with 0.3 opacity end up somewhat visible at 0.51 opacity
-		alpha = 255 * (1 - (1 - material.opacity)*(1 - material.opacity))
+		alpha = 255 * (1 - (1 - material_legacy.opacity)*(1 - material_legacy.opacity))
 	else
 		color = "#ffffff"
 		alpha = 255
 
 /obj/item/weapon/material/shard/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/weldingtool) && material.shard_can_repair)
+	if(istype(W, /obj/item/weapon/weldingtool) && material_legacy.shard_can_repair)
 		var/obj/item/weapon/weldingtool/WT = W
 		if(WT.remove_fuel(0, user))
-			material.place_sheet(loc)
+			material_legacy.place_sheet(loc)
 			qdel(src)
 			return
 	return ..()

@@ -8,34 +8,34 @@
 	density = 1.0
 	var/health = 100
 	var/maxhealth = 100
-	var/datum/material/material
+	var/datum/material/material_legacy
 
 /obj/structure/barricade/New(var/newloc, var/material_name)
 	..(newloc)
 	if(!material_name)
 		material_name = "wood"
-	material = get_material_by_name("[material_name]")
-	if(!material)
+	material_legacy = get_material_by_name("[material_name]")
+	if(!material_legacy)
 		qdel(src)
 		return
-	name = "[material.display_name] barricade"
-	desc = "This space is blocked off by a barricade made of [material.display_name]."
-	color = material.icon_colour
-	maxhealth = material.integrity
+	name = "[material_legacy.display_name] barricade"
+	desc = "This space is blocked off by a barricade made of [material_legacy.display_name]."
+	color = material_legacy.icon_colour
+	maxhealth = material_legacy.integrity
 	health = maxhealth
 
 /obj/structure/barricade/get_material()
-	return material
+	return material_legacy
 
 /obj/structure/barricade/attackby(obj/item/W as obj, mob/user as mob)
 	user.setClickCooldown(user.get_attack_speed(W))
 	if(istype(W, /obj/item/stack))
 		var/obj/item/stack/D = W
-		if(D.get_material_name() != material.name)
+		if(D.get_material_name() != material_legacy.name)
 			return //hitting things with the wrong type of stack usually doesn't produce messages, and probably doesn't need to.
 		if(health < maxhealth)
 			if(D.get_amount() < 1)
-				to_chat(user, "<span class='warning'>You need one sheet of [material.display_name] to repair \the [src].</span>")
+				to_chat(user, "<span class='warning'>You need one sheet of [material_legacy.display_name] to repair \the [src].</span>")
 				return
 			visible_message("<span class='notice'>[user] begins to repair \the [src].</span>")
 			if(do_after(user,20) && health < maxhealth)
@@ -50,7 +50,7 @@
 				health -= W.force * 1
 			if("brute")
 				health -= W.force * 0.75
-		if(material == (get_material_by_name(MAT_WOOD) || get_material_by_name(MAT_SIFWOOD)))
+		if(material_legacy == (get_material_by_name(MAT_WOOD) || get_material_by_name(MAT_SIFWOOD)))
 			playsound(src, 'sound/effects/woodcutting.ogg', 100, 1)
 		else
 			playsound(src, 'sound/weapons/smash.ogg', 50, 1)
@@ -72,11 +72,11 @@
 
 /obj/structure/barricade/attack_generic(var/mob/user, var/damage, var/attack_verb)
 	visible_message("<span class='danger'>[user] [attack_verb] the [src]!</span>")
-	if(material == get_material_by_name("resin"))
+	if(material_legacy == get_material_by_name("resin"))
 		playsound(src, 'sound/effects/attackblob.ogg', 100, 1)
-	else if(material == (get_material_by_name(MAT_CLOTH) || get_material_by_name(MAT_SYNCLOTH)))
+	else if(material_legacy == (get_material_by_name(MAT_CLOTH) || get_material_by_name(MAT_SYNCLOTH)))
 		playsound(src, 'sound/items/drop/clothing.ogg', 100, 1)
-	else if(material == (get_material_by_name(MAT_WOOD) || get_material_by_name(MAT_SIFWOOD)))
+	else if(material_legacy == (get_material_by_name(MAT_WOOD) || get_material_by_name(MAT_SIFWOOD)))
 		playsound(src, 'sound/effects/woodcutting.ogg', 100, 1)
 	else
 		playsound(src, 'sound/weapons/smash.ogg', 50, 1)
@@ -86,7 +86,7 @@
 	return
 
 /obj/structure/barricade/proc/dismantle()
-	material.place_dismantled_product(get_turf(src))
+	material_legacy.place_dismantled_product(get_turf(src))
 	visible_message("<span class='danger'>\The [src] falls apart!</span>")
 	qdel(src)
 	return
@@ -114,14 +114,14 @@
 	if(!material_name)
 		material_name = "cloth"
 	..(newloc, material_name)
-	material = get_material_by_name("[material_name]")
-	if(!material)
+	material_legacy = get_material_by_name("[material_name]")
+	if(!material_legacy)
 		qdel(src)
 		return
-	name = "[material.display_name] [initial(name)]"
-	desc = "This space is blocked off by a barricade made of [material.display_name]."
+	name = "[material_legacy.display_name] [initial(name)]"
+	desc = "This space is blocked off by a barricade made of [material_legacy.display_name]."
 	color = null
-	maxhealth = material.integrity * 2	// These things are, commonly, used to stop bullets where possible.
+	maxhealth = material_legacy.integrity * 2	// These things are, commonly, used to stop bullets where possible.
 	health = maxhealth
 	update_connections(1)
 
@@ -131,13 +131,13 @@
 
 /obj/structure/barricade/sandbag/dismantle()
 	update_connections(1, src)
-	material.place_dismantled_product(get_turf(src))
+	material_legacy.place_dismantled_product(get_turf(src))
 	visible_message("<span class='danger'>\The [src] falls apart!</span>")
 	qdel(src)
 	return
 
 /obj/structure/barricade/sandbag/update_icon()
-	if(!material)
+	if(!material_legacy)
 		return
 
 	cut_overlays()
@@ -145,17 +145,17 @@
 
 	for(var/i = 1 to 4)
 		I = image('icons/obj/sandbags.dmi', "sandbags[connections[i]]", dir = 1<<(i-1))
-		I.color = material.icon_colour
+		I.color = material_legacy.icon_colour
 		add_overlay(I)
 
 	return
 
 /obj/structure/barricade/sandbag/update_connections(propagate = 0, var/obj/structure/barricade/sandbag/ignore = null)
-	if(!material)
+	if(!material_legacy)
 		return
 	var/list/dirs = list()
 	for(var/obj/structure/barricade/sandbag/S in orange(src, 1))
-		if(!S.material)
+		if(!S.material_legacy)
 			continue
 		if(S == ignore)
 			continue
@@ -169,7 +169,7 @@
 	update_icon()
 
 /obj/structure/barricade/sandbag/proc/can_join_with(var/obj/structure/barricade/sandbag/S)
-	if(material == S.material)
+	if(material_legacy == S.material_legacy)
 		return 1
 	return 0
 
@@ -181,5 +181,5 @@
 			var/obj/item/projectile/P = mover
 
 			if(P.firer && get_dist(P.firer, src) > 1)	// If you're firing from adjacent turfs, you are unobstructed.
-				if(P.armor_penetration < (material.protectiveness + material.hardness) || prob(33))
+				if(P.armor_penetration < (material_legacy.protectiveness + material_legacy.hardness) || prob(33))
 					return FALSE

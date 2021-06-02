@@ -117,7 +117,7 @@
 		var/obj/item/stack/material/M = thing
 		var/success = FALSE
 		if(istype(M)) //stack
-			if(!M.material || M.material.name != ammo_material || loading)
+			if(!M.material_legacy || M.material_legacy.name != ammo_material || loading)
 				return
 
 			if(mat_storage + SHEET_MATERIAL_AMOUNT > max_mat_storage)
@@ -132,7 +132,7 @@
 			loading = FALSE
 
 		else //ore
-			if(M.material != ammo_material)
+			if(M.material_legacy != ammo_material)
 				return
 
 			if(mat_storage + (SHEET_MATERIAL_AMOUNT/2*0.8) > max_mat_storage)
