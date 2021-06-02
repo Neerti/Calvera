@@ -2115,6 +2115,7 @@
 #include "code\modules\materials\materials\organic\resin.dm"
 #include "code\modules\materials\materials\organic\wood.dm"
 #include "code\modules\materials\materials2\_materials.dm"
+#include "code\modules\materials\materials2\item_materials.dm"
 #include "code\modules\materials\materials2\definitions\_mat_solid.dm"
 #include "code\modules\materials\materials2\definitions\solids\materials_solid_metals.dm"
 #include "code\modules\materials\sheets\_sheets.dm"

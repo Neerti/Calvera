@@ -140,7 +140,7 @@
 /obj/item/weapon/material/knife/machete/cyborg
 	name = "integrated machete"
 	desc = "A sharp machete often found attached to robots."
-	unbreakable = TRUE
+	unbreakable_legacy = TRUE
 
 /obj/item/weapon/material/knife/tacknife/survival
 	name = "survival knife"

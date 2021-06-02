@@ -8,8 +8,8 @@
 
 /obj/item/stack/material/cyborg/Initialize()
 	. = ..()
-	name = "[material.display_name] synthesiser"
-	desc = "A device that synthesises [material.display_name]."
+	name = "[material_legacy.display_name] synthesiser"
+	desc = "A device that synthesises [material_legacy.display_name]."
 	matter = null
 
 /obj/item/stack/material/cyborg/update_strings()

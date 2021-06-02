@@ -10,7 +10,7 @@
 	move_delay = 3 // Rather slow, but still faster than swimming, and won't get you wet.
 	max_buckled_mobs = 2
 	anchored = FALSE
-	var/datum/material/material = null
+	var/datum/material/material_legacy = null
 	var/riding_datum_type = /datum/riding/boat/small
 
 /obj/vehicle/boat/sifwood/New(newloc, material_name)
@@ -43,7 +43,7 @@
 	icon_state = "oar"
 	item_state = "oar"
 	force = 12
-	var/datum/material/material = null
+	var/datum/material/material_legacy = null
 
 /obj/item/weapon/oar/sifwood/New(newloc, material_name)
 	..(newloc, MAT_SIFWOOD)
@@ -52,21 +52,21 @@
 	..(newloc)
 	if(!material_name)
 		material_name = "wood"
-	material = get_material_by_name("[material_name]")
-	if(!material)
+	material_legacy = get_material_by_name("[material_name]")
+	if(!material_legacy)
 		qdel(src)
 		return
-	color = material.icon_colour
+	color = material_legacy.icon_colour
 
 /obj/vehicle/boat/New(newloc, material_name)
 	..(newloc)
 	if(!material_name)
 		material_name = "wood"
-	material = get_material_by_name("[material_name]")
-	if(!material)
+	material_legacy = get_material_by_name("[material_name]")
+	if(!material_legacy)
 		qdel(src)
 		return
-	color = material.icon_colour
+	color = material_legacy.icon_colour
 	riding_datum = new riding_datum_type(src)
 
 // Boarding.

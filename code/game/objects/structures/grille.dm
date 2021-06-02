@@ -110,7 +110,7 @@
 	//window placing begin //TODO CONVERT PROPERLY TO MATERIAL DATUM
 	else if(istype(W,/obj/item/stack/material))
 		var/obj/item/stack/material/ST = W
-		if(!ST.material.created_window)
+		if(!ST.material_legacy.created_window)
 			return 0
 
 		var/dir_to_set = 1
@@ -142,7 +142,7 @@
 					to_chat(user, "<span class='notice'>There is already a window facing this way there.</span>")
 					return
 
-			var/wtype = ST.material.created_window
+			var/wtype = ST.material_legacy.created_window
 			if (ST.use(1))
 				var/obj/structure/window/WD = new wtype(loc, dir_to_set, 1)
 				to_chat(user, "<span class='notice'>You place the [WD] on [src].</span>")

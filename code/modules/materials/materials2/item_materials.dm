@@ -1,7 +1,7 @@
 /obj/item
 	// Material handling for material weapons (not used by default, unless material is supplied or set)
 	/// Reference to material decl. If set to a path corresponding to a material /decl, will init the item with that material.
-	var/decl/material/material
+//	var/decl/material/material
 
 	/// Whether or not the material recolors this icon.
 	var/applies_material_color = FALSE
@@ -19,7 +19,7 @@
 
 	/// Whether or not this weapon degrades.
 	var/unbreakable = FALSE
-
+/*
 /obj/item/on_update_icon()
 //	overlays.Cut()
 	if(applies_material_color && material)
@@ -27,7 +27,7 @@
 		alpha = 100 + material.opacity * 255
 //	if(blood_overlay)
 //		overlays += blood_overlay
-
+*/
 /*
 /obj/item/apply_hit_effect(mob/living/target, mob/living/user, hit_zone, attack_modifier)
 	. = ..()
@@ -39,18 +39,19 @@
 	if(istype(damage_source, /obj/item))
 		check_shatter()
 */
+/*
 /obj/item/proc/check_shatter()
 	if(material && !unbreakable && prob(material.hardness))
-		if(material.is_brittle())
-			health = 0
-		else
-			health--
+//		if(material.is_brittle())
+//			health = 0
+//		else
+//			health--
 		check_health()
 
 /obj/item/proc/check_health(var/consumed)
 	if(health <= 0)
 		shatter(consumed)
-
+*/
 /*
 /obj/item/proc/shatter(var/consumed)
 	var/turf/T = get_turf(src)

@@ -10,7 +10,7 @@
 	if(W.is_screwdriver())
 		to_chat(user, "You finish the concealed blade weapon.")
 		playsound(src, W.usesound, 50, 1)
-		new /obj/item/weapon/material/butterfly(user.loc, material.name)
+		new /obj/item/weapon/material/butterfly(user.loc, material_legacy.name)
 		qdel(src)
 		return
 
@@ -34,7 +34,7 @@
 	if(istype(W,/obj/item/weapon/material/butterflyblade))
 		var/obj/item/weapon/material/butterflyblade/B = W
 		to_chat(user, "You attach the two concealed blade parts.")
-		new /obj/item/weapon/material/butterflyconstruction(user.loc, B.material.name)
+		new /obj/item/weapon/material/butterflyconstruction(user.loc, B.material_legacy.name)
 		qdel(W)
 		qdel(src)
 		return

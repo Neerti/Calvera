@@ -372,7 +372,7 @@
 		)
 
 	var/default_type = DEFAULT_WALL_MATERIAL
-	var/datum/material/material
+	var/datum/material/material_legacy
 	var/perunit = SHEET_MATERIAL_AMOUNT
 	var/apply_colour //temp pending icon rewrite
 	drop_sound = 'sound/items/drop/axe.ogg'

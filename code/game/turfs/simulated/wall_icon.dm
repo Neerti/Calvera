@@ -1,29 +1,29 @@
 /turf/simulated/wall/proc/update_material()
 
-	if(!material)
+	if(!material_legacy)
 		return
 
 	if(reinf_material)
 		construction_stage = 6
 	else
 		construction_stage = null
-	if(!material)
-		material = get_material_by_name(DEFAULT_WALL_MATERIAL)
-	if(material)
-		explosion_resistance = material.explosion_resistance
+	if(!material_legacy)
+		material_legacy = get_material_by_name(DEFAULT_WALL_MATERIAL)
+	if(material_legacy)
+		explosion_resistance = material_legacy.explosion_resistance
 	if(reinf_material && reinf_material.explosion_resistance > explosion_resistance)
 		explosion_resistance = reinf_material.explosion_resistance
 
 	if(reinf_material)
-		name = "reinforced [material.display_name] wall"
-		desc = "It seems to be a section of hull reinforced with [reinf_material.display_name] and plated with [material.display_name]."
+		name = "reinforced [material_legacy.display_name] wall"
+		desc = "It seems to be a section of hull reinforced with [reinf_material.display_name] and plated with [material_legacy.display_name]."
 	else
-		name = "[material.display_name] wall"
-		desc = "It seems to be a section of hull plated with [material.display_name]."
+		name = "[material_legacy.display_name] wall"
+		desc = "It seems to be a section of hull plated with [material_legacy.display_name]."
 
-	if(material.opacity > 0.5 && !opacity)
+	if(material_legacy.opacity > 0.5 && !opacity)
 		set_light(1)
-	else if(material.opacity < 0.5 && opacity)
+	else if(material_legacy.opacity < 0.5 && opacity)
 		set_light(0)
 
 	SSradiation.resistance_cache.Remove(src)
@@ -32,7 +32,7 @@
 
 
 /turf/simulated/wall/proc/set_material(var/datum/material/newmaterial, var/datum/material/newrmaterial, var/datum/material/newgmaterial)
-	material = newmaterial
+	material_legacy = newmaterial
 	reinf_material = newrmaterial
 	if(!newgmaterial)
 		girder_material = DEFAULT_WALL_MATERIAL
@@ -41,7 +41,7 @@
 	update_material()
 
 /turf/simulated/wall/update_icon()
-	if(!material)
+	if(!material_legacy)
 		return
 
 	if(!damage_overlays[1]) //list hasn't been populated
@@ -51,14 +51,14 @@
 	var/image/I
 
 	if(!density)
-		I = image('icons/turf/wall_masks.dmi', "[material.icon_base]fwall_open")
-		I.color = material.icon_colour
+		I = image('icons/turf/wall_masks.dmi', "[material_legacy.icon_base]fwall_open")
+		I.color = material_legacy.icon_colour
 		add_overlay(I)
 		return
 
 	for(var/i = 1 to 4)
-		I = image('icons/turf/wall_masks.dmi', "[material.icon_base][wall_connections[i]]", dir = 1<<(i-1))
-		I.color = material.icon_colour
+		I = image('icons/turf/wall_masks.dmi', "[material_legacy.icon_base][wall_connections[i]]", dir = 1<<(i-1))
+		I.color = material_legacy.icon_colour
 		add_overlay(I)
 
 	if(reinf_material)
@@ -79,7 +79,7 @@
 				add_overlay(I)
 
 	if(damage != 0)
-		var/integrity = material.integrity
+		var/integrity = material_legacy.integrity
 		if(reinf_material)
 			integrity += reinf_material.integrity
 
@@ -101,11 +101,11 @@
 
 
 /turf/simulated/wall/proc/update_connections(propagate = 0)
-	if(!material)
+	if(!material_legacy)
 		return
 	var/list/dirs = list()
 	for(var/turf/simulated/wall/W in orange(src, 1))
-		if(!W.material)
+		if(!W.material_legacy)
 			continue
 		if(propagate)
 			W.update_connections()
@@ -116,6 +116,6 @@
 	wall_connections = dirs_to_corner_states(dirs)
 
 /turf/simulated/wall/proc/can_join_with(var/turf/simulated/wall/W)
-	if(material && W.material && material.icon_base == W.material.icon_base)
+	if(material_legacy && W.material_legacy && material_legacy.icon_base == W.material_legacy.icon_base)
 		return 1
 	return 0
