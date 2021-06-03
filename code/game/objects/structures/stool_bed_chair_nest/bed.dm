@@ -39,7 +39,7 @@
 	return material
 
 // Reuse the cache/code from stools, todo maybe unify.
-/obj/structure/bed/update_icon()
+/obj/structure/bed/on_update_icon()
 	// Prep icon.
 	icon_state = ""
 	cut_overlays()
@@ -208,7 +208,7 @@
 	bedtype = /obj/structure/bed/roller/adv
 	rollertype = /obj/item/roller/adv
 
-/obj/structure/bed/roller/update_icon()
+/obj/structure/bed/roller/on_update_icon()
 	return
 
 /obj/structure/bed/roller/attackby(obj/item/weapon/W as obj, mob/user as mob)
@@ -341,7 +341,7 @@
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "bed"
 
-/obj/structure/bed/alien/update_icon()
+/obj/structure/bed/alien/on_update_icon()
 	return // Doesn't care about material or anything else.
 
 /obj/structure/bed/alien/attackby(obj/item/weapon/W, mob/user)

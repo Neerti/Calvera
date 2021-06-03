@@ -68,7 +68,7 @@
 		return 1
 	return 0
 
-/obj/item/weapon/material/twohanded/update_icon()
+/obj/item/weapon/material/twohanded/on_update_icon()
 	icon_state = "[base_icon][wielded]"
 	item_state = icon_state
 

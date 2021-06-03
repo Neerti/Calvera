@@ -39,7 +39,7 @@ var/list/tape_roll_applications = list()
 	var/tape_dir = 0
 	var/icon_base = "tape"
 
-/obj/item/tape/update_icon()
+/obj/item/tape/on_update_icon()
 	//Possible directional bitflags: 0 (AIRLOCK), 1 (NORTH), 2 (SOUTH), 4 (EAST), 8 (WEST), 3 (VERTICAL), 12 (HORIZONTAL)
 	switch (tape_dir)
 		if(0)  // AIRLOCK
@@ -113,7 +113,7 @@ var/list/tape_roll_applications = list()
 	req_one_access = list(access_engine,access_atmospherics)
 	color = COLOR_DEEP_SKY_BLUE
 
-/obj/item/taperoll/update_icon()
+/obj/item/taperoll/on_update_icon()
 	overlays.Cut()
 	var/image/overlay = image(icon = src.icon)
 	overlay.appearance_flags = RESET_COLOR

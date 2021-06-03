@@ -21,7 +21,7 @@
 	animate(src, transform = M, time = 10)
 	return
 
-/obj/mecha/update_icon()
+/obj/mecha/on_update_icon()
 	if(!initial_icon)
 		initial_icon = initial(icon_state)
 

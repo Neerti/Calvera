@@ -11,7 +11,7 @@
 /obj/structure/blob/shield/core
 	point_return = 0
 
-/obj/structure/blob/shield/update_icon()
+/obj/structure/blob/shield/on_update_icon()
 	..()
 	if(integrity <= 75)
 		icon_state = "blob_shield_damaged"

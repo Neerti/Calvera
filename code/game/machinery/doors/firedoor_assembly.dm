@@ -9,7 +9,7 @@ obj/structure/firedoor_assembly
 	var/wired = 0
 	var/glass = FALSE
 
-obj/structure/firedoor_assembly/update_icon()
+obj/structure/firedoor_assembly/on_update_icon()
 	if(glass)
 		icon = 'icons/obj/doors/DoorHazardGlass.dmi'
 	else

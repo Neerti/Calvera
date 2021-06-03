@@ -257,7 +257,7 @@
 		D = "Requires [english_list(component_list)]."
 	desc = D
 
-/obj/structure/frame/update_icon()
+/obj/structure/frame/on_update_icon()
 	..()
 	if(frame_type.icon_override)
 		icon = frame_type.icon_override

@@ -165,7 +165,7 @@
 	stat |= BROKEN
 	update_icon()
 
-/obj/machinery/station_map/update_icon()
+/obj/machinery/station_map/on_update_icon()
 	if(!holomap_datum)
 		return //Not yet.
 		

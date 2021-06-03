@@ -63,7 +63,7 @@
 /obj/machinery/computer/blob_act()
 	ex_act(2)
 
-/obj/machinery/computer/update_icon()
+/obj/machinery/computer/on_update_icon()
 	cut_overlays()
 	// No power
 	if(stat & NOPOWER)

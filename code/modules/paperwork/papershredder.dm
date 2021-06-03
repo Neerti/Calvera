@@ -125,7 +125,7 @@
 	spawn(rand(0,15))
 		update_icon()
 
-/obj/machinery/papershredder/update_icon()
+/obj/machinery/papershredder/on_update_icon()
 	overlays.Cut()
 	if(operable())
 		icon_state = "shredder-on"

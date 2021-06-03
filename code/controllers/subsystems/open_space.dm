@@ -79,7 +79,7 @@ SUBSYSTEM_DEF(open_space)
 /datum/controller/subsystem/open_space/stat_entry(msg_prefix)
 	return ..("T [turfs_to_process.len]")
 
-/obj/update_icon()
+/obj/on_update_icon()
 	. = ..()
 	if(GLOB.open_space_initialised && !invisibility && isturf(loc))
 		var/turf/T = GetAbove(src)

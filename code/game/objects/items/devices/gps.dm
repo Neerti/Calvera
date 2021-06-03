@@ -170,7 +170,7 @@ var/list/GPS_list = list()
 		update_icon()
 		visible_message("\The [src] appears to be functional again.")
 
-/obj/item/device/gps/update_icon()
+/obj/item/device/gps/on_update_icon()
 	cut_overlays()
 	if(emped)
 		add_overlay("emp")

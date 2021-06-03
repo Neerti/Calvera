@@ -81,7 +81,7 @@
 			return
 	..()
 
-/obj/vehicle/train/engine/quadbike/update_icon()
+/obj/vehicle/train/engine/quadbike/on_update_icon()
 	..()
 	overlays.Cut()
 	if(custom_frame)
@@ -240,7 +240,7 @@
 			to_chat(D, "<span class='danger'>You hit [M]!</span>")
 			add_attack_logs(D,M,"Ran over with [src.name]")
 
-/obj/vehicle/train/trolley/trailer/update_icon()
+/obj/vehicle/train/trolley/trailer/on_update_icon()
 	..()
 	overlays.Cut()
 

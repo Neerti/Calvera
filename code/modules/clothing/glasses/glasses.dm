@@ -471,7 +471,7 @@ BLIND     // can't see anything
 		user.update_inv_glasses()
 		user.update_action_buttons()
 
-/obj/item/clothing/glasses/sunglasses/sechud/aviator/update_icon()
+/obj/item/clothing/glasses/sunglasses/sechud/aviator/on_update_icon()
 	if(on)
 		icon_state = initial(icon_state)
 	else

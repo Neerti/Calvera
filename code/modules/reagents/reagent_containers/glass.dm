@@ -178,7 +178,7 @@
 	..()
 	update_icon()
 
-/obj/item/weapon/reagent_containers/glass/beaker/update_icon()
+/obj/item/weapon/reagent_containers/glass/beaker/on_update_icon()
 	overlays.Cut()
 
 	if(reagents.total_volume)
@@ -305,7 +305,7 @@
 	else
 		return ..()
 
-/obj/item/weapon/reagent_containers/glass/bucket/update_icon()
+/obj/item/weapon/reagent_containers/glass/bucket/on_update_icon()
 	overlays.Cut()
 	if (!is_open_container())
 		var/image/lid = image(icon, src, "lid_[initial(icon_state)]")

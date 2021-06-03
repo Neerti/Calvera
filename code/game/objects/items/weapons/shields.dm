@@ -182,7 +182,7 @@
 	add_fingerprint(user)
 	return
 
-/obj/item/weapon/shield/energy/update_icon()
+/obj/item/weapon/shield/energy/on_update_icon()
 	var/mutable_appearance/blade_overlay = mutable_appearance(icon, "[icon_state]_blade")
 	if(lcolor)
 		blade_overlay.color = lcolor

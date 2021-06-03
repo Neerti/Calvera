@@ -55,7 +55,7 @@
 	else
 		..()
 
-/obj/item/device/flash/update_icon()
+/obj/item/device/flash/on_update_icon()
 	var/obj/item/weapon/cell/battery = power_supply
 
 	if(use_external_power)

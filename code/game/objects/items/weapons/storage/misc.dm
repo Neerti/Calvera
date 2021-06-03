@@ -17,7 +17,7 @@
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/storage/box/donut/update_icon()
+/obj/item/weapon/storage/box/donut/on_update_icon()
 	overlays.Cut()
 	var/i = 0
 	for(var/obj/item/weapon/reagent_containers/food/snacks/donut/D in contents)
@@ -44,7 +44,7 @@
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/storage/box/wormcan/update_icon(var/itemremoved = 0)
+/obj/item/weapon/storage/box/wormcan/on_update_icon(var/itemremoved = 0)
 	if (contents.len == 0)
 		icon_state = "wormcan_empty"
 
@@ -55,7 +55,7 @@
 	max_storage_space = ITEMSIZE_COST_TINY * 6
 	starts_with = list(/obj/item/weapon/reagent_containers/food/snacks/wormsickly = 6)
 
-/obj/item/weapon/storage/box/wormcan/sickly/update_icon(var/itemremoved = 0)
+/obj/item/weapon/storage/box/wormcan/sickly/on_update_icon(var/itemremoved = 0)
 	if (contents.len == 0)
 		icon_state = "wormcan_empty_sickly"
 
@@ -66,6 +66,6 @@
 	max_storage_space = ITEMSIZE_COST_TINY * 6
 	starts_with = list(/obj/item/weapon/reagent_containers/food/snacks/wormdeluxe = 6)
 
-/obj/item/weapon/storage/box/wormcan/deluxe/update_icon(var/itemremoved = 0)
+/obj/item/weapon/storage/box/wormcan/deluxe/on_update_icon(var/itemremoved = 0)
 	if (contents.len == 0)
 		icon_state = "wormcan_empty_deluxe"

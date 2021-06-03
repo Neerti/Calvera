@@ -88,7 +88,7 @@
 	if(get_dist(user, src) == 0)
 		. += "It has a tiny camera inside. Needs to be both configured and brought in contact with monitor device to be fully functional."
 
-/obj/item/device/camerabug/update_icon()
+/obj/item/device/camerabug/on_update_icon()
 	..()
 
 	if(anchored)	// Standard versions are relatively obvious if not hidden in a container. Anchoring them is advised, to disguise them.

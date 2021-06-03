@@ -229,7 +229,7 @@
 
 	InputSocket = new(src)
 
-/obj/item/weapon/reagent_containers/spray/chemsprayer/hosed/update_icon()
+/obj/item/weapon/reagent_containers/spray/chemsprayer/hosed/on_update_icon()
 	..()
 
 	overlays.Cut()

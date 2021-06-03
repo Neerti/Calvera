@@ -279,7 +279,7 @@ GLOBAL_LIST_EMPTY(all_waypoints)
 	circuit = /obj/item/weapon/circuitboard/nav/tele
 	density = 0
 
-/obj/machinery/computer/ship/navigation/telescreen/update_icon()
+/obj/machinery/computer/ship/navigation/telescreen/on_update_icon()
 	if(stat & NOPOWER || stat & BROKEN)
 		icon_state = "tele_off"
 		set_light(0)

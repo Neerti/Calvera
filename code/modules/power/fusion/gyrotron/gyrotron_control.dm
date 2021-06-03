@@ -124,7 +124,7 @@
 			monitor.gyro_tag = new_ident
 		return
 /*
-/obj/machinery/computer/gyrotron_control/update_icon()
+/obj/machinery/computer/gyrotron_control/on_update_icon()
 	if(stat & (BROKEN))
 		icon = 'icons/obj/computer.dmi'
 		icon_state = "broken"

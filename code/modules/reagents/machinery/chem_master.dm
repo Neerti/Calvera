@@ -38,7 +38,7 @@
 				qdel(src)
 				return
 
-/obj/machinery/chem_master/update_icon()
+/obj/machinery/chem_master/on_update_icon()
 	icon_state = "mixer[beaker ? "1" : "0"]"
 
 /obj/machinery/chem_master/attackby(var/obj/item/weapon/B as obj, var/mob/user as mob)

@@ -142,7 +142,7 @@
 			update_icon()
 	..()
 
-/obj/item/weapon/beartrap/update_icon()
+/obj/item/weapon/beartrap/on_update_icon()
 	..()
 
 	if(!deployed)
@@ -263,7 +263,7 @@
 
 	..()
 
-/obj/item/weapon/material/barbedwire/update_icon()
+/obj/item/weapon/material/barbedwire/on_update_icon()
 	..()
 
 	if(anchored)

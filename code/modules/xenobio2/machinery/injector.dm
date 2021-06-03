@@ -27,7 +27,7 @@
 	beaker = new /obj/item/weapon/reagent_containers/glass/beaker(src)
 	default_apply_parts()
 
-/obj/machinery/xenobio2/manualinjector/update_icon()
+/obj/machinery/xenobio2/manualinjector/on_update_icon()
 	if(beaker)
 		if(occupant)
 			icon_state = "biogen-stand"

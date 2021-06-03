@@ -35,7 +35,7 @@
 			standing.add_overlay(image(icon = INV_BELT_DEF_ICON, icon_state = i_state))
 	return standing
 
-/obj/item/weapon/storage/update_icon()
+/obj/item/weapon/storage/on_update_icon()
 	if (ismob(src.loc))
 		var/mob/M = src.loc
 		M.update_inv_belt()

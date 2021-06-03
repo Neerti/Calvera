@@ -31,7 +31,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    burst_accuracy=list(0,-10,-10), dispersion=list(0.0, 0.3, 0.6))
 	)
 
-/obj/item/weapon/gun/projectile/automatic/advanced_smg/update_icon()
+/obj/item/weapon/gun/projectile/automatic/advanced_smg/on_update_icon()
 	..()
 	icon_state = (ammo_magazine)? "advanced_smg" : "advanced_smg-empty"
 	return
@@ -62,7 +62,7 @@
 /obj/item/weapon/gun/projectile/automatic/c20r/empty
 	magazine_type = null
 
-/obj/item/weapon/gun/projectile/automatic/c20r/update_icon()
+/obj/item/weapon/gun/projectile/automatic/c20r/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "c20r-[round(ammo_magazine.stored_ammo.len,4)]"
@@ -99,7 +99,7 @@
 //		list(mode_name="short bursts", 	burst=5, fire_delay=null, move_delay=6,    burst_accuracy=list(0,-15,-30,-30,-45), dispersion=list(0.6, 1.0, 1.0, 1.0, 1.2)),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/sts35/update_icon(var/ignore_inhands)
+/obj/item/weapon/gun/projectile/automatic/sts35/on_update_icon(var/ignore_inhands)
 	..()
 	if(istype(ammo_magazine,/obj/item/ammo_magazine/m545/small))
 		icon_state = "arifle-small" // If using the small magazines, use the small magazine sprite.
@@ -122,7 +122,7 @@
 	allowed_magazines = list(/obj/item/ammo_magazine/m9mmt)
 	projectile_type = /obj/item/projectile/bullet/pistol/medium
 
-/obj/item/weapon/gun/projectile/automatic/wt550/update_icon()
+/obj/item/weapon/gun/projectile/automatic/wt550/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "wt550-[round(ammo_magazine.stored_ammo.len,4)]"
@@ -187,7 +187,7 @@
 	else
 		..()
 
-/obj/item/weapon/gun/projectile/automatic/z8/update_icon(var/ignore_inhands)
+/obj/item/weapon/gun/projectile/automatic/z8/on_update_icon(var/ignore_inhands)
 	..()
 	if(ammo_magazine)
 		icon_state = "carbine-[round(ammo_magazine.stored_ammo.len,2)]"
@@ -268,7 +268,7 @@
 	else
 		return ..() //once open, behave like normal
 
-/obj/item/weapon/gun/projectile/automatic/l6_saw/update_icon()
+/obj/item/weapon/gun/projectile/automatic/l6_saw/on_update_icon()
 	if(istype(ammo_magazine,/obj/item/ammo_magazine/m762))
 		icon_state = "l6[cover_open ? "open" : "closed"]mag"
 		item_state = icon_state
@@ -314,7 +314,7 @@
 //		list(mode_name="6-round bursts", burst=6, move_delay=6, burst_accuracy = list(0,-15,-15,-30,-30, -30), dispersion = list(0.6, 1.0, 1.0, 1.0, 1.2, 1.2)),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/as24/update_icon()
+/obj/item/weapon/gun/projectile/automatic/as24/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "ashot"
@@ -341,7 +341,7 @@
 		list(mode_name="3-round bursts", burst=3, burst_delay=1, fire_delay=4, move_delay=4, burst_accuracy = list(0,-15,-15,-30,-30), dispersion = list(0.6, 1.0, 1.0))
 		)
 
-/obj/item/weapon/gun/projectile/automatic/mini_uzi/update_icon()
+/obj/item/weapon/gun/projectile/automatic/mini_uzi/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "mini-uzi"
@@ -367,7 +367,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    burst_accuracy=list(0,-15,-15), dispersion=list(0.0, 0.6, 1.0))
 		)
 
-/obj/item/weapon/gun/projectile/automatic/p90/update_icon()
+/obj/item/weapon/gun/projectile/automatic/p90/on_update_icon()
 	icon_state = "p90smg-[ammo_magazine ? round(ammo_magazine.stored_ammo.len, 6) : "empty"]"
 
 /obj/item/weapon/gun/projectile/automatic/tommygun
@@ -388,7 +388,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    burst_accuracy=list(0,-15,-15), dispersion=list(0.0, 0.6, 1.0))
 		)
 
-/obj/item/weapon/gun/projectile/automatic/tommygun/update_icon()
+/obj/item/weapon/gun/projectile/automatic/tommygun/on_update_icon()
 	..()
 	icon_state = (ammo_magazine)? "tommygun" : "tommygun-empty"
 //	update_held_icon()
@@ -416,7 +416,7 @@
 		list(mode_name="2-round bursts", burst=2, fire_delay=null, move_delay=6,    burst_accuracy=list(0,-15), dispersion=list(0.0, 0.6))
 		)
 
-/obj/item/weapon/gun/projectile/automatic/bullpup/update_icon(var/ignore_inhands)
+/obj/item/weapon/gun/projectile/automatic/bullpup/on_update_icon(var/ignore_inhands)
 	..()
 	if(istype(ammo_magazine,/obj/item/ammo_magazine/m762))
 		icon_state = "bullpup-small"
@@ -447,7 +447,7 @@
 		list(mode_name="3-round bursts", burst=3, burst_delay=1, fire_delay=4, move_delay=4, burst_accuracy=list(0,-15,-30), dispersion=list(0.0, 0.6, 0.6))
 		)
 
-/obj/item/weapon/gun/projectile/automatic/combatsmg/update_icon()
+/obj/item/weapon/gun/projectile/automatic/combatsmg/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "combatsmg"

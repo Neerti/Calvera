@@ -11,7 +11,7 @@
 	. = ..()
 	update_icon()
 
-/obj/item/stack/arcadeticket/update_icon()
+/obj/item/stack/arcadeticket/on_update_icon()
 	var/amount = get_amount()
 	switch(amount)
 		if(12 to INFINITY)

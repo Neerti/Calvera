@@ -695,7 +695,7 @@
 	var/open_state
 	var/closed_state
 
-/obj/item/weapon/storage/trinketbox/update_icon()
+/obj/item/weapon/storage/trinketbox/on_update_icon()
 	overlays.Cut()
 	if(open)
 		icon_state = open_state

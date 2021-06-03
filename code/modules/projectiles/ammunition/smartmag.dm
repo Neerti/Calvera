@@ -57,7 +57,7 @@
 	else
 		. += "<span class='warning'>\The [src] does not appear to have a power source installed.</span>"
 
-/obj/item/ammo_magazine/smart/update_icon()
+/obj/item/ammo_magazine/smart/on_update_icon()
 	if(attached_cell)
 		icon_state = "smartmag-filled"
 	else

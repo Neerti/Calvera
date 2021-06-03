@@ -34,7 +34,7 @@
 	else
 		. += "<span class='notice'>The \"manipulator missing\" indicator is lit. [src] consumes [mat_cost] units of [ammo_material] per shot.</span>"
 
-/obj/item/weapon/gun/magnetic/matfed/update_icon()
+/obj/item/weapon/gun/magnetic/matfed/on_update_icon()
 	var/list/overlays_to_add = list()
 	if(removable_components)
 		if(cell)

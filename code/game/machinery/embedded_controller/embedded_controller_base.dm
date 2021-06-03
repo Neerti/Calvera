@@ -86,7 +86,7 @@
 		radio_controller.remove_object(src,frequency)
 	..()
 
-/obj/machinery/embedded_controller/radio/update_icon()
+/obj/machinery/embedded_controller/radio/on_update_icon()
 	if(on && program)
 		if(program.memory["processing"])
 			icon_state = "airlock_control_process"

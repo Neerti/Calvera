@@ -122,7 +122,7 @@ obj/item/weapon/chainsaw/suicide_act(mob/user)
 	to_chat(viewers(user), "<span class='danger'>[user] is lying down and pulling the chainsaw into [TU.him], it looks like [TU.he] [TU.is] trying to commit suicide!</span>")
 	return(BRUTELOSS)
 
-obj/item/weapon/chainsaw/update_icon()
+obj/item/weapon/chainsaw/on_update_icon()
 	if(on)
 		icon_state = "chainsaw1"
 		item_state = "chainsaw1"

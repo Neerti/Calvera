@@ -80,7 +80,7 @@
 		visible_message("<span class='notice'>The ID slot indicator light flickers on \the [src] as it spits out a card before powering down.</span>")
 		inserted_id.forceMove(get_turf(src))
 
-/obj/machinery/mineral/equipment_vendor/update_icon()
+/obj/machinery/mineral/equipment_vendor/on_update_icon()
 	if(panel_open)
 		add_overlay("[initial(icon_state)]-panel")
 	else

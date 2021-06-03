@@ -34,7 +34,7 @@
 		if(3)
 			take_damage(rand(20, 60) / brute_resist)
 
-/obj/effect/blob/update_icon()
+/obj/effect/blob/on_update_icon()
 	if(health > maxHealth / 2)
 		icon_state = "blob"
 	else
@@ -161,7 +161,7 @@
 
 	expandType = /obj/effect/blob/shield
 
-/obj/effect/blob/core/update_icon()
+/obj/effect/blob/core/on_update_icon()
 	return
 
 /obj/effect/blob/core/New(loc)
@@ -197,7 +197,7 @@
 	update_nearby_tiles()
 	..()
 
-/obj/effect/blob/shield/update_icon()
+/obj/effect/blob/shield/on_update_icon()
 	if(health > maxHealth * 2 / 3)
 		icon_state = "blob_idle"
 	else if(health > maxHealth / 3)

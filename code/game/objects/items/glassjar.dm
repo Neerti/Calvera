@@ -84,7 +84,7 @@
 		S.loc = src
 		update_icon()
 
-/obj/item/glass_jar/update_icon() // Also updates name and desc
+/obj/item/glass_jar/on_update_icon() // Also updates name and desc
 	underlays.Cut()
 	overlays.Cut()
 	switch(contains)
@@ -136,7 +136,7 @@
 	desc = "A large plastic tank."
 	matter = list("plastic" = 4000)
 
-/obj/item/glass_jar/fish/update_icon() // Also updates name and desc
+/obj/item/glass_jar/fish/on_update_icon() // Also updates name and desc
 	underlays.Cut()
 	overlays.Cut()
 

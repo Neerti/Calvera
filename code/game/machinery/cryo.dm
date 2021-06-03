@@ -197,7 +197,7 @@
 		return
 	put_mob(target)
 
-/obj/machinery/atmospherics/unary/cryo_cell/update_icon()
+/obj/machinery/atmospherics/unary/cryo_cell/on_update_icon()
 	cut_overlay(fluid)
 	fluid.color = null
 	if(on)

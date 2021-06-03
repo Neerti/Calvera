@@ -167,7 +167,7 @@ turf/simulated/mineral/floor/light_corner
 	if(density && mineral)
 		MineralSpread()
 
-/turf/simulated/mineral/update_icon(var/update_neighbors)
+/turf/simulated/mineral/on_update_icon(var/update_neighbors)
 
 	cut_overlays()
 

@@ -107,7 +107,7 @@ proc/cardinalrange(var/center)
 	return 0
 
 
-/obj/machinery/am_shielding/update_icon()
+/obj/machinery/am_shielding/on_update_icon()
 	overlays.Cut()
 	for(var/direction in alldirs)
 		var/machine = locate(/obj/machinery, get_step(loc, direction))

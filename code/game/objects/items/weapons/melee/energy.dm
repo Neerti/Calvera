@@ -162,7 +162,7 @@
 /obj/item/weapon/melee/energy/get_cell()
 	return bcell
 
-/obj/item/weapon/melee/energy/update_icon()
+/obj/item/weapon/melee/energy/on_update_icon()
 	. = ..()
 	var/mutable_appearance/blade_overlay = mutable_appearance(icon, "[icon_state]_blade")
 	blade_overlay.color = lcolor

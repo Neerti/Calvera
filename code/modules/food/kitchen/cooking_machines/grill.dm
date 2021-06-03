@@ -34,7 +34,7 @@
 	QDEL_NULL(grill_loop)
 	return ..()
 	
-/obj/machinery/appliance/cooker/grill/update_icon() // TODO: Cooking icon
+/obj/machinery/appliance/cooker/grill/on_update_icon() // TODO: Cooking icon
 	if(!stat)
 		icon_state = on_icon
 		if(cooking == TRUE)

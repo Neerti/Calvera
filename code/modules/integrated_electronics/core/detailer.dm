@@ -29,7 +29,7 @@
 	update_icon()
 	return ..()
 
-/obj/item/device/integrated_electronics/detailer/update_icon()
+/obj/item/device/integrated_electronics/detailer/on_update_icon()
 	cut_overlays()
 	var/mutable_appearance/detail_overlay = mutable_appearance('icons/obj/integrated_electronics/electronic_tools.dmi', "detailer-color")
 	detail_overlay.color = detail_color

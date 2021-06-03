@@ -96,7 +96,7 @@
 	if(node3)
 		node3.update_underlays()
 
-/obj/machinery/atmospherics/pipe/manifold/update_icon(var/safety = 0)
+/obj/machinery/atmospherics/pipe/manifold/on_update_icon(var/safety = 0)
 	if(!check_icon_cache())
 		return
 

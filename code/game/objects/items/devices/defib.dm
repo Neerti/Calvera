@@ -42,7 +42,7 @@
 	bcell = /obj/item/weapon/cell/apc
 
 
-/obj/item/device/defib_kit/update_icon()
+/obj/item/device/defib_kit/on_update_icon()
 	var/list/new_overlays = list()
 
 	if(paddles && paddles.loc == src) //in case paddles got destroyed somehow.
@@ -243,7 +243,7 @@
 	update_icon()
 	..()
 
-/obj/item/weapon/shockpaddles/update_icon()
+/obj/item/weapon/shockpaddles/on_update_icon()
 	icon_state = "defibpaddles[wielded]"
 	item_state = "defibpaddles[wielded]"
 	if(cooldown)

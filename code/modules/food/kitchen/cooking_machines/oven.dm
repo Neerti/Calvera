@@ -48,7 +48,7 @@
 	QDEL_NULL(oven_loop)
 	return ..()
 
-/obj/machinery/appliance/cooker/oven/update_icon()
+/obj/machinery/appliance/cooker/oven/on_update_icon()
 	if(!open)
 		if(!stat)
 			icon_state = "ovenclosed_on"

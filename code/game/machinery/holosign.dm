@@ -22,7 +22,7 @@
 	update_use_power(lit ? USE_POWER_ACTIVE : USE_POWER_IDLE)
 	update_icon()
 
-/obj/machinery/holosign/update_icon()
+/obj/machinery/holosign/on_update_icon()
 	if(!lit)
 		icon_state = off_icon
 		set_light(0)

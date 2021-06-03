@@ -79,7 +79,7 @@
 
 	update_icon()
 
-/obj/item/weapon/telecube/update_icon()
+/obj/item/weapon/telecube/on_update_icon()
 	. = ..()
 
 	if(isturf(loc))

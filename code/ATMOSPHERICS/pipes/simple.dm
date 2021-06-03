@@ -111,7 +111,7 @@
 	if(node2)
 		node2.update_underlays()
 
-/obj/machinery/atmospherics/pipe/simple/update_icon(var/safety = 0)
+/obj/machinery/atmospherics/pipe/simple/on_update_icon(var/safety = 0)
 	if(!check_icon_cache())
 		return
 

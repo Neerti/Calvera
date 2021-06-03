@@ -29,7 +29,7 @@
 // Proc: update_icon()
 // Parameters: None
 // Description: Self explanatory.
-/obj/machinery/exonet_node/update_icon()
+/obj/machinery/exonet_node/on_update_icon()
 	if(on)
 		if(!allow_external_PDAs && !allow_external_communicators && !allow_external_newscasters)
 			icon_state = "[initial(icon_state)]_idle"

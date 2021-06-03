@@ -183,7 +183,7 @@
 			L.adjust_fire_stacks(get_fuel_amount() / 4)
 			L.IgniteMob()
 
-/obj/structure/bonfire/update_icon()
+/obj/structure/bonfire/on_update_icon()
 	overlays.Cut()
 	if(burning)
 		var/state
@@ -372,7 +372,7 @@
 			var/obj/O = A
 			O.fire_act(null, 1000, 500)
 
-/obj/structure/fireplace/update_icon()
+/obj/structure/fireplace/on_update_icon()
 	overlays.Cut()
 	if(burning)
 		var/state

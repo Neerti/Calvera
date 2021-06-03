@@ -32,7 +32,7 @@
 			if(istype(S) && cell.checked_use(10 KILOWATTS * CELLRATE))
 				qdel(S)
 
-/obj/item/weapon/shield_diffuser/update_icon()
+/obj/item/weapon/shield_diffuser/on_update_icon()
 	if(enabled)
 		icon_state = "hdiffuser_on"
 	else

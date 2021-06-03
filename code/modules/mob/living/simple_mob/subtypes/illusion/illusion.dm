@@ -24,7 +24,7 @@
 	var/atom/movable/copying = null // The thing we're trying to look like.
 	var/realistic = FALSE // If true, things like bullets and weapons will hit it, to be a bit more convincing from a distance.
 
-/mob/living/simple_mob/illusion/update_icon() // We don't want the appearance changing AT ALL unless by copy_appearance().
+/mob/living/simple_mob/illusion/on_update_icon() // We don't want the appearance changing AT ALL unless by copy_appearance().
 	return
 
 /mob/living/simple_mob/illusion/proc/copy_appearance(atom/movable/thing_to_copy)

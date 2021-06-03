@@ -32,7 +32,7 @@
 	unregister_radio(src, frequency)
 	. = ..()
 
-/obj/machinery/atmospherics/unary/outlet_injector/update_icon()
+/obj/machinery/atmospherics/unary/outlet_injector/on_update_icon()
 	if(!powered())
 		icon_state = "off"
 	else

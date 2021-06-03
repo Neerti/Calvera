@@ -42,7 +42,7 @@
 	input_power_multiplier = power_multiplier
 
 
-/obj/machinery/power/tesla_coil/update_icon()
+/obj/machinery/power/tesla_coil/on_update_icon()
 	if(panel_open)
 		icon_state = "coil_open[anchored]"
 	else
@@ -110,7 +110,7 @@
 /obj/machinery/power/grounding_rod/pre_mapped
 	anchored = TRUE
 
-/obj/machinery/power/grounding_rod/update_icon()
+/obj/machinery/power/grounding_rod/on_update_icon()
 	if(panel_open)
 		icon_state = "grounding_rod_open[anchored]"
 	else

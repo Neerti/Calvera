@@ -35,7 +35,7 @@
 	sprite_stack = initial_sprite_stack
 	update_icon()
 
-/obj/item/weapon/card/update_icon()
+/obj/item/weapon/card/on_update_icon()
 	if(!sprite_stack || !istype(sprite_stack) || sprite_stack == list(""))
 		icon = base_icon
 		icon_state = initial(icon_state)

@@ -96,7 +96,7 @@
 		ability.maptext = "[ability.index]" // Slot number
 		i++
 
-/obj/screen/movable/ability_master/update_icon()
+/obj/screen/movable/ability_master/on_update_icon()
 	if(ability_objects.len)
 		invisibility = 0
 	else
@@ -209,7 +209,7 @@
 	ability_master = null
 	..()
 
-/obj/screen/ability/update_icon()
+/obj/screen/ability/on_update_icon()
 //	if(!spell)
 //		qdel(src)
 //		return

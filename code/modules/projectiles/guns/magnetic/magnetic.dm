@@ -99,7 +99,7 @@
 	if(needs_update)
 		update_icon()
 
-/obj/item/weapon/gun/magnetic/update_icon()
+/obj/item/weapon/gun/magnetic/on_update_icon()
 	cut_overlays()
 	if(state & ICON_CELL)
 		add_overlay("[icon_state]_cell")

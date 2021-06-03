@@ -53,7 +53,7 @@
 
 	update_icon() // this probably won't cause issues, but Aurora used SSIcons and queue_icon_update() instead
 
-/obj/machinery/appliance/cooker/update_icon()
+/obj/machinery/appliance/cooker/on_update_icon()
 	cut_overlays()
 	var/image/light
 	if(use_power == 1 && !stat)

@@ -59,7 +59,7 @@
 	user.update_inv_wear_suit()
 	user.update_action_buttons()
 
-/obj/item/clothing/suit/armor/tesla/update_icon()
+/obj/item/clothing/suit/armor/tesla/on_update_icon()
 	if(active && ready)
 		icon_state = ready_icon_state
 		item_state = ready_icon_state

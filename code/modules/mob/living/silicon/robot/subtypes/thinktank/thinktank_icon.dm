@@ -1,4 +1,4 @@
-/mob/living/silicon/robot/platform/update_icon()
+/mob/living/silicon/robot/platform/on_update_icon()
 	updateicon()
 
 /mob/living/silicon/robot/platform/updateicon()

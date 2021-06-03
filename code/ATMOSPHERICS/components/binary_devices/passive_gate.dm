@@ -36,7 +36,7 @@
 	unregister_radio(src, frequency)
 	. = ..()
 
-/obj/machinery/atmospherics/binary/passive_gate/update_icon()
+/obj/machinery/atmospherics/binary/passive_gate/on_update_icon()
 	icon_state = (unlocked && flowing)? "on" : "off"
 
 /obj/machinery/atmospherics/binary/passive_gate/update_underlays()

@@ -211,7 +211,7 @@ GLOBAL_LIST_BOILERPLATE(all_janitorial_carts, /obj/structure/janitorialcart)
 
 
 
-/obj/structure/janitorialcart/update_icon()
+/obj/structure/janitorialcart/on_update_icon()
 	overlays.Cut()
 
 	if(mybucket)

@@ -64,7 +64,7 @@ GLOBAL_LIST_EMPTY(all_cataloguers)
 	displayed_data = null
 	return ..()
 
-/obj/item/device/cataloguer/update_icon()
+/obj/item/device/cataloguer/on_update_icon()
 	if(busy)
 		icon_state = "[initial(icon_state)]_active"
 	else

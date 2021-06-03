@@ -25,7 +25,7 @@
 	update_icon()
 	handle_fish()
 
-/turf/simulated/floor/water/update_icon()
+/turf/simulated/floor/water/on_update_icon()
 	..() // To get the edges.
 
 	icon_state = under_state // This isn't set at compile time in order for it to show as water in the map editor.
@@ -152,7 +152,7 @@ var/list/shoreline_icon_cache = list()
 	icon_state = "beach"
 	depth = 0
 
-/turf/simulated/floor/water/beach/update_icon()
+/turf/simulated/floor/water/beach/on_update_icon()
 	return
 
 /turf/simulated/floor/water/beach/corner
@@ -169,7 +169,7 @@ var/list/shoreline_icon_cache = list()
 	icon_state = "shorelinecorner"
 
 // Water sprites are really annoying, so let BYOND sort it out.
-/turf/simulated/floor/water/shoreline/update_icon()
+/turf/simulated/floor/water/shoreline/on_update_icon()
 	underlays.Cut()
 	cut_overlays()
 	..() // Get the underlay first.

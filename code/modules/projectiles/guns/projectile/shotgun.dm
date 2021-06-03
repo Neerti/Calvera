@@ -46,7 +46,7 @@
 
 	update_icon()
 
-/obj/item/weapon/gun/projectile/shotgun/pump/update_icon()//This adds empty sprite capability for shotguns.
+/obj/item/weapon/gun/projectile/shotgun/pump/on_update_icon()//This adds empty sprite capability for shotguns.
 	..()
 	if(!empty_sprite)//Just a dirty check
 		return

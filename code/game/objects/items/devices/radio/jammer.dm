@@ -95,7 +95,7 @@ var/global/list/active_radio_jammers = list()
 		update_icon()
 		to_chat(user,"<span class='notice'>You insert \the [power_source] into \the [src].</span>")
 
-/obj/item/device/radio_jammer/update_icon()
+/obj/item/device/radio_jammer/on_update_icon()
 	if(on)
 		icon_state = active_state
 	else

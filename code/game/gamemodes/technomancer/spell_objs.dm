@@ -165,7 +165,7 @@
 // Proc: update_icon()
 // Parameters: 0
 // Description: Applys an overlay if it is a passive spell.
-/obj/item/weapon/spell/update_icon()
+/obj/item/weapon/spell/on_update_icon()
 	if(toggled)
 		var/image/new_overlay = image('icons/obj/spells.dmi',"toggled")
 		overlays |= new_overlay

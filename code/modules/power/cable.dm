@@ -156,7 +156,7 @@ var/list/possible_cable_coil_colours = list(
 /obj/structure/cable/hides_under_flooring()
 	return 1
 
-/obj/structure/cable/update_icon()
+/obj/structure/cable/on_update_icon()
 	icon_state = "[d1]-[d2]"
 	alpha = invisibility ? 127 : 255
 
@@ -568,7 +568,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	else
 		return ..()
 
-/obj/item/stack/cable_coil/update_icon()
+/obj/item/stack/cable_coil/on_update_icon()
 	if (!color)
 		color = pick(COLOR_RED, COLOR_BLUE, COLOR_LIME, COLOR_ORANGE, COLOR_WHITE, COLOR_PINK, COLOR_YELLOW, COLOR_CYAN)
 	if(amount == 1)
@@ -965,7 +965,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 			embed_chance = force/(w_class*3)
 	update_icon()
 
-/obj/item/stack/cable_coil/alien/update_icon()
+/obj/item/stack/cable_coil/alien/on_update_icon()
 	icon_state = initial(icon_state)
 
 /obj/item/stack/cable_coil/alien/can_use(var/used)

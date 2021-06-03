@@ -27,7 +27,7 @@
 	wires = null
 	return ..()
 
-/obj/machinery/power/grid_checker/update_icon()
+/obj/machinery/power/grid_checker/on_update_icon()
 	if(power_failing)
 		icon_state = "gridchecker_off"
 		set_light(2, 2, "#F86060")

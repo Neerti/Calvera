@@ -48,7 +48,7 @@
 
 	return mining_overlay_cache["[cache_id]_[direction]"]
 
-/turf/simulated/wall/solidrock/update_icon(var/update_neighbors)
+/turf/simulated/wall/solidrock/on_update_icon(var/update_neighbors)
 	if(density)
 		var/image/I
 		for(var/i = 1 to 4)
@@ -84,7 +84,7 @@
 /turf/simulated/wall/solidrock/Initialize(mapload)
 	. = ..(mapload, "mossyrock")
 
-/turf/simulated/wall/solidrock/mossyrockpoi/update_icon(var/update_neighbors)
+/turf/simulated/wall/solidrock/mossyrockpoi/on_update_icon(var/update_neighbors)
 	if(density)
 		var/image/I
 		for(var/i = 1 to 4)

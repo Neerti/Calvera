@@ -292,7 +292,7 @@
 		return 1
 	return 0
 
-/obj/machinery/alarm/update_icon()
+/obj/machinery/alarm/on_update_icon()
 	if(panel_open)
 		icon_state = "alarmx"
 		set_light(0)

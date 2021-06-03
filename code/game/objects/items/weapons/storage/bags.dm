@@ -44,7 +44,7 @@
 	can_hold = list() // any
 	cant_hold = list(/obj/item/weapon/disk/nuclear)
 
-/obj/item/weapon/storage/bag/trash/update_icon()
+/obj/item/weapon/storage/bag/trash/on_update_icon()
 	if(contents.len == 0)
 		icon_state = "trashbag0"
 	else if(contents.len < 9)

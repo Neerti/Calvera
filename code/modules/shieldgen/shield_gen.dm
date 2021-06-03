@@ -254,7 +254,7 @@
 		for(var/mob/M in view(5,src))
 			to_chat(M, "[bicon(src)] You hear heavy droning fade out.")
 
-/obj/machinery/shield_gen/update_icon()
+/obj/machinery/shield_gen/on_update_icon()
 	if(stat & BROKEN)
 		icon_state = "broke"
 		set_light(0)

@@ -278,7 +278,7 @@ obj/item/weapon/gripper/proc/drop_item()
 	to_chat(src.loc, "<span class='notice'>You drop \the [wrapped].</span>")
 	wrapped.loc = get_turf(src)
 	wrapped = null
-	//update_icon()
+	//on_update_icon()
 
 /obj/item/weapon/gripper/proc/drop_item_nm()
 
@@ -293,7 +293,7 @@ obj/item/weapon/gripper/proc/drop_item()
 
 	wrapped.loc = get_turf(src)
 	wrapped = null
-	//update_icon()
+	//on_update_icon()
 
 /obj/item/weapon/gripper/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	if(wrapped) 	//The force of the wrapped obj gets set to zero during the attack() and afterattack().

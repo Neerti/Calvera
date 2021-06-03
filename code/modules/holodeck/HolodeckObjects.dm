@@ -62,7 +62,7 @@
 	name = "\proper space"
 	icon_state = "white"
 
-/turf/simulated/floor/holofloor/space/update_icon()
+/turf/simulated/floor/holofloor/space/on_update_icon()
 	. = ..()
 	add_overlay(SSskybox.dust_cache["[((x + y) ^ ~(x * y) + z) % 25]"])
 
@@ -334,7 +334,7 @@ datum/unarmed_attack/holopugilism/unarmed_override(var/mob/living/carbon/human/u
 		update_icon()
 	return ..()
 
-/obj/item/weapon/holo/esword/update_icon()
+/obj/item/weapon/holo/esword/on_update_icon()
 	. = ..()
 	var/mutable_appearance/blade_overlay = mutable_appearance(icon, "[icon_state]_blade")
 	blade_overlay.color = lcolor
@@ -454,7 +454,7 @@ datum/unarmed_attack/holopugilism/unarmed_override(var/mob/living/carbon/human/u
 	if(numbuttons == numready)
 		begin_event()
 
-/obj/machinery/readybutton/update_icon()
+/obj/machinery/readybutton/on_update_icon()
 	if(ready)
 		icon_state = "auth_on"
 	else

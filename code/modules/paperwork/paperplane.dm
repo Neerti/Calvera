@@ -30,7 +30,7 @@
 		internalPaper = null
 	return ..()
 
-/obj/item/weapon/paperplane/update_icon()
+/obj/item/weapon/paperplane/on_update_icon()
 	overlays.Cut()
 	var/list/stamped = internalPaper.stamped
 	if(!stamped)

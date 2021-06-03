@@ -10,7 +10,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	load_method = MAGAZINE
 
-/obj/item/weapon/gun/projectile/colt/update_icon()
+/obj/item/weapon/gun/projectile/colt/on_update_icon()
 	if(ammo_magazine)
 		if(unique_reskin)
 			icon_state = unique_reskin
@@ -88,7 +88,7 @@
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	load_method = MAGAZINE
 
-/obj/item/weapon/gun/projectile/sec/update_icon()
+/obj/item/weapon/gun/projectile/sec/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "secguncomp"
@@ -104,7 +104,7 @@
 	name = "custom .45 Pistol"
 	icon_state = "secgundark"
 
-/obj/item/weapon/gun/projectile/sec/wood/update_icon()
+/obj/item/weapon/gun/projectile/sec/wood/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "secgundark"
@@ -144,7 +144,7 @@
 	magazine_type = /obj/item/ammo_magazine/m44
 	allowed_magazines = list(/obj/item/ammo_magazine/m44)
 
-/obj/item/weapon/gun/projectile/deagle/update_icon()
+/obj/item/weapon/gun/projectile/deagle/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "[initial(icon_state)]"
@@ -176,7 +176,7 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 
-/obj/item/weapon/gun/projectile/gyropistol/update_icon()
+/obj/item/weapon/gun/projectile/gyropistol/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "gyropistolloaded"
@@ -229,7 +229,7 @@
 		return
 	..()
 
-/obj/item/weapon/gun/projectile/pistol/update_icon()
+/obj/item/weapon/gun/projectile/pistol/on_update_icon()
 	..()
 	if(silenced)
 		icon_state = "pistol-silencer"
@@ -305,7 +305,7 @@
 	allowed_magazines = list(/obj/item/ammo_magazine/m9mm/compact)
 	projectile_type = /obj/item/projectile/bullet/pistol
 
-/obj/item/weapon/gun/projectile/luger/update_icon()
+/obj/item/weapon/gun/projectile/luger/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "[initial(icon_state)]"
@@ -328,7 +328,7 @@
 	magazine_type = /obj/item/ammo_magazine/m9mm
 	allowed_magazines = list(/obj/item/ammo_magazine/m9mm) // Can accept illegal large capacity magazines, or compact magazines.
 
-/obj/item/weapon/gun/projectile/p92x/update_icon()
+/obj/item/weapon/gun/projectile/p92x/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "[initial(icon_state)]"

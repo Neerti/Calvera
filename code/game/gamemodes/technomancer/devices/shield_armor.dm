@@ -80,7 +80,7 @@
 	user.update_inv_wear_suit()
 	user.update_action_buttons()
 
-/obj/item/clothing/suit/armor/shield/update_icon()
+/obj/item/clothing/suit/armor/shield/on_update_icon()
 	icon_state = "shield_armor_[active]"
 	item_state = "shield_armor_[active]"
 	if(active)

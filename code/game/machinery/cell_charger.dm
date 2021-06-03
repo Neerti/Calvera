@@ -17,7 +17,7 @@
 	. = ..()
 	default_apply_parts()
 
-/obj/machinery/cell_charger/update_icon()
+/obj/machinery/cell_charger/on_update_icon()
 	icon_state = "ccharger[charging ? 1 : 0]"
 
 	if(charging && !(stat & (BROKEN|NOPOWER)))

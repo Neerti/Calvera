@@ -162,7 +162,7 @@
 
 	return canhear_range
 
-/obj/item/device/radio/intercom/update_icon()
+/obj/item/device/radio/intercom/on_update_icon()
 	var/area/A = get_area(src)
 	on = A?.powered(EQUIP)
 

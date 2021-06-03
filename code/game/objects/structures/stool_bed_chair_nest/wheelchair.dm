@@ -41,7 +41,7 @@
 			to_chat(M, SPAN_WARNING("You are too large to use \the [src]."))
 			. = FALSE
 
-/obj/structure/bed/chair/wheelchair/update_icon()
+/obj/structure/bed/chair/wheelchair/on_update_icon()
 	cut_overlays()
 	var/image/O = image(icon = icon, icon_state = "[icon_state]_overlay", layer = ABOVE_MOB_LAYER)
 	O.plane = MOB_PLANE

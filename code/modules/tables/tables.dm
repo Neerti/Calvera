@@ -335,7 +335,7 @@
 		return TRUE
 	..()
 
-/obj/structure/table/update_icon()
+/obj/structure/table/on_update_icon()
 	if(flipped != 1)
 		icon_state = "blank"
 		overlays.Cut()

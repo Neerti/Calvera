@@ -1,4 +1,4 @@
-/mob/living/simple_mob/update_icon()
+/mob/living/simple_mob/on_update_icon()
 	. = ..()
 	cut_overlays()
 //	var/mutable_appearance/ma = new(src)

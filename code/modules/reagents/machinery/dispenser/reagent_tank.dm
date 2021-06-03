@@ -356,7 +356,7 @@
 		flick("[icon_state]-vend", src)
 		return
 
-/obj/structure/reagent_dispensers/water_cooler/update_icon()
+/obj/structure/reagent_dispensers/water_cooler/on_update_icon()
 	icon_state = "water_cooler"
 	overlays.Cut()
 	var/image/I

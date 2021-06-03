@@ -72,7 +72,7 @@
 #define OVERLAY_PARTIAL	1
 #define OVERLAY_EMPTY	0
 
-/obj/item/weapon/cell/update_icon()
+/obj/item/weapon/cell/on_update_icon()
 	var/new_overlay = null // The overlay that is needed.
 	// If it's different than the current overlay, then it'll get changed.
 	// Otherwise nothing happens, to save on CPU.

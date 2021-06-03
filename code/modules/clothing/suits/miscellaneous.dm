@@ -810,7 +810,7 @@ obj/item/clothing/suit/kamishimo
 		to_chat(usr, "<span class='notice'>You unbutton your [src].</span>")
 	update_icon()
 
-/obj/item/clothing/suit/storage/flannel/update_icon()
+/obj/item/clothing/suit/storage/flannel/on_update_icon()
 	icon_state = initial(icon_state)
 	if(rolled)
 		icon_state += "r"

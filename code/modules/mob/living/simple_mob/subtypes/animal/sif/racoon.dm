@@ -139,7 +139,7 @@
 		drop_hat(src)
 	..()
 
-/mob/living/simple_mob/animal/sif/sakimm/update_icon()
+/mob/living/simple_mob/animal/sif/sakimm/on_update_icon()
 	overlays.Cut()
 	..()
 	if(hat)

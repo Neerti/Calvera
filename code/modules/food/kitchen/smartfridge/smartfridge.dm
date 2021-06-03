@@ -67,7 +67,7 @@
 	if(old_stat != stat)
 		update_icon()
 
-/obj/machinery/smartfridge/update_icon()
+/obj/machinery/smartfridge/on_update_icon()
 	cut_overlays()
 	if(stat & (BROKEN|NOPOWER))
 		icon_state = "[icon_base]-off"

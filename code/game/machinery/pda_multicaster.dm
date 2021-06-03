@@ -31,7 +31,7 @@
 		qdel(AM)
 	..()
 
-/obj/machinery/pda_multicaster/update_icon()
+/obj/machinery/pda_multicaster/on_update_icon()
 	if(on)
 		icon_state = initial(icon_state)
 	else

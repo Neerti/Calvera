@@ -185,7 +185,7 @@
 	position_x = ((loc.x - 1) * WORLD_ICON_SIZE) + MODULUS(position_x, WORLD_ICON_SIZE)
 	position_y = ((loc.y - 1) * WORLD_ICON_SIZE) + MODULUS(position_y, WORLD_ICON_SIZE)
 
-/obj/effect/overmap/visitable/ship/update_icon()
+/obj/effect/overmap/visitable/ship/on_update_icon()
 	if(!is_still())
 		icon_state = moving_state
 		transform = matrix().Turn(get_heading_degrees())

@@ -46,7 +46,7 @@ var/global/list/light_type_cache = list()
 		set_dir(newdir)
 	update_icon()
 
-/obj/machinery/light_construct/update_icon()
+/obj/machinery/light_construct/on_update_icon()
 	switch(stage)
 		if(1)
 			icon_state = "tube-construct-stage1"
@@ -171,7 +171,7 @@ var/global/list/light_type_cache = list()
 	fixture_type = /obj/machinery/light/small
 	sheets_refunded = 1
 
-/obj/machinery/light_construct/small/update_icon()
+/obj/machinery/light_construct/small/on_update_icon()
 	switch(stage)
 		if(1)
 			icon_state = "bulb-construct-stage1"
@@ -192,7 +192,7 @@ var/global/list/light_type_cache = list()
 	fixture_type = /obj/machinery/light/flamp
 	sheets_refunded = 2
 
-/obj/machinery/light_construct/flamp/update_icon()
+/obj/machinery/light_construct/flamp/on_update_icon()
 	switch(stage)
 		if(1)
 			icon_state = "flamp-construct-stage1"
@@ -338,7 +338,7 @@ var/global/list/light_type_cache = list()
 	QDEL_NULL(cell)
 	return ..()
 
-/obj/machinery/light/update_icon()
+/obj/machinery/light/on_update_icon()
 
 	switch(status)		// set icon_states
 		if(LIGHT_OK)
@@ -354,7 +354,7 @@ var/global/list/light_type_cache = list()
 			on = 0
 	return
 
-/obj/machinery/light/flamp/update_icon()
+/obj/machinery/light/flamp/on_update_icon()
 	if(lamp_shade)
 		base_state = "flampshade"
 		switch(status)		// set icon_states
@@ -908,7 +908,7 @@ var/global/list/light_type_cache = list()
 	matter = list("glass" = 100)
 
 // update the icon state and description of the light
-/obj/item/weapon/light/update_icon()
+/obj/item/weapon/light/on_update_icon()
 	switch(status)
 		if(LIGHT_OK)
 			icon_state = base_state

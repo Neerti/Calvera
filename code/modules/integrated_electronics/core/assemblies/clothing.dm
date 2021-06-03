@@ -18,7 +18,7 @@
 /obj/item/device/electronic_assembly/clothing/resolve_nano_host()
 	return clothing
 
-/obj/item/device/electronic_assembly/clothing/update_icon()
+/obj/item/device/electronic_assembly/clothing/on_update_icon()
 	..()
 	clothing.icon_state = icon_state
 	// We don't need to update the mob sprite since it won't (and shouldn't) actually get changed.

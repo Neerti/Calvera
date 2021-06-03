@@ -184,7 +184,7 @@
 	else
 		. += "Does not have a power cell."
 
-/obj/item/weapon/gun/energy/update_icon(var/ignore_inhands)
+/obj/item/weapon/gun/energy/on_update_icon(var/ignore_inhands)
 	if(power_supply == null)
 		if(modifystate)
 			icon_state = "[modifystate]_open"

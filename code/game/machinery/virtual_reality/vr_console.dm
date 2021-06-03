@@ -46,7 +46,7 @@
 		visible_message("<span class='warning'>\The [src] sounds an alarm, swinging its hatch open.</span>")
 		go_out()
 
-/obj/machinery/vr_sleeper/update_icon()
+/obj/machinery/vr_sleeper/on_update_icon()
 	icon_state = "[base_state][occupant ? "1" : "0"]"
 
 /obj/machinery/vr_sleeper/Topic(href, href_list)

@@ -10,7 +10,7 @@ var/image/no_ceiling_image = null
 	no_ceiling_image = image(icon = 'icons/turf/open_space.dmi', icon_state = "no_ceiling")
 	no_ceiling_image.plane = PLANE_MESONS
 
-/turf/simulated/floor/update_icon(var/update_neighbors)
+/turf/simulated/floor/on_update_icon(var/update_neighbors)
 
 	if(lava)
 		return

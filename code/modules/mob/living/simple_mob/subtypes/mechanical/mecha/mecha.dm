@@ -85,7 +85,7 @@
 		adjustCloneLoss(-2)
 	..()
 
-/mob/living/simple_mob/mechanical/mecha/update_icon()
+/mob/living/simple_mob/mechanical/mecha/on_update_icon()
 	..() // Cuts everything else, so do that first.
 	if(has_repair_droid)
 		add_overlay(image(icon = 'icons/mecha/mecha_equipment.dmi', icon_state = "repair_droid"))

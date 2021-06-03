@@ -120,7 +120,7 @@
 		toggle_valve()
 		VARSET_IN(src, toggle, TRUE, 5 SECONDS)
 
-/obj/item/device/transfer_valve/update_icon()
+/obj/item/device/transfer_valve/on_update_icon()
 	overlays.Cut()
 	underlays = null
 

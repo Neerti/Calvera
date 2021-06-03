@@ -86,7 +86,7 @@ GLOBAL_LIST_EMPTY(solars_list)
 	return
 
 
-/obj/machinery/power/solar/update_icon()
+/obj/machinery/power/solar/on_update_icon()
 	..()
 	overlays.Cut()
 	if(stat & BROKEN)
@@ -364,7 +364,7 @@ GLOBAL_LIST_EMPTY(solars_list)
 	set_panels(cdir)
 	updateDialog()
 
-/obj/machinery/power/solar_control/update_icon()
+/obj/machinery/power/solar_control/on_update_icon()
 	if(stat & BROKEN)
 		icon_state = "broken"
 		overlays.Cut()

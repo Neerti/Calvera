@@ -41,7 +41,7 @@
 		for(var/obj/effect/energy_field/S in shielded_tile)
 			qdel(S)
 
-/obj/machinery/shield_diffuser/update_icon()
+/obj/machinery/shield_diffuser/on_update_icon()
 	if(alarm)
 		icon_state = "fdiffuser_emergency"
 		return

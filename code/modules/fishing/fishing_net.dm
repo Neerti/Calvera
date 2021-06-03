@@ -76,7 +76,7 @@
 				L.attackby(W, user)
 	..()
 
-/obj/item/weapon/material/fishing_net/update_icon() // Also updates name and desc
+/obj/item/weapon/material/fishing_net/on_update_icon() // Also updates name and desc
 	underlays.Cut()
 	overlays.Cut()
 

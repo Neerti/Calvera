@@ -153,7 +153,7 @@ Pipelines + Other Objects -> Pipe network
 
 /obj/machinery/atmospherics/proc/disconnect(obj/machinery/atmospherics/reference)
 
-/obj/machinery/atmospherics/update_icon()
+/obj/machinery/atmospherics/on_update_icon()
 	return null
 
 /obj/machinery/atmospherics/proc/can_unwrench()

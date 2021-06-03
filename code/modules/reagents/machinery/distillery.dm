@@ -333,7 +333,7 @@
 
 	update_icon()
 
-/obj/machinery/portable_atmospherics/powered/reagent_distillery/update_icon()
+/obj/machinery/portable_atmospherics/powered/reagent_distillery/on_update_icon()
 	..()
 	cut_overlays()
 

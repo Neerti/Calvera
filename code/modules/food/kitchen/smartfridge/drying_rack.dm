@@ -24,7 +24,7 @@
 		dry()
 		update_icon()
 
-/obj/machinery/smartfridge/drying_rack/update_icon()
+/obj/machinery/smartfridge/drying_rack/on_update_icon()
 	var/not_working = stat & (BROKEN|NOPOWER)
 	var/hasItems
 	for(var/datum/stored_item/I in item_records)

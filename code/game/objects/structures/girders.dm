@@ -60,7 +60,7 @@
 /obj/structure/girder/get_material()
 	return girder_material
 
-/obj/structure/girder/update_icon()
+/obj/structure/girder/on_update_icon()
 	if(anchored)
 		icon_state = initial(icon_state)
 	else
@@ -326,7 +326,7 @@
 	girder_material = "cult"
 	applies_material_colour = 0
 
-/obj/structure/girder/cult/update_icon()
+/obj/structure/girder/cult/on_update_icon()
 	if(anchored)
 		icon_state = "cultgirder"
 	else

@@ -48,7 +48,7 @@
 /obj/machinery/atmospherics/pipe/vent/pipeline_expansion()
 	return list(node1)
 
-/obj/machinery/atmospherics/pipe/vent/update_icon()
+/obj/machinery/atmospherics/pipe/vent/on_update_icon()
 	if(node1)
 		icon_state = "intact"
 

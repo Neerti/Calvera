@@ -20,7 +20,7 @@ var/list/blob_nodes = list()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/structure/blob/node/update_icon()
+/obj/structure/blob/node/on_update_icon()
 	overlays.Cut()
 	color = null
 	var/mutable_appearance/blob_overlay = mutable_appearance('icons/mob/blob.dmi', "blob")

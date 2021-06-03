@@ -38,7 +38,7 @@ GLOBAL_LIST_EMPTY(all_blobs)
 	overmind = null
 	return ..()
 
-/obj/structure/blob/update_icon() //Updates color based on overmind color if we have an overmind.
+/obj/structure/blob/on_update_icon() //Updates color based on overmind color if we have an overmind.
 	if(overmind)
 		name = "[overmind.blob_type.name] [base_name]" // This is in update_icon() because inert blobs can turn into other blobs with magic if another blob core claims it with pulsing.
 		color = overmind.blob_type.color

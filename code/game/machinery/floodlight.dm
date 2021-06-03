@@ -15,7 +15,7 @@
 	cell = new(src)
 	..()
 
-/obj/machinery/floodlight/update_icon()
+/obj/machinery/floodlight/on_update_icon()
 	overlays.Cut()
 	icon_state = "flood[open ? "o" : ""][open && cell ? "b" : ""]0[on]"
 

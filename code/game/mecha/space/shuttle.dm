@@ -41,7 +41,7 @@
 	max_universal_equip = 1
 	max_special_equip = 1
 
-/obj/mecha/working/hoverpod/shuttlecraft/update_icon()
+/obj/mecha/working/hoverpod/shuttlecraft/on_update_icon()
 	cut_overlays()
 	..()
 
