@@ -12,7 +12,7 @@
 	if(armed)
 		. += "It looks like it's armed."
 
-/obj/item/device/assembly/mousetrap/update_icon()
+/obj/item/device/assembly/mousetrap/on_update_icon()
 	if(armed)
 		icon_state = "mousetraparmed"
 	else

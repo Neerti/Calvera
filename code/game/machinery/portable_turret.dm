@@ -319,7 +319,7 @@
 	spark_system = null
 	return ..()
 
-/obj/machinery/porta_turret/update_icon()
+/obj/machinery/porta_turret/on_update_icon()
 	if(stat & BROKEN) // Turret is dead.
 		icon_state = "destroyed_target_prism_[turret_type]"
 

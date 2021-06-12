@@ -11,7 +11,7 @@ GLOBAL_LIST_EMPTY(shutoff_valves)
 	var/close_on_leaks = TRUE	// If false it will be always open
 	level = 1
 
-/obj/machinery/atmospherics/valve/shutoff/update_icon()
+/obj/machinery/atmospherics/valve/shutoff/on_update_icon()
 	icon_state = "vclamp[open]"
 
 /obj/machinery/atmospherics/valve/shutoff/examine(var/mob/user)

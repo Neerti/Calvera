@@ -101,7 +101,7 @@ obj/machinery/atmospherics/pipe/zpipe/Destroy()
 obj/machinery/atmospherics/pipe/zpipe/pipeline_expansion()
 	return list(node1, node2)
 
-obj/machinery/atmospherics/pipe/zpipe/update_icon()
+obj/machinery/atmospherics/pipe/zpipe/on_update_icon()
 	color = pipe_color
 	return
 

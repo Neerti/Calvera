@@ -40,7 +40,7 @@
 	go_out()
 	return
 
-/obj/machinery/transportpod/update_icon()
+/obj/machinery/transportpod/on_update_icon()
 	..()
 	if(occupant)
 		icon_state = "borg_pod_closed"

@@ -44,7 +44,7 @@
 		usr << browse(null, "window=stack")
 	return ..()
 
-/obj/item/stack/update_icon()
+/obj/item/stack/on_update_icon()
 	if(no_variants)
 		icon_state = initial(icon_state)
 	else

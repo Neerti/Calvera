@@ -179,7 +179,7 @@
 	belly_color = rgb(rand(min_red,max_red), rand(min_green,max_green), rand(min_blue,max_blue))
 	update_icon()
 
-/mob/living/simple_mob/animal/passive/fish/icebass/update_icon()
+/mob/living/simple_mob/animal/passive/fish/icebass/on_update_icon()
 	overlays.Cut()
 	..()
 
@@ -252,7 +252,7 @@
 	head_color = rgb(rand(min_red,max_red), rand(min_green,max_green), rand(min_blue,max_blue))
 	update_icon()
 
-/mob/living/simple_mob/animal/passive/fish/rockfish/update_icon()
+/mob/living/simple_mob/animal/passive/fish/rockfish/on_update_icon()
 	overlays.Cut()
 	..()
 	if(!head_image)

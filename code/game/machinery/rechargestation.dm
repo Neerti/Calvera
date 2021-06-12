@@ -212,7 +212,7 @@
 		if(99 to 110)
 			overlays += image('icons/obj/objects.dmi', "statn_c100")
 
-/obj/machinery/recharge_station/update_icon()
+/obj/machinery/recharge_station/on_update_icon()
 	..()
 	if(stat & BROKEN)
 		icon_state = "borgcharger0"
@@ -305,7 +305,7 @@
 	desc = "This is a pod which used to contain a drone... Or maybe it still does?"
 	icon = 'icons/obj/structures.dmi'
 
-/obj/machinery/recharge_station/ghost_pod_recharger/update_icon()
+/obj/machinery/recharge_station/ghost_pod_recharger/on_update_icon()
 	..()
 	if(stat & BROKEN)
 		icon_state = "borg_pod_closed"

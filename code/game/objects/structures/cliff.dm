@@ -120,7 +120,7 @@ two tiles on initialization, and which way a cliff is facing may change during m
 	..()
 	update_icon()
 
-/obj/structure/cliff/update_icon()
+/obj/structure/cliff/on_update_icon()
 	icon_state = "cliff-[dir][icon_variant][bottom ? "-bottom" : ""][corner ? "-corner" : ""][ramp ? "-ramp" : ""]"
 
 	// Now for making the top-side look like a different turf.

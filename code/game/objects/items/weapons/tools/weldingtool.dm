@@ -201,7 +201,7 @@
 /obj/item/weapon/weldingtool/proc/isOn()
 	return welding
 
-/obj/item/weapon/weldingtool/update_icon()
+/obj/item/weapon/weldingtool/on_update_icon()
 	..()
 	overlays.Cut()
 	// Welding overlay.

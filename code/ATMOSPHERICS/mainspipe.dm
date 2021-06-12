@@ -142,7 +142,7 @@ obj/machinery/atmospherics/mains_pipe/simple
 		else if(dir==12)
 			set_dir(4)
 
-	update_icon()
+	on_update_icon()
 		if(nodes[1] && nodes[2])
 			icon_state = "intact[invisibility ? "-f" : "" ]"
 
@@ -247,7 +247,7 @@ obj/machinery/atmospherics/mains_pipe/manifold
 		if(level == 1 && !T.is_plating()) hide(1)
 		update_icon()
 
-	update_icon()
+	on_update_icon()
 		icon_state = "manifold[invisibility ? "-f" : "" ]"
 
 	hidden
@@ -297,7 +297,7 @@ obj/machinery/atmospherics/mains_pipe/manifold4w
 		if(level == 1 && !T.is_plating()) hide(1)
 		update_icon()
 
-	update_icon()
+	on_update_icon()
 		icon_state = "manifold4w[invisibility ? "-f" : "" ]"
 
 	hidden
@@ -358,7 +358,7 @@ obj/machinery/atmospherics/mains_pipe/split
 		if(level == 1 && !T.is_plating()) hide(1)
 		update_icon()
 
-	update_icon()
+	on_update_icon()
 		icon_state = "split-[icon_type][invisibility ? "-f" : "" ]"
 
 	return_network(A)
@@ -479,7 +479,7 @@ obj/machinery/atmospherics/mains_pipe/split3
 		if(level == 1 && !T.is_plating()) hide(1)
 		update_icon()
 
-	update_icon()
+	on_update_icon()
 		icon_state = "split-t[invisibility ? "-f" : "" ]"
 
 	return_network(obj/machinery/atmospherics/reference)
@@ -514,7 +514,7 @@ obj/machinery/atmospherics/mains_pipe/cap
 		..()
 		initialize_mains_directions = dir
 
-	update_icon()
+	on_update_icon()
 		icon_state = "cap[invisibility ? "-f" : ""]"
 
 	atmos_init()

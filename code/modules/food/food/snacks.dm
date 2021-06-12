@@ -3149,7 +3149,7 @@
 	var/list/boxes = list() // If the boxes are stacked, they come here
 	var/boxtag = ""
 
-/obj/item/pizzabox/update_icon()
+/obj/item/pizzabox/on_update_icon()
 
 	overlays = list()
 
@@ -6876,7 +6876,7 @@
 		to_chat(user, "<span class='notice'>You unseal \the [src] with a crack of metal.</span>")
 		unseal()
 
-/obj/item/weapon/reagent_containers/food/snacks/canned/update_icon()
+/obj/item/weapon/reagent_containers/food/snacks/canned/on_update_icon()
 	if(!sealed)
 		icon_state = "[initial(icon_state)]-open"
 
@@ -7041,7 +7041,7 @@
 		to_chat(user, "<span class='notice'>You unseal \the [src] with a tear of plastic.</span>")
 		unseal()
 
-/obj/item/weapon/reagent_containers/food/snacks/packaged/update_icon()
+/obj/item/weapon/reagent_containers/food/snacks/packaged/on_update_icon()
 	if(!sealed)
 		icon_state = "[initial(icon_state)]-open"
 

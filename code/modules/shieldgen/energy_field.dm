@@ -113,7 +113,7 @@
 		update_icon()
 		update_nearby_tiles()
 
-/obj/effect/energy_field/update_icon(var/update_neightbors = 0)
+/obj/effect/energy_field/on_update_icon(var/update_neightbors = 0)
 	overlays.Cut()
 	var/list/adjacent_shields_dir = list()
 	for(var/direction in cardinal)

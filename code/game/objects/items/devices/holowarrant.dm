@@ -54,7 +54,7 @@
 			"<span class='notice'>[user] holds up a warrant projector and shows the contents to [M].</span>")
 	M.examinate(src)
 
-/obj/item/device/holowarrant/update_icon()
+/obj/item/device/holowarrant/on_update_icon()
 	if(active)
 		icon_state = "holowarrant_filled"
 	else

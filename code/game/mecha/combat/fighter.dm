@@ -263,7 +263,7 @@
 	ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay(src)
 	ME.attach(src)
 
-/obj/mecha/combat/fighter/gunpod/update_icon()
+/obj/mecha/combat/fighter/gunpod/on_update_icon()
 	cut_overlays()
 	..()
 

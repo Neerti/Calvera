@@ -27,7 +27,7 @@
 	secured = 1
 	update_icon()
 
-/obj/item/device/assembly/electronic_assembly/update_icon()
+/obj/item/device/assembly/electronic_assembly/on_update_icon()
 	if(EA)
 		icon_state = initial(icon_state)
 	else

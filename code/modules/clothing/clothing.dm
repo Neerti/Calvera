@@ -49,7 +49,7 @@
 			src.attach_accessory(null, tie)
 	set_clothing_index()
 
-/obj/item/clothing/update_icon()
+/obj/item/clothing/on_update_icon()
 	overlays.Cut() //This removes all the overlays on the sprite and then goes down a checklist adding them as required.
 	if(blood_DNA)
 		add_blood()
@@ -491,7 +491,7 @@
 		to_chat(user, "<span class='notice'>You crawl under \the [src].</span>")
 	return 1
 
-/obj/item/clothing/head/update_icon(var/mob/user)
+/obj/item/clothing/head/on_update_icon(var/mob/user)
 	var/mob/living/carbon/human/H
 	if(ishuman(user))
 		H = user
@@ -654,7 +654,7 @@
 	shoes_under_pants = !shoes_under_pants
 	update_icon()
 
-/obj/item/clothing/shoes/update_icon()
+/obj/item/clothing/shoes/on_update_icon()
 	. = ..()
 	if(holding)
 		overlays += image(icon, "[icon_state]_knife")

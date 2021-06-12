@@ -8,7 +8,7 @@
 	generic_filth = FALSE
 	persistent = FALSE
 
-/obj/effect/decal/cleanable/blood/gibs/robot/update_icon()
+/obj/effect/decal/cleanable/blood/gibs/robot/on_update_icon()
 	color = "#FFFFFF"
 
 /obj/effect/decal/cleanable/blood/gibs/robot/dry()	//pieces of robots do not dry up like

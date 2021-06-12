@@ -151,7 +151,7 @@
 		to_chat(user, "<span class='warning'>\The [siphoning] cannot be drained any further.</span>")
 		stop_siphoning()
 
-/obj/item/weapon/spell/energy_siphon/update_icon()
+/obj/item/weapon/spell/energy_siphon/on_update_icon()
 	..()
 	if(siphoning)
 		icon_state = "energy_siphon_drain"

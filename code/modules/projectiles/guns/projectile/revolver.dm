@@ -136,7 +136,7 @@ obj/item/weapon/gun/projectile/revolver/detective45/verb/rename_gun()
 	ammo_type = /obj/item/ammo_casing/a38/emp
 
 
-/obj/item/weapon/gun/projectile/revolver/deckard/update_icon()
+/obj/item/weapon/gun/projectile/revolver/deckard/on_update_icon()
 	..()
 	if(loaded.len)
 		icon_state = "deckard-loaded"

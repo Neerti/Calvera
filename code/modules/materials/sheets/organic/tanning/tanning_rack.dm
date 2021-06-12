@@ -26,7 +26,7 @@
 	if(drying)
 		. += "\The [drying] is [drying.get_dryness_text()]."
 
-/obj/structure/tanning_rack/update_icon()
+/obj/structure/tanning_rack/on_update_icon()
 	overlays.Cut()
 	if(drying)
 		var/image/I

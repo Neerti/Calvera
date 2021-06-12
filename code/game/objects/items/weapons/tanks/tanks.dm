@@ -656,7 +656,7 @@ var/list/global/tank_gauge_cache = list()
 	air_contents.add_thermal_energy(15000)
 
 
-/obj/item/device/tankassemblyproxy/update_icon()
+/obj/item/device/tankassemblyproxy/on_update_icon()
 	if(assembly)
 		tank.update_icon()
 		tank.overlays += "bomb_assembly"

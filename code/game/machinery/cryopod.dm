@@ -27,7 +27,7 @@
 	var/storage_name = "Cryogenic Oversight Control"
 	var/allow_items = 1
 
-/obj/machinery/computer/cryopod/update_icon()
+/obj/machinery/computer/cryopod/on_update_icon()
 	..()
 	if((stat & NOPOWER) || (stat & BROKEN))
 		icon_state = "[initial(icon_state)]-p"

@@ -10,7 +10,7 @@
 /obj/machinery/iv_drip/var/mode = 1 // 1 is injecting, 0 is taking blood.
 /obj/machinery/iv_drip/var/obj/item/weapon/reagent_containers/beaker = null
 
-/obj/machinery/iv_drip/update_icon()
+/obj/machinery/iv_drip/on_update_icon()
 	if(attached)
 		icon_state = "hooked"
 	else

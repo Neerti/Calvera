@@ -44,7 +44,7 @@
 /obj/machinery/computer/station_alert/tgui_interact(mob/user)
 	alarm_monitor.tgui_interact(user)
 
-/obj/machinery/computer/station_alert/update_icon()
+/obj/machinery/computer/station_alert/on_update_icon()
 	if(!(stat & (BROKEN|NOPOWER)))
 		var/list/alarms = alarm_monitor ? alarm_monitor.major_alarms() : list()
 		if(alarms.len)

@@ -250,8 +250,14 @@
 /atom/proc/melt()
 	return
 
-// Previously this was defined both on /obj/ and /turf/ seperately.  And that's bad.
+/** Call to make an atom's icon be updated. Do not put the actual icon logic in update_icon(). 
+Instead, put it inside on_update_icon().*/
 /atom/proc/update_icon()
+	SHOULD_CALL_PARENT(TRUE)
+	on_update_icon(arglist(args))
+
+/// Called by update_icon(). Place your icon changing logic here. Don't call this directly, call update_icon() instead.
+/atom/proc/on_update_icon()
 	return
 
 

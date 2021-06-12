@@ -81,7 +81,7 @@
 	// If we reach this point, AI or sec isn't near us.
 	return PROXIMITY_NONE
 
-/obj/item/device/multitool/ai_detector/update_icon()
+/obj/item/device/multitool/ai_detector/on_update_icon()
 	icon_state = "[initial(icon_state)][detect_state]"
 
 /obj/item/device/multitool/ai_detector/proc/update_warning(var/old_state, var/new_state)

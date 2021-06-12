@@ -61,7 +61,7 @@
 	..()
 	update_icon()
 
-/obj/machinery/button/remote/update_icon()
+/obj/machinery/button/remote/on_update_icon()
 	if(stat & NOPOWER)
 		icon_state = "doorctrl-p"
 	else
@@ -199,7 +199,7 @@
 
 	return
 
-/obj/machinery/button/remote/driver/update_icon()
+/obj/machinery/button/remote/driver/on_update_icon()
 	if(!active || (stat & NOPOWER))
 		icon_state = "launcherbtt"
 	else

@@ -131,7 +131,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(location)
 		location.hotspot_expose(700, 5)
 
-/obj/item/clothing/mask/smokable/update_icon()
+/obj/item/clothing/mask/smokable/on_update_icon()
 	if(lit)
 		icon_state = "[initial(icon_state)]_on"
 		item_state = "[initial(item_state)]_on"

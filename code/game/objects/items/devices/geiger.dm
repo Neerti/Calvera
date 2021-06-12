@@ -67,7 +67,7 @@
 	update_sound()
 	to_chat(user, "<span class='notice'>[bicon(src)] You switch [scanning ? "on" : "off"] \the [src].</span>")
 
-/obj/item/device/geiger/update_icon()
+/obj/item/device/geiger/on_update_icon()
 	if(!scanning)
 		icon_state = "geiger_off"
 		return 1
@@ -122,7 +122,7 @@
 	update_sound()
 	to_chat(user, "<span class='notice'>\icon[src] You switch [scanning ? "on" : "off"] \the [src].</span>")
 
-/obj/item/device/geiger/wall/update_icon()
+/obj/item/device/geiger/wall/on_update_icon()
 	if(!scanning)
 		icon_state = "geiger_wall-p"
 		return 1

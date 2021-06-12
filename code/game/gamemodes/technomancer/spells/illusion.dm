@@ -64,7 +64,7 @@
 	return ..()
 
 // Makes a tiny overlay of the thing the player has copied, so they can easily tell what they currently have.
-/obj/item/weapon/spell/illusion/update_icon()
+/obj/item/weapon/spell/illusion/on_update_icon()
 	overlays.Cut()
 	if(copied)
 		var/image/temp_image = image(copied)

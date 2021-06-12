@@ -101,7 +101,7 @@ GLOBAL_LIST_EMPTY(smeses)
 	terminals -= term
 	term.master = null
 
-/obj/machinery/power/smes/update_icon()
+/obj/machinery/power/smes/on_update_icon()
 	cut_overlays()
 	if(stat & BROKEN)	return
 

@@ -61,7 +61,7 @@
 	unregister_radio(src, frequency)
 	. = ..()
 
-/obj/machinery/atmospherics/trinary/atmos_filter/update_icon()
+/obj/machinery/atmospherics/trinary/atmos_filter/on_update_icon()
 	if(mirrored)
 		icon_state = "m"
 	else

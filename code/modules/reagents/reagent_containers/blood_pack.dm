@@ -42,7 +42,7 @@
 /obj/item/weapon/reagent_containers/blood/on_reagent_change()
 	update_icon()
 
-/obj/item/weapon/reagent_containers/blood/update_icon()
+/obj/item/weapon/reagent_containers/blood/on_update_icon()
 	var/percent = round((reagents.total_volume / volume) * 100)
 	if(percent >= 0 && percent <= 9)
 		icon_state = "empty"

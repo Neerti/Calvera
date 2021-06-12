@@ -19,7 +19,7 @@
 		cell = new cell_type(src)
 	update_icon()
 
-/obj/machinery/space_heater/update_icon()
+/obj/machinery/space_heater/on_update_icon()
 	overlays.Cut()
 	icon_state = "sheater[on]"
 	if(panel_open)

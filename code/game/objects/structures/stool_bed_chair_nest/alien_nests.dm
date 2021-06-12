@@ -7,7 +7,7 @@
 	icon_state = "nest"
 	var/health = 100
 
-/obj/structure/bed/nest/update_icon()
+/obj/structure/bed/nest/on_update_icon()
 	return
 
 /obj/structure/bed/nest/user_unbuckle_mob(mob/living/buckled_mob, mob/user)

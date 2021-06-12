@@ -31,6 +31,6 @@
 /obj/effect/decal/cleanable/chemcoating/Crossed(AM as mob|obj)
 	Bumped(AM)
 
-/obj/effect/decal/cleanable/chemcoating/update_icon()
+/obj/effect/decal/cleanable/chemcoating/on_update_icon()
 	..()
 	color = reagents.get_color()

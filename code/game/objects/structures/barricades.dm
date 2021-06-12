@@ -136,7 +136,7 @@
 	qdel(src)
 	return
 
-/obj/structure/barricade/sandbag/update_icon()
+/obj/structure/barricade/sandbag/on_update_icon()
 	if(!material)
 		return
 

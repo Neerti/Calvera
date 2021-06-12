@@ -25,7 +25,7 @@
 
     . = ..()
 
-/turf/snow/update_icon()
+/turf/snow/on_update_icon()
     cut_overlays()
     for(var/d in crossed_dirs)
         var/amt = crossed_dirs[d]

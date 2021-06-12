@@ -141,7 +141,7 @@
 		var/turf/T = get_turf(src)
 		T.ex_act(prob(80) ? 3 : 2)
 
-/obj/effect/plant/update_icon()
+/obj/effect/plant/on_update_icon()
 	//TODO: should really be caching this.
 	refresh_icon()
 	if(growth_type == 0 && !floor)

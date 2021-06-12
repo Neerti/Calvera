@@ -26,7 +26,7 @@ MRE Stuff
 	. = ..()
 	. += meal_desc
 
-/obj/item/weapon/storage/mre/update_icon()
+/obj/item/weapon/storage/mre/on_update_icon()
 	if(opened)
 		icon_state = "[initial(icon_state)][opened]"
 	. = ..()
@@ -226,7 +226,7 @@ MRE Stuff
 /obj/item/weapon/storage/mrebag/Initialize()
 	. = ..()
 
-/obj/item/weapon/storage/mrebag/update_icon()
+/obj/item/weapon/storage/mrebag/on_update_icon()
 	if(opened)
 		icon_state = "[initial(icon_state)][opened]"
 	. = ..()

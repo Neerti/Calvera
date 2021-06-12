@@ -194,7 +194,7 @@ GLOBAL_LIST_BOILERPLATE(allCasters, /obj/machinery/newscaster)
 	node = null
 	return ..()
 
-/obj/machinery/newscaster/update_icon()
+/obj/machinery/newscaster/on_update_icon()
 	if(!ispowered || isbroken)
 		icon_state = "newscaster_off"
 		if(isbroken) //If the thing is smashed, add crack overlay on top of the unpowered sprite.
@@ -519,12 +519,12 @@ GLOBAL_LIST_BOILERPLATE(allCasters, /obj/machinery/newscaster)
 		if(href_list["set_channel_name"])
 			channel_name = sanitizeSafe(input(usr, "Provide a Feed Channel Name", "Network Channel Handler", ""), MAX_LNAME_LEN)
 			updateUsrDialog()
-			//update_icon()
+			//on_update_icon()
 
 		else if(href_list["set_channel_lock"])
 			c_locked = !c_locked
 			updateUsrDialog()
-			//update_icon()
+			//on_update_icon()
 
 		else if(href_list["submit_new_channel"])
 			//var/list/existing_channels = list() //OBSOLETE
@@ -548,7 +548,7 @@ GLOBAL_LIST_BOILERPLATE(allCasters, /obj/machinery/newscaster)
 					news_network.CreateFeedChannel(channel_name, scanned_user, c_locked)
 					screen=5
 			updateUsrDialog()
-			//update_icon()
+			//on_update_icon()
 
 		else if(href_list["set_channel_receiving"])
 			//var/list/datum/feed_channel/available_channels = list()

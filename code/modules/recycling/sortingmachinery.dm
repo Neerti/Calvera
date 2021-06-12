@@ -72,7 +72,7 @@
 					playsound(src, pick('sound/bureaucracy/pen1.ogg','sound/bureaucracy/pen2.ogg'), 20)
 		return
 
-	update_icon()
+	on_update_icon()
 		overlays = new()
 		if(nameset || examtext)
 			var/image/I = new/image('icons/obj/storage.dmi',"delivery_label")
@@ -184,7 +184,7 @@
 					playsound(src, pick('sound/bureaucracy/pen1.ogg','sound/bureaucracy/pen2.ogg'), 20)
 		return
 
-	update_icon()
+	on_update_icon()
 		overlays = new()
 		if((nameset || examtext) && icon_state != "deliverycrate1")
 			var/image/I = new/image('icons/obj/storage.dmi',"delivery_label")

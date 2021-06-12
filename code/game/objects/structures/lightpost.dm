@@ -16,7 +16,7 @@
 	update_icon()
 	return ..()
 
-/obj/structure/lightpost/update_icon()
+/obj/structure/lightpost/on_update_icon()
 	cut_overlays()
 
 	if(lit)

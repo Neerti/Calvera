@@ -315,7 +315,7 @@ var/global/list/obj/item/device/communicator/all_communicators = list()
 // Proc: update_icon()
 // Parameters: None
 // Description: Self explanatory
-/obj/item/device/communicator/update_icon()
+/obj/item/device/communicator/on_update_icon()
 	if(video_source)
 		icon_state = "communicator-video"
 		return
@@ -348,7 +348,7 @@ var/global/list/obj/item/device/communicator/all_communicators = list()
 	icon_state = "commwatch"
 	slot_flags = SLOT_GLOVES
 
-/obj/item/device/communicator/watch/update_icon()
+/obj/item/device/communicator/watch/on_update_icon()
 	if(video_source)
 		icon_state = "commwatch-video"
 		return

@@ -240,7 +240,7 @@
 		selecting = choice
 		update_icon()
 
-/obj/screen/zone_sel/update_icon()
+/obj/screen/zone_sel/on_update_icon()
 	cut_overlay(selecting_appearance)
 	selecting_appearance = mutable_appearance('icons/mob/zone_sel.dmi', "[selecting]")
 	add_overlay(selecting_appearance)
@@ -591,7 +591,7 @@
 /obj/screen/inventory/hand
 	var/image/handcuff_overlay
 
-/obj/screen/inventory/hand/update_icon()
+/obj/screen/inventory/hand/on_update_icon()
 	..()
 	if(!hud)
 		return

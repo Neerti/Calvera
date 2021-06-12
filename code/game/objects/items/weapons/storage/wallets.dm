@@ -62,7 +62,7 @@
 			name = "[name] ([front_id])"
 			update_icon()
 
-/obj/item/weapon/storage/wallet/update_icon()
+/obj/item/weapon/storage/wallet/on_update_icon()
 	overlays.Cut()
 	if(front_id)
 		var/tiny_state = "id-generic"

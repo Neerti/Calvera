@@ -42,7 +42,7 @@
 	product.overlays += food_image
 */
 
-/obj/machinery/appliance/mixer/cereal/update_icon()
+/obj/machinery/appliance/mixer/cereal/on_update_icon()
 	. = ..()
 
 	if(!stat)

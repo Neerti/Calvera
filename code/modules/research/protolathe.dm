@@ -86,7 +86,7 @@
 	..()
 
 
-/obj/machinery/r_n_d/protolathe/update_icon()
+/obj/machinery/r_n_d/protolathe/on_update_icon()
 	overlays.Cut()
 
 	icon_state = initial(icon_state)

@@ -38,7 +38,7 @@
 /obj/structure/bed/chair/post_buckle_mob()
 	update_icon()
 
-/obj/structure/bed/chair/update_icon()
+/obj/structure/bed/chair/on_update_icon()
 	..()
 	if(has_buckled_mobs())
 		var/cache_key = "[base_icon]-armrest-[padding_material ? padding_material.name : "no_material"]"
@@ -131,7 +131,7 @@
 	anchored = 0
 	buckle_movable = 1
 
-/obj/structure/bed/chair/office/update_icon()
+/obj/structure/bed/chair/office/on_update_icon()
 	return
 
 /obj/structure/bed/chair/office/attackby(obj/item/weapon/W as obj, mob/user as mob)
@@ -212,7 +212,7 @@
 	desc = "Old is never too old to not be in fashion."
 	icon_state = "wooden_chair"
 
-/obj/structure/bed/chair/wood/update_icon()
+/obj/structure/bed/chair/wood/on_update_icon()
 	return
 
 /obj/structure/bed/chair/wood/attackby(obj/item/weapon/W as obj, mob/user as mob)
@@ -237,7 +237,7 @@
 	applies_material_colour = 1
 	var/sofa_material = "carpet"
 
-/obj/structure/bed/chair/sofa/update_icon()
+/obj/structure/bed/chair/sofa/on_update_icon()
 	if(applies_material_colour && sofa_material)
 		var/datum/material/color_material = get_material_by_name(sofa_material)
 		color = color_material.icon_colour

@@ -24,7 +24,7 @@
 	one_handed_penalty = 90
 	var/bolt_open = 0
 
-/obj/item/weapon/gun/projectile/heavysniper/update_icon()
+/obj/item/weapon/gun/projectile/heavysniper/on_update_icon()
 	if(bolt_open)
 		icon_state = "heavysniper-open"
 	else
@@ -95,7 +95,7 @@
 	magazine_type = /obj/item/ammo_magazine/m762svd
 	allowed_magazines = list(/obj/item/ammo_magazine/m762svd)
 
-/obj/item/weapon/gun/projectile/SVD/update_icon()
+/obj/item/weapon/gun/projectile/SVD/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "SVD"

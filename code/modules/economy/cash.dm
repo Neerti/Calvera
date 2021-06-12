@@ -35,7 +35,7 @@
 		to_chat(user, "<span class='notice'>You combine the Thalers to a bundle of [SC.worth] [initial_name]s.</span>")
 		qdel(src)
 
-/obj/item/weapon/spacecash/update_icon()
+/obj/item/weapon/spacecash/on_update_icon()
 	overlays.Cut()
 	name = "[worth] [initial_name]\s"
 	if(worth in list(1000,500,200,100,50,20,10,1))
@@ -159,7 +159,7 @@ proc/spawn_money(var/sum, spawnloc, mob/living/carbon/human/human_user as mob)
 	var/owner_name = "" //So the ATM can set it so the EFTPOS can put a valid name on transactions.
 	attack_self() return  //Don't act
 	attackby()    return  //like actual
-	update_icon() return  //space cash
+	on_update_icon() return  //space cash
 
 /obj/item/weapon/spacecash/ewallet/examine(mob/user)
 	. = ..()

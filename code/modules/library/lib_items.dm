@@ -90,7 +90,7 @@
 		else
 	return
 
-/obj/structure/bookcase/update_icon()
+/obj/structure/bookcase/on_update_icon()
 	if(contents.len < 5)
 		icon_state = "book-[contents.len]"
 	else
@@ -115,7 +115,7 @@ Book Cart
 	else
 		return
 
-/obj/structure/bookcase/bookcart/update_icon()
+/obj/structure/bookcase/bookcart/on_update_icon()
 	if(contents.len < 5)
 		icon_state = "bookcart-[contents.len]"
 	else

@@ -70,7 +70,7 @@
 			O.unwield()
 	return	unwield()
 
-/obj/item/weapon/material/twohanded/update_icon()
+/obj/item/weapon/material/twohanded/on_update_icon()
 	icon_state = "[base_icon][wielded]"
 	item_state = icon_state
 
@@ -133,7 +133,7 @@
 /obj/item/weapon/material/twohanded/offhand/wield()
 	qdel(src)
 
-/obj/item/weapon/material/twohanded/offhand/update_icon()
+/obj/item/weapon/material/twohanded/offhand/on_update_icon()
 	return
 
 /*

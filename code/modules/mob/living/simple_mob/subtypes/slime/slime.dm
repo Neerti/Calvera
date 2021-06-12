@@ -113,7 +113,7 @@ var/list/_slime_default_emotes = list(
 	handle_light()
 	..()
 
-/mob/living/simple_mob/slime/update_icon()
+/mob/living/simple_mob/slime/on_update_icon()
 	..() // Do the regular stuff first.
 
 	if(stat != DEAD)

@@ -17,7 +17,7 @@
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/garand_ping.ogg'
 
-/obj/item/weapon/gun/projectile/garand/update_icon()
+/obj/item/weapon/gun/projectile/garand/on_update_icon()
 	if(ammo_magazine)
 		icon_state = initial(icon_state)
 	else
@@ -41,7 +41,7 @@
 	max_shells = 6
 	ammo_type = /obj/item/ammo_casing/a44/rifle
 
-/obj/item/weapon/gun/projectile/revolvingrifle/update_icon()
+/obj/item/weapon/gun/projectile/revolvingrifle/on_update_icon()
 	if(ammo_magazine)
 		icon_state = initial(icon_state)
 	else

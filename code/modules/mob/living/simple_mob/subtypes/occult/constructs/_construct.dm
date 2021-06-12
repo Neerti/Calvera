@@ -106,7 +106,7 @@
 	updateicon()
 
 /*
-/mob/living/simple_mob/construct/update_icon()
+/mob/living/simple_mob/construct/on_update_icon()
 	..()
 	if(do_glow)
 		add_glow()

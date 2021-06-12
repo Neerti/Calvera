@@ -98,7 +98,7 @@
 	else
 		return ..()
 
-/obj/machinery/particle_smasher/update_icon()
+/obj/machinery/particle_smasher/on_update_icon()
 	cut_overlays()
 	if(!material_layer)
 		material_layer = image(icon, "[initial(icon_state)]-material")

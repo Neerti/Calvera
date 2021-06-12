@@ -123,7 +123,7 @@
 		return
 
 /*
-/obj/machinery/computer/fusion_fuel_control/update_icon()
+/obj/machinery/computer/fusion_fuel_control/on_update_icon()
 	if(stat & (BROKEN))
 		icon = 'icons/obj/computer.dmi'
 		icon_state = "broken"

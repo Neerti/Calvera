@@ -438,7 +438,7 @@
 	return
 
 
-/obj/machinery/door/firedoor/update_icon()
+/obj/machinery/door/firedoor/on_update_icon()
 	overlays.Cut()
 	if(density)
 		icon_state = "door_closed"

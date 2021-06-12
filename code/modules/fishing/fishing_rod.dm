@@ -77,7 +77,7 @@
 		update_bait()
 	return ..()
 
-/obj/item/weapon/material/fishing_rod/update_icon()
+/obj/item/weapon/material/fishing_rod/on_update_icon()
 	overlays.Cut()
 	..()
 	if(strung)

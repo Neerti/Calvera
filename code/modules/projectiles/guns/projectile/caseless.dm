@@ -13,7 +13,7 @@
 	magazine_type = null // R&D builds this. Starts unloaded.
 	allowed_magazines = list(/obj/item/ammo_magazine/m5mmcaseless)
 
-/obj/item/weapon/gun/projectile/caseless/prototype/update_icon()
+/obj/item/weapon/gun/projectile/caseless/prototype/on_update_icon()
 	if(ammo_magazine)
 		icon_state = initial(icon_state)
 	else

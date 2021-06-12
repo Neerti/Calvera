@@ -103,7 +103,7 @@ datum/track/New(var/title_name, var/audio)
 		StopPlaying()
 	update_icon()
 
-/obj/machinery/media/jukebox/update_icon()
+/obj/machinery/media/jukebox/on_update_icon()
 	overlays.Cut()
 	if(stat & (NOPOWER|BROKEN) || !anchored)
 		if(stat & BROKEN)

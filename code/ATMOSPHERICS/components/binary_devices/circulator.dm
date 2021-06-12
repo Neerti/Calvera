@@ -76,7 +76,7 @@
 		recent_moles_transferred = 0
 		update_icon()
 
-/obj/machinery/atmospherics/binary/circulator/update_icon()
+/obj/machinery/atmospherics/binary/circulator/on_update_icon()
 	icon_state = anchored ? "circ-assembled" : "circ-unassembled"
 	cut_overlays()
 	if (stat & (BROKEN|NOPOWER) || !anchored)

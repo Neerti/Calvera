@@ -19,7 +19,7 @@
 	..()
 	monitor.tgui_interact(user)
 
-/obj/machinery/computer/shutoff_monitor/update_icon()
+/obj/machinery/computer/shutoff_monitor/on_update_icon()
 	..()
 	if(!(stat & (NOPOWER|BROKEN)))
 		add_overlay("ai-fixer-empty")

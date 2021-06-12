@@ -15,7 +15,7 @@
 	clicksound = "button"
 	var/analyzing = FALSE
 
-/obj/machinery/chemical_analyzer/update_icon()
+/obj/machinery/chemical_analyzer/on_update_icon()
 	icon_state = "chem_analyzer[analyzing ? "-working":""]"
 
 /obj/machinery/chemical_analyzer/attackby(obj/item/I, mob/living/user)

@@ -36,7 +36,7 @@
 /obj/machinery/computer/rcon/tgui_interact(mob/user, datum/tgui/ui)
 	rcon.tgui_interact(user, ui)
 
-/obj/machinery/computer/rcon/update_icon()
+/obj/machinery/computer/rcon/on_update_icon()
 	..()
 	if(!(stat & (NOPOWER|BROKEN)))
 		add_overlay("ai-fixer-empty")

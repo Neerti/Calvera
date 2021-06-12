@@ -185,7 +185,7 @@ obj/aiming_overlay/proc/update_aiming_deferred()
 	update_icon()
 	lock_time = world.time + 25
 
-/obj/aiming_overlay/update_icon()
+/obj/aiming_overlay/on_update_icon()
 	if(locked)
 		icon_state = "locked"
 	else

@@ -65,7 +65,7 @@
 			update_icon()
 			return PROCESS_KILL
 
-/obj/item/device/flashlight/update_icon()
+/obj/item/device/flashlight/on_update_icon()
 	if(on)
 		icon_state = "[initial(icon_state)]-on"
 
@@ -469,7 +469,7 @@
 	..()
 	set_light(brightness_on, flashlight_power, flashlight_colour)
 
-/obj/item/device/flashlight/slime/update_icon()
+/obj/item/device/flashlight/slime/on_update_icon()
 	return
 
 /obj/item/device/flashlight/slime/attack_self(mob/user)

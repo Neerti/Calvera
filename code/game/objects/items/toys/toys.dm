@@ -84,7 +84,7 @@
 				qdel(src)
 	return
 
-/obj/item/toy/balloon/update_icon()
+/obj/item/toy/balloon/on_update_icon()
 	if(src.reagents.total_volume >= 1)
 		icon_state = "waterballoon"
 	else
@@ -301,7 +301,7 @@
 		src.add_fingerprint(user)
 		return
 
-/obj/item/toy/sword/update_icon()
+/obj/item/toy/sword/on_update_icon()
 	. = ..()
 	var/mutable_appearance/blade_overlay = mutable_appearance(icon, "[icon_state]_blade")
 	blade_overlay.color = lcolor

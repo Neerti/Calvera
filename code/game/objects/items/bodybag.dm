@@ -101,7 +101,7 @@
 		var/obj/structure/morgue/M = loc
 		M.update(broadcast)
 
-/obj/structure/closet/body_bag/update_icon()
+/obj/structure/closet/body_bag/on_update_icon()
 	if(opened)
 		icon_state = "open"
 	else
@@ -170,7 +170,7 @@
 		new /obj/item/usedcryobag(loc)
 		qdel(src)
 
-/obj/structure/closet/body_bag/cryobag/update_icon()
+/obj/structure/closet/body_bag/cryobag/on_update_icon()
 	..()
 	overlays.Cut()
 	var/image/I = image(icon, "indicator[opened]")

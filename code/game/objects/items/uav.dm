@@ -147,7 +147,7 @@
 			to_chat(user, "<span class='warning'>You can't do that while [nickname] is in this state.</span>")
 		return FALSE
 
-/obj/item/device/uav/update_icon()
+/obj/item/device/uav/on_update_icon()
 	cut_overlays()
 	switch(state)
 		if(UAV_PAIRING)

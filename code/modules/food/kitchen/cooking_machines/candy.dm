@@ -27,7 +27,7 @@
 	
 	QDEL_NULL(candymaker_loop)
 
-/obj/machinery/appliance/mixer/candy/update_icon()
+/obj/machinery/appliance/mixer/candy/on_update_icon()
 	. = ..()
 
 	if(!stat)

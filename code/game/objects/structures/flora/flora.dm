@@ -525,7 +525,7 @@
 
 	update_icon()
 
-/obj/structure/flora/sif/frostbelle/update_icon()
+/obj/structure/flora/sif/frostbelle/on_update_icon()
 	..()
 
 	if(max_harvests > 0 && harvest_count < max_harvests)

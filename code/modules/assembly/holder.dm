@@ -42,7 +42,7 @@
 /obj/item/device/assembly_holder/proc/detached()
 	return
 
-/obj/item/device/assembly_holder/update_icon()
+/obj/item/device/assembly_holder/on_update_icon()
 	cut_overlays()
 	if(a_left)
 		add_overlay("[a_left.icon_state]_left")

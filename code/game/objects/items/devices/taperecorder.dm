@@ -343,7 +343,7 @@
 		record()
 
 
-/obj/item/device/taperecorder/update_icon()
+/obj/item/device/taperecorder/on_update_icon()
 	if(!mytape)
 		icon_state = "taperecorder_empty"
 	else if(recording)
@@ -371,7 +371,7 @@
 	var/ruined = 0
 
 
-/obj/item/device/tape/update_icon()
+/obj/item/device/tape/on_update_icon()
 	overlays.Cut()
 	if(ruined)
 		overlays += "ribbonoverlay"

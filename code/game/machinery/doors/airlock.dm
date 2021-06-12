@@ -751,7 +751,7 @@ About the new airlock wires panel:
 		return 0
 
 
-/obj/machinery/door/airlock/update_icon()
+/obj/machinery/door/airlock/on_update_icon()
 	if(overlays) overlays.Cut()
 	if(density)
 		if(locked && lights && src.arePowerSystemsOn())

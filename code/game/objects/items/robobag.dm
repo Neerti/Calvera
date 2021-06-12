@@ -31,7 +31,7 @@
 	if(corptag && Adjacent(user))
 		. += "<span class='notice'>[src] has a [corptag] attached to it.</span>"
 
-/obj/structure/closet/body_bag/cryobag/robobag/update_icon()
+/obj/structure/closet/body_bag/cryobag/robobag/on_update_icon()
 	overlays.Cut()
 	..()
 	if(corptag)

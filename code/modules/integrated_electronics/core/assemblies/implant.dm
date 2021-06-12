@@ -16,6 +16,6 @@
 /obj/item/device/electronic_assembly/implant/resolve_nano_host()
 	return implant
 
-/obj/item/device/electronic_assembly/implant/update_icon()
+/obj/item/device/electronic_assembly/implant/on_update_icon()
 	..()
 	implant.icon_state = icon_state

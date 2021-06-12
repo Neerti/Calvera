@@ -11,7 +11,7 @@
 	var/obj/machinery/atmospherics/unary/heat_exchanger/partner = null
 	var/update_cycle
 
-	update_icon()
+	on_update_icon()
 		if(node)
 			icon_state = "intact"
 		else

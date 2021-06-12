@@ -51,7 +51,7 @@
 /obj/item/weapon/paper/card/AltClick() //No fun allowed
 	return
 
-/obj/item/weapon/paper/card/update_icon()
+/obj/item/weapon/paper/card/on_update_icon()
 	return
 
 /obj/item/weapon/paper/card/smile
@@ -92,7 +92,7 @@
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "alienpaper"
 
-/obj/item/weapon/paper/alien/update_icon()
+/obj/item/weapon/paper/alien/on_update_icon()
 	if(info)
 		icon_state = "alienpaper_words"
 	else
@@ -132,7 +132,7 @@
 		updateinfolinks()
 		return
 
-/obj/item/weapon/paper/update_icon()
+/obj/item/weapon/paper/on_update_icon()
 	if(icon_state == "paper_talisman")
 		return
 	if(info)
@@ -655,7 +655,7 @@
 	name = "paper scrap"
 	icon_state = "scrap"
 
-/obj/item/weapon/paper/crumpled/update_icon()
+/obj/item/weapon/paper/crumpled/on_update_icon()
 	return
 
 /obj/item/weapon/paper/crumpled/bloody

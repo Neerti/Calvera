@@ -56,7 +56,7 @@
 	desc = "A red folder with HoS markings."
 	icon_state = "folder_hos"
 
-/obj/item/weapon/folder/update_icon()
+/obj/item/weapon/folder/on_update_icon()
 	overlays.Cut()
 	if(contents.len)
 		overlays += "folder_paper"

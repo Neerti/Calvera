@@ -42,7 +42,7 @@
 	if(MASK_TYPE)
 		MASK = new MASK_TYPE(src)
 
-/obj/machinery/suit_storage_unit/update_icon()
+/obj/machinery/suit_storage_unit/on_update_icon()
 	var/hashelmet = 0
 	var/hassuit = 0
 	var/hashuman = 0

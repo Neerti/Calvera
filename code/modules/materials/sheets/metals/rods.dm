@@ -31,7 +31,7 @@
 	recipes = rods_recipes
 	update_icon()
 
-/obj/item/stack/rods/update_icon()
+/obj/item/stack/rods/on_update_icon()
 	var/amount = get_amount()
 	if((amount <= 5) && (amount > 0))
 		icon_state = "rods-[amount]"

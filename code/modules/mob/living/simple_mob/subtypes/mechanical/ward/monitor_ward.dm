@@ -66,7 +66,7 @@
 /mob/living/simple_mob/mechanical/ward/monitor/handle_special()
 	detect_mobs()
 
-/mob/living/simple_mob/mechanical/ward/monitor/update_icon()
+/mob/living/simple_mob/mechanical/ward/monitor/on_update_icon()
 	if(seen_mobs.len)
 		icon_living = "[initial(icon_state)]_spotted"
 		glow_color = "#FF0000"

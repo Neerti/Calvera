@@ -22,7 +22,7 @@
 	drop_sound = 'sound/items/drop/cardboardbox.ogg'
 	pickup_sound = 'sound/items/pickup/cardboardbox.ogg'
 
-/obj/item/weapon/storage/fancy/update_icon(var/itemremoved = 0)
+/obj/item/weapon/storage/fancy/on_update_icon(var/itemremoved = 0)
 	var/total_contents = contents.len - itemremoved
 	icon_state = "[icon_type]box[total_contents]"
 	return
@@ -123,7 +123,7 @@
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/storage/fancy/crayons/update_icon()
+/obj/item/weapon/storage/fancy/crayons/on_update_icon()
 	var/mutable_appearance/ma = new(src)
 	ma.overlays = list()
 	for(var/obj/item/weapon/pen/crayon/crayon in contents)
@@ -165,7 +165,7 @@
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/storage/fancy/markers/update_icon()
+/obj/item/weapon/storage/fancy/markers/on_update_icon()
 	var/mutable_appearance/ma = new(src)
 	ma.overlays = list()
 	for(var/obj/item/weapon/pen/crayon/marker/marker in contents)
@@ -227,7 +227,7 @@
 			C.brand = brand
 			C.desc += " This one is \a [brand]."
 
-/obj/item/weapon/storage/fancy/cigarettes/update_icon()
+/obj/item/weapon/storage/fancy/cigarettes/on_update_icon()
 	icon_state = "[initial(icon_state)][contents.len]"
 	return
 
@@ -336,7 +336,7 @@
 	flags |= NOREACT
 	create_reagents(15 * storage_slots)
 
-/obj/item/weapon/storage/fancy/cigar/update_icon()
+/obj/item/weapon/storage/fancy/cigar/on_update_icon()
 	icon_state = "[initial(icon_state)][contents.len]"
 	return
 
@@ -396,7 +396,7 @@
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/storage/lockbox/vials/update_icon(var/itemremoved = 0)
+/obj/item/weapon/storage/lockbox/vials/on_update_icon(var/itemremoved = 0)
 	var/total_contents = contents.len - itemremoved
 	icon_state = "vialbox[total_contents]"
 	overlays.Cut()
@@ -441,6 +441,6 @@
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/storage/fancy/heartbox/update_icon(var/itemremoved = 0)
+/obj/item/weapon/storage/fancy/heartbox/on_update_icon(var/itemremoved = 0)
 	if (contents.len == 0)
 		icon_state = "heartbox_empty"

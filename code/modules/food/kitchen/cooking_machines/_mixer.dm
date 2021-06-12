@@ -137,7 +137,7 @@ fundamental differences
 	CI.reset()
 	update_icon()
 
-/obj/machinery/appliance/mixer/update_icon()
+/obj/machinery/appliance/mixer/on_update_icon()
 	if (!stat)
 		icon_state = on_icon
 		if(mixer_loop)

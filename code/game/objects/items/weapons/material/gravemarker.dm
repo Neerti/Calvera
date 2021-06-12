@@ -42,7 +42,7 @@
 	if(epitaph && get_dist(src, user) < 2)
 		. += epitaph
 
-/obj/item/weapon/material/gravemarker/update_icon()
+/obj/item/weapon/material/gravemarker/on_update_icon()
 	if(icon_changes)
 		if(grave_name && epitaph)
 			icon_state = "[initial(icon_state)]_3"

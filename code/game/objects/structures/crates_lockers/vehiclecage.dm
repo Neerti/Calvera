@@ -42,7 +42,7 @@
 	else
 		return attack_hand(user)
 
-/obj/structure/vehiclecage/update_icon()
+/obj/structure/vehiclecage/on_update_icon()
 	..()
 	overlays.Cut()
 	underlays.Cut()

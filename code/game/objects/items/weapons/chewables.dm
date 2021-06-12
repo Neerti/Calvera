@@ -20,7 +20,7 @@
 		slot_flags = SLOT_EARS | SLOT_MASK
 		update_icon()
 
-/obj/item/clothing/mask/chewable/update_icon()
+/obj/item/clothing/mask/chewable/on_update_icon()
 	cut_overlays()
 	if(wrapped)
 		add_overlay("[initial(icon_state)]_wrapper")
@@ -165,7 +165,7 @@ obj/item/clothing/mask/chewable/Destroy()
 	drop_sound = 'sound/items/drop/box.ogg'
 	use_sound = 'sound/items/storage/box.ogg'
 
-/obj/item/weapon/storage/box/fancy/chewables/tobacco/update_icon()
+/obj/item/weapon/storage/box/fancy/chewables/tobacco/on_update_icon()
 	icon_state = "[initial(icon_state)][contents.len]"
 
 

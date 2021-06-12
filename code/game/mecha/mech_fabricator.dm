@@ -54,7 +54,7 @@
 		update_use_power(USE_POWER_IDLE)
 	update_icon()
 
-/obj/machinery/mecha_part_fabricator/update_icon()
+/obj/machinery/mecha_part_fabricator/on_update_icon()
 	overlays.Cut()
 	if(panel_open)
 		icon_state = "mechfab-o"

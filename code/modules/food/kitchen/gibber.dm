@@ -60,7 +60,7 @@
 	..()
 	src.overlays += image('icons/obj/kitchen.dmi', "grjam")
 
-/obj/machinery/gibber/update_icon()
+/obj/machinery/gibber/on_update_icon()
 	overlays.Cut()
 	if (dirty)
 		src.overlays += image('icons/obj/kitchen.dmi', "grbloody")

@@ -35,7 +35,7 @@ FIRE ALARM
 	if(z in using_map.contact_levels)
 		set_security_level(security_level ? get_security_level() : "green")
 
-/obj/machinery/firealarm/update_icon()
+/obj/machinery/firealarm/on_update_icon()
 	cut_overlays()
 
 	if(panel_open)

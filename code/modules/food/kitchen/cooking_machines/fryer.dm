@@ -57,7 +57,7 @@
 	if(Adjacent(user))
 		to_chat(user, "Oil Level: [oil.total_volume]/[optimal_oil]")
 		
-/obj/machinery/appliance/cooker/fryer/update_icon() // We add our own version of the proc to use the special fryer double-lights.
+/obj/machinery/appliance/cooker/fryer/on_update_icon() // We add our own version of the proc to use the special fryer double-lights.
 	cut_overlays()
 	var/image/light
 	if(use_power == 1 && !stat)
@@ -103,7 +103,7 @@
 
 	cooking_power *= oil_efficiency
 	
-/obj/machinery/appliance/cooker/fryer/update_icon()
+/obj/machinery/appliance/cooker/fryer/on_update_icon()
 	if(!stat)
 		..()
 		if(cooking == TRUE)

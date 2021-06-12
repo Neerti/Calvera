@@ -47,7 +47,7 @@
 	RefreshParts()
 	update_icon()
 
-/obj/machinery/pump/update_icon()
+/obj/machinery/pump/on_update_icon()
 	..()
 	if(!tank)
 		tank = new/icon(icon, "[icon_state]-volume")

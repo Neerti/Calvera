@@ -201,7 +201,7 @@
 	return istype(C) ? C.check_core_status() : FALSE
 
 /*
-/obj/machinery/computer/fusion_core_control/update_icon()
+/obj/machinery/computer/fusion_core_control/on_update_icon()
 	if(stat & (BROKEN))
 		icon = 'icons/obj/computer.dmi'
 		icon_state = "broken"

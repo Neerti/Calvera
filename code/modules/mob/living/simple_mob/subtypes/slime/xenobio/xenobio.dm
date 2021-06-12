@@ -55,7 +55,7 @@
 	AI.rabid = previous_AI.rabid
 
 
-/mob/living/simple_mob/slime/xenobio/update_icon()
+/mob/living/simple_mob/slime/xenobio/on_update_icon()
 	icon_living = "[icon_state_override ? "[icon_state_override] slime" : "slime"] [is_adult ? "adult" : "baby"][victim ? " eating" : ""]"
 	icon_dead = "[icon_state_override ? "[icon_state_override] slime" : "slime"] [is_adult ? "adult" : "baby"] dead"
 	icon_rest = icon_dead

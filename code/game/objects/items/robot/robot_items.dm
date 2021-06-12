@@ -13,7 +13,7 @@
 	hitcost = 750
 	agonyforce = 70
 
-/obj/item/weapon/melee/baton/robot/arm/update_icon()
+/obj/item/weapon/melee/baton/robot/arm/on_update_icon()
 	if(status)
 		set_light(1.5, 1, lightcolor)
 	else

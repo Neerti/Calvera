@@ -52,7 +52,7 @@
 		update_use_power(USE_POWER_IDLE)
 	update_icon()
 
-/obj/machinery/pros_fabricator/update_icon()
+/obj/machinery/pros_fabricator/on_update_icon()
 	overlays.Cut()
 	icon_state = initial(icon_state)
 

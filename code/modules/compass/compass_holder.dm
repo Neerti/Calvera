@@ -71,7 +71,7 @@
 	else
 		. = 0
 
-/obj/compass_holder/update_icon()
+/obj/compass_holder/on_update_icon()
 	var/set_overlays = (compass_static_labels | compass_waypoint_markers)
 	if(show_heading)
 		set_overlays |= compass_heading_marker

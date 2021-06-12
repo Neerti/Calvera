@@ -94,7 +94,7 @@
 	..()
 	update_body_faction()
 
-/mob/living/simple_mob/animal/space/space_worm/head/update_icon()
+/mob/living/simple_mob/animal/space/space_worm/head/on_update_icon()
 	..()
 	if(!open_maw && !stat)
 		icon_state = "[icon_living][previous ? 1 : 0]_hunt"
@@ -220,7 +220,7 @@
 		currentlyEating = null
 		. = ..(obstacle)
 
-/mob/living/simple_mob/animal/space/space_worm/update_icon()
+/mob/living/simple_mob/animal/space/space_worm/on_update_icon()
 	if(previous) //midsection
 		icon_state = "spaceworm[get_dir(src,previous) | get_dir(src,next)]"
 		if(stat)

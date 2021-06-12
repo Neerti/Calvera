@@ -43,7 +43,7 @@
 		return INITIALIZE_HINT_QDEL
 	color = M.icon_colour
 
-/obj/item/stack/sandbags/update_icon()
+/obj/item/stack/sandbags/on_update_icon()
 	var/amount = get_amount()
 
 	slowdown = round(amount / 10, 0.1)
