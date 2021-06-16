@@ -218,3 +218,7 @@
 #define ROUNDUPTOPOWEROFTWO(x) (2 ** -round(-log(2,x)))
 
 #define DEFAULT(a, b) (a? a : b)
+
+// A neat little helper to convert the value X, that's between imin and imax, into a value
+// that's proportionally scaled and in range of omin and omax.
+#define MAP(x, imin, imax, omin, omax) ((x - imin) * (omax - omin) / (imax - imin) + omin)
