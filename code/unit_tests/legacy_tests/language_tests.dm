@@ -1,7 +1,7 @@
-/datum/unit_test/language_test_shall_have_distinct_names
+/datum/unit_test_legacy/language_test_shall_have_distinct_names
 	name = "LANGUAGES: Entries shall have distinct names"
 
-/datum/unit_test/language_test_shall_have_distinct_names/start_test()
+/datum/unit_test_legacy/language_test_shall_have_distinct_names/start_test()
 	if(length(GLOB.language_name_conflicts) != 0)
 		var/list/name_conflict_log = list()
 		for(var/conflicted_name in GLOB.language_name_conflicts)
@@ -13,10 +13,10 @@
 		pass("All languages have distinct names")
 	return 1
 
-/datum/unit_test/language_test_shall_have_distinct_keys
+/datum/unit_test_legacy/language_test_shall_have_distinct_keys
 	name = "LANGUAGES: Entries shall have distinct keys"
 
-/datum/unit_test/language_test_shall_have_distinct_keys/start_test()
+/datum/unit_test_legacy/language_test_shall_have_distinct_keys/start_test()
 	if(length(GLOB.language_key_conflicts) != 0)
 		var/list/key_conflict_log = list()
 		for(var/conflicted_key in GLOB.language_key_conflicts)

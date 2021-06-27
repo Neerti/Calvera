@@ -2,12 +2,12 @@
 #define UT_VACUUM 2
 #define UT_NORMAL_COLD 3
 
-/datum/unit_test/zas_area_test
+/datum/unit_test_legacy/zas_area_test
 	name = "ZAS: Area Test Template"
 	var/area_path = null
 	var/expectation = UT_NORMAL
 
-/datum/unit_test/zas_area_test/proc/test_air_in_area(var/test_area, var/expectation = UT_NORMAL)
+/datum/unit_test_legacy/zas_area_test/proc/test_air_in_area(var/test_area, var/expectation = UT_NORMAL)
 	var/test_result = list("result" = 0, "msg" = "")
 
 	var/area/A = locate(test_area)
@@ -65,7 +65,7 @@
 
 	return test_result
 
-/datum/unit_test/zas_area_test/start_test()
+/datum/unit_test_legacy/zas_area_test/start_test()
 	var/list/test = test_air_in_area(area_path, expectation)
 
 	if(isnull(test))

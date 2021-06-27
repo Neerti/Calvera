@@ -1,5 +1,5 @@
 
-/datum/unit_test/integrated_circuits
+/datum/unit_test_legacy/integrated_circuits
 	name = "circuit template"
 	var/circuit_type = null
 	var/obj/item/integrated_circuit/IC = null
@@ -7,16 +7,16 @@
 	var/list/expected_outputs = list()
 
 // Use this to set up.
-/datum/unit_test/integrated_circuits/proc/arrange()
+/datum/unit_test_legacy/integrated_circuits/proc/arrange()
 	IC = new circuit_type(get_standard_turf()) // Make the circuit
 	IC.cooldown_per_use = 0
 
 // Use this when finished to remove clutter for the next test.
-/datum/unit_test/integrated_circuits/proc/clean_up()
+/datum/unit_test_legacy/integrated_circuits/proc/clean_up()
 	qdel(IC)
 
 // Override this if needing special output (e.g. rounding to avoid floating point fun).
-/datum/unit_test/integrated_circuits/proc/assess()
+/datum/unit_test_legacy/integrated_circuits/proc/assess()
 	var/output_wrong = FALSE
 	var/i = 1
 	for(var/datum/integrated_io/io in IC.outputs)
@@ -27,7 +27,7 @@
 	return output_wrong
 
 // Useful when doing floating point fun.
-/datum/unit_test/integrated_circuits/floor/assess()
+/datum/unit_test_legacy/integrated_circuits/floor/assess()
 	var/output_wrong = FALSE
 	var/i = 1
 	for(var/datum/integrated_io/io in IC.outputs)
@@ -37,7 +37,7 @@
 		i++
 	return output_wrong
 
-/datum/unit_test/integrated_circuits/start_test()
+/datum/unit_test_legacy/integrated_circuits/start_test()
 	var/output_wrong = FALSE
 	if(!circuit_type)
 		fail("[name] did not supply a circuit_type path.")

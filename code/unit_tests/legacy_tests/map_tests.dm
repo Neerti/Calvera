@@ -1,7 +1,7 @@
-/datum/unit_test/apc_area_test
+/datum/unit_test_legacy/apc_area_test
 	name = "MAP: Area Test APC / Scrubbers / Vents Z level 1"
 
-/datum/unit_test/apc_area_test/start_test()
+/datum/unit_test_legacy/apc_area_test/start_test()
 	var/list/bad_areas = list()
 	var/area_test_count = 0
 	var/list/exempt_areas = typesof(/area/space,
@@ -70,10 +70,10 @@
 
 	return 1
 
-/datum/unit_test/wire_test
+/datum/unit_test_legacy/wire_test
 	name = "MAP: Cable Test Z level 1"
 
-/datum/unit_test/wire_test/start_test()
+/datum/unit_test_legacy/wire_test/start_test()
 	var/wire_test_count = 0
 	var/bad_tests = 0
 	var/turf/T = null
@@ -106,10 +106,10 @@
 
 	return 1
 
-/datum/unit_test/active_edges
+/datum/unit_test_legacy/active_edges
 	name = "MAP: Active edges (all maps)"
 
-/datum/unit_test/active_edges/start_test()
+/datum/unit_test_legacy/active_edges/start_test()
 
 	var/active_edges = air_master.active_edges.len
 	var/list/edge_log = list()

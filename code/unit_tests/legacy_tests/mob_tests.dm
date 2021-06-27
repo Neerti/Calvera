@@ -1,4 +1,4 @@
-/datum/unit_test/space_suffocation
+/datum/unit_test_legacy/space_suffocation
 	name = "MOB: human mob suffocates in space"
 
 	var/startOxyloss
@@ -6,7 +6,7 @@
 	var/mob/living/carbon/human/H
 	async = 1
 
-/datum/unit_test/space_suffocation/start_test()
+/datum/unit_test_legacy/space_suffocation/start_test()
 	var/turf/space/T = locate()
 
 	H = new(T)
@@ -14,7 +14,7 @@
 
 	return 1
 
-/datum/unit_test/space_suffocation/check_result()
+/datum/unit_test_legacy/space_suffocation/check_result()
 	if(H.life_tick < 10)
 		return 0
 
@@ -31,7 +31,7 @@
 
 /datum/modifier/unit_test
 
-/datum/unit_test/modifier
+/datum/unit_test_legacy/modifier
 	name = "modifier test template"
 	var/mob/living/subject = null
 	var/subject_type = /mob/living/carbon/human
@@ -40,7 +40,7 @@
 	var/datum/modifier/test_modifier = null
 	var/issues = 0
 
-/datum/unit_test/modifier/start_test()
+/datum/unit_test_legacy/modifier/start_test()
 	// Arrange.
 	subject = new subject_type(get_standard_turf())
 	subject.add_modifier(/datum/modifier/unit_test)
@@ -63,84 +63,84 @@
 	return TRUE
 
 // Override for subtypes.
-/datum/unit_test/modifier/proc/set_tested_variable(datum/modifier/M, new_value)
+/datum/unit_test_legacy/modifier/proc/set_tested_variable(datum/modifier/M, new_value)
 	return
 
-/datum/unit_test/modifier/proc/get_test_value(mob/living/L)
+/datum/unit_test_legacy/modifier/proc/get_test_value(mob/living/L)
 	return
 
 
-/datum/unit_test/modifier/heat_protection
+/datum/unit_test_legacy/modifier/heat_protection
 	name = "MOB: human mob heat protection is calculated correctly"
 
-/datum/unit_test/modifier/heat_protection/set_tested_variable(datum/modifier/M, new_value)
+/datum/unit_test_legacy/modifier/heat_protection/set_tested_variable(datum/modifier/M, new_value)
 	M.heat_protection = new_value
 
-/datum/unit_test/modifier/heat_protection/get_test_value(mob/living/L)
+/datum/unit_test_legacy/modifier/heat_protection/get_test_value(mob/living/L)
 	return L.get_heat_protection(1000)
 
-/datum/unit_test/modifier/heat_protection/simple_mob
+/datum/unit_test_legacy/modifier/heat_protection/simple_mob
 	name = "MOB: simple mob heat protection is calculated correctly"
 	subject_type = /mob/living/simple_mob
 
 
-/datum/unit_test/modifier/cold_protection
+/datum/unit_test_legacy/modifier/cold_protection
 	name = "MOB: human mob cold protection is calculated correctly"
 
-/datum/unit_test/modifier/cold_protection/set_tested_variable(datum/modifier/M, new_value)
+/datum/unit_test_legacy/modifier/cold_protection/set_tested_variable(datum/modifier/M, new_value)
 	M.cold_protection = new_value
 
-/datum/unit_test/modifier/cold_protection/get_test_value(mob/living/L)
+/datum/unit_test_legacy/modifier/cold_protection/get_test_value(mob/living/L)
 	return L.get_cold_protection(50)
 
-/datum/unit_test/modifier/cold_protection/simple_mob
+/datum/unit_test_legacy/modifier/cold_protection/simple_mob
 	name = "MOB: simple mob cold protection is calculated correctly"
 	subject_type = /mob/living/simple_mob
 
 
-/datum/unit_test/modifier/shock_protection
+/datum/unit_test_legacy/modifier/shock_protection
 	name = "MOB: human mob shock protection is calculated correctly"
 	inputs = list(3.00, 2.00, 1.50, 1.00, 0.75, 0.50, 0.25, 0.00)
 	expected_outputs = list(-2.00, -1.00, -0.50, 0.00, 0.25, 0.50, 0.75, 1.00)
 
-/datum/unit_test/modifier/shock_protection/set_tested_variable(datum/modifier/M, new_value)
+/datum/unit_test_legacy/modifier/shock_protection/set_tested_variable(datum/modifier/M, new_value)
 	M.siemens_coefficient = new_value
 
-/datum/unit_test/modifier/shock_protection/get_test_value(mob/living/L)
+/datum/unit_test_legacy/modifier/shock_protection/get_test_value(mob/living/L)
 	return L.get_shock_protection()
 
-/datum/unit_test/modifier/shock_protection/simple_mob
+/datum/unit_test_legacy/modifier/shock_protection/simple_mob
 	name = "MOB: simple mob shock protection is calculated correctly"
 	subject_type = /mob/living/simple_mob
 
 
-/datum/unit_test/modifier/percentage_armor
+/datum/unit_test_legacy/modifier/percentage_armor
 	name = "MOB: human mob percentage armor is calculated correctly"
 	inputs = list(100, 75, 50, 25, 0)
 	expected_outputs = list(100, 75, 50, 25, 0)
 
-/datum/unit_test/modifier/percentage_armor/set_tested_variable(datum/modifier/M, new_value)
+/datum/unit_test_legacy/modifier/percentage_armor/set_tested_variable(datum/modifier/M, new_value)
 	M.armor_percent = list("melee" = new_value)
 
-/datum/unit_test/modifier/percentage_armor/get_test_value(mob/living/L)
+/datum/unit_test_legacy/modifier/percentage_armor/get_test_value(mob/living/L)
 	return L.getarmor(null, "melee")
 
-/datum/unit_test/modifier/percentage_armor/simple_mob
+/datum/unit_test_legacy/modifier/percentage_armor/simple_mob
 	name = "MOB: simple mob percentage armor is calculated correctly"
 	subject_type = /mob/living/simple_mob
 
 
-/datum/unit_test/modifier/percentage_flat
+/datum/unit_test_legacy/modifier/percentage_flat
 	name = "MOB: human mob flat armor is calculated correctly"
 	inputs = list(100, 75, 50, 25, 0)
 	expected_outputs = list(100, 75, 50, 25, 0)
 
-/datum/unit_test/modifier/percentage_flat/set_tested_variable(datum/modifier/M, new_value)
+/datum/unit_test_legacy/modifier/percentage_flat/set_tested_variable(datum/modifier/M, new_value)
 	M.armor_flat = list("melee" = new_value)
 
-/datum/unit_test/modifier/percentage_flat/get_test_value(mob/living/L)
+/datum/unit_test_legacy/modifier/percentage_flat/get_test_value(mob/living/L)
 	return L.getsoak(null, "melee")
 
-/datum/unit_test/modifier/percentage_flat/simple_mob
+/datum/unit_test_legacy/modifier/percentage_flat/simple_mob
 	name = "MOB: simple mob flat armor is calculated correctly"
 	subject_type = /mob/living/simple_mob

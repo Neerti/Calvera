@@ -2,26 +2,26 @@ var/all_unit_tests_passed = 1
 var/failed_unit_tests = 0
 var/total_unit_tests = 0
 
-/datum/unit_test
+/datum/unit_test_legacy
 	var/name = "template"
 	var/disabled = ""
 	var/async = 0
 	var/reported = 0
 
-/datum/unit_test/proc/fail(var/message)
+/datum/unit_test_legacy/proc/fail(var/message)
 	all_unit_tests_passed = 0
 	failed_unit_tests++
 	reported = 1
 	log_unit_test("[ASCII_RED]!! FAILURE !! \[[name]\]: [message][ASCII_RESET]")
 
-/datum/unit_test/proc/pass(var/message)
+/datum/unit_test_legacy/proc/pass(var/message)
 	reported = 1
 	log_unit_test("[ASCII_GREEN]** SUCCESS ** \[[name]\]: [message][ASCII_RESET]")
 
-/datum/unit_test/proc/start_test()
+/datum/unit_test_legacy/proc/start_test()
 	fail("No test proc.")
 
-/datum/unit_test/proc/check_result()
+/datum/unit_test_legacy/proc/check_result()
 	fail("No check results proc.")
 	return 1
 
@@ -50,7 +50,7 @@ var/total_unit_tests = 0
 	log_unit_test("Round has been started.  Waiting 10 seconds to start tests.")
 	sleep(100)
 
-	var/list/test_datums = typesof(/datum/unit_test)
+	var/list/test_datums = typesof(/datum/unit_test_legacy)
 
 	var/list/async_test = list()
 	var/list/started_tests = list()
@@ -58,7 +58,7 @@ var/total_unit_tests = 0
 	log_unit_test("Testing Started.")
 
 	for(var/test in test_datums)
-		var/datum/unit_test/d = new test()
+		var/datum/unit_test_legacy/d = new test()
 
 		if(d.disabled)
 			d.pass("[ASCII_RED]Check Disabled: [d.disabled][ASCII_RESET]")
@@ -79,7 +79,7 @@ var/total_unit_tests = 0
 	//
 
 	while(async_test.len)
-		for(var/datum/unit_test/test in async_test)
+		for(var/datum/unit_test_legacy/test in async_test)
 			if(test.check_result())
 				async_test.Remove(test)
 		sleep(1)
@@ -88,7 +88,7 @@ var/total_unit_tests = 0
 	// Make sure all Unit Tests reported a result
 	//
 
-	for(var/datum/unit_test/test in started_tests)
+	for(var/datum/unit_test_legacy/test in started_tests)
 		if(!test.reported)
 			test.fail("Test failed to report a result.")
 
@@ -99,11 +99,11 @@ var/total_unit_tests = 0
 	log_unit_test("Caught [GLOB.total_runtimes] Runtime\s.")
 	world.Del()
 
-/datum/unit_test/proc/get_standard_turf()
+/datum/unit_test_legacy/proc/get_standard_turf()
 	return locate(20,20,1)
 
-/datum/unit_test/proc/log_bad(var/message)
+/datum/unit_test_legacy/proc/log_bad(var/message)
 	log_unit_test("[ASCII_RED]\[[name]\]: [message][ASCII_RESET]")
 
-/datum/unit_test/proc/log_debug(var/message)
+/datum/unit_test_legacy/proc/log_debug(var/message)
 	log_unit_test("[ASCII_YELLOW]---  DEBUG  --- \[[name]\]: [message][ASCII_RESET]")

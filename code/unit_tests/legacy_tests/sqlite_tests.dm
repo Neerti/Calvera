@@ -1,17 +1,17 @@
-/datum/unit_test/sqlite
+/datum/unit_test_legacy/sqlite
 	name = "SQLite template" // Template has to be in the name or this test will be ran, and fail.
 	var/database/stub_sqlite_db = null
 
-/datum/unit_test/sqlite/proc/setup_stub_db()
+/datum/unit_test_legacy/sqlite/proc/setup_stub_db()
 	fdel("data/sqlite/testing_[name].db") // In case any remain from a previous local test, so we can have a clean new database.
 	stub_sqlite_db = new("data/sqlite/testing_[name].db") // Unfortunately, byond doesn't like having working sqlite stuff w/o a file existing.
 	SSsqlite.init_schema(stub_sqlite_db)
 
 // Feedback table tests.
-/datum/unit_test/sqlite/feedback/insert
+/datum/unit_test_legacy/sqlite/feedback/insert
 	name = "SQLITE FEEDBACK: Insert and Retrieve Data"
 
-/datum/unit_test/sqlite/feedback/insert/start_test()
+/datum/unit_test_legacy/sqlite/feedback/insert/start_test()
 	// Arrange.
 	setup_stub_db()
 	var/test_author = "alice"
@@ -34,10 +34,10 @@
 	return TRUE
 
 
-/datum/unit_test/sqlite/feedback/cooldown
+/datum/unit_test_legacy/sqlite/feedback/cooldown
 	name = "SQLITE FEEDBACK: Cooldown"
 
-/datum/unit_test/sqlite/feedback/cooldown/start_test()
+/datum/unit_test_legacy/sqlite/feedback/cooldown/start_test()
 	// Arrange.
 	setup_stub_db()
 	var/days_to_wait = 1

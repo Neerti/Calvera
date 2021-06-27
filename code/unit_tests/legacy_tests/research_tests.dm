@@ -1,7 +1,7 @@
-/datum/unit_test/research_designs_shall_be_unique
+/datum/unit_test_legacy/research_designs_shall_be_unique
 	name = "RESEARCH: Designs Shall Be Unique"
 
-/datum/unit_test/research_designs_shall_be_unique/start_test()
+/datum/unit_test_legacy/research_designs_shall_be_unique/start_test()
 	var/list/ids = list()
 	var/list/build_paths = list()
 
@@ -23,7 +23,7 @@
 
 	return 1
 
-/datum/unit_test/research_designs_shall_be_unique/proc/group_by(var/list/entries, var/datum/design/entry, var/value)
+/datum/unit_test_legacy/research_designs_shall_be_unique/proc/group_by(var/list/entries, var/datum/design/entry, var/value)
 	var/designs = entries[value]
 	if(!designs)
 		designs = list()
@@ -31,7 +31,7 @@
 
 	designs += entry
 
-/datum/unit_test/research_designs_shall_be_unique/proc/number_of_issues(var/list/entries, var/type)
+/datum/unit_test_legacy/research_designs_shall_be_unique/proc/number_of_issues(var/list/entries, var/type)
 	var/issues = 0
 	for(var/value in entries)
 		var/list/list_of_designs = entries[value]
@@ -41,10 +41,10 @@
 
 	return issues
 
-/datum/unit_test/research_designs_have_valid_materials
+/datum/unit_test_legacy/research_designs_have_valid_materials
 	name = "RESEARCH: Designs Shall Have Valid Materials and Chemicals"
 
-/datum/unit_test/research_designs_have_valid_materials/start_test()
+/datum/unit_test_legacy/research_designs_have_valid_materials/start_test()
 	var/number_of_issues = 0
 
 	for(var/design_type in typesof(/datum/design) - /datum/design)

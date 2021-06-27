@@ -50,8 +50,9 @@
 
 	spawn(1)
 		master_controller.setup()
-#if UNIT_TEST
-		initialize_unit_tests()
+#ifdef UNIT_TEST
+	log_unit_test("Unit Tests Enabled. This will destroy the world when testing is complete.")
+	load_unit_test_changes()
 #endif
 
 	spawn(3000)		//so we aren't adding to the round-start lag

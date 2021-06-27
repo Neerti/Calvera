@@ -1,7 +1,7 @@
-/datum/unit_test/subsystem_shall_be_initialized
+/datum/unit_test_legacy/subsystem_shall_be_initialized
 	name = "SUBSYSTEM - INIT: Subsystems shall be initalized"
 
-/datum/unit_test/subsystem_shall_be_initialized/start_test()
+/datum/unit_test_legacy/subsystem_shall_be_initialized/start_test()
 	var/list/bad_subsystems = list()
 	for(var/datum/controller/subsystem/SS in Master.subsystems)
 		if (SS.flags & SS_NO_INIT)
@@ -17,10 +17,10 @@
 	return 1
 
 /* Uncomment when all atoms init properly
-/datum/unit_test/subsystem_atom_shall_have_no_bad_init_calls
+/datum/unit_test_legacy/subsystem_atom_shall_have_no_bad_init_calls
 	name = "SUBSYSTEM - ATOMS: Shall have no bad init calls"
 
-/datum/unit_test/subsystem_atom_shall_have_no_bad_init_calls/start_test()
+/datum/unit_test_legacy/subsystem_atom_shall_have_no_bad_init_calls/start_test()
 	if(SSatoms.BadInitializeCalls.len)
 		log_bad(jointext(SSatoms.InitLog(), null))
 		fail("[SSatoms] had bad initialization calls.")
@@ -28,10 +28,10 @@
 		pass("[SSatoms] had no bad initialization calls.")
 	return 1
 
-/datum/unit_test/all_atoms_shall_be_initialized
+/datum/unit_test_legacy/all_atoms_shall_be_initialized
 	name = "SUBSYSTEM - ATOMS: All atoms shall be initialized."
 
-/datum/unit_test/all_atoms_shall_be_initialized/start_test()
+/datum/unit_test_legacy/all_atoms_shall_be_initialized/start_test()
 	set background = TRUE // avoid infinite loop warning; SS will still wait for us.
 	var/fail = FALSE
 	for(var/atom/atom in world)

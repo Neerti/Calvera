@@ -1,7 +1,7 @@
-/datum/unit_test/loadout_test_shall_have_name_cost_path
+/datum/unit_test_legacy/loadout_test_shall_have_name_cost_path
 	name = "LOADOUT: Entries shall have name, cost, and path definitions"
 
-/datum/unit_test/loadout_test_shall_have_name_cost_path/start_test()
+/datum/unit_test_legacy/loadout_test_shall_have_name_cost_path/start_test()
 	var/failed = 0
 	for(var/geartype in typesof(/datum/gear) - /datum/gear)
 		var/datum/gear/G = geartype

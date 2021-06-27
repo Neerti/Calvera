@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY_TYPED(areas, /area)
+
 // Areas.dm
 
 /area
@@ -54,6 +56,7 @@
 
 /area/Initialize()
 	. = ..()
+	GLOB.areas += src
 	luminosity = !(dynamic_lighting)
 	icon_state = ""
 	return INITIALIZE_HINT_LATELOAD // Areas tradiationally are initialized AFTER other atoms.
@@ -66,6 +69,15 @@
 	power_change()		// all machines set to current power level, also updates lighting icon
 	if(no_spoilers)
 		set_spoiler_obfuscation(TRUE)
+
+/area/Del()
+	GLOB.areas -= src
+	. = ..()
+	
+/area/Destroy()
+	GLOB.areas -= src
+	..()
+	return QDEL_HINT_HARDDEL
 
 // Changes the area of T to A. Do not do this manually.
 // Area is expected to be a non-null instance.

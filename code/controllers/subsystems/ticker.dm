@@ -584,3 +584,12 @@ var/global/datum/controller/subsystem/ticker/ticker
 	Bible_name = SSticker.Bible_name
 	Bible_deity_name = SSticker.Bible_deity_name
 	random_players = SSticker.random_players
+
+/datum/controller/subsystem/ticker/proc/start_now(mob/user)
+	if(!(CURRENT_RUNLEVEL == RUNLEVEL_LOBBY))
+		return
+//	if(istype(SSvote.active_vote, /datum/vote/gamemode))
+//		SSvote.cancel_vote(user)
+//		bypass_gamemode_vote = 1
+	Master.SetRunLevel(RUNLEVEL_SETUP)
+	return 1
