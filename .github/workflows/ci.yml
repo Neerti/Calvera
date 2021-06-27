@@ -2,10 +2,10 @@ name: CI
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 env:
-  BASENAME: "polaris"
+  BASENAME: "calvera"
 
 jobs:
   file_tests:
