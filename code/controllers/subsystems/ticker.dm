@@ -588,6 +588,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 /datum/controller/subsystem/ticker/proc/start_now(mob/user)
 	if(!(CURRENT_RUNLEVEL == RUNLEVEL_LOBBY))
 		return
+	start_immediately = TRUE
 //	if(istype(SSvote.active_vote, /datum/vote/gamemode))
 //		SSvote.cancel_vote(user)
 //		bypass_gamemode_vote = 1
