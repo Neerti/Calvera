@@ -91802,15 +91802,6 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 24
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -92110,20 +92101,6 @@
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/freezer,
 /area/construction/seconddeck/construction2)
-"dpd" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/borderfloor{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/green/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/seconddeck/aft)
 "dpe" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -92350,11 +92327,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/aft)
 "dpK" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 22
@@ -92583,18 +92555,6 @@
 /area/security/checkpoint2)
 "dqi" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
-/area/hallway/primary/seconddeck/aft)
-"dqj" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals4,
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	dir = 10
-	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/aft)
 "dqk" = (
@@ -93781,20 +93741,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/aft)
-"dsD" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	dir = 8
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	dir = 5
-	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/seconddeck/aft)
 "dsE" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
@@ -94051,18 +93997,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/dockhallway)
-"dtj" = (
-/obj/machinery/door/firedoor/glass,
-/obj/machinery/door/airlock/glass{
-	name = "Central Access"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/steel_grid,
-/area/hallway/primary/seconddeck/dockhallway)
 "dtk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 6
@@ -94133,11 +94067,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/seconddeck/aft)
 "dts" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
@@ -110522,11 +110451,6 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/rnd/research/firstdeck/hallway)
 "dXT" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -212838,17 +212762,17 @@ dow
 dmT
 dVA
 dop
-dpd
+ddz
 dpK
-dqj
-dqj
+cUL
+cUL
 dts
 dXT
-dsD
-dtj
-dtw
-dtK
-duo
+dsC
+dth
+dtx
+dtL
+duj
 duN
 dvc
 dvn

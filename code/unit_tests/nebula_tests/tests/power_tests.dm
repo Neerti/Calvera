@@ -62,7 +62,7 @@
 				continue
 			if(failure)
 				failure = "[failure]\n"
-			failure = "[failure]Duplicated APCs in area: [A.name]. #1: [log_info_line(found_apc)]  #2: [log_info_line(APC)]"
+			failure = "[failure]Duplicated APCs in area: [A.name]. #1: [found_apc.log_info_line()]  #2: [APC.log_info_line()]"
 
 	if(failure)
 		fail(failure)
