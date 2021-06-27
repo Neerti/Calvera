@@ -10984,11 +10984,6 @@
 /turf/simulated/floor/tiled/white,
 /area/surface/outpost/research/xenoresearch)
 "wS" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -11171,11 +11166,6 @@
 "xk" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/glass_medical,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
@@ -11417,40 +11407,16 @@
 /area/surface/outpost/research/xenoresearch/xenobiology)
 "xF" = (
 /obj/structure/bed/roller,
-/obj/machinery/power/apc{
-	dir = 8;
-	locked = 0;
-	name = "west bump";
-	operating = 0;
-	pixel_x = -24
-	},
 /obj/machinery/light_switch{
 	pixel_x = -36
 	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /turf/simulated/floor/tiled/white,
-/area/surface/outpost/research/xenoresearch/xenobiology)
-"xG" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/white,
-/area/surface/outpost/research/xenoresearch/xenobiology)
+/area/surface/outpost/research/xenoresearch)
 "xH" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
-/area/surface/outpost/research/xenoresearch/xenobiology)
+/area/surface/outpost/research/xenoresearch)
 "xI" = (
 /obj/machinery/camera/network/research_outpost{
 	c_tag = "OPR - First Aid Station";
@@ -11460,7 +11426,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/surface/outpost/research/xenoresearch/xenoflora)
+/area/surface/outpost/research/xenoresearch)
 "xJ" = (
 /obj/structure/table/glass,
 /obj/effect/floor_decal/corner/paleblue{
@@ -11472,7 +11438,7 @@
 	name = "Medbay Emergency Radio Link"
 	},
 /turf/simulated/floor/tiled/white,
-/area/surface/outpost/research/xenoresearch/xenoflora)
+/area/surface/outpost/research/xenoresearch)
 "xK" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/wingrille_spawn/reinforced,
@@ -11656,7 +11622,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/surface/outpost/research/xenoresearch/xenobiology)
+/area/surface/outpost/research/xenoresearch)
 "yd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -11667,7 +11633,7 @@
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/white,
-/area/surface/outpost/research/xenoresearch/xenobiology)
+/area/surface/outpost/research/xenoresearch)
 "ye" = (
 /obj/machinery/newscaster{
 	pixel_x = 30;
@@ -11679,7 +11645,7 @@
 /obj/effect/floor_decal/corner/paleblue,
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/white,
-/area/surface/outpost/research/xenoresearch/xenoflora)
+/area/surface/outpost/research/xenoresearch)
 "yf" = (
 /obj/machinery/atmospherics/unary/freezer{
 	dir = 2;
@@ -11862,7 +11828,7 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/full,
 /turf/simulated/floor/tiled/white,
-/area/surface/outpost/research/xenoresearch/xenobiology)
+/area/surface/outpost/research/xenoresearch)
 "yz" = (
 /obj/machinery/sleep_console,
 /obj/effect/floor_decal/corner/paleblue{
@@ -11870,7 +11836,7 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
-/area/surface/outpost/research/xenoresearch/xenobiology)
+/area/surface/outpost/research/xenoresearch)
 "yA" = (
 /obj/structure/table/rack,
 /obj/item/bodybag/cryobag,
@@ -11887,7 +11853,7 @@
 	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/white,
-/area/surface/outpost/research/xenoresearch/xenoflora)
+/area/surface/outpost/research/xenoresearch)
 "yB" = (
 /turf/simulated/wall,
 /area/surface/outpost/research/xenoresearch/xenoflora)
@@ -52122,7 +52088,7 @@ vR
 wo
 wQ
 uF
-xG
+wF
 yc
 yy
 xe
