@@ -236,7 +236,8 @@ var/list/admin_verbs_debug = list(
 	/datum/admins/proc/view_feedback,
 	/client/proc/debug_global_variables,
 	/client/proc/ping_webhook,
-	/client/proc/reload_webhooks
+	/client/proc/reload_webhooks,
+	/datum/admins/proc/run_unit_test
 	)
 
 var/list/admin_verbs_paranoid_debug = list(

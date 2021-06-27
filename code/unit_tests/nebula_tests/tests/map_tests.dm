@@ -24,30 +24,30 @@
 		if(!isPlayerLevel(A.z))
 			continue
 		area_test_count++
-		var/area_good = 1
+		var/area_good = TRUE
 		var/bad_msg = "--------------- [A.name]([A.type])"
 
 		var/exemptions = get_exemptions(A)
-		if(!A.apc && !(exemptions & GLOB.using_map.NO_APC))
+		if(!A.apc && !(exemptions & using_map.NO_APC))
 			log_bad("[bad_msg] lacks an APC.")
-			area_good = 0
-		else if(A.apc && (exemptions & GLOB.using_map.NO_APC))
+			area_good = FALSE
+		else if(A.apc && (exemptions & using_map.NO_APC))
 			log_bad("[bad_msg] is not supposed to have an APC.")
-			area_good = 0
+			area_good = FALSE
 
-		if(!A.air_scrub_names.len && !(exemptions & GLOB.using_map.NO_SCRUBBER))
+		if(!A.air_scrub_names.len && !(exemptions & using_map.NO_SCRUBBER))
 			log_bad("[bad_msg] lacks an air scrubber.")
-			area_good = 0
-		else if(A.air_scrub_names.len && (exemptions & GLOB.using_map.NO_SCRUBBER))
+			area_good = FALSE
+		else if(A.air_scrub_names.len && (exemptions & using_map.NO_SCRUBBER))
 			log_bad("[bad_msg] is not supposed to have an air scrubber.")
-			area_good = 0
+			area_good = FALSE
 
-		if(!A.air_vent_names.len && !(exemptions & GLOB.using_map.NO_VENT))
+		if(!A.air_vent_names.len && !(exemptions & using_map.NO_VENT))
 			log_bad("[bad_msg] lacks an air vent.[ascii_reset]")
-			area_good = 0
-		else if(A.air_vent_names.len && (exemptions & GLOB.using_map.NO_VENT))
+			area_good = FALSE
+		else if(A.air_vent_names.len && (exemptions & using_map.NO_VENT))
 			log_bad("[bad_msg] is not supposed to have an air vent.")
-			area_good = 0
+			area_good = FALSE
 
 		if(!area_good)
 			bad_areas.Add(A)
@@ -61,11 +61,11 @@
 
 /datum/unit_test/apc_area_test/proc/get_exemptions(var/area)
 	// We assume deeper types come last
-	for(var/i = GLOB.using_map.apc_test_exempt_areas.len; i>0; i--)
-		var/exempt_type = GLOB.using_map.apc_test_exempt_areas[i]
+	for(var/i = using_map.apc_test_exempt_areas.len; i>0; i--)
+		var/exempt_type = using_map.apc_test_exempt_areas[i]
 		if(istype(area, exempt_type))
-			return GLOB.using_map.apc_test_exempt_areas[exempt_type]
-
+			return using_map.apc_test_exempt_areas[exempt_type]
+/*
 /datum/unit_test/air_alarm_connectivity
 	name = "MAP: Air alarms shall receive updates."
 	async = TRUE // Waits for SStimers to finish one full run before testing
@@ -848,6 +848,6 @@
 	else
 		pass("All doors are on appropriate turfs")
 	return TRUE
-
+*/
 #undef SUCCESS
 #undef FAILURE
