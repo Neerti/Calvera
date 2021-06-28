@@ -38,14 +38,6 @@ if [ $retVal -ne 0 ]; then
   FAILED=1
 fi
 
-#Checking for any 'checked' maps that include 'test'
-(! grep 'maps\\.*test.*' *.dme)
-retVal=$?
-if [ $retVal -ne 0 ]; then
-  echo -e "${RED}A map containing the word 'test' is included. This is not allowed to be committed.${NC}"
-  FAILED=1
-fi
-
 #Check for weird indentation in any .dm files
 awk -f tools/indentation.awk **/*.dm
 retVal=$?
