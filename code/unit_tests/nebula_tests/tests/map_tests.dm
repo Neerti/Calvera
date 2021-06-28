@@ -65,7 +65,7 @@
 		var/exempt_type = using_map.machinery_test_exempt_areas[i]
 		if(istype(area, exempt_type))
 			return using_map.machinery_test_exempt_areas[exempt_type]
-/*
+
 /datum/unit_test/air_alarm_connectivity
 	name = "MAP: Air alarms shall receive updates."
 	async = TRUE // Waits for SStimers to finish one full run before testing
@@ -105,6 +105,7 @@
 
 	return 1
 //=======================================================================================
+
 
 /datum/unit_test/wire_test
 	name = "MAP: Cable Overlap Test"
@@ -164,7 +165,7 @@
 	return 1
 
 //=======================================================================================
-
+/*
 /datum/unit_test/closet_test
 	name = "MAP: Closet Capacity Test Player Z levels"
 
