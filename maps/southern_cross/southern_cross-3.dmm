@@ -7098,8 +7098,7 @@
 	dir = 4
 	},
 /obj/machinery/camera/network/main_outpost{
-	c_tag = "MO - Corridor West";
-	dir = 2
+	c_tag = "MO - Corridor East"
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1

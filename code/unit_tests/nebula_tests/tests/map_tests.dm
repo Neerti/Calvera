@@ -223,7 +223,7 @@
 	return 1
 
 //=======================================================================================
-/*
+
 /datum/unit_test/storage_map_test
 	name = "MAP: On Map Storage Item Capacity Test Player Z levels"
 	disabled = TRUE
@@ -232,7 +232,7 @@
 /datum/unit_test/storage_map_test/start_test()
 	var/bad_tests = 0
 
-	for(var/obj/item/storage/S in world)
+	for(var/obj/item/weapon/storage/S in world)
 		if(isPlayerLevel(S.z))
 			var/bad_msg = "[ascii_red]--------------- [S.name] \[[S.type]\] \[[S.x] / [S.y] / [S.z]\]"
 			bad_tests += test_storage_capacity(S, bad_msg)
@@ -243,7 +243,7 @@
 		pass("All on-map storage items were able to hold their initial contents.")
 
 	return 1
-
+/*
 /datum/unit_test/map_image_map_test
 	name = "MAP: All map levels shall have a corresponding map image."
 
@@ -295,7 +295,7 @@
 	return 1
 
 //=======================================================================================
-
+*/
 /datum/unit_test/map_check
 	name = "MAP: Map Check"
 
@@ -309,26 +309,30 @@
 
 /datum/unit_test/ladder_check
 	name = "MAP: Ladder Check"
+	disabled = TRUE
+	why_disabled = "Polaris-style ladders do not require open turf."
 
 /datum/unit_test/ladder_check/start_test()
-	var/failed
+	var/failed = 0
 	for(var/obj/structure/ladder/L)
 		if(HasAbove(L.z))
 			var/turf/T = GetAbove(L)
 			if(!istype(T) || !T.is_open() && (locate(/obj/structure/ladder) in T))
-				LAZYADD(failed, "[L.x],[L.y],[L.z]")
+				log_bad("Bad ladder going up: [log_info_line(L)]")
+				failed++
 				continue
 		if(HasBelow(L.z))
 			var/turf/T = get_turf(L)
 			if((!istype(T) || !T.is_open()) && (locate(/obj/structure/ladder) in GetBelow(L)))
-				LAZYADD(failed, "[L.x],[L.y],[L.z]")
+				log_bad("Bad ladder going down: [log_info_line(L)]")
+				failed++
 				continue
-	if(LAZYLEN(failed))
-		fail("[LAZYLEN(failed)] ladder\s are incorrectly setup: [english_list(failed)].")
+	if(failed)
+		fail("[failed] ladder\s are incorrectly setup.")
 	else
 		pass("All ladders are correctly setup.")
 	return 1
-
+/*
 //=======================================================================================
 
 /datum/unit_test/landmark_check
@@ -361,19 +365,19 @@
 	return 1
 
 //=======================================================================================
-
+*/
 /datum/unit_test/cryopod_comp_check
 	name = "MAP: Cryopod Validity Check"
 
 /datum/unit_test/cryopod_comp_check/start_test()
 	var/pass = TRUE
 
-	for(var/obj/machinery/cryopod/C in SSmachines.machinery)
+	for(var/obj/machinery/cryopod/C in machines)
 		if(!C.control_computer)
 			log_bad("[get_area(C)] lacks a cryopod control computer while holding a cryopod.")
 			pass = FALSE
 
-	for(var/obj/machinery/computer/cryopod/C in SSmachines.machinery)
+	for(var/obj/machinery/computer/cryopod/C in machines)
 		if(!(locate(/obj/machinery/cryopod) in get_area(C)))
 			log_bad("[get_area(C)] lacks a cryopod while holding a control computer.")
 			pass = FALSE
@@ -427,7 +431,7 @@
 		pass("[checked_cameras] camera\s have a unique c_tag.")
 
 	return 1
-
+/*
 //=======================================================================================
 
 /datum/unit_test/disposal_segments_shall_connect_with_other_disposal_pipes
