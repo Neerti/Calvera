@@ -165,9 +165,11 @@
 	return 1
 
 //=======================================================================================
-/*
+
 /datum/unit_test/closet_test
 	name = "MAP: Closet Capacity Test Player Z levels"
+	disabled = TRUE
+	why_disabled = "Closets currently auto-resize based on contents."
 
 /datum/unit_test/closet_test/start_test()
 	var/bad_tests = 0
@@ -221,9 +223,11 @@
 	return 1
 
 //=======================================================================================
-
+/*
 /datum/unit_test/storage_map_test
 	name = "MAP: On Map Storage Item Capacity Test Player Z levels"
+	disabled = TRUE
+	why_disabled = "Storage containers currently auto-resize based on contents."
 
 /datum/unit_test/storage_map_test/start_test()
 	var/bad_tests = 0

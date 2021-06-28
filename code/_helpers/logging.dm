@@ -253,29 +253,48 @@
 /proc/key_name_admin(var/whom, var/include_name = 1)
 	return key_name(whom, 1, include_name)
 
-// Helper procs for building detailed log lines
-/datum/proc/log_info_line()
-	return "[src] ([type])"
-
-/atom/log_info_line()
-	var/turf/t = get_turf(src)
-	if(istype(t))
-		return "([t]) ([t.x],[t.y],[t.z]) ([t.type])"
-	else if(loc)
-		return "([loc]) (0,0,0) ([loc.type])"
-	else
-		return "(NULL) (0,0,0) (NULL)"
-
-/mob/log_info_line()
-	return "[..()] ([ckey])"
-
-/proc/log_info_line(var/datum/d)
-	if(!istype(d))
-		return
-	return d.log_info_line()
-
 /mob/proc/simple_info_line()
 	return "[key_name(src)] ([x],[y],[z])"
 
 /client/proc/simple_info_line()
 	return "[key_name(src)] ([mob.x],[mob.y],[mob.z])"
+
+// Helper procs for building detailed log lines
+/datum/proc/get_log_info_line()
+	return "[src] ([type]) ([any2ref(src)])"
+
+/area/get_log_info_line()
+	return "[..()] ([isnum(z) ? "[x],[y],[z]" : "0,0,0"])"
+
+/turf/get_log_info_line()
+	var/obj/effect/overmap/visitable/O = map_sectors["[z]"]
+	if(istype(O))
+		return "[..()] ([x],[y],[z] - [O.name]) ([loc ? loc.type : "NULL"])"
+	else
+		return "[..()] ([x],[y],[z]) ([loc ? loc.type : "NULL"])"
+
+/atom/movable/get_log_info_line()
+	var/turf/t = get_turf(src)
+	if(t)
+		var/obj/effect/overmap/visitable/O = map_sectors["[t.z]"]
+		if(istype(O))
+			return "[..()] ([t]) ([t.x],[t.y],[t.z] - [O.name]) ([t.type])"
+		return "[..()] ([t]) ([t.x],[t.y],[t.z]) ([t.type])"
+	return "[..()] ([loc?.name || "NULL" ]) (NULL) ([loc?.type || "NULL"])"
+
+/mob/get_log_info_line()
+	return ckey ? "[..()] ([ckey])" : ..()
+
+/proc/log_info_line(var/datum/d)
+	if(isnull(d))
+		return "*null*"
+	if(islist(d))
+		var/list/L = list()
+		for(var/e in d)
+			// Indexing on numbers just gives us the same number again in the best case and causes an index out of bounds runtime in the worst
+			var/v = isnum(e) ? null : d[e]
+			L += "[log_info_line(e)][" - [log_info_line(v)]"]"
+		return "\[[jointext(L, ", ")]\]" // We format the string ourselves, rather than use json_encode(), because it becomes difficult to read recursively escaped "
+	if(!istype(d))
+		return json_encode(d)
+	return d.get_log_info_line()

@@ -3225,6 +3225,7 @@
 #include "code\unit_tests\nebula_tests\_defines.dm"
 #include "code\unit_tests\nebula_tests\_includes.dm"
 #include "code\unit_tests\nebula_tests\unit_test.dm"
+#include "code\unit_tests\nebula_tests\~unit_test_overrides.dm"
 #include "code\unit_tests\nebula_tests\tests\map_tests.dm"
 #include "code\unit_tests\nebula_tests\tests\power_tests.dm"
 #include "code\ZAS\Airflow.dm"
