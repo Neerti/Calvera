@@ -1,10 +1,22 @@
 /datum/map
+	/// Flag to designate that no APC should exist in an area.
 	var/const/NO_APC = 1
+	/// Flag to designate that no air vents should exist in an area.
 	var/const/NO_VENT = 2
+	/// Flag to designate that no scrubbers should exist in an area.
 	var/const/NO_SCRUBBER = 4
 
-	// Unit test vars
-	var/list/apc_test_exempt_areas = list(
+	/// Combines NO_VENT, and NO_SCRUBBER.
+	var/const/NO_ATMOS = NO_VENT|NO_SCRUBBER
+
+	/// Combines NO_APC, NO_VENT, and NO_SCRUBBER.
+	var/const/NO_MACHINES = NO_APC|NO_VENT|NO_SCRUBBER
+
+	/**
+	Assoc list of areas that are exempt from having certain machines, such as APCs, air vents, or scrubbers. 
+	Format is `/area/foo = NO_SCRUBBER|NO_VENT|NO_APC`.
+	*/
+	var/list/machinery_test_exempt_areas = list(
 		/area/space = NO_SCRUBBER|NO_VENT|NO_APC
 	)
 

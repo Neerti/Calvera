@@ -10,11 +10,11 @@
 #define SUCCESS 1
 
 
-/datum/unit_test/apc_area_test
-	name = "MAP: Area Test APC / Scrubbers / Vents"
+/datum/unit_test/machinery_area_test
+	name = "MAP: Area Test Machinery"
 
 
-/datum/unit_test/apc_area_test/start_test()
+/datum/unit_test/machinery_area_test/start_test()
 	var/list/bad_areas = list()
 	var/area_test_count = 0
 
@@ -59,12 +59,12 @@
 
 	return 1
 
-/datum/unit_test/apc_area_test/proc/get_exemptions(var/area)
+/datum/unit_test/machinery_area_test/proc/get_exemptions(var/area)
 	// We assume deeper types come last
-	for(var/i = using_map.apc_test_exempt_areas.len; i>0; i--)
-		var/exempt_type = using_map.apc_test_exempt_areas[i]
+	for(var/i = using_map.machinery_test_exempt_areas.len; i>0; i--)
+		var/exempt_type = using_map.machinery_test_exempt_areas[i]
 		if(istype(area, exempt_type))
-			return using_map.apc_test_exempt_areas[exempt_type]
+			return using_map.machinery_test_exempt_areas[exempt_type]
 /*
 /datum/unit_test/air_alarm_connectivity
 	name = "MAP: Air alarms shall receive updates."
