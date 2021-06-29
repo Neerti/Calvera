@@ -491,63 +491,72 @@
 	desc = "This is a random material."
 	icon = 'icons/obj/stacks.dmi'
 	icon_state = "sheet-metal_2"
+	var/final_amount = 10 // Don't use the {amount = 10} method to set amount, since these need to be typepaths and not instances.
 
 /obj/random/material/item_to_spawn()
-	return pick(/obj/item/stack/material/steel{amount = 10},
-				/obj/item/stack/material/glass{amount = 10},
-				/obj/item/stack/material/glass/reinforced{amount = 10},
-				/obj/item/stack/material/plastic{amount = 10},
-				/obj/item/stack/material/wood{amount = 10},
-				/obj/item/stack/material/wood/sif{amount = 10},
-				/obj/item/stack/material/cardboard{amount = 10},
-				/obj/item/stack/rods{amount = 10},
-				/obj/item/stack/material/sandstone{amount = 10},
-				/obj/item/stack/material/marble{amount = 10},
-				/obj/item/stack/material/plasteel{amount = 10})
+	return pick(/obj/item/stack/material/steel,
+				/obj/item/stack/material/glass,
+				/obj/item/stack/material/glass/reinforced,
+				/obj/item/stack/material/plastic,
+				/obj/item/stack/material/wood,
+				/obj/item/stack/material/wood/sif,
+				/obj/item/stack/material/cardboard,
+				/obj/item/stack/rods,
+				/obj/item/stack/material/sandstone,
+				/obj/item/stack/material/marble,
+				/obj/item/stack/material/plasteel)
+
+/obj/random/material/apply_adjustments(atom/A)
+	. = ..()
+	var/obj/item/stack/material/stack = A
+	stack.amount = final_amount
+	stack.update_icon()
 
 /obj/random/material/refined //Random materials for building stuff
 	name = "random refined material"
 	desc = "This is a random refined metal."
 	icon = 'icons/obj/stacks.dmi'
 	icon_state = "sheet-adamantine_3"
+	final_amount = 5
 
 /obj/random/material/refined/item_to_spawn()
-	return pick(/obj/item/stack/material/steel{amount = 10},
-				/obj/item/stack/material/glass{amount = 10},
-				/obj/item/stack/material/glass/reinforced{amount = 5},
-				/obj/item/stack/material/glass/phoronglass{amount = 5},
-				/obj/item/stack/material/glass/phoronrglass{amount = 5},
-				/obj/item/stack/material/plasteel{amount = 5},
-				/obj/item/stack/material/durasteel{amount = 5},
-				/obj/item/stack/material/gold{amount = 5},
-				/obj/item/stack/material/iron{amount = 10},
-				/obj/item/stack/material/copper{amount = 10},
-				/obj/item/stack/material/aluminium{amount = 10},
-				/obj/item/stack/material/lead{amount = 10},
-				/obj/item/stack/material/diamond{amount = 3},
-				/obj/item/stack/material/deuterium{amount = 5},
-				/obj/item/stack/material/uranium{amount = 5},
-				/obj/item/stack/material/phoron{amount = 5},
-				/obj/item/stack/material/silver{amount = 5},
-				/obj/item/stack/material/platinum{amount = 5},
-				/obj/item/stack/material/mhydrogen{amount = 3},
-				/obj/item/stack/material/osmium{amount = 3},
-				/obj/item/stack/material/titanium{amount = 5},
-				/obj/item/stack/material/tritium{amount = 3},
-				/obj/item/stack/material/verdantium{amount = 2})
+	return pick(/obj/item/stack/material/steel,
+				/obj/item/stack/material/glass,
+				/obj/item/stack/material/glass/reinforced,
+				/obj/item/stack/material/glass/phoronglass,
+				/obj/item/stack/material/glass/phoronrglass,
+				/obj/item/stack/material/plasteel,
+				/obj/item/stack/material/durasteel,
+				/obj/item/stack/material/gold,
+				/obj/item/stack/material/iron,
+				/obj/item/stack/material/copper,
+				/obj/item/stack/material/aluminium,
+				/obj/item/stack/material/lead,
+				/obj/item/stack/material/diamond,
+				/obj/item/stack/material/deuterium,
+				/obj/item/stack/material/uranium,
+				/obj/item/stack/material/phoron,
+				/obj/item/stack/material/silver,
+				/obj/item/stack/material/platinum,
+				/obj/item/stack/material/mhydrogen,
+				/obj/item/stack/material/osmium,
+				/obj/item/stack/material/titanium,
+				/obj/item/stack/material/tritium,
+				/obj/item/stack/material/verdantium)
 
 /obj/random/material/precious //Precious metals, go figure
 	name = "random precious metal"
 	desc = "This is a small stack of a random precious metal."
 	icon = 'icons/obj/stacks.dmi'
 	icon_state = "sheet-gold_2"
+	final_amount = 5
 
 /obj/random/material/precious/item_to_spawn()
-	return pick(/obj/item/stack/material/gold{amount = 5},
-				/obj/item/stack/material/copper{amount = 5},
-				/obj/item/stack/material/silver{amount = 5},
-				/obj/item/stack/material/platinum{amount = 5},
-				/obj/item/stack/material/osmium{amount = 5})
+	return pick(/obj/item/stack/material/gold,
+				/obj/item/stack/material/copper,
+				/obj/item/stack/material/silver,
+				/obj/item/stack/material/platinum,
+				/obj/item/stack/material/osmium)
 
 /obj/random/tank
 	name = "random tank"

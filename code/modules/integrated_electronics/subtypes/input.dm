@@ -390,8 +390,6 @@
 	if(!frequency)
 		return
 	if(!radio_controller)
-		sleep(20)
-	if(!radio_controller)
 		return
 	radio_controller.remove_object(src, frequency)
 	frequency = new_frequency
@@ -442,11 +440,11 @@
 	power_draw_per_use = 50
 	var/datum/exonet_protocol/exonet = null
 
-/obj/item/integrated_circuit/input/EPv2/New()
-	..()
+/obj/item/integrated_circuit/input/EPv2/Initialize()
 	exonet = new(src)
 	exonet.make_address("EPv2_circuit-\ref[src]")
 	desc += "<br>This circuit's EPv2 address is: [exonet.address]"
+	return ..()
 
 /obj/item/integrated_circuit/input/EPv2/Destroy()
 	if(exonet)

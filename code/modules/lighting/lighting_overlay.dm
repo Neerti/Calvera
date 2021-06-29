@@ -19,6 +19,7 @@
 	var/needs_update = FALSE
 
 /atom/movable/lighting_overlay/Initialize()
+	SHOULD_CALL_PARENT(FALSE)
 	// doesn't need special init
 	initialized = TRUE
 	return INITIALIZE_HINT_NORMAL

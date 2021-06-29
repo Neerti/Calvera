@@ -214,7 +214,7 @@
 		if(existing == src)
 			continue
 		else
-			qdel(existing)
+			return INITIALIZE_HINT_QDEL
 
 	linked_node = src
 

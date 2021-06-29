@@ -4,7 +4,8 @@
 	icon_state = "ano01"
 	var/find_type = 0
 
-/obj/item/weapon/archaeological_find/New(loc, var/new_item_type)
+/obj/item/weapon/archaeological_find/Initialize(mapload, new_item_type)
+	. = ..()
 	if(new_item_type)
 		find_type = new_item_type
 	else
@@ -684,7 +685,7 @@
 		if(istype(T))
 			T.last_find = new_item
 
-		qdel(src)
+		return INITIALIZE_HINT_QDEL
 
 	else if(talkative)
 		src.talking_atom = new(src)

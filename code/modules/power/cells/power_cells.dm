@@ -113,6 +113,7 @@
 
 /obj/item/device/fbp_backup_cell/Initialize()
 	overlays += image(icon,"[icon_state]1")
+	return ..()
 
 /obj/item/device/fbp_backup_cell/attack(mob/living/M as mob, mob/user as mob)
 	if(!used && ishuman(M))
