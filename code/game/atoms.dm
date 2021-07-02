@@ -34,6 +34,15 @@
 	// Track if we are already had initialize() called to prevent double-initialization.
 	var/initialized = FALSE
 
+	/// Last name used to calculate a color for the chatmessage overlays
+	var/chat_color_name
+	/// Last color calculated for the the chatmessage overlays
+	var/chat_color
+	/// A luminescence-shifted value of the last color calculated for chatmessage overlays
+	var/chat_color_darkened
+	/// The chat color var, without alpha.
+	var/chat_color_hover
+
 /atom/New(loc, ...)
 //	SHOULD_NOT_OVERRIDE(TRUE)
 	// Don't call ..() unless /datum/New() ever exists
@@ -485,7 +494,7 @@ Instead, put it inside on_update_icon().*/
 // Use for objects performing visible actions
 // message is output to anyone who can see, e.g. "The [src] does something!"
 // blind_message (optional) is what blind people will hear e.g. "You hear something!"
-/atom/proc/visible_message(var/message, var/blind_message, var/list/exclude_mobs, var/range = world.view)
+/atom/proc/visible_message(var/message, var/blind_message, var/list/exclude_mobs, var/range = world.view, var/runemessage = "<span style='font-size: 1.5em'>👁</span>")
 
 	var/list/see = get_mobs_and_objs_in_view_fast(get_turf(src), range, remote_ghosts = FALSE)
 
@@ -501,6 +510,8 @@ Instead, put it inside on_update_icon().*/
 		var/mob/M = mob
 		if(M.see_invisible >= invisibility && MOB_CAN_SEE_PLANE(M, plane))
 			M.show_message(message, VISIBLE_MESSAGE, blind_message, AUDIBLE_MESSAGE)
+			if(runemessage != -1)
+				M.create_chat_message(src, "[runemessage]", FALSE, list("emote"), audible = FALSE)
 		else if(blind_message)
 			M.show_message(blind_message, AUDIBLE_MESSAGE)
 
@@ -509,7 +520,7 @@ Instead, put it inside on_update_icon().*/
 // message is the message output to anyone who can hear.
 // deaf_message (optional) is what deaf people will see.
 // hearing_distance (optional) is the range, how many tiles away the message can be heard.
-/atom/proc/audible_message(var/message, var/deaf_message, var/hearing_distance, var/radio_message)
+/atom/proc/audible_message(var/message, var/deaf_message, var/hearing_distance, var/radio_message, var/runemessage)
 
 	var/range = hearing_distance || world.view
 	var/list/hear = get_mobs_and_objs_in_view_fast(get_turf(src),range,remote_ghosts = FALSE)
@@ -530,6 +541,8 @@ Instead, put it inside on_update_icon().*/
 		var/mob/M = mob
 		var/msg = message
 		M.show_message(msg, AUDIBLE_MESSAGE, deaf_message, VISIBLE_MESSAGE)
+		if(runemessage != -1)
+			M.create_chat_message(src, "[runemessage || message]", FALSE, list("emote"))
 
 /atom/movable/proc/dropInto(var/atom/destination)
 	while(istype(destination))
