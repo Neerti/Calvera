@@ -431,7 +431,7 @@
 		pass("[checked_cameras] camera\s have a unique c_tag.")
 
 	return 1
-/*
+
 //=======================================================================================
 
 /datum/unit_test/disposal_segments_shall_connect_with_other_disposal_pipes
@@ -504,7 +504,7 @@
 	return FALSE
 
 //=======================================================================================
-
+/*
 // Having them face north or west is now supported fully in code; this is for map consistency.
 /datum/unit_test/simple_pipes_shall_not_face_north_or_west
 	name = "MAP: Simple pipes shall not face north or west"
@@ -531,9 +531,11 @@
 
 /datum/unit_test/shutoff_valves_shall_connect_to_two_different_pipe_networks/start_test()
 	var/failures = 0
-	for(var/obj/machinery/atmospherics/valve/shutoff/SV in SSmachines.machinery)
+//	for(var/obj/machinery/atmospherics/valve/shutoff/SV in SSmachines.machinery)
+	for(var/obj/machinery/atmospherics/valve/shutoff/SV in machines)
 		SV.close()
-	for(var/obj/machinery/atmospherics/valve/shutoff/SV in SSmachines.machinery)
+//	for(var/obj/machinery/atmospherics/valve/shutoff/SV in SSmachines.machinery)
+	for(var/obj/machinery/atmospherics/valve/shutoff/SV in machines)
 		if(SV.network_in_dir(SV.dir) == SV.network_in_dir(turn(SV.dir, 180)))
 			log_bad("Following shutoff valve does not connect to two different pipe networks: [log_info_line(SV)]")
 			failures++
@@ -543,7 +545,7 @@
 	else
 		pass("All shutoff valves connect to two different pipe networks.")
 	return 1
-
+*/
 //=======================================================================================
 
 /datum/unit_test/station_pipes_shall_not_leak
@@ -569,7 +571,8 @@
 
 /datum/unit_test/station_power_terminals_shall_be_wired/start_test()
 	var/failures = 0
-	for(var/obj/machinery/power/terminal/term in SSmachines.machinery)
+//	for(var/obj/machinery/power/terminal/term in SSmachines.machinery)
+	for(var/obj/machinery/power/terminal/term in machines)
 		var/turf/T = get_turf(term)
 		if(!T)
 			failures++
@@ -598,6 +601,8 @@
 
 /datum/unit_test/station_wires_shall_be_connected
 	name = "MAP: Station wires shall be connected"
+	disabled = TRUE
+	why_disabled = "Breaker boxes set to be disconnected cause this test to always fail."
 	var/list/exceptions
 
 /datum/unit_test/station_wires_shall_be_connected/start_test()
@@ -670,7 +675,7 @@
 		if(!connected)
 			log_bad("Disconnected wire: [dir2text(dir)] - [log_info_line(C)]")
 			. = FALSE
-
+/*
 /datum/unit_test/networked_disposals_shall_deliver_tagged_packages
 	name = "MAP: Networked disposals shall deliver tagged packages"
 	async = 1

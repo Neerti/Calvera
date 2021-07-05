@@ -18,7 +18,8 @@ Pipelines + Other Objects -> Pipe network
 	var/power_rating //the maximum amount of power the machine can use to do work, affects how powerful the machine is, in Watts
 
 	layer = ATMOS_LAYER
-	plane = PLATING_PLANE
+	plane = ABOVE_PLANE
+	init_plane = PLATING_PLANE
 
 	var/pipe_flags = PIPING_DEFAULT_LAYER_ONLY // Allow other layers by exception basis.
 	var/connect_types = CONNECT_TYPE_REGULAR

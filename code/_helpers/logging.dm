@@ -278,9 +278,9 @@
 	if(t)
 		var/obj/effect/overmap/visitable/O = map_sectors["[t.z]"]
 		if(istype(O))
-			return "[..()] ([t]) ([t.x],[t.y],[t.z] - [O.name]) ([t.type])"
-		return "[..()] ([t]) ([t.x],[t.y],[t.z]) ([t.type])"
-	return "[..()] ([loc?.name || "NULL" ]) (NULL) ([loc?.type || "NULL"])"
+			return "[..()] ([t]) ([t.x],[t.y],[t.z] - [O.name]) ([t.type]) ([t.loc])"
+		return "[..()] ([t]) ([t.x],[t.y],[t.z]) ([t.type]) ([t.loc])"
+	return "[..()] ([loc?.name || "NULL" ]) (NULL) ([loc?.type || "NULL"]) (NULL)"
 
 /mob/get_log_info_line()
 	return ckey ? "[..()] ([ckey])" : ..()

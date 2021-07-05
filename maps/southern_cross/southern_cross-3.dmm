@@ -14217,6 +14217,18 @@
 /obj/effect/landmark/robot_platform/explorer,
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/garage)
+"XD" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "xenobio6";
+	name = "Containment Blast Doors";
+	opacity = 0
+	},
+/obj/effect/wingrille_spawn/reinforced,
+/obj/structure/window/reinforced/full,
+/turf/simulated/floor/plating,
+/area/surface/outpost/research/xenoresearch/xenobiology)
 
 (1,1,1) = {"
 aa
@@ -51318,7 +51330,7 @@ BE
 xe
 zl
 zL
-zl
+XD
 Au
 AN
 Bh

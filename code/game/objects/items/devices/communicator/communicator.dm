@@ -84,7 +84,7 @@ var/global/list/obj/item/device/communicator/all_communicators = list()
 	node = get_exonet_node()
 	START_PROCESSING(SSobj, src)
 	camera = new(src)
-	camera.name = "[src] #[rand(100,999)]"
+	camera.name = "[name] #[random_id(/obj/item/device/communicator, 100, 200)]"
 	camera.c_tag = camera.name
 
 	//This is a pretty terrible way of doing this.
