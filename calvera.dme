@@ -2135,6 +2135,7 @@
 #include "code\modules\materials\sheets\organic\tanning\hide_hairless.dm"
 #include "code\modules\materials\sheets\organic\tanning\leather_wet.dm"
 #include "code\modules\materials\sheets\organic\tanning\tanning_rack.dm"
+#include "code\modules\medical_diagnostics\diagnostics.dm"
 #include "code\modules\metric\activity.dm"
 #include "code\modules\metric\count.dm"
 #include "code\modules\metric\department.dm"
