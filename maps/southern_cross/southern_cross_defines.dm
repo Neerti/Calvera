@@ -145,6 +145,16 @@
 
 	)
 
+	area_coherency_test_exempt_areas = list(
+		/area/space,
+		/area/thirddeck/roof
+	)
+
+	area_coherency_test_exempted_root_areas = list(
+		/area/mine,
+		/area/surface/outside
+	)
+
 	planet_datums_to_make = list(/datum/planet/sif)
 
 	map_levels = list(

@@ -21263,6 +21263,11 @@
 /obj/machinery/power/breakerbox{
 	RCon_tag = "Auxiliary Bypass"
 	},
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/plating,
 /area/engineering/auxiliary_engineering)
 "aQe" = (
@@ -33381,16 +33386,10 @@
 /obj/random/tool,
 /turf/space,
 /area/space)
-"bjU" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green,
-/obj/structure/lattice,
-/turf/space,
-/area/space)
 "bjV" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/obj/structure/lattice,
-/turf/space,
-/area/space)
+/turf/simulated/floor/airless,
+/area/engineering/atmos)
 "bjW" = (
 /obj/effect/floor_decal/corner/lime/full{
 	dir = 4
@@ -33773,15 +33772,13 @@
 /turf/simulated/floor,
 /area/engineering/atmos)
 "bkE" = (
-/obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/turf/space,
-/area/space)
+/turf/simulated/floor/airless,
+/area/engineering/atmos)
 "bkF" = (
-/obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/visible/green,
-/turf/space,
-/area/space)
+/turf/simulated/floor/airless,
+/area/engineering/atmos)
 "bkG" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/green{
 	dir = 4
@@ -35996,9 +35993,8 @@
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
 	},
-/obj/structure/lattice,
-/turf/space,
-/area/space)
+/turf/simulated/floor/airless,
+/area/engineering/atmos)
 "boL" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
@@ -36477,9 +36473,8 @@
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 4
 	},
-/obj/structure/lattice,
-/turf/space,
-/area/space)
+/turf/simulated/floor/airless,
+/area/engineering/atmos)
 "bpH" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
@@ -38886,7 +38881,7 @@
 "bul" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/red,
 /turf/simulated/floor/airless,
-/area/space)
+/area/maintenance/research)
 "bum" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/binary/pump{
@@ -113994,6 +113989,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/central)
+"kGF" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/turf/simulated/floor/airless,
+/area/engineering/atmos)
 "lfa" = (
 /obj/structure/cable/cyan{
 	d2 = 4;
@@ -198182,20 +198181,20 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aaf
 boK
 bpG
+aaf
 aaa
-aaa
-aaa
+aaf
 boK
 bpG
+aaf
 aaa
-aaa
-aaa
+aaf
 boK
 bpG
-aaa
+aaf
 aaa
 bAk
 bBK
@@ -198949,7 +198948,7 @@ bgv
 bgv
 bgv
 bgv
-aaa
+aaf
 bkC
 blD
 bmL
@@ -199206,7 +199205,7 @@ bhi
 bTT
 bib
 bja
-bjU
+bkF
 bkG
 blE
 bmM
@@ -199463,7 +199462,7 @@ bhj
 bTT
 bic
 bjb
-bgw
+kGF
 bkI
 blF
 bmN
@@ -199720,7 +199719,7 @@ bgv
 bgv
 bgv
 bgv
-aaa
+aaf
 bkH
 blL
 bnF
@@ -200234,7 +200233,7 @@ bgv
 bgv
 bgv
 bgv
-aaa
+aaf
 bkJ
 blP
 bmL
@@ -200491,7 +200490,7 @@ bhk
 bYm
 bid
 bja
-bjU
+bkF
 bkG
 blM
 bmO
@@ -200748,7 +200747,7 @@ bhl
 bYm
 bie
 bjb
-bgw
+kGF
 bkK
 blN
 bmP
@@ -201005,7 +201004,7 @@ bgv
 bgv
 bgv
 bgv
-aaa
+aaf
 bkM
 bnG
 bmQ
@@ -201519,7 +201518,7 @@ bgv
 bgv
 bgv
 bgv
-aaa
+aaf
 bkH
 blQ
 bmT
@@ -202290,7 +202289,7 @@ bgv
 bgv
 bgv
 bgv
-aaa
+aaf
 blH
 bmR
 bnO
@@ -202804,7 +202803,7 @@ bgv
 bgv
 bgv
 bgv
-aaa
+aaf
 blC
 buo
 bnM
@@ -203575,7 +203574,7 @@ bgv
 bgv
 bgv
 bgv
-aaa
+aaf
 bkA
 bmT
 bnP

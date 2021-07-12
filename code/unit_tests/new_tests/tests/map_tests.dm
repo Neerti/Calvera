@@ -601,7 +601,7 @@
 
 /datum/unit_test/station_wires_shall_be_connected
 	name = "MAP: Station wires shall be connected"
-	disabled = TRUE
+	disabled = FALSE
 	why_disabled = "Breaker boxes set to be disconnected cause this test to always fail."
 	var/list/exceptions
 
@@ -618,7 +618,7 @@
 		exceptions_by_turf[T] += exception[4]
 	exceptions = exceptions_by_turf
 
-	for(var/obj/structure/cable/C in world)
+	for(var/obj/structure/cable/C in cable_list)
 		if(!all_ends_connected(C))
 			failures++
 

@@ -1036,14 +1036,14 @@
 	},
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/tiled/asteroid_steel,
-/area/surface/outside/plains/outpost)
+/area/surface/outpost/mining_main/refinery)
 "cF" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall/r_wall,
-/area/surface/outpost/mining_main/gen_room)
+/area/surface/outpost/mining_main/refinery)
 "cG" = (
 /obj/structure/window/reinforced,
 /obj/machinery/deployable/barrier,
@@ -1244,7 +1244,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/asteroid_steel,
-/area/surface/outside/plains/outpost)
+/area/surface/outpost/mining_main/refinery)
 "df" = (
 /obj/effect/floor_decal/industrial/warning/dust,
 /obj/effect/overlay/snow/floor,
@@ -1252,7 +1252,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/asteroid_steel,
-/area/surface/outside/plains/outpost)
+/area/surface/outpost/mining_main/refinery)
 "dg" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 6;
@@ -1270,7 +1270,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/asteroid_steel,
-/area/surface/outpost/mining_main/gen_room)
+/area/surface/outpost/mining_main/refinery)
 "dh" = (
 /obj/machinery/alarm{
 	pixel_y = 23
@@ -1544,7 +1544,7 @@
 	id = "mining_external"
 	},
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outpost/mining_main/gen_room)
+/area/surface/outpost/mining_main/refinery)
 "dL" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -1556,7 +1556,7 @@
 /turf/simulated/floor/tiled/steel/sif/planetuse{
 	icon_state = "dark"
 	},
-/area/surface/outpost/mining_main/gen_room)
+/area/surface/outpost/mining_main/refinery)
 "dM" = (
 /obj/machinery/camera/network/main_outpost{
 	c_tag = "MO - Security Checkpoint";
@@ -1761,7 +1761,7 @@
 	},
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/tiled/asteroid_steel,
-/area/surface/outpost/mining_main/gen_room)
+/area/surface/outpost/mining_main/refinery)
 "eg" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1;
@@ -1773,7 +1773,7 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/asteroid_steel,
-/area/surface/outpost/mining_main/gen_room)
+/area/surface/outpost/mining_main/refinery)
 "eh" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 5;
@@ -1784,7 +1784,7 @@
 	},
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/tiled/asteroid_steel,
-/area/surface/outside/path/plains)
+/area/surface/outpost/mining_main/refinery)
 "ei" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -2127,7 +2127,7 @@
 "eM" = (
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/tiled/asteroid_steel,
-/area/surface/outside/plains/outpost)
+/area/surface/outpost/mining_main/refinery)
 "eN" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 4;
@@ -2138,7 +2138,7 @@
 	},
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/tiled/asteroid_steel,
-/area/surface/outside/path/plains)
+/area/surface/outpost/mining_main/refinery)
 "eO" = (
 /obj/machinery/computer/secure_data,
 /obj/effect/floor_decal/borderfloor{
@@ -2982,7 +2982,7 @@
 	},
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/tiled/asteroid_steel,
-/area/surface/outpost/mining_main/gen_room)
+/area/surface/outpost/mining_main/refinery)
 "gq" = (
 /obj/machinery/door/airlock/mining{
 	autoclose = 0;
@@ -3289,13 +3289,13 @@
 /obj/effect/floor_decal/industrial/warning/dust,
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/tiled/asteroid_steel,
-/area/surface/outside/plains/outpost)
+/area/surface/outpost/mining_main/refinery)
 "gX" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
 /turf/simulated/wall/r_wall,
-/area/surface/outpost/mining_main/gen_room)
+/area/surface/outpost/mining_main/refinery)
 "gY" = (
 /obj/effect/overlay/snow/floor,
 /obj/machinery/light/small{
@@ -14082,9 +14082,6 @@
 /obj/effect/step_trigger/teleporter/wild/to_wild,
 /turf/simulated/shuttle/floor/voidcraft/external,
 /area/surface/outpost/wall)
-"DZ" = (
-/turf/simulated/shuttle/wall/voidcraft,
-/area/surface/outside/lake/romsele)
 "Ea" = (
 /turf/simulated/floor/water/shoreline/corner{
 	dir = 4;
@@ -48152,7 +48149,7 @@ DJ
 DJ
 DJ
 DJ
-DZ
+DQ
 "}
 (133,1,1) = {"
 ab
@@ -48409,7 +48406,7 @@ DJ
 DJ
 DJ
 DJ
-DZ
+DQ
 "}
 (134,1,1) = {"
 ab
@@ -48666,7 +48663,7 @@ DK
 DK
 DK
 DK
-DZ
+DQ
 "}
 (135,1,1) = {"
 ab
@@ -48923,7 +48920,7 @@ DK
 DK
 DK
 DK
-DZ
+DQ
 "}
 (136,1,1) = {"
 ab
@@ -49180,7 +49177,7 @@ DJ
 DJ
 DJ
 DJ
-DZ
+DQ
 "}
 (137,1,1) = {"
 ab
@@ -49437,7 +49434,7 @@ DJ
 DJ
 DJ
 DJ
-DZ
+DQ
 "}
 (138,1,1) = {"
 ab
