@@ -41,3 +41,11 @@
 	flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER
 	transit_chance = 50
 	base_turf = /turf/simulated/open
+
+/area/example_map
+	ambience = AMBIENCE_AI
+	icon_state = "ai"
+/area/example_map/first_floor
+	name = "\improper Example One"
+/area/example_map/second_floor
+	name = "\improper Example Two"

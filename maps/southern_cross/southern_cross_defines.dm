@@ -139,7 +139,8 @@
 		/area/rnd/test_area = NO_ATMOS,
 		/area/medical/genetics = NO_APC,
 		/area/hallway/secondary/entry/D2/arrivals = NO_APC|NO_SCRUBBER,
-		/area/submap/pa_room = 0
+		/area/submap/pa_room = 0,
+		/area/surface/outpost/main/landing_pad = NO_ATMOS
 
 
 
@@ -147,12 +148,14 @@
 
 	area_coherency_test_exempt_areas = list(
 		/area/space,
-		/area/thirddeck/roof
+		/area/thirddeck/roof,
+		/area/hallway/secondary/entry/D2/arrivals
 	)
 
 	area_coherency_test_exempted_root_areas = list(
 		/area/mine,
-		/area/surface/outside
+		/area/surface/outside,
+		/area/surface/cave
 	)
 
 	planet_datums_to_make = list(/datum/planet/sif)

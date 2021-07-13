@@ -377,11 +377,6 @@
 /datum/tgui_module/communications/ntos
 	ntos = TRUE
 
-/* Etc global procs */
-/proc/enable_prison_shuttle(var/mob/user)
-	for(var/obj/machinery/computer/prison_shuttle/PS in machines)
-		PS.allowedtocall = !(PS.allowedtocall)
-
 /proc/call_shuttle_proc(var/mob/user)
 	if ((!( ticker ) || !emergency_shuttle.location()))
 		return

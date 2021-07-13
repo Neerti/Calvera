@@ -50,9 +50,6 @@
 		if(LOC_TECH)
 			spawn_area_type = /area/storage/tech
 			locstring = "technical storage"
-		if(LOC_GARDEN)
-			spawn_area_type = /area/hydroponics/garden
-			locstring = "the public garden"
 
 	for(var/areapath in typesof(spawn_area_type))
 		var/area/A = locate(areapath)

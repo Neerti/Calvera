@@ -96273,7 +96273,7 @@
 	req_access = list(13)
 	},
 /turf/simulated/floor/tiled/dark,
-/area/hallway/secondary/entry/D2)
+/area/hallway/secondary/entry/D3)
 "dxN" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -97397,7 +97397,7 @@
 	req_access = list(13)
 	},
 /turf/simulated/floor/tiled/dark,
-/area/hallway/secondary/entry/D2)
+/area/hallway/secondary/entry/D3)
 "dzI" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -109031,13 +109031,6 @@
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/hallway/secondary/entry/D3)
-"dVj" = (
-/obj/effect/wingrille_spawn/reinforced,
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 6
-	},
-/turf/simulated/floor/plating,
-/area/hallway/secondary/entry/D2)
 "dVk" = (
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
@@ -213198,7 +213191,7 @@ aaa
 aaa
 aaa
 aaa
-dVj
+dxV
 dxp
 dxK
 dvk
@@ -213208,7 +213201,7 @@ duY
 dvk
 dzm
 dzF
-dVj
+dxV
 aaa
 aaa
 aaa
@@ -213455,17 +213448,17 @@ aaa
 aaa
 aaa
 aaa
-dVj
+dxV
 dxq
 dxL
-dVj
+dxV
 aaa
 aaa
 aaa
-dVj
+dxV
 dzn
 dzG
-dVj
+dxV
 aaa
 aaa
 aaa
@@ -213715,11 +213708,11 @@ aaa
 dVk
 dxI
 dzk
-dVj
+dxV
 aaa
 aaa
 aaa
-dVj
+dxV
 dzD
 dCP
 dVk

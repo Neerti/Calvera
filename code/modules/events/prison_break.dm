@@ -13,19 +13,19 @@
 /datum/event/prison_break/virology
 	eventDept = "Medical"
 	areaName = list("Virology")
-	areaType = list(/area/medical/virology, /area/medical/virologyaccess)
+	areaType = list(/area/medical/virology)
 
 /datum/event/prison_break/xenobiology
 	eventDept = "Science"
 	areaName = list("Xenobiology")
 	areaType = list(/area/rnd/xenobiology)
-	areaNotType = list(/area/rnd/xenobiology/xenoflora, /area/rnd/xenobiology/xenoflora_storage)
+	areaNotType = list(/area/rnd/xenobiology/xenoflora)
 
 /datum/event/prison_break/station
 	eventDept = "Station"
 	areaName = list("Brig","Virology","Xenobiology")
-	areaType = list(/area/security/prison, /area/security/brig, /area/medical/virology, /area/medical/virologyaccess, /area/rnd/xenobiology)
-	areaNotType = list(/area/rnd/xenobiology/xenoflora, /area/rnd/xenobiology/xenoflora_storage)
+	areaType = list(/area/security/prison, /area/security/brig, /area/medical/virology, /area/rnd/xenobiology)
+	areaNotType = list(/area/rnd/xenobiology/xenoflora)
 
 
 /datum/event/prison_break/setup()

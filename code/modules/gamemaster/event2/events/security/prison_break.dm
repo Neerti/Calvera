@@ -50,8 +50,7 @@
 	relevant_areas = list(
 		/area/security/prison,
 		/area/security/security_cell_hallway,
-		/area/security/security_processing,
-		/area/security/interrogation
+		/area/security/security_processing
 	)
 
 /datum/event2/meta/prison_break/brig/get_odds_from_trapped_mobs()
@@ -85,8 +84,7 @@
 	event_type = /datum/event2/event/prison_break/xenobio
 	relevant_areas = list(/area/rnd/xenobiology)
 	irrelevant_areas = list(
-		/area/rnd/xenobiology/xenoflora,
-		/area/rnd/xenobiology/xenoflora_storage
+		/area/rnd/xenobiology/xenoflora
 	)
 
 /datum/event2/meta/prison_break/xenobio/get_odds_from_trapped_mobs()
@@ -101,8 +99,7 @@
 	departments = list(DEPARTMENT_MEDICAL, DEPARTMENT_SYNTHETIC)
 	event_type = /datum/event2/event/prison_break/virology
 	relevant_areas = list(
-		/area/medical/virology,
-		/area/medical/virologyaccess
+		/area/medical/virology
 	)
 
 /datum/event2/meta/prison_break/virology/get_odds_from_trapped_mobs()
@@ -135,8 +132,7 @@
 		/area/security/prison,
 		/area/security/brig,
 		/area/security/security_cell_hallway,
-		/area/security/security_processing,
-		/area/security/interrogation
+		/area/security/security_processing
 	)
 
 /datum/event2/event/prison_break/armory
@@ -155,8 +151,7 @@
 	area_display_name = "Bridge"
 	containment_display_desc = "isolation"
 	area_types_to_break = list(
-		/area/bridge,
-		/area/bridge_hallway
+		/area/bridge
 	)
 
 /datum/event2/event/prison_break/xenobio
@@ -165,15 +160,13 @@
 	area_types_to_break = list(/area/rnd/xenobiology)
 	area_types_to_ignore = list(
 		/area/rnd/xenobiology/xenoflora,
-		/area/rnd/xenobiology/xenoflora_storage
 	)
 
 /datum/event2/event/prison_break/virology
 	area_display_name = "Virology"
 	containment_display_desc = "quarantine"
 	area_types_to_break = list(
-		/area/medical/virology,
-		/area/medical/virologyaccess
+		/area/medical/virology
 	)
 
 

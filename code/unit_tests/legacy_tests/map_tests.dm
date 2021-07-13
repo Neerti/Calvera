@@ -10,28 +10,22 @@
 					/area/solar,
 					/area/shuttle,
 					/area/holodeck,
-					/area/supply/station,
 					/area/mine,
-					/area/vacant/vacant_shop,
 					/area/turbolift,
 					/area/submap					)
 
 	var/list/exempt_from_atmos = typesof(/area/maintenance,
 						/area/storage,
-						/area/engineering/atmos/storage,
 						/area/rnd/test_area,
 						/area/construction,
 						/area/server,
 						/area/mine,
-						/area/vacant/vacant_shop,
-						/area/rnd/research_storage, // This should probably be fixed,
 						/area/security/riot_control // This should probably be fixed,
 						)
 
 	var/list/exempt_from_apc = typesof(/area/construction,
 						/area/medical/genetics,
 						/area/mine,
-						/area/vacant/vacant_shop
 						)
 
 	// Some maps have areas specific to the map, so include those.

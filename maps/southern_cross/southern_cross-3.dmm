@@ -2696,7 +2696,7 @@
 	},
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/tiled/steel/sif/planetuse,
-/area/surface/outpost/mining_main/gen_room)
+/area/surface/outpost/mining_main)
 "fH" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -9665,7 +9665,7 @@
 	tag_door = "surface_dock_1_door"
 	},
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outpost/main/corridor)
+/area/surface/outpost/main/landing_pad)
 "ue" = (
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
@@ -9681,7 +9681,7 @@
 	tag_door = "surface_dock_2_door"
 	},
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outpost/main/corridor)
+/area/surface/outpost/main/landing_pad)
 "ug" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -9708,31 +9708,31 @@
 	},
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outpost/main/corridor)
+/area/surface/outpost/main/landing_pad)
 "uk" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outside/plains/outpost)
+/area/surface/outpost/main/landing_pad)
 "ul" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outside/plains/outpost)
+/area/surface/outpost/main/landing_pad)
 "um" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 8
 	},
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outside/plains/outpost)
+/area/surface/outpost/main/landing_pad)
 "un" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outside/plains/outpost)
+/area/surface/outpost/main/landing_pad)
 "uo" = (
 /turf/simulated/floor/plating/sif/planetuse,
 /area/surface/outside/plains/outpost)
@@ -9745,7 +9745,7 @@
 	},
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outside/plains/outpost)
+/area/surface/outpost/main/landing_pad)
 "ur" = (
 /turf/simulated/floor/plating/sif/planetuse,
 /area/shuttle/shuttle2/planet)
@@ -10500,28 +10500,28 @@
 /obj/machinery/light,
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outpost/main/corridor)
+/area/surface/outpost/main/landing_pad)
 "wc" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outside/plains/outpost)
+/area/surface/outpost/main/landing_pad)
 "wd" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outside/plains/outpost)
+/area/surface/outpost/main/landing_pad)
 "we" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outside/plains/outpost)
+/area/surface/outpost/main/landing_pad)
 "wf" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -10801,7 +10801,7 @@
 "wE" = (
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
-/area/surface/outpost/main/corridor)
+/area/surface/outpost/main/landing_pad)
 "wF" = (
 /turf/simulated/floor/tiled/white,
 /area/surface/outpost/research/xenoresearch)
@@ -14194,6 +14194,9 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/pool)
+"Gl" = (
+/turf/simulated/wall/r_wall,
+/area/surface/outpost/main/landing_pad)
 "GP" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/light{
@@ -14208,12 +14211,92 @@
 /obj/machinery/mech_recharger,
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/garage)
+"Jz" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/effect/overlay/snow/floor,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/plating/sif/planetuse,
+/area/surface/outpost/main/landing_pad)
+"Lq" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/overlay/snow/floor,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/plating/sif/planetuse,
+/area/surface/outpost/main/landing_pad)
 "Lz" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/mech_recharger,
 /obj/effect/landmark/robot_platform/explorer,
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/garage)
+"Oe" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/obj/effect/overlay/snow/floor,
+/turf/simulated/floor/plating/sif/planetuse,
+/area/surface/outside/plains/outpost)
+"OU" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/overlay/snow/floor,
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	operating = 0;
+	pixel_x = 0;
+	pixel_y = 24
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating/sif/planetuse,
+/area/surface/outpost/main/landing_pad)
+"OZ" = (
+/obj/structure/cable/heavyduty{
+	icon_state = "1-2"
+	},
+/obj/effect/overlay/snow/floor,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/steel/sif/planetuse,
+/area/surface/outside/plains/outpost)
+"Wi" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/overlay/snow/floor,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/plating/sif/planetuse,
+/area/surface/outpost/main/landing_pad)
 "XD" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -14226,6 +14309,17 @@
 /obj/structure/window/reinforced/full,
 /turf/simulated/floor/plating,
 /area/surface/outpost/research/xenoresearch/xenobiology)
+"ZZ" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/obj/effect/overlay/snow/floor,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor/plating/sif/planetuse,
+/area/surface/outpost/main/landing_pad)
 
 (1,1,1) = {"
 aa
@@ -39480,7 +39574,7 @@ al
 aj
 aj
 aj
-mu
+Gl
 uj
 al
 al
@@ -39497,7 +39591,7 @@ al
 al
 al
 wb
-mu
+Gl
 al
 al
 al
@@ -42307,7 +42401,7 @@ al
 al
 al
 al
-ue
+wE
 um
 uq
 uq
@@ -42564,24 +42658,24 @@ al
 al
 al
 al
-mu
-uj
-ue
-ue
-ue
-ue
-ue
-ue
-ue
-ue
-ue
-ue
-ue
-ue
-ue
-ue
+Gl
+OU
+wE
+wE
+wE
+wE
+wE
+wE
+wE
+wE
+wE
+wE
+wE
+wE
+wE
+wE
 wb
-mu
+Gl
 al
 al
 al
@@ -42821,8 +42915,8 @@ al
 al
 al
 al
-ue
-uk
+wE
+ZZ
 un
 un
 un
@@ -43079,7 +43173,7 @@ al
 al
 al
 al
-ul
+Wi
 ur
 ur
 ur
@@ -43336,7 +43430,7 @@ al
 al
 al
 al
-ul
+Wi
 ur
 ur
 ur
@@ -43593,7 +43687,7 @@ al
 al
 al
 al
-ul
+Wi
 uo
 ur
 ur
@@ -43850,7 +43944,7 @@ al
 al
 al
 al
-ul
+Wi
 uo
 uo
 ur
@@ -44107,7 +44201,7 @@ al
 al
 al
 al
-ul
+Wi
 uo
 uo
 ur
@@ -44364,7 +44458,7 @@ al
 al
 al
 al
-ul
+Wi
 uo
 uo
 ur
@@ -44621,7 +44715,7 @@ al
 al
 al
 al
-ul
+Wi
 uo
 ur
 ur
@@ -44878,7 +44972,7 @@ al
 al
 al
 al
-ul
+Wi
 ur
 ur
 ur
@@ -45135,7 +45229,7 @@ al
 al
 al
 al
-ul
+Wi
 ur
 ur
 ur
@@ -45392,7 +45486,7 @@ al
 al
 al
 uf
-um
+Jz
 uq
 uq
 uq
@@ -45648,8 +45742,8 @@ al
 al
 al
 al
-mu
-uj
+Gl
+Lq
 al
 al
 aj
@@ -45665,7 +45759,7 @@ al
 al
 al
 wb
-mu
+Gl
 al
 al
 al
@@ -45906,7 +46000,7 @@ al
 al
 al
 al
-al
+Oe
 al
 aj
 aj
@@ -46163,7 +46257,7 @@ tu
 tu
 tu
 tu
-tu
+OZ
 tu
 ut
 ut
