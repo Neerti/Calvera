@@ -13,9 +13,9 @@
 	aspect = ASPECT_EMP
 	spawner_type = /obj/effect/temporary_effect/pulse/pulsar
 
-/obj/item/weapon/spell/spawner/pulsar/New()
-	..()
+/obj/item/weapon/spell/spawner/pulsar/Initialize(mapload)
 	set_light(3, 2, l_color = "#2ECCFA")
+	return ..()
 
 /obj/item/weapon/spell/spawner/pulsar/on_ranged_cast(atom/hit_atom, mob/user)
 	if(within_range(hit_atom) && pay_energy(4000))

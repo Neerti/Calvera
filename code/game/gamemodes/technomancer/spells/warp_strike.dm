@@ -14,11 +14,11 @@
 	aspect = ASPECT_TELE
 	var/datum/effect/effect/system/spark_spread/sparks
 
-/obj/item/weapon/spell/warp_strike/New()
-	..()
+/obj/item/weapon/spell/warp_strike/Initialize(mapload)
 	sparks = new /datum/effect/effect/system/spark_spread()
 	sparks.set_up(5, 0, src)
 	sparks.attach(loc)
+	return ..()
 
 /obj/item/weapon/spell/warp_strike/on_ranged_cast(atom/hit_atom, mob/user)
 	var/turf/T = get_turf(hit_atom)

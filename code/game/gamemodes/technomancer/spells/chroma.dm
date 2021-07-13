@@ -14,9 +14,9 @@
 	aspect = ASPECT_LIGHT
 	var/color_to_use = "#FFFFFF"
 
-/obj/item/weapon/spell/chroma/New()
-	..()
+/obj/item/weapon/spell/chroma/Initialize(mapload)
 	set_light(6, 5, l_color = color_to_use)
+	return ..()
 
 /obj/effect/temporary_effect/chroma
 	name = "chroma"

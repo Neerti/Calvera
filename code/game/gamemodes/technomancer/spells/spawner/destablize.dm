@@ -14,9 +14,9 @@
 	aspect = ASPECT_UNSTABLE
 	spawner_type = /obj/effect/temporary_effect/destablize
 
-/obj/item/weapon/spell/spawner/destablize/New()
-	..()
+/obj/item/weapon/spell/spawner/destablize/Initialize(mapload)
 	set_light(3, 2, l_color = "#C26DDE")
+	return ..()
 
 /obj/item/weapon/spell/spawner/destablize/on_ranged_cast(atom/hit_atom, mob/user)
 	if(within_range(hit_atom) && pay_energy(2000))
