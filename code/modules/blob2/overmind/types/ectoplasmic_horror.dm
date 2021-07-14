@@ -53,7 +53,7 @@
 					spawn(9 SECONDS)
 						if(B && drain_beam)
 							B.visible_message("<span class='alien'>\The [B] siphons energy from \the [L]</span>")
-							L.add_modifier(/datum/legacy_modifier/berserk_exhaustion, 60 SECONDS)
+							L.add_legacy_modifier(/datum/legacy_modifier/berserk_exhaustion, 60 SECONDS)
 							B.overmind.add_points(rand(10,30))
 							if(!QDELETED(drain_beam))
 								qdel(drain_beam)
@@ -100,7 +100,7 @@
 					spawn(9 SECONDS)
 						if(B && drain_beam)
 							carrier.visible_message("<span class='alien'>\The [B] siphons energy from \the [L]</span>")
-							L.add_modifier(/datum/legacy_modifier/berserk_exhaustion, 30 SECONDS)
+							L.add_legacy_modifier(/datum/legacy_modifier/berserk_exhaustion, 30 SECONDS)
 							var/total_heal = 0
 
 							if(carrier.getBruteLoss())
@@ -123,6 +123,6 @@
 								carrier.adjustCloneLoss(-5)
 								total_heal += 5
 
-							carrier.add_modifier(/datum/legacy_modifier/berserk_exhaustion, total_heal SECONDS)
+							carrier.add_legacy_modifier(/datum/legacy_modifier/berserk_exhaustion, total_heal SECONDS)
 							if(!QDELETED(drain_beam))
 								qdel(drain_beam)

@@ -24,7 +24,7 @@
 		if(L == src)
 			continue // Don't buff ourselves.
 		if(IIsAlly(L) && L.isSynthetic()) // Don't buff enemies.
-			L.add_modifier(/datum/legacy_modifier/aura/hivebot_commander_buff, null, src)
+			L.add_legacy_modifier(/datum/legacy_modifier/aura/hivebot_commander_buff, null, src)
 
 // Modifier added to friendly hivebots nearby.
 // Boosts most stats by 30%.

@@ -34,7 +34,7 @@
 		type_to_give = /datum/legacy_modifier/delayed_toxin_sting/strong
 		to_chat(src, "<span class='notice'>Our toxin will be extra potent, when it strikes.</span>")
 
-	T.add_modifier(type_to_give, 2 MINUTES)
+	T.add_legacy_modifier(type_to_give, 2 MINUTES)
 
 
 	feedback_add_details("changeling_powers","DTS")

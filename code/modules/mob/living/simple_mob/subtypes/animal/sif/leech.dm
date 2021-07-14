@@ -385,7 +385,7 @@
 			to_chat(user, span("notice","You cannot get through that host's protective gear."))
 			return
 
-	H.add_modifier(/datum/legacy_modifier/poisoned/paralysis, 15 SECONDS)
+	H.add_legacy_modifier(/datum/legacy_modifier/poisoned/paralysis, 15 SECONDS)
 
 /mob/living/simple_mob/animal/sif/leech/verb/medicate_host()
 	set category = "Abilities"
@@ -449,7 +449,7 @@
 		to_chat(src, span("alien","We feed on [O]."))
 		O.take_damage(2,silent=prob(10))
 		chemicals = min(max_chemicals, chemicals + 60)
-		host.add_modifier(/datum/legacy_modifier/grievous_wounds, 60 SECONDS)
+		host.add_legacy_modifier(/datum/legacy_modifier/grievous_wounds, 60 SECONDS)
 		adjustBruteLoss(rand(-10,-60))
 		adjustFireLoss(rand(-10,-60))
 

@@ -610,7 +610,7 @@ emp_act
 	adjust_fire_stacks(-amount * 5)
 	for(var/atom/movable/AM in contents)
 		AM.water_act(amount)
-	remove_modifiers_of_type(/datum/legacy_modifier/fire)
+	remove_legacy_modifiers_of_type(/datum/legacy_modifier/fire)
 
 	species.handle_water_damage(src, amount)
 

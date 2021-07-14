@@ -41,6 +41,6 @@
 		if(src.mind.changeling.recursive_enhancement)
 			type_to_give = /datum/legacy_modifier/enfeeble/strong
 			to_chat(src, "<span class='notice'>We make them extremely weak.</span>")
-		H.add_modifier(type_to_give, 2 MINUTES)
+		H.add_legacy_modifier(type_to_give, 2 MINUTES)
 	feedback_add_details("changeling_powers","ES")
 	return 1

@@ -102,7 +102,7 @@ the artifact triggers the rage.
 
 /datum/legacy_modifier/berserk/on_expire()
 	if(exhaustion_duration > 0 && holder.stat != DEAD)
-		holder.add_modifier(/datum/legacy_modifier/berserk_exhaustion, exhaustion_duration)
+		holder.add_legacy_modifier(/datum/legacy_modifier/berserk_exhaustion, exhaustion_duration)
 
 		if(prob(last_shock_stage))
 			to_chat(holder, "<span class='warning'>You pass out from the pain you were suppressing.</span>")
@@ -121,13 +121,13 @@ the artifact triggers the rage.
 	if(!L.is_sentient())
 		return FALSE // Drones don't feel anything.
 
-	if(L.has_modifier_of_type(/datum/legacy_modifier/berserk_exhaustion))
+	if(L.has_legacy_modifier_of_type(/datum/legacy_modifier/berserk_exhaustion))
 		if(!suppress_failure)
 			to_chat(L, "<span class='warning'>You recently berserked, and cannot do so again while exhausted.</span>")
 		return FALSE // On cooldown.
 
 	if(L.isSynthetic())
-		L.add_modifier(/datum/legacy_modifier/berserk_synthetic, 30 SECONDS)
+		L.add_legacy_modifier(/datum/legacy_modifier/berserk_synthetic, 30 SECONDS)
 		return FALSE // Borgs can get angry but their metal shell can't be pushed harder by just being mad. Same for Posibrains.
 
 	if(ishuman(L))

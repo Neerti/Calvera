@@ -18,7 +18,7 @@
 /datum/reagent/modapplying/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
 		return
-	M.add_modifier(modifier_to_add, modifier_duration, suppress_failure = TRUE)
+	M.add_legacy_modifier(modifier_to_add, modifier_duration, suppress_failure = TRUE)
 
 /datum/reagent/modapplying/cryofluid
 	name = "cryogenic slurry"
@@ -45,7 +45,7 @@
 	if(isliving(M))
 		var/mob/living/L = M
 		for(var/I = 1 to rand(1, round(amount + 1)))
-			L.add_modifier(modifier_to_add, amount * rand(modifier_duration / 2, modifier_duration * 2))
+			L.add_legacy_modifier(modifier_to_add, amount * rand(modifier_duration / 2, modifier_duration * 2))
 	return
 
 /datum/reagent/modapplying/cryofluid/touch_turf(var/turf/T, var/amount)

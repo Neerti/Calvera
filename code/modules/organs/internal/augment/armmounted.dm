@@ -142,7 +142,7 @@
 
 	if(istype(owner, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = owner
-		H.add_modifier(/datum/legacy_modifier/melee_surge, 0.75 MINUTES)
+		H.add_legacy_modifier(/datum/legacy_modifier/melee_surge, 0.75 MINUTES)
 
 /obj/item/organ/internal/augment/armmounted/shoulder/blade
 	name = "armblade implant"

@@ -89,7 +89,7 @@
 	if(confused)
 		threat /= 2
 
-	if(has_modifier_of_type(/datum/legacy_modifier/berserk))
+	if(has_legacy_modifier_of_type(/datum/legacy_modifier/berserk))
 		threat *= 2
 
 	// Handle ability to harm.
@@ -131,7 +131,7 @@
 	if(confused)
 		threat /= 2
 
-	if(has_modifier_of_type(/datum/legacy_modifier/berserk))
+	if(has_legacy_modifier_of_type(/datum/legacy_modifier/berserk))
 		threat *= 2
 
 	return threat

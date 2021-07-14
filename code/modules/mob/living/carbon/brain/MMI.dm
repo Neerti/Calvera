@@ -129,7 +129,7 @@
 	// Copy modifiers.
 	for(var/datum/legacy_modifier/M in H.legacy_modifiers)
 		if(M.flags & MODIFIER_GENETIC)
-			brainmob.add_modifier(M.type)
+			brainmob.add_legacy_modifier(M.type)
 
 	name = "Man-Machine Interface: [brainmob.real_name]"
 	icon_state = "mmi_full"

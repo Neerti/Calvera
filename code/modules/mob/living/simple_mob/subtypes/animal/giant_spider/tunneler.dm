@@ -159,7 +159,7 @@
 			to_chat(src, span("critical", "You hit something really solid!"))
 			playsound(src, "punch", 75, 1)
 			Weaken(5)
-			add_modifier(/datum/legacy_modifier/tunneler_vulnerable, 10 SECONDS)
+			add_legacy_modifier(/datum/legacy_modifier/tunneler_vulnerable, 10 SECONDS)
 			return FALSE // Hit a wall.
 
 		// Stun anyone in our way.

@@ -106,7 +106,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 		// Copy modifiers.
 		for(var/datum/legacy_modifier/M in H.legacy_modifiers)
 			if(M.flags & MODIFIER_GENETIC)
-				brainmob.add_modifier(M.type)
+				brainmob.add_legacy_modifier(M.type)
 
 	if(H.mind)
 		H.mind.transfer_to(brainmob)
@@ -264,7 +264,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	H.regenerate_icons()
 	clonemind.transfer_to(H)
 	for(var/modifier_type in R.genetic_modifiers)
-		H.add_modifier(modifier_type)
+		H.add_legacy_modifier(modifier_type)
 
 	for(var/datum/language/L in R.languages)
 		H.add_language(L.name)

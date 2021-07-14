@@ -312,7 +312,7 @@
 	else
 		duration = duration SECONDS
 
-	L.add_modifier(new_modifier_type, duration)
+	L.add_legacy_modifier(new_modifier_type, duration)
 	log_and_message_admins("has given [key_name(L)] the modifer [new_modifier_type], with a duration of [duration ? "[duration / 600] minutes" : "forever"].")
 
 /client/proc/make_sound(var/obj/O in world) // -- TLE

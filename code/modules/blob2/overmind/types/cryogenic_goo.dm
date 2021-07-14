@@ -57,5 +57,5 @@
 		env.add_thermal_energy(-10 * 1000)
 
 /datum/blob_type/cryogenic_goo/on_chunk_use(obj/item/weapon/blobcore_chunk/B, mob/living/user)
-	user.add_modifier(/datum/legacy_modifier/endothermic, 5 MINUTES)
+	user.add_legacy_modifier(/datum/legacy_modifier/endothermic, 5 MINUTES)
 	return

@@ -31,4 +31,4 @@
 		return
 
 	for(var/mob/living/L in view(2, T))
-		L.add_modifier(/datum/legacy_modifier/faraday, 30 SECONDS)
+		L.add_legacy_modifier(/datum/legacy_modifier/faraday, 30 SECONDS)

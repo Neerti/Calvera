@@ -314,10 +314,10 @@
 							H.adjustOxyLoss(-(rand(1,8)))
 
 				if(H.stat == DEAD)
-					H.add_modifier(/datum/legacy_modifier/bloodpump_corpse, 6 SECONDS)
+					H.add_legacy_modifier(/datum/legacy_modifier/bloodpump_corpse, 6 SECONDS)
 
 				else
-					H.add_modifier(/datum/legacy_modifier/bloodpump, 6 SECONDS)
+					H.add_legacy_modifier(/datum/legacy_modifier/bloodpump, 6 SECONDS)
 
 	var/turf/T = get_turf(src)
 

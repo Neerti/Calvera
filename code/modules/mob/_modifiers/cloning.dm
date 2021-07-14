@@ -101,7 +101,7 @@
 				F.can_defib = 0
 
 /datum/legacy_modifier/franken_sickness/on_expire() //Not permanent, but its child is.
-	holder.add_modifier(/datum/legacy_modifier/franken_recovery, 0)
+	holder.add_legacy_modifier(/datum/legacy_modifier/franken_recovery, 0)
 
 /datum/legacy_modifier/franken_recovery //When Franken_Sickness expires, this will be permanently applied in its place.
 	name = "neural recovery"

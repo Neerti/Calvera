@@ -125,7 +125,7 @@
 	return ..()
 
 /mob/living/simple_mob/animal/sif/kururak/should_special_attack(atom/A)
-	return has_modifier_of_type(/datum/legacy_modifier/ace)
+	return has_legacy_modifier_of_type(/datum/legacy_modifier/ace)
 
 /mob/living/simple_mob/animal/sif/kururak/do_special_attack(atom/A)
 	. = TRUE
@@ -273,7 +273,7 @@
 		else
 			L.adjustBruteLoss(damage_to_apply)
 
-		L.add_modifier(/datum/legacy_modifier/grievous_wounds, 60 SECONDS)
+		L.add_legacy_modifier(/datum/legacy_modifier/grievous_wounds, 60 SECONDS)
 
 	else if(istype(A, /obj/mecha))
 		visible_message(span("danger","\The [src] rakes its claws against \the [A]."))
@@ -293,7 +293,7 @@
 	set desc = "Tries to command your fellow pack members to follow you."
 	set category = "Abilities"
 
-	if(has_modifier_of_type(/datum/legacy_modifier/ace))
+	if(has_legacy_modifier_of_type(/datum/legacy_modifier/ace))
 		for(var/mob/living/simple_mob/animal/sif/kururak/K in hearers(7, src))
 			if(K == src)
 				continue
@@ -326,9 +326,9 @@
 /mob/living/simple_mob/animal/sif/kururak/proc/pack_gauge()	// Check incase we have a client.
 	var/mob/living/simple_mob/animal/sif/kururak/highest_instinct = detect_instinct()
 	if(highest_instinct == src)
-		add_modifier(/datum/legacy_modifier/ace, 60 SECONDS)
+		add_legacy_modifier(/datum/legacy_modifier/ace, 60 SECONDS)
 	else
-		remove_modifiers_of_type(/datum/legacy_modifier/ace)
+		remove_legacy_modifiers_of_type(/datum/legacy_modifier/ace)
 
 /mob/living/simple_mob/animal/sif/kururak/hibernate/Initialize()
 	. = ..()
@@ -353,18 +353,18 @@
 	if(istype(K))
 		var/mob/living/simple_mob/animal/sif/kururak/highest_instinct = K.detect_instinct()
 		if(highest_instinct == K)
-			K.add_modifier(/datum/legacy_modifier/ace, 60 SECONDS)
+			K.add_legacy_modifier(/datum/legacy_modifier/ace, 60 SECONDS)
 		else
-			K.remove_modifiers_of_type(/datum/legacy_modifier/ace)
+			K.remove_legacy_modifiers_of_type(/datum/legacy_modifier/ace)
 
-		if(holder.has_modifier_of_type(/datum/legacy_modifier/ace))
+		if(holder.has_legacy_modifier_of_type(/datum/legacy_modifier/ace))
 			if(leader && istype(leader, /mob/living/simple_mob/animal/sif/kururak))	// Kururaks will not follow another kururak if they're the pack leader.
 				lose_follow()
 
 		else if(highest_instinct)
 			set_follow(highest_instinct)
 
-	if(holder.has_modifier_of_type(/datum/legacy_modifier/ace))
+	if(holder.has_legacy_modifier_of_type(/datum/legacy_modifier/ace))
 		hostile = TRUE
 	else
 		hostile = initial(hostile)
@@ -397,7 +397,7 @@
 	return ..()
 
 /datum/ai_holder/simple_mob/intentional/kururak/post_melee_attack()
-	if(holder.has_modifier_of_type(/datum/legacy_modifier/ace))
+	if(holder.has_legacy_modifier_of_type(/datum/legacy_modifier/ace))
 		request_help()
 	return ..()
 

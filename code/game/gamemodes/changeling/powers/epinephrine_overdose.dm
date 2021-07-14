@@ -39,7 +39,7 @@
 	C.reagents.add_reagent("epinephrine", 20)
 
 	if(src.mind.changeling.recursive_enhancement)
-		C.add_modifier(/datum/legacy_modifier/unstoppable, 30 SECONDS)
+		C.add_legacy_modifier(/datum/legacy_modifier/unstoppable, 30 SECONDS)
 
 	feedback_add_details("changeling_powers","UNS")
 	return 1

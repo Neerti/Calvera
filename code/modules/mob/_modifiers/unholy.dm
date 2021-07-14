@@ -164,7 +164,7 @@
 	if(!L.is_sentient())
 		return FALSE // Drones don't feel anything, not even hunger.
 
-	if(L.has_modifier_of_type(/datum/legacy_modifier/berserk_exhaustion))
+	if(L.has_legacy_modifier_of_type(/datum/legacy_modifier/berserk_exhaustion))
 		to_chat(L, "<span class='warning'>You recently berserked, so you are too tired to consume.</span>")
 		return FALSE
 

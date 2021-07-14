@@ -15,7 +15,7 @@
 	if(isliving(A))
 		var/mob/living/L = A
 		L.taunt(src, TRUE)
-		L.add_modifier(/datum/legacy_modifier/hivebot_weaken, 3 SECONDS)
+		L.add_legacy_modifier(/datum/legacy_modifier/hivebot_weaken, 3 SECONDS)
 
 // Modifier applied to whatever a tank hivebot hits, intended to make the target do even less damage.
 /datum/legacy_modifier/hivebot_weaken

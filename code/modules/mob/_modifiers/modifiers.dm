@@ -114,7 +114,7 @@
 	var/list/legacy_modifiers = list() // A list of modifier datums, which can adjust certain mob numbers.
 
 /mob/living/Destroy()
-	remove_all_modifiers(TRUE)
+	remove_all_legacy_modifiers(TRUE)
 	return ..()
 
 // Called by Life().
@@ -130,9 +130,9 @@
 
 // Call this to add a modifier to a mob. First argument is the modifier type you want, second is how long it should last, in ticks.
 // Third argument is the 'source' of the modifier, if it's from someone else.  If null, it will default to the mob being applied to.
-// The SECONDS/MINUTES macro is very helpful for this.  E.g. M.add_modifier(/datum/legacy_modifier/example, 5 MINUTES)
+// The SECONDS/MINUTES macro is very helpful for this.  E.g. M.add_legacy_modifier(/datum/legacy_modifier/example, 5 MINUTES)
 // The fourth argument is a boolean to suppress failure messages, set it to true if the modifier is repeatedly applied (as chem-based legacy_modifiers are) to prevent chat-spam
-/mob/living/proc/add_modifier(var/modifier_type, var/expire_at = null, var/mob/living/origin = null, var/suppress_failure = FALSE)
+/mob/living/proc/add_legacy_modifier(var/modifier_type, var/expire_at = null, var/mob/living/origin = null, var/suppress_failure = FALSE)
 	// First, check if the mob already has this modifier.
 	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(ispath(modifier_type, M))
@@ -175,29 +175,29 @@
 	M.expire(silent)
 
 // Removes one modifier of a type
-/mob/living/proc/remove_a_modifier_of_type(var/modifier_type, var/silent = FALSE)
+/mob/living/proc/remove_a_legacy_modifier_of_type(var/modifier_type, var/silent = FALSE)
 	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(ispath(M.type, modifier_type))
 			M.expire(silent)
 			break
 
 // Removes all legacy_modifiers of a type
-/mob/living/proc/remove_modifiers_of_type(var/modifier_type, var/silent = FALSE)
+/mob/living/proc/remove_legacy_modifiers_of_type(var/modifier_type, var/silent = FALSE)
 	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(ispath(M.type, modifier_type))
 			M.expire(silent)
 
 // Removes all legacy_modifiers, useful if the mob's being deleted
-/mob/living/proc/remove_all_modifiers(var/silent = FALSE)
+/mob/living/proc/remove_all_legacy_modifiers(var/silent = FALSE)
 	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		M.expire(silent)
 
 // Checks if the mob has a modifier type.
-/mob/living/proc/has_modifier_of_type(var/modifier_type)
-	return get_modifier_of_type(modifier_type) ? TRUE : FALSE
+/mob/living/proc/has_legacy_modifier_of_type(var/modifier_type)
+	return get_legacy_modifier_of_type(modifier_type) ? TRUE : FALSE
 
 // Gets the first instance of a specific modifier type or subtype.
-/mob/living/proc/get_modifier_of_type(var/modifier_type)
+/mob/living/proc/get_legacy_modifier_of_type(var/modifier_type)
 	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(istype(M, modifier_type))
 			return M

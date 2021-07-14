@@ -602,7 +602,7 @@
 	var/mob/living/L = target
 	L.apply_effects(stun, weaken, paralyze, irradiate, stutter, eyeblur, drowsy, agony, blocked, incendiary, flammability) // add in AGONY!
 	if(modifier_type_to_apply)
-		L.add_modifier(modifier_type_to_apply, modifier_duration)
+		L.add_legacy_modifier(modifier_type_to_apply, modifier_duration)
 	return 1
 
 //called when the projectile stops flying because it Bump'd with something

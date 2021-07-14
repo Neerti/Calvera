@@ -28,7 +28,7 @@
 	var/duration = modifier_duration
 	if(duration)
 		duration = round(duration * calculate_spell_power(1.0), 1)
-	var/datum/legacy_modifier/M = L.add_modifier(modifier_type, duration, owner)
+	var/datum/legacy_modifier/M = L.add_legacy_modifier(modifier_type, duration, owner)
 	if(istype(M, /datum/legacy_modifier/technomancer))
 		var/datum/legacy_modifier/technomancer/MT = M
 		MT.spell_power = calculate_spell_power(1)

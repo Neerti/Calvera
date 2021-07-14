@@ -1028,11 +1028,11 @@ var/global/list/damage_icon_parts = list() //see UpdateDamageIcon()
 
 	remove_layer(MODIFIER_EFFECTS_LAYER)
 
-	if(!LAZYLEN(legacy_modifiers))
+	if(!LAZYLEN(modifiers))
 		return //No modifiers, no effects.
 
 	var/image/effects = new()
-	for(var/datum/legacy_modifier/M in legacy_modifiers)
+	for(var/datum/modifier/M in modifiers)
 		if(M.mob_overlay_state)
 			var/image/I = image(icon = 'icons/mob/modifier_effects.dmi', icon_state = M.mob_overlay_state)
 			effects.overlays += I //TODO, this compositing is annoying.

@@ -49,6 +49,6 @@
 
 		for(var/mob/living/L in Target)
 			L.fire_stacks += 2
-			L.add_modifier(/datum/legacy_modifier/fire/stack_managed/intense, 30 SECONDS)
+			L.add_legacy_modifier(/datum/legacy_modifier/fire/stack_managed/intense, 30 SECONDS)
 
 	return TRUE

@@ -43,8 +43,8 @@
 /datum/unit_test/modifier/start_test()
 	// Arrange.
 	subject = new subject_type(get_standard_turf())
-	subject.add_modifier(/datum/legacy_modifier/unit_test)
-	test_modifier = subject.get_modifier_of_type(/datum/legacy_modifier/unit_test)
+	subject.add_legacy_modifier(/datum/legacy_modifier/unit_test)
+	test_modifier = subject.get_legacy_modifier_of_type(/datum/legacy_modifier/unit_test)
 
 	// Act,
 	for(var/i = 1 to inputs.len)

@@ -153,14 +153,14 @@
 	modifier_lower_bound = round(modifier_lower_bound * clone_sickness_length, 1)
 	modifier_upper_bound = round(modifier_upper_bound * clone_sickness_length, 1)
 
-	H.add_modifier(H.species.cloning_modifier, rand(modifier_lower_bound, modifier_upper_bound))
+	H.add_legacy_modifier(H.species.cloning_modifier, rand(modifier_lower_bound, modifier_upper_bound))
 
 	// Modifier that doesn't do anything.
-	H.add_modifier(/datum/legacy_modifier/cloned)
+	H.add_legacy_modifier(/datum/legacy_modifier/cloned)
 
 	// This is really stupid.
 	for(var/modifier_type in R.genetic_modifiers)
-		H.add_modifier(modifier_type)
+		H.add_legacy_modifier(modifier_type)
 
 	for(var/datum/language/L in R.languages)
 		H.add_language(L.name)

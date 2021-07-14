@@ -55,7 +55,7 @@
 		if(L.can_inject(src, null, target_zone))
 			to_chat(L, span("warning", "You feel a tiny prick."))
 			if(L.get_poison_protection() < 1)
-				L.add_modifier(/datum/legacy_modifier/poisoned, 30 SECONDS)
+				L.add_legacy_modifier(/datum/legacy_modifier/poisoned, 30 SECONDS)
 				L.inflict_poison_damage(5)
 
 

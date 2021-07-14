@@ -5,7 +5,7 @@
 	var/modifier_type = null // Type to add to the mob post spawn.
 
 /datum/trait/modifier/apply_trait_post_spawn(mob/living/L)
-	L.add_modifier(modifier_type)
+	L.add_legacy_modifier(modifier_type)
 
 /datum/trait/modifier/generate_desc()
 	var/new_desc = desc

@@ -30,4 +30,4 @@
 /mob/living/simple_mob/construct/wraith/apply_melee_effects(var/atom/A)
 	if(isliving(A))
 		var/mob/living/L = A
-		L.add_modifier(/datum/legacy_modifier/deep_wounds, 30 SECONDS)
+		L.add_legacy_modifier(/datum/legacy_modifier/deep_wounds, 30 SECONDS)

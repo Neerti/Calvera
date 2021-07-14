@@ -401,7 +401,7 @@
 	)
 
 /mob/living/simple_mob/slime/xenobio/ruby/Initialize()
-	add_modifier(/datum/legacy_modifier/slime_strength, null, src) // Slime is always swole.
+	add_legacy_modifier(/datum/legacy_modifier/slime_strength, null, src) // Slime is always swole.
 	return ..()
 
 /mob/living/simple_mob/slime/xenobio/ruby/apply_melee_effects(atom/A)
@@ -557,7 +557,7 @@
 	for(var/mob/living/L in view(src, 2))
 		if(L.stat == DEAD || !IIsAlly(L))
 			continue
-		L.add_modifier(/datum/legacy_modifier/aura/slime_heal, null, src)
+		L.add_legacy_modifier(/datum/legacy_modifier/aura/slime_heal, null, src)
 
 /datum/legacy_modifier/aura/slime_heal
 	name = "slime mending"
@@ -724,7 +724,7 @@
 	for(var/mob/living/L in view(src, 2))
 		if(L.stat == DEAD || !IIsAlly(L))
 			continue
-		L.add_modifier(/datum/legacy_modifier/technomancer/haste, 5 SECONDS, src)
+		L.add_legacy_modifier(/datum/legacy_modifier/technomancer/haste, 5 SECONDS, src)
 
 
 /mob/living/simple_mob/slime/xenobio/light_pink

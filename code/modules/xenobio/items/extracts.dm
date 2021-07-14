@@ -563,14 +563,14 @@
 			if(!X.client)
 				X.enrage()
 
-		S.add_modifier(/datum/legacy_modifier/berserk, 30 SECONDS)
+		S.add_legacy_modifier(/datum/legacy_modifier/berserk, 30 SECONDS)
 
 		if(S.client) // Player slimes always have free will.
 			to_chat(S, "<span class='warning'>An intense wave of rage is felt from inside, but you remain in control of yourself.</span>")
 
 	for(var/mob/living/carbon/human/H in view(get_turf(holder.my_atom)))
 		if(H.species.name == SPECIES_PROMETHEAN)
-			H.add_modifier(/datum/legacy_modifier/berserk, 30 SECONDS)
+			H.add_legacy_modifier(/datum/legacy_modifier/berserk, 30 SECONDS)
 			to_chat(H, "<span class='warning'>An intense wave of rage is felt from inside, but you remain in control of yourself.</span>")
 
 	log_and_message_admins("Red extract reaction (enrage) has been activated in [get_area(holder.my_atom)].  Last fingerprints: [holder.my_atom.fingerprintslast]")
@@ -839,7 +839,7 @@
 
 /decl/chemical_reaction/instant/slime/ruby_swole/on_reaction(var/datum/reagents/holder)
 	for(var/mob/living/L in range(1, holder.my_atom))
-		L.add_modifier(/datum/legacy_modifier/slime_strength, 10 MINUTES, src)
+		L.add_legacy_modifier(/datum/legacy_modifier/slime_strength, 10 MINUTES, src)
 	..()
 
 
@@ -888,7 +888,7 @@
 
 /decl/chemical_reaction/instant/slime/emerald_fast/on_reaction(var/datum/reagents/holder)
 	for(var/mob/living/L in range(1, holder.my_atom))
-		L.add_modifier(/datum/legacy_modifier/slime_agility, 10 MINUTES, src)
+		L.add_legacy_modifier(/datum/legacy_modifier/slime_agility, 10 MINUTES, src)
 	..()
 
 /datum/legacy_modifier/slime_agility

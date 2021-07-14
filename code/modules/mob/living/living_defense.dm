@@ -378,8 +378,8 @@
 		clear_alert("fire")
 		update_fire()
 
-	if(has_modifier_of_type(/datum/legacy_modifier/fire))
-		remove_modifiers_of_type(/datum/legacy_modifier/fire)
+	if(has_legacy_modifier_of_type(/datum/legacy_modifier/fire))
+		remove_legacy_modifiers_of_type(/datum/legacy_modifier/fire)
 
 /mob/living/proc/update_fire()
 	return
@@ -475,7 +475,7 @@
 // Called when touching a lava tile.
 // Does roughly 100 damage to unprotected mobs, and 20 to fully protected mobs.
 /mob/living/lava_act()
-	add_modifier(/datum/legacy_modifier/fire/intense, 8 SECONDS) // Around 40 total if left to burn and without fire protection per stack.
+	add_legacy_modifier(/datum/legacy_modifier/fire/intense, 8 SECONDS) // Around 40 total if left to burn and without fire protection per stack.
 	inflict_heat_damage(40) // Another 40, however this is instantly applied to unprotected mobs.
 	adjustFireLoss(20) // Lava cannot be 100% resisted with fire protection.
 

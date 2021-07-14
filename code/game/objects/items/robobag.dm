@@ -76,7 +76,7 @@
 			if(H.getToxLoss() == 0)	// We don't exactly care about the bag being 'used' when containing a synth, unless it's got work.
 				used = FALSE
 			else
-				H.add_modifier(/datum/legacy_modifier/fbp_debug/robobag)
+				H.add_legacy_modifier(/datum/legacy_modifier/fbp_debug/robobag)
 
 /obj/structure/closet/body_bag/cryobag/robobag/attackby(obj/item/W, mob/user)
 	if(opened)
