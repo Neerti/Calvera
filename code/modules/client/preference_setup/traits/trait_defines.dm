@@ -12,7 +12,7 @@
 	if(!modifier_type)
 		new_desc = "[new_desc] This trait is not implemented yet."
 		return new_desc
-	var/datum/modifier/M = new modifier_type()
+	var/datum/legacy_modifier/M = new modifier_type()
 	if(!desc)
 		new_desc = M.desc // Use the modifier's description, if the trait doesn't have one defined.
 	var/modifier_effects = M.describe_modifier_effects()
@@ -30,21 +30,21 @@
 /datum/trait/modifier/physical/flimsy
 	name = "Flimsy"
 	desc = "You're more fragile than most, and have less of an ability to endure harm."
-	modifier_type = /datum/modifier/trait/flimsy
+	modifier_type = /datum/legacy_modifier/trait/flimsy
 	mutually_exclusive = list(/datum/trait/modifier/physical/frail)
 
 
 /datum/trait/modifier/physical/frail
 	name = "Frail"
 	desc = "Your body is very fragile, and has even less of an ability to endure harm."
-	modifier_type = /datum/modifier/trait/frail
+	modifier_type = /datum/legacy_modifier/trait/frail
 	mutually_exclusive = list(/datum/trait/modifier/physical/flimsy)
 
 
 /datum/trait/modifier/physical/haemophilia
 	name = "Haemophilia"
 	desc = "Some say that when it rains, it pours.  Unfortunately, this is also true for yourself if you get cut."
-	modifier_type = /datum/modifier/trait/haemophilia
+	modifier_type = /datum/legacy_modifier/trait/haemophilia
 
 /datum/trait/modifier/physical/haemophilia/test_for_invalidity(var/datum/category_item/player_setup_item/traits/setup)
 	if(setup.is_FBP())
@@ -56,14 +56,14 @@
 /datum/trait/modifier/physical/weak
 	name = "Weak"
 	desc = "A lack of physical strength causes a diminshed capability in close quarters combat."
-	modifier_type = /datum/modifier/trait/weak
+	modifier_type = /datum/legacy_modifier/trait/weak
 	mutually_exclusive = list(/datum/trait/modifier/physical/wimpy)
 
 
 /datum/trait/modifier/physical/wimpy
 	name = "Wimpy"
 	desc = "An extreme lack of physical strength causes a greatly diminished capability in close quarters combat."
-	modifier_type = /datum/modifier/trait/wimpy
+	modifier_type = /datum/legacy_modifier/trait/wimpy
 	mutually_exclusive = list(/datum/trait/modifier/physical/weak)
 
 
@@ -71,76 +71,76 @@
 	name = "Inaccurate"
 	desc = "You're rather inexperienced with guns, you've never used one in your life, or you're just really rusty.  \
 	Regardless, you find it quite difficult to land shots where you wanted them to go."
-	modifier_type = /datum/modifier/trait/inaccurate
+	modifier_type = /datum/legacy_modifier/trait/inaccurate
 
 /datum/trait/modifier/physical/shorter
 	name = "Shorter"
-	modifier_type = /datum/modifier/trait/shorter
+	modifier_type = /datum/legacy_modifier/trait/shorter
 	mutually_exclusive = list(/datum/trait/modifier/physical/short, /datum/trait/modifier/physical/tall, /datum/trait/modifier/physical/taller)
 
 /datum/trait/modifier/physical/short
 	name = "Short"
-	modifier_type = /datum/modifier/trait/short
+	modifier_type = /datum/legacy_modifier/trait/short
 	mutually_exclusive = list(/datum/trait/modifier/physical/shorter, /datum/trait/modifier/physical/tall, /datum/trait/modifier/physical/taller)
 
 /datum/trait/modifier/physical/tall
 	name = "Tall"
-	modifier_type = /datum/modifier/trait/tall
+	modifier_type = /datum/legacy_modifier/trait/tall
 	mutually_exclusive = list(/datum/trait/modifier/physical/shorter, /datum/trait/modifier/physical/short, /datum/trait/modifier/physical/taller)
 
 /datum/trait/modifier/physical/taller
 	name = "Taller"
-	modifier_type = /datum/modifier/trait/taller
+	modifier_type = /datum/legacy_modifier/trait/taller
 	mutually_exclusive = list(/datum/trait/modifier/physical/shorter, /datum/trait/modifier/physical/short, /datum/trait/modifier/physical/tall)
 
 /datum/trait/modifier/physical/thin
 	name = "Thin"
-	modifier_type = /datum/modifier/trait/thin
+	modifier_type = /datum/legacy_modifier/trait/thin
 	mutually_exclusive = list(/datum/trait/modifier/physical/fat, /datum/trait/modifier/physical/obese, /datum/trait/modifier/physical/thinner)
 
 /datum/trait/modifier/physical/thinner
 	name = "Rail Thin"
-	modifier_type = /datum/modifier/trait/thinner
+	modifier_type = /datum/legacy_modifier/trait/thinner
 	mutually_exclusive = list(/datum/trait/modifier/physical/fat, /datum/trait/modifier/physical/obese, /datum/trait/modifier/physical/thin)
 
 /datum/trait/modifier/physical/fat
 	name = "Broad-Shouldered"
-	modifier_type = /datum/modifier/trait/fat
+	modifier_type = /datum/legacy_modifier/trait/fat
 	mutually_exclusive = list(/datum/trait/modifier/physical/thin, /datum/trait/modifier/physical/obese, /datum/trait/modifier/physical/thinner)
 
 /datum/trait/modifier/physical/obese
 	name = "Heavily Built"
-	modifier_type = /datum/modifier/trait/obese
+	modifier_type = /datum/legacy_modifier/trait/obese
 	mutually_exclusive = list(/datum/trait/modifier/physical/fat, /datum/trait/modifier/physical/thinner, /datum/trait/modifier/physical/thin)
 
 /datum/trait/modifier/physical/colorblind_protanopia
 	name = "Protanopia"
 	desc = "You have a form of red-green colorblindness. You cannot see reds, and have trouble distinguishing them from yellows and greens."
-	modifier_type = /datum/modifier/trait/colorblind_protanopia
+	modifier_type = /datum/legacy_modifier/trait/colorblind_protanopia
 	mutually_exclusive = list(/datum/trait/modifier/physical/colorblind_deuteranopia, /datum/trait/modifier/physical/colorblind_tritanopia, /datum/trait/modifier/physical/colorblind_monochrome)
 
 /datum/trait/modifier/physical/colorblind_deuteranopia
 	name = "Deuteranopia"
 	desc = "You have a form of red-green colorblindness. You cannot see greens, and have trouble distinguishing them from yellows and reds."
-	modifier_type = /datum/modifier/trait/colorblind_deuteranopia
+	modifier_type = /datum/legacy_modifier/trait/colorblind_deuteranopia
 	mutually_exclusive = list(/datum/trait/modifier/physical/colorblind_protanopia, /datum/trait/modifier/physical/colorblind_tritanopia, /datum/trait/modifier/physical/colorblind_monochrome)
 
 /datum/trait/modifier/physical/colorblind_tritanopia
 	name = "Tritanopia"
 	desc = "You have a form of blue-yellow colorblindness. You have trouble distinguishing between blues, greens, and yellows, and see blues and violets as dim."
-	modifier_type = /datum/modifier/trait/colorblind_tritanopia
+	modifier_type = /datum/legacy_modifier/trait/colorblind_tritanopia
 	mutually_exclusive = list(/datum/trait/modifier/physical/colorblind_protanopia, /datum/trait/modifier/physical/colorblind_deuteranopia, /datum/trait/modifier/physical/colorblind_monochrome)
 
 /datum/trait/modifier/physical/colorblind_monochrome
 	name = "Monochromacy"
 	desc = "You are fully colorblind. Your condition is rare, but you can see no colors at all."
-	modifier_type = /datum/modifier/trait/colorblind_monochrome
+	modifier_type = /datum/legacy_modifier/trait/colorblind_monochrome
 	mutually_exclusive = list(/datum/trait/modifier/physical/colorblind_protanopia, /datum/trait/modifier/physical/colorblind_deuteranopia, /datum/trait/modifier/physical/colorblind_tritanopia)
 
 // These two traits might be borderline, feel free to remove if they get abused.
 /datum/trait/modifier/physical/high_metabolism
 	name = "High Metabolism"
-	modifier_type = /datum/modifier/trait/high_metabolism
+	modifier_type = /datum/legacy_modifier/trait/high_metabolism
 	mutually_exclusive = list(/datum/trait/modifier/physical/low_metabolism)
 
 /datum/trait/modifier/physical/high_metabolism/test_for_invalidity(var/datum/category_item/player_setup_item/traits/setup)
@@ -151,7 +151,7 @@
 
 /datum/trait/modifier/physical/low_metabolism
 	name = "Low Metabolism"
-	modifier_type = /datum/modifier/trait/low_metabolism
+	modifier_type = /datum/legacy_modifier/trait/low_metabolism
 	mutually_exclusive = list(/datum/trait/modifier/physical/high_metabolism)
 
 /datum/trait/modifier/physical/low_metabolism/test_for_invalidity(var/datum/category_item/player_setup_item/traits/setup)
@@ -163,7 +163,7 @@
 /datum/trait/modifier/physical/cloned
 	name = "Cloned"
 	desc = "At some point in your life, you died and were cloned."
-	modifier_type = /datum/modifier/cloned
+	modifier_type = /datum/legacy_modifier/cloned
 
 /datum/trait/modifier/physical/cloned/test_for_invalidity(var/datum/category_item/player_setup_item/traits/setup)
 	if(setup.is_FBP())
@@ -173,7 +173,7 @@
 
 /datum/trait/modifier/physical/no_clone
 	name = "Cloning Incompatability"
-	modifier_type = /datum/modifier/no_clone
+	modifier_type = /datum/legacy_modifier/no_clone
 
 /datum/trait/modifier/physical/no_clone/test_for_invalidity(var/datum/category_item/player_setup_item/traits/setup)
 	if(setup.is_FBP())
@@ -183,7 +183,7 @@
 
 /datum/trait/modifier/physical/no_borg
 	name = "Cybernetic Incompatability"
-	modifier_type = /datum/modifier/no_borg
+	modifier_type = /datum/legacy_modifier/no_borg
 
 /datum/trait/modifier/physical/no_borg/test_for_invalidity(var/datum/category_item/player_setup_item/traits/setup)
 	if(setup.is_FBP())
@@ -208,37 +208,37 @@
 /datum/trait/modifier/mental/arachnophobe
 	name = "Arachnophobic"
 	desc = "Spiders are quite creepy to most people, however for you, those chitters of pure evil inspire pure dread and fear."
-	modifier_type = /datum/modifier/trait/phobia/arachnophobe
+	modifier_type = /datum/legacy_modifier/trait/phobia/arachnophobe
 
 
 /datum/trait/modifier/mental/nyctophobe
 	name = "Nyctophobic"
 	desc = "More commonly known as the fear of darkness.  The shadows can hide many dangers, which makes the prospect of going into the depths of Maintenance rather worrisome."
-	modifier_type = /datum/modifier/trait/phobia/nyctophobe
+	modifier_type = /datum/legacy_modifier/trait/phobia/nyctophobe
 
 
 /datum/trait/modifier/mental/haemophobe
 	name = "Haemophobia"
 	desc = "Not to be confused with Haemophilia (which makes you bleed faster), Haemophobia is the fear of blood.  Seeing a bunch of blood isn't really \
 	pleasant for most people, but for you, it is very distressing."
-	modifier_type = /datum/modifier/trait/phobia/haemophobia
+	modifier_type = /datum/legacy_modifier/trait/phobia/haemophobia
 
 
 /datum/trait/modifier/mental/claustrophobe
 	name = "Claustrophobic"
 	desc = "Small spaces and tight quarters makes you feel distressed.  Unfortunately both are rather common when living in space."
-	modifier_type = /datum/modifier/trait/phobia/claustrophobe
+	modifier_type = /datum/legacy_modifier/trait/phobia/claustrophobe
 
 
 /datum/trait/modifier/mental/blennophobe
 	name = "Blennophobia"
 	desc = "Slimes are quite dangerous, but just the aspect of something being slimey is uncomfortable."
-	modifier_type = /datum/modifier/trait/phobia/blennophobe
+	modifier_type = /datum/legacy_modifier/trait/phobia/blennophobe
 
 /datum/trait/modifier/mental/trypanophobe
 	name = "Trypanophobia"
 	desc = "Syringes and needles make you very distressed. You really don't want to get sick..."
-	modifier_type = /datum/modifier/trait/phobia/trypanophobe
+	modifier_type = /datum/legacy_modifier/trait/phobia/trypanophobe
 
 /*
 // Uncomment this when/if these get finished.

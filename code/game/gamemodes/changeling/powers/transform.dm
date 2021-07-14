@@ -50,11 +50,11 @@
 	changeling_update_languages(changeling.absorbed_languages)
 	if(chosen_dna.genMods)
 		var/mob/living/carbon/human/self = src
-		for(var/datum/modifier/mod in self.modifiers)
-			self.modifiers.Remove(mod.type)
+		for(var/datum/legacy_modifier/mod in self.legacy_modifiers)
+			self.legacy_modifiers.Remove(mod.type)
 
-		for(var/datum/modifier/mod in chosen_dna.genMods)
-			self.modifiers.Add(mod.type)
+		for(var/datum/legacy_modifier/mod in chosen_dna.genMods)
+			self.legacy_modifiers.Add(mod.type)
 
 	src.verbs -= /mob/proc/changeling_transform
 	spawn(10)

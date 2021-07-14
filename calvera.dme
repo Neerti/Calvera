@@ -2192,6 +2192,7 @@
 #include "code\modules\mob\_modifiers\traits.dm"
 #include "code\modules\mob\_modifiers\traits_phobias.dm"
 #include "code\modules\mob\_modifiers\unholy.dm"
+#include "code\modules\mob\_modifiers2\modifiers2.dm"
 #include "code\modules\mob\dead\corpse.dm"
 #include "code\modules\mob\dead\death.dm"
 #include "code\modules\mob\dead\observer\login.dm"

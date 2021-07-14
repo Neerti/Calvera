@@ -24,12 +24,12 @@
 		if(L == src)
 			continue // Don't buff ourselves.
 		if(IIsAlly(L) && L.isSynthetic()) // Don't buff enemies.
-			L.add_modifier(/datum/modifier/aura/hivebot_commander_buff, null, src)
+			L.add_modifier(/datum/legacy_modifier/aura/hivebot_commander_buff, null, src)
 
 // Modifier added to friendly hivebots nearby.
 // Boosts most stats by 30%.
 // The boost is lost if the commander is too far away or dies.
-/datum/modifier/aura/hivebot_commander_buff
+/datum/legacy_modifier/aura/hivebot_commander_buff
 	name = "Strategicals"
 	on_created_text = "<span class='notice'>Signal established with commander. Optimizating combat performance...</span>"
 	on_expired_text = "<span class='warning'>Lost signal to commander. Optimization halting.</span>"

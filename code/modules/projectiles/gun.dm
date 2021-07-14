@@ -608,7 +608,7 @@
 		P.accuracy += 30
 
 	// Some modifiers make it harder or easier to hit things.
-	for(var/datum/modifier/M in user.modifiers)
+	for(var/datum/legacy_modifier/M in user.legacy_modifiers)
 		if(!isnull(M.accuracy))
 			P.accuracy += M.accuracy
 		if(!isnull(M.accuracy_dispersion))

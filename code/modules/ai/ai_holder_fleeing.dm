@@ -10,7 +10,7 @@
 
 
 /datum/ai_holder/proc/should_flee(force = FALSE)
-	if(holder.has_modifier_of_type(/datum/modifier/berserk)) // Berserked mobs will never flee, even if 'forced' to.
+	if(holder.has_modifier_of_type(/datum/legacy_modifier/berserk)) // Berserked mobs will never flee, even if 'forced' to.
 		return FALSE
 	if(force)
 		return TRUE

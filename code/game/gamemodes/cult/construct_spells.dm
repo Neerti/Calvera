@@ -319,10 +319,10 @@ proc/findNullRod(var/atom/target)
 	charge_max = 600
 
 /spell/targeted/fortify/cast(list/targets, mob/living/user)
-	if(findNullRod(user) || user.has_modifier_of_type(/datum/modifier/fortify))
+	if(findNullRod(user) || user.has_modifier_of_type(/datum/legacy_modifier/fortify))
 		charge_counter = 400
 		return
-	user.add_modifier(/datum/modifier/fortify, 1 MINUTES)
+	user.add_modifier(/datum/legacy_modifier/fortify, 1 MINUTES)
 
 /spell/targeted/occult_repair_aura
 	name = "Repair Aura"
@@ -341,10 +341,10 @@ proc/findNullRod(var/atom/target)
 	charge_max = 600
 
 /spell/targeted/occult_repair_aura/cast(list/targets, mob/living/user)
-	if(findNullRod(user) || user.has_modifier_of_type(/datum/modifier/repair_aura))
+	if(findNullRod(user) || user.has_modifier_of_type(/datum/legacy_modifier/repair_aura))
 		charge_counter = 300
 		return
-	user.add_modifier(/datum/modifier/repair_aura, 30 SECONDS)
+	user.add_modifier(/datum/legacy_modifier/repair_aura, 30 SECONDS)
 
 /spell/targeted/ambush_mode
 	name = "Toggle Ambush"
@@ -366,10 +366,10 @@ proc/findNullRod(var/atom/target)
 	if(findNullRod(user))
 		charge_counter = 50
 		return
-	if(user.has_modifier_of_type(/datum/modifier/ambush))
-		user.remove_modifiers_of_type(/datum/modifier/ambush)
+	if(user.has_modifier_of_type(/datum/legacy_modifier/ambush))
+		user.remove_modifiers_of_type(/datum/legacy_modifier/ambush)
 		return
-	user.add_modifier(/datum/modifier/ambush, 0)
+	user.add_modifier(/datum/legacy_modifier/ambush, 0)
 
 /*
  *
@@ -619,7 +619,7 @@ proc/findNullRod(var/atom/target)
 	pay_energy(5)
 	if(isliving(hit_atom))
 		var/mob/living/L = hit_atom
-		L.add_modifier(/datum/modifier/agonize, 10 SECONDS)
+		L.add_modifier(/datum/legacy_modifier/agonize, 10 SECONDS)
 
 /obj/effect/temporary_effect/pulse/agonizing_sphere
 	name = "agonizing sphere"
@@ -635,7 +635,7 @@ proc/findNullRod(var/atom/target)
 /obj/effect/temporary_effect/pulse/agonizing_sphere/on_pulse()
 	for(var/mob/living/L in view(4,src))
 		if(!iscultist(L) && !istype(L, /mob/living/simple_mob/construct))
-			L.add_modifier(/datum/modifier/agonize, 2 SECONDS)
+			L.add_modifier(/datum/legacy_modifier/agonize, 2 SECONDS)
 			if(L.isSynthetic())
 				to_chat(L, "<span class='cult'>Your chassis warps as the [src] pulses!</span>")
 				L.adjustFireLoss(4)
@@ -654,7 +654,7 @@ proc/findNullRod(var/atom/target)
 /obj/item/weapon/spell/construct/mend_occult/on_melee_cast(atom/hit_atom, mob/living/user, def_zone)
 	if(isliving(hit_atom))
 		var/mob/living/L = hit_atom
-		L.add_modifier(/datum/modifier/mend_occult, 150)
+		L.add_modifier(/datum/legacy_modifier/mend_occult, 150)
 	qdel(src)
 
 //Juggernaut Slam

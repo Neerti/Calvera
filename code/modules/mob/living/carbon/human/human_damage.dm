@@ -113,14 +113,14 @@
 /mob/living/carbon/human/adjustBruteLoss(var/amount,var/include_robo)
 	amount = amount*species.brute_mod
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_damage_percent))
 				amount *= M.incoming_damage_percent
 			if(!isnull(M.incoming_brute_damage_percent))
 				amount *= M.incoming_brute_damage_percent
 		take_overall_damage(amount, 0)
 	else
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_healing_percent))
 				amount *= M.incoming_healing_percent
 		heal_overall_damage(-amount, 0, include_robo)
@@ -130,14 +130,14 @@
 /mob/living/carbon/human/adjustFireLoss(var/amount,var/include_robo)
 	amount = amount*species.burn_mod
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_damage_percent))
 				amount *= M.incoming_damage_percent
 			if(!isnull(M.incoming_fire_damage_percent))
 				amount *= M.incoming_fire_damage_percent
 		take_overall_damage(0, amount)
 	else
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_healing_percent))
 				amount *= M.incoming_healing_percent
 		heal_overall_damage(0, -amount, include_robo)
@@ -149,14 +149,14 @@
 		var/obj/item/organ/external/O = get_organ(organ_name)
 
 		if(amount > 0)
-			for(var/datum/modifier/M in modifiers)
+			for(var/datum/legacy_modifier/M in legacy_modifiers)
 				if(!isnull(M.incoming_damage_percent))
 					amount *= M.incoming_damage_percent
 				if(!isnull(M.incoming_brute_damage_percent))
 					amount *= M.incoming_brute_damage_percent
 			O.take_damage(amount, 0, sharp=is_sharp(damage_source), edge=has_edge(damage_source), used_weapon=damage_source)
 		else
-			for(var/datum/modifier/M in modifiers)
+			for(var/datum/legacy_modifier/M in legacy_modifiers)
 				if(!isnull(M.incoming_healing_percent))
 					amount *= M.incoming_healing_percent
 			//if you don't want to heal robot organs, they you will have to check that yourself before using this proc.
@@ -170,14 +170,14 @@
 		var/obj/item/organ/external/O = get_organ(organ_name)
 
 		if(amount > 0)
-			for(var/datum/modifier/M in modifiers)
+			for(var/datum/legacy_modifier/M in legacy_modifiers)
 				if(!isnull(M.incoming_damage_percent))
 					amount *= M.incoming_damage_percent
 				if(!isnull(M.incoming_fire_damage_percent))
 					amount *= M.incoming_fire_damage_percent
 			O.take_damage(0, amount, sharp=is_sharp(damage_source), edge=has_edge(damage_source), used_weapon=damage_source)
 		else
-			for(var/datum/modifier/M in modifiers)
+			for(var/datum/legacy_modifier/M in legacy_modifiers)
 				if(!isnull(M.incoming_healing_percent))
 					amount *= M.incoming_healing_percent
 			//if you don't want to heal robot organs, they you will have to check that yourself before using this proc.
@@ -490,7 +490,7 @@ This function restores all organs.
 			damageoverlaytemp = 20
 			damage = damage*species.brute_mod
 
-			for(var/datum/modifier/M in modifiers)
+			for(var/datum/legacy_modifier/M in legacy_modifiers)
 				if(!isnull(M.incoming_damage_percent))
 					damage *= M.incoming_damage_percent
 				if(!isnull(M.incoming_brute_damage_percent))
@@ -502,7 +502,7 @@ This function restores all organs.
 			damageoverlaytemp = 20
 			damage = damage*species.burn_mod
 
-			for(var/datum/modifier/M in modifiers)
+			for(var/datum/legacy_modifier/M in legacy_modifiers)
 				if(!isnull(M.incoming_damage_percent))
 					damage *= M.incoming_damage_percent
 				if(!isnull(M.incoming_brute_damage_percent))

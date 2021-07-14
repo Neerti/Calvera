@@ -52,4 +52,4 @@
 
 /datum/blob_type/volatile_alluvium/on_chunk_use(obj/item/weapon/blobcore_chunk/B, mob/living/user)
 	if(user)
-		user.add_modifier(/datum/modifier/fortify, 60 SECONDS)
+		user.add_modifier(/datum/legacy_modifier/fortify, 60 SECONDS)

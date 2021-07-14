@@ -168,8 +168,8 @@
 /mob/living/emp_act(severity)
 	var/list/L = src.get_contents()
 
-	if(LAZYLEN(modifiers))
-		for(var/datum/modifier/M in modifiers)
+	if(LAZYLEN(legacy_modifiers))
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.emp_modifier))
 				severity = CLAMP(severity + M.emp_modifier, 1, 5)
 
@@ -378,8 +378,8 @@
 		clear_alert("fire")
 		update_fire()
 
-	if(has_modifier_of_type(/datum/modifier/fire))
-		remove_modifiers_of_type(/datum/modifier/fire)
+	if(has_modifier_of_type(/datum/legacy_modifier/fire))
+		remove_modifiers_of_type(/datum/legacy_modifier/fire)
 
 /mob/living/proc/update_fire()
 	return
@@ -475,7 +475,7 @@
 // Called when touching a lava tile.
 // Does roughly 100 damage to unprotected mobs, and 20 to fully protected mobs.
 /mob/living/lava_act()
-	add_modifier(/datum/modifier/fire/intense, 8 SECONDS) // Around 40 total if left to burn and without fire protection per stack.
+	add_modifier(/datum/legacy_modifier/fire/intense, 8 SECONDS) // Around 40 total if left to burn and without fire protection per stack.
 	inflict_heat_damage(40) // Another 40, however this is instantly applied to unprotected mobs.
 	adjustFireLoss(20) // Lava cannot be 100% resisted with fire protection.
 
@@ -555,7 +555,7 @@
 // Returns a number to determine if something is harder or easier to hit than normal.
 /mob/living/proc/get_evasion()
 	var/result = evasion // First we get the 'base' evasion.  Generally this is zero.
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.evasion))
 			result += M.evasion
 	return result

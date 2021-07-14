@@ -51,7 +51,7 @@
 	else
 		effects = new()
 
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(M.mob_overlay_state)
 			var/image/I = image("icon" = 'icons/mob/modifier_effects.dmi', "icon_state" = M.mob_overlay_state)
 			I.appearance_flags = RESET_COLOR // So colored mobs don't affect the overlay.

@@ -121,7 +121,7 @@ var/global/list/damage_icon_parts = list() //see UpdateDamageIcon()
 	desired_scale_x *= species.icon_scale_x
 	desired_scale_y *= species.icon_scale_y
 
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.icon_scale_x_percent))
 			desired_scale_x *= M.icon_scale_x_percent
 		if(!isnull(M.icon_scale_y_percent))
@@ -1028,11 +1028,11 @@ var/global/list/damage_icon_parts = list() //see UpdateDamageIcon()
 
 	remove_layer(MODIFIER_EFFECTS_LAYER)
 
-	if(!LAZYLEN(modifiers))
+	if(!LAZYLEN(legacy_modifiers))
 		return //No modifiers, no effects.
 
 	var/image/effects = new()
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(M.mob_overlay_state)
 			var/image/I = image(icon = 'icons/mob/modifier_effects.dmi', icon_state = M.mob_overlay_state)
 			effects.overlays += I //TODO, this compositing is annoying.

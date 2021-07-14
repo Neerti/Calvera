@@ -208,7 +208,7 @@
 	SA_bonus_damage = 35 // 50 total on animals.
 	SA_vulnerability = SA_ANIMAL
 
-/obj/item/projectile/bullet/rifle/a145 // 14.5×114mm is bigger than a .50 BMG round.
+/obj/item/projectile/bullet/rifle/a145 // 14.5ï¿½114mm is bigger than a .50 BMG round.
 	fire_sound = 'sound/weapons/Gunshot_cannon.ogg' // This is literally an anti-tank rifle caliber. It better sound like a fucking cannon.
 	damage = 80
 	stun = 3
@@ -287,7 +287,7 @@
 	damage = 2
 	incendiary = 0
 	flammability = 2
-	modifier_type_to_apply = /datum/modifier/fire/stack_managed/weak
+	modifier_type_to_apply = /datum/legacy_modifier/fire/stack_managed/weak
 	modifier_duration = 20 SECONDS
 	range = 6
 	agony = 0

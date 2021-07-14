@@ -401,7 +401,7 @@
 	)
 
 /mob/living/simple_mob/slime/xenobio/ruby/Initialize()
-	add_modifier(/datum/modifier/slime_strength, null, src) // Slime is always swole.
+	add_modifier(/datum/legacy_modifier/slime_strength, null, src) // Slime is always swole.
 	return ..()
 
 /mob/living/simple_mob/slime/xenobio/ruby/apply_melee_effects(atom/A)
@@ -557,9 +557,9 @@
 	for(var/mob/living/L in view(src, 2))
 		if(L.stat == DEAD || !IIsAlly(L))
 			continue
-		L.add_modifier(/datum/modifier/aura/slime_heal, null, src)
+		L.add_modifier(/datum/legacy_modifier/aura/slime_heal, null, src)
 
-/datum/modifier/aura/slime_heal
+/datum/legacy_modifier/aura/slime_heal
 	name = "slime mending"
 	desc = "You feel somewhat gooy."
 	mob_overlay_state = "pink_sparkles"
@@ -569,7 +569,7 @@
 	on_created_text = "<span class='warning'>Twinkling spores of goo surround you.  It makes you feel healthier.</span>"
 	on_expired_text = "<span class='notice'>The spores of goo have faded, although you feel much healthier than before.</span>"
 
-/datum/modifier/aura/slime_heal/tick()
+/datum/legacy_modifier/aura/slime_heal/tick()
 	if(holder.stat == DEAD)
 		expire()
 
@@ -724,7 +724,7 @@
 	for(var/mob/living/L in view(src, 2))
 		if(L.stat == DEAD || !IIsAlly(L))
 			continue
-		L.add_modifier(/datum/modifier/technomancer/haste, 5 SECONDS, src)
+		L.add_modifier(/datum/legacy_modifier/technomancer/haste, 5 SECONDS, src)
 
 
 /mob/living/simple_mob/slime/xenobio/light_pink

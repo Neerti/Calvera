@@ -218,7 +218,7 @@
 	if(force_max_speed)
 		return -3
 
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.haste) && M.haste == TRUE)
 			return -3
 		if(!isnull(M.slowdown))

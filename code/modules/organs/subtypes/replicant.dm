@@ -149,7 +149,7 @@
 	if(((damage_tally >= 50 || prev_damage_tally >= 50) && prev_damage_tally - damage_tally < 0) || pain_tally >= 60)
 		if(world.time > last_activation_time + 60 SECONDS)
 			last_activation_time = world.time
-			owner.add_modifier(/datum/modifier/berserk, 20 SECONDS)
+			owner.add_modifier(/datum/legacy_modifier/berserk, 20 SECONDS)
 			take_damage(5)
 
 /obj/item/organ/internal/lungs/replicant/mending

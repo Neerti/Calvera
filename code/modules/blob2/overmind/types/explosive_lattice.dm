@@ -55,4 +55,4 @@
 		return
 
 	for(var/mob/living/L in view(1, T))
-		L.add_modifier(/datum/modifier/blastshield, 30 SECONDS)
+		L.add_modifier(/datum/legacy_modifier/blastshield, 30 SECONDS)

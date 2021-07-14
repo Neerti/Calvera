@@ -58,7 +58,7 @@ var/datum/species/shapeshifter/promethean/prometheans
 	flash_mod =		0.5 //No centralized, lensed eyes.
 	item_slowdown_mod = 1.33
 
-	cloning_modifier = /datum/modifier/cloning_sickness/promethean
+	cloning_modifier = /datum/legacy_modifier/cloning_sickness/promethean
 
 	cold_level_1 = 280 //Default 260 - Lower is better
 	cold_level_2 = 220 //Default 200

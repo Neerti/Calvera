@@ -16,10 +16,10 @@
 	cast_methods = CAST_MELEE
 	aspect = ASPECT_BIOMED
 	light_color = "#FF5C5C"
-	modifier_type = /datum/modifier/technomancer/mend_life
+	modifier_type = /datum/legacy_modifier/technomancer/mend_life
 	modifier_duration = 10 SECONDS
 
-/datum/modifier/technomancer/mend_life
+/datum/legacy_modifier/technomancer/mend_life
 	name = "mend life"
 	desc = "You feel rather refreshed."
 	mob_overlay_state = "green_sparkles"
@@ -28,7 +28,7 @@
 	on_expired_text = "<span class='notice'>The sparkles have faded, although you feel healthier than before.</span>"
 	stacks = MODIFIER_STACK_EXTEND
 
-/datum/modifier/technomancer/mend_life/tick()
+/datum/legacy_modifier/technomancer/mend_life/tick()
 	if(holder.isSynthetic()) // Don't heal synths!
 		expire()
 		return

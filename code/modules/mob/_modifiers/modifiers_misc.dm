@@ -40,7 +40,7 @@ the artifact triggers the rage.
 
 */
 
-/datum/modifier/berserk
+/datum/legacy_modifier/berserk
 	name = "berserk"
 	desc = "You are filled with an overwhelming rage."
 	client_color = "#FF5555" // Make everything red!
@@ -71,17 +71,17 @@ the artifact triggers the rage.
 
 
 // For changelings.
-/datum/modifier/berserk/changeling
+/datum/legacy_modifier/berserk/changeling
 	on_created_text = "<span class='critical'>We feel an intense and overwhelming rage overtake us as we go berserk!</span>"
 	on_expired_text = "<span class='notice'>The blaze of rage inside us has ran out.</span>"
 
 // For changelings who bought the Recursive Enhancement evolution.
-/datum/modifier/berserk/changeling/recursive
+/datum/legacy_modifier/berserk/changeling/recursive
 	exhaustion_duration = 1 MINUTE
 	nutrition_cost = 75
 
 
-/datum/modifier/berserk/on_applied()
+/datum/legacy_modifier/berserk/on_applied()
 	if(ishuman(holder)) // Most other mobs don't really use nutrition and can't get it back.
 		holder.adjust_nutrition(-nutrition_cost)
 	holder.visible_message("<span class='critical'>\The [holder] descends into an all consuming rage!</span>")
@@ -100,9 +100,9 @@ the artifact triggers the rage.
 		last_shock_stage = H.shock_stage
 		H.shock_stage = 0
 
-/datum/modifier/berserk/on_expire()
+/datum/legacy_modifier/berserk/on_expire()
 	if(exhaustion_duration > 0 && holder.stat != DEAD)
-		holder.add_modifier(/datum/modifier/berserk_exhaustion, exhaustion_duration)
+		holder.add_modifier(/datum/legacy_modifier/berserk_exhaustion, exhaustion_duration)
 
 		if(prob(last_shock_stage))
 			to_chat(holder, "<span class='warning'>You pass out from the pain you were suppressing.</span>")
@@ -112,7 +112,7 @@ the artifact triggers the rage.
 			var/mob/living/carbon/human/H = holder
 			H.shock_stage = last_shock_stage
 
-/datum/modifier/berserk/can_apply(var/mob/living/L, var/suppress_failure = FALSE)
+/datum/legacy_modifier/berserk/can_apply(var/mob/living/L, var/suppress_failure = FALSE)
 	if(L.stat)
 		if(!suppress_failure)
 			to_chat(L, "<span class='warning'>You can't be unconscious or dead to berserk.</span>")
@@ -121,13 +121,13 @@ the artifact triggers the rage.
 	if(!L.is_sentient())
 		return FALSE // Drones don't feel anything.
 
-	if(L.has_modifier_of_type(/datum/modifier/berserk_exhaustion))
+	if(L.has_modifier_of_type(/datum/legacy_modifier/berserk_exhaustion))
 		if(!suppress_failure)
 			to_chat(L, "<span class='warning'>You recently berserked, and cannot do so again while exhausted.</span>")
 		return FALSE // On cooldown.
 
 	if(L.isSynthetic())
-		L.add_modifier(/datum/modifier/berserk_synthetic, 30 SECONDS)
+		L.add_modifier(/datum/legacy_modifier/berserk_synthetic, 30 SECONDS)
 		return FALSE // Borgs can get angry but their metal shell can't be pushed harder by just being mad. Same for Posibrains.
 
 	if(ishuman(L))
@@ -143,13 +143,13 @@ the artifact triggers the rage.
 
 	return ..()
 
-/datum/modifier/berserk/tick()
+/datum/legacy_modifier/berserk/tick()
 	if(holder.stat == DEAD)
 		expire(silent = TRUE)
 
 
 // Applied when berserk expires. Acts as a downside as well as the cooldown for berserk.
-/datum/modifier/berserk_exhaustion
+/datum/legacy_modifier/berserk_exhaustion
 	name = "exhaustion"
 	desc = "You recently exerted yourself extremely hard, and need a rest."
 
@@ -163,13 +163,13 @@ the artifact triggers the rage.
 	disable_duration_percent = 1.5
 	evasion = -30
 
-/datum/modifier/berserk_exhaustion/on_applied()
+/datum/legacy_modifier/berserk_exhaustion/on_applied()
 	holder.visible_message("<span class='warning'>\The [holder] looks exhausted.</span>")
 
 
 // Synth version with no benefits due to a loss of focus inside a metal shell, which can't be pushed harder just be being mad.
 // Fortunately there is no exhaustion or nutrition cost.
-/datum/modifier/berserk_synthetic
+/datum/legacy_modifier/berserk_synthetic
 	name = "recklessness"
 	desc = "You are filled with an overwhelming rage, however your metal shell prevents taking advantage of this."
 	client_color = "#FF0000" // Make everything red!
@@ -186,7 +186,7 @@ the artifact triggers the rage.
 	evasion = -45				// Too angry to dodge.
 
 // Speedy, but not hasted.
-/datum/modifier/sprinting
+/datum/legacy_modifier/sprinting
 	name = "sprinting"
 	desc = "You are filled with energy!"
 
@@ -198,7 +198,7 @@ the artifact triggers the rage.
 	disable_duration_percent = 0.8
 
 // Speedy, but not berserked.
-/datum/modifier/melee_surge
+/datum/legacy_modifier/melee_surge
 	name = "melee surge"
 	desc = "You are filled with energy!"
 
@@ -212,7 +212,7 @@ the artifact triggers the rage.
 
 // Non-cult version of deep wounds.
 // Surprisingly, more dangerous.
-/datum/modifier/grievous_wounds
+/datum/legacy_modifier/grievous_wounds
 	name = "grievous wounds"
 	desc = "Your wounds are not easily mended."
 
@@ -229,7 +229,7 @@ the artifact triggers the rage.
 
 // Applied when near something very cold.
 // Reduces mobility, attack speed.
-/datum/modifier/chilled
+/datum/legacy_modifier/chilled
 	name = "chilled"
 	desc = "You feel yourself freezing up. Its hard to move."
 	mob_overlay_state = "chilled"
@@ -247,7 +247,7 @@ the artifact triggers the rage.
 // Similar to being on fire, except poison tends to be more long term.
 // Antitoxins will remove stacks over time.
 // Synthetics can't receive this.
-/datum/modifier/poisoned
+/datum/legacy_modifier/poisoned
 	name = "poisoned"
 	desc = "You have poison inside of you. It will cause harm over a long span of time if not cured."
 	mob_overlay_state = "poisoned"
@@ -257,40 +257,40 @@ the artifact triggers the rage.
 	stacks = MODIFIER_STACK_ALLOWED // Multiple instances will hurt a lot.
 	var/damage_per_tick = 1
 
-/datum/modifier/poisoned/weak
+/datum/legacy_modifier/poisoned/weak
 	damage_per_tick = 0.5
 
-/datum/modifier/poisoned/strong
+/datum/legacy_modifier/poisoned/strong
 	damage_per_tick = 2
 
-/datum/modifier/poisoned/tick()
+/datum/legacy_modifier/poisoned/tick()
 	if(holder.stat == DEAD)
 		expire(silent = TRUE)
 	holder.inflict_poison_damage(damage_per_tick)
 
-/datum/modifier/poisoned/can_apply(mob/living/L)
+/datum/legacy_modifier/poisoned/can_apply(mob/living/L)
 	if(L.isSynthetic())
 		return FALSE
 	if(L.get_poison_protection() >= 1)
 		return FALSE
 	return TRUE
 
-/datum/modifier/poisoned/paralysis
+/datum/legacy_modifier/poisoned/paralysis
 	desc = "You have poison inside of you. It will cause harm over a long span of time if not cured, and may cause temporary paralysis."
 	on_created_text = "<span class='warning'>You feel incredibly weak...</span>"
 	damage_per_tick = 0.75
 
-/datum/modifier/poisoned/paralysis/tick()
+/datum/legacy_modifier/poisoned/paralysis/tick()
 	..()
 	if(prob(5))
 		holder.Paralyse(3)
 
-/datum/modifier/poisoned/paralysis/on_applied()
+/datum/legacy_modifier/poisoned/paralysis/on_applied()
 	..()
 	holder.Paralyse(4)
 
 // Pulse modifier.
-/datum/modifier/false_pulse
+/datum/legacy_modifier/false_pulse
 	name = "false pulse"
 	desc = "Your blood flows, despite all other factors."
 
@@ -300,7 +300,7 @@ the artifact triggers the rage.
 
 	pulse_set_level = PULSE_NORM
 
-/datum/modifier/slow_pulse
+/datum/legacy_modifier/slow_pulse
 	name = "slow pulse"
 	desc = "Your blood flows slower."
 
@@ -313,7 +313,7 @@ the artifact triggers the rage.
 	pulse_modifier = -1
 
 // Temperature Normalizer.
-/datum/modifier/homeothermic
+/datum/legacy_modifier/homeothermic
 	name = "temperature resistance"
 	desc = "Your body normalizes to room temperature."
 
@@ -321,11 +321,11 @@ the artifact triggers the rage.
 	on_expired_text = "<span class='notice'>You feel.. still probably comfortable.</span>"
 	stacks = MODIFIER_STACK_EXTEND
 
-/datum/modifier/homeothermic/tick()
+/datum/legacy_modifier/homeothermic/tick()
 	..()
 	holder.bodytemperature = round((holder.bodytemperature + T20C) / 2)
 
-/datum/modifier/exothermic
+/datum/legacy_modifier/exothermic
 	name = "heat resistance"
 	desc = "Your body lowers to room temperature."
 
@@ -333,12 +333,12 @@ the artifact triggers the rage.
 	on_expired_text = "<span class='notice'>You feel.. still probably comfortable.</span>"
 	stacks = MODIFIER_STACK_EXTEND
 
-/datum/modifier/exothermic/tick()
+/datum/legacy_modifier/exothermic/tick()
 	..()
 	if(holder.bodytemperature > T20C)
 		holder.bodytemperature = round((holder.bodytemperature + T20C) / 2)
 
-/datum/modifier/endothermic
+/datum/legacy_modifier/endothermic
 	name = "cold resistance"
 	desc = "Your body rises to room temperature."
 
@@ -346,13 +346,13 @@ the artifact triggers the rage.
 	on_expired_text = "<span class='notice'>You feel.. still probably comfortable.</span>"
 	stacks = MODIFIER_STACK_EXTEND
 
-/datum/modifier/endothermic/tick()
+/datum/legacy_modifier/endothermic/tick()
 	..()
 	if(holder.bodytemperature < T20C)
 		holder.bodytemperature = round((holder.bodytemperature + T20C) / 2)
 
 // Nullifies EMP.
-/datum/modifier/faraday
+/datum/legacy_modifier/faraday
 	name = "EMP shielding"
 	desc = "You are covered in some form of faraday shielding. EMPs have no effect."
 	mob_overlay_state = "electricity"
@@ -364,7 +364,7 @@ the artifact triggers the rage.
 	emp_modifier = 5
 
 // Nullifies explosions.
-/datum/modifier/blastshield
+/datum/legacy_modifier/blastshield
 	name = "Blast Shielding"
 	desc = "You are protected from explosions somehow."
 	mob_overlay_state = "electricity"
@@ -376,7 +376,7 @@ the artifact triggers the rage.
 	explosion_modifier = 3
 
 // Kills on expiration.
-/datum/modifier/doomed
+/datum/legacy_modifier/doomed
 	name = "Doomed"
 	desc = "You are doomed."
 
@@ -384,25 +384,25 @@ the artifact triggers the rage.
 	on_expired_text = "<span class='warning'>You feel the life drain from your body.</span>"
 	stacks = MODIFIER_STACK_EXTEND
 
-/datum/modifier/doomed/on_expire()
+/datum/legacy_modifier/doomed/on_expire()
 	if(holder.stat != DEAD)
 		holder.visible_message("<span class='alien'>\The [holder] collapses, the life draining from their body.</span>")
 		holder.death()
 
-/datum/modifier/outline_test
+/datum/legacy_modifier/outline_test
 	name = "Outline Test"
 	desc = "This only exists to prove filter effects work and gives an example of how to animate() the resulting filter object."
 
 	filter_parameters = list(type = "outline", size = 1, color = "#FFFFFF", flags = OUTLINE_SHARP)
 
-/datum/modifier/outline_test/tick()
+/datum/legacy_modifier/outline_test/tick()
 	animate(filter_instance, size = 3, time = 0.25 SECONDS)
 	animate(size = 1, 0.25 SECONDS)
 
 
 // Acts as a psuedo-godmode, yet probably is more reliable than the actual var for it nowdays.
 // Can't protect from instantly killing things like singulos.
-/datum/modifier/invulnerable
+/datum/legacy_modifier/invulnerable
 	name = "invulnerable"
 	desc = "You are almost immune to harm, for a little while at least."
 	stacks = MODIFIER_STACK_EXTEND
@@ -419,7 +419,7 @@ the artifact triggers the rage.
 // Reduces resistance to "elements".
 // Note that most things that do give resistance gives 100% protection,
 // and due to multiplicitive stacking, this modifier won't do anything to change that.
-/datum/modifier/elemental_vulnerability
+/datum/legacy_modifier/elemental_vulnerability
 	name = "elemental vulnerability"
 	desc = "You're more vulnerable to extreme temperatures and electricity."
 	stacks = MODIFIER_STACK_EXTEND
@@ -428,7 +428,7 @@ the artifact triggers the rage.
 	cold_protection = -0.5
 	siemens_coefficient = 1.5
 
-/datum/modifier/entangled
+/datum/legacy_modifier/entangled
 	name = "entangled"
 	desc = "Its hard to move."
 

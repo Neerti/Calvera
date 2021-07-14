@@ -99,7 +99,7 @@
 /datum/ai_holder/simple_mob/xenobio_slime/red/adjust_discipline(amount, silent)
 	if(amount > 0 && !rabid)
 		holder.say("Grrr...")
-		holder.add_modifier(/datum/modifier/berserk, 30 SECONDS)
+		holder.add_modifier(/datum/legacy_modifier/berserk, 30 SECONDS)
 		enrage()
 
 /datum/ai_holder/simple_mob/xenobio_slime/handle_special_strategical()

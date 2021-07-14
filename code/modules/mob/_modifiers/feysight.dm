@@ -1,4 +1,4 @@
-/datum/modifier/feysight
+/datum/legacy_modifier/feysight
 	name = "feysight"
 	desc = "You are filled with an inner peace, and widened sight."
 	client_color = "#42e6ca"
@@ -10,15 +10,15 @@
 	accuracy = -15
 	accuracy_dispersion = 1
 
-/datum/modifier/feysight/on_applied()
+/datum/legacy_modifier/feysight/on_applied()
 	holder.see_invisible = 60
 	holder.see_invisible_default = 60
 
-/datum/modifier/feysight/on_expire()
+/datum/legacy_modifier/feysight/on_expire()
 	holder.see_invisible_default = initial(holder.see_invisible_default)
 	holder.see_invisible = holder.see_invisible_default
 
-/datum/modifier/feysight/can_apply(var/mob/living/L)
+/datum/legacy_modifier/feysight/can_apply(var/mob/living/L)
 	if(L.stat)
 		to_chat(L, "<span class='warning'>You can't be unconscious or dead to experience tranquility.</span>")
 		return FALSE
@@ -34,7 +34,7 @@
 
 	return ..()
 
-/datum/modifier/feysight/tick()
+/datum/legacy_modifier/feysight/tick()
 	..()
 
 	if(ishuman(holder))

@@ -74,7 +74,7 @@
 
 	if(!mrate_static == TRUE)
 		// Modifiers
-		for(var/datum/modifier/mod in M.modifiers)
+		for(var/datum/legacy_modifier/mod in M.legacy_modifiers)
 			if(!isnull(mod.metabolism_percent))
 				removed *= mod.metabolism_percent
 				ingest_rem_mult *= mod.metabolism_percent

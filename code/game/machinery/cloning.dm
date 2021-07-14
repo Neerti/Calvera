@@ -90,7 +90,7 @@
 					return 0
 
 	for(var/modifier_type in R.genetic_modifiers)	//Can't be cloned, even if they had a previous scan
-		if(istype(modifier_type, /datum/modifier/no_clone))
+		if(istype(modifier_type, /datum/legacy_modifier/no_clone))
 			return 0
 
 	// Remove biomass when the cloning is started, rather than when the guy pops out
@@ -156,7 +156,7 @@
 	H.add_modifier(H.species.cloning_modifier, rand(modifier_lower_bound, modifier_upper_bound))
 
 	// Modifier that doesn't do anything.
-	H.add_modifier(/datum/modifier/cloned)
+	H.add_modifier(/datum/legacy_modifier/cloned)
 
 	// This is really stupid.
 	for(var/modifier_type in R.genetic_modifiers)

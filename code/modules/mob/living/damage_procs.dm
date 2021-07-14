@@ -114,7 +114,7 @@
 	if(flammable)	adjust_fire_stacks(flammable)
 	if(ignite)
 		if(ignite >= 3)
-			add_modifier(/datum/modifier/fire/stack_managed/intense, 60 SECONDS)
+			add_modifier(/datum/legacy_modifier/fire/stack_managed/intense, 60 SECONDS)
 		else
-			add_modifier(/datum/modifier/fire/stack_managed, 45 * ignite SECONDS)
+			add_modifier(/datum/legacy_modifier/fire/stack_managed, 45 * ignite SECONDS)
 	return 1

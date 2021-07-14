@@ -53,8 +53,8 @@
 			to_chat(user, "<span class='warning'>You aren't sure where this brain came from, but you're pretty sure it's useless.</span>")
 			return
 
-		for(var/modifier_type in B.brainmob.modifiers)	//Can't be shoved in an MMI.
-			if(istype(modifier_type, /datum/modifier/no_borg))
+		for(var/modifier_type in B.brainmob.legacy_modifiers)	//Can't be shoved in an MMI.
+			if(istype(modifier_type, /datum/legacy_modifier/no_borg))
 				to_chat(user, "<span class='warning'>\The [src] appears to reject this brain.  It is incompatable.</span>")
 				return
 
@@ -127,7 +127,7 @@
 	brainmob.container = src
 
 	// Copy modifiers.
-	for(var/datum/modifier/M in H.modifiers)
+	for(var/datum/legacy_modifier/M in H.legacy_modifiers)
 		if(M.flags & MODIFIER_GENETIC)
 			brainmob.add_modifier(M.type)
 

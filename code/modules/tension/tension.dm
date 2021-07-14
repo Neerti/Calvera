@@ -89,7 +89,7 @@
 	if(confused)
 		threat /= 2
 
-	if(has_modifier_of_type(/datum/modifier/berserk))
+	if(has_modifier_of_type(/datum/legacy_modifier/berserk))
 		threat *= 2
 
 	// Handle ability to harm.
@@ -131,7 +131,7 @@
 	if(confused)
 		threat /= 2
 
-	if(has_modifier_of_type(/datum/modifier/berserk))
+	if(has_modifier_of_type(/datum/legacy_modifier/berserk))
 		threat *= 2
 
 	return threat
@@ -166,7 +166,7 @@
 		else
 			damage_guess += 5
 
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.outgoing_melee_damage_percent))
 				damage_guess *= M.outgoing_melee_damage_percent
 
@@ -176,7 +176,7 @@
 		var/weapon_attack_speed = get_attack_speed(I) / (1 SECOND)
 		var/weapon_damage = I.force
 
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.outgoing_melee_damage_percent))
 				weapon_damage *= M.outgoing_melee_damage_percent
 

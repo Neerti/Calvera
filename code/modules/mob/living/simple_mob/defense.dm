@@ -114,7 +114,7 @@
 	if(!blinded)
 		flash_eyes()
 
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.explosion_modifier))
 			severity = CLAMP(severity + M.explosion_modifier, 1, 4)
 
@@ -144,8 +144,8 @@
 	. = 1 - . // Invert from 1 = immunity to 0 = immunity.
 
 	// Doing it this way makes multiplicative stacking not get out of hand, so two modifiers that give 0.5 protection will be combined to 0.75 in the end.
-	for(var/thing in modifiers)
-		var/datum/modifier/M = thing
+	for(var/thing in legacy_modifiers)
+		var/datum/legacy_modifier/M = thing
 		if(!isnull(M.cold_protection))
 			. *= 1 - M.cold_protection
 
@@ -169,8 +169,8 @@
 	. = 1 - . // Invert from 1 = immunity to 0 = immunity.
 
 	// Doing it this way makes multiplicative stacking not get out of hand, so two modifiers that give 0.5 protection will be combined to 0.75 in the end.
-	for(var/thing in modifiers)
-		var/datum/modifier/M = thing
+	for(var/thing in legacy_modifiers)
+		var/datum/legacy_modifier/M = thing
 		if(!isnull(M.heat_protection))
 			. *= 1 - M.heat_protection
 
@@ -196,8 +196,8 @@
 	. = 1 - . // Invert from 1 = immunity to 0 = immunity.
 
 	// Doing it this way makes multiplicative stacking not get out of hand, so two modifiers that give 0.5 protection will be combined to 0.75 in the end.
-	for(var/thing in modifiers)
-		var/datum/modifier/M = thing
+	for(var/thing in legacy_modifiers)
+		var/datum/legacy_modifier/M = thing
 		if(!isnull(M.siemens_coefficient))
 			. *= M.siemens_coefficient
 
@@ -254,8 +254,8 @@
 	if(isnull(armorval))
 		armorval = 0
 
-	for(var/thing in modifiers)
-		var/datum/modifier/M = thing
+	for(var/thing in legacy_modifiers)
+		var/datum/legacy_modifier/M = thing
 		var/modifier_armor = LAZYACCESS(M.armor_percent, attack_flag)
 		if(modifier_armor)
 			armorval += modifier_armor
@@ -267,8 +267,8 @@
 	if(isnull(armorval))
 		armorval = 0
 
-	for(var/thing in modifiers)
-		var/datum/modifier/M = thing
+	for(var/thing in legacy_modifiers)
+		var/datum/legacy_modifier/M = thing
 		var/modifier_armor = LAZYACCESS(M.armor_flat, attack_flag)
 		if(modifier_armor)
 			armorval += modifier_armor

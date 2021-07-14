@@ -43,4 +43,4 @@
 	set desc = "Enrage and become vastly stronger for a period of time, however you will be weaker afterwards."
 	set category = "Abilities"
 
-	add_modifier(/datum/modifier/berserk, 30 SECONDS)
+	add_modifier(/datum/legacy_modifier/berserk, 30 SECONDS)

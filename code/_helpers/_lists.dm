@@ -867,3 +867,9 @@ var/global/list/json_cache = list()
 	catch(var/exception/e)
 		log_error("Exception during JSON decoding ([json_to_decode]): [e]")
 		return list()
+
+/// Merges two assoc lists together, summing their values into one assoc list.
+/proc/sum_assoc(list/A, list/B)
+	. = list()
+	for(var/k in (A|B))
+		.[k] = A[k] + B[k]

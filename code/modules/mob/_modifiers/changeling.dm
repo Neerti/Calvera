@@ -1,4 +1,4 @@
-/datum/modifier/changeling
+/datum/legacy_modifier/changeling
 	name = "changeling"
 	desc = "Changeling modifier."
 
@@ -14,7 +14,7 @@
 
 	var/exterior_modifier = FALSE	// Should we be checking the origin mob for chems?
 
-/datum/modifier/changeling/check_if_valid()
+/datum/legacy_modifier/changeling/check_if_valid()
 	var/mob/living/L = null
 	if(exterior_modifier)
 		if(origin)
@@ -28,7 +28,7 @@
 	else
 		..()
 
-/datum/modifier/changeling/tick()
+/datum/legacy_modifier/changeling/tick()
 	..()
 
 	if(use_chems)
@@ -42,7 +42,7 @@
 
 		L.mind.changeling.chem_charges = between(0, L.mind.changeling.chem_charges - chem_maintenance, L.mind.changeling.chem_storage)
 
-/datum/modifier/changeling/thermal_sight
+/datum/legacy_modifier/changeling/thermal_sight
 	name = "Thermal Adaptation"
 	desc = "Our eyes are capable of seeing into the infrared spectrum to accurately identify prey through walls."
 	vision_flags = SEE_MOBS
@@ -50,7 +50,7 @@
 	on_expired_text = "<span class='alien'>Your sight returns to what it once was.</span>"
 	stacks = MODIFIER_STACK_EXTEND
 
-/datum/modifier/changeling/thermal_sight/check_if_valid()
+/datum/legacy_modifier/changeling/thermal_sight/check_if_valid()
 	var/mob/living/L = null
 
 	if(exterior_modifier)
@@ -75,7 +75,7 @@
 
 	..()
 
-/datum/modifier/changeling/thermal_sight/expire()
+/datum/legacy_modifier/changeling/thermal_sight/expire()
 	var/mob/living/L = null
 
 	if(exterior_modifier)

@@ -3,7 +3,7 @@
  * Modifiers applied by Medical sources.
  */
 
-/datum/modifier/bloodpump
+/datum/legacy_modifier/bloodpump
 	name = "external blood pumping"
 	desc = "Your blood flows thanks to the wonderful power of science."
 
@@ -13,12 +13,12 @@
 
 	pulse_set_level = PULSE_NORM
 
-/datum/modifier/bloodpump/check_if_valid()
+/datum/legacy_modifier/bloodpump/check_if_valid()
 	..()
 	if(holder.stat == DEAD)
 		src.expire()
 
-/datum/modifier/bloodpump_corpse
+/datum/legacy_modifier/bloodpump_corpse
 	name = "forced blood pumping"
 	desc = "Your blood flows thanks to the wonderful power of science."
 
@@ -28,7 +28,7 @@
 
 	pulse_set_level = PULSE_SLOW
 
-/datum/modifier/bloodpump/corpse/check_if_valid()
+/datum/legacy_modifier/bloodpump/corpse/check_if_valid()
 	..()
 	if(holder.stat != DEAD)
 		src.expire()
@@ -37,7 +37,7 @@
  * Modifiers caused by chemicals or organs specifically.
  */
 
-/datum/modifier/cryogelled
+/datum/legacy_modifier/cryogelled
 	name = "cryogelled"
 	desc = "Your body begins to freeze."
 	mob_overlay_state = "chilled"
@@ -51,7 +51,7 @@
 	attack_speed_percent = 1.1
 	disable_duration_percent = 1.05
 
-/datum/modifier/clone_stabilizer
+/datum/legacy_modifier/clone_stabilizer
 	name = "clone stabilized"
 	desc = "Your body's regeneration is highly restricted."
 

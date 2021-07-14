@@ -837,8 +837,8 @@
 	. = 1 - . // Invert from 1 = immunity to 0 = immunity.
 
 	// Doing it this way makes multiplicative stacking not get out of hand, so two modifiers that give 0.5 protection will be combined to 0.75 in the end.
-	for(var/thing in modifiers)
-		var/datum/modifier/M = thing
+	for(var/thing in legacy_modifiers)
+		var/datum/legacy_modifier/M = thing
 		if(!isnull(M.heat_protection))
 			. *= 1 - M.heat_protection
 
@@ -857,8 +857,8 @@
 	. = 1 - . // Invert from 1 = immunity to 0 = immunity.
 
 	// Doing it this way makes multiplicative stacking not get out of hand, so two modifiers that give 0.5 protection will be combined to 0.75 in the end.
-	for(var/thing in modifiers)
-		var/datum/modifier/M = thing
+	for(var/thing in legacy_modifiers)
+		var/datum/legacy_modifier/M = thing
 		if(!isnull(M.cold_protection))
 			// Invert the modifier values so they align with the current working value.
 			. *= 1 - M.cold_protection
@@ -947,7 +947,7 @@
 	if (nutrition > 0 && stat != DEAD)
 		var/nutrition_reduction = species.hunger_factor
 
-		for(var/datum/modifier/mod in modifiers)
+		for(var/datum/legacy_modifier/mod in legacy_modifiers)
 			if(!isnull(mod.metabolism_percent))
 				nutrition_reduction *= mod.metabolism_percent
 		adjust_nutrition(-nutrition_reduction)
@@ -1378,7 +1378,7 @@
 			see_in_dark = 8
 			if(!druggy)		see_invisible = SEE_INVISIBLE_LEVEL_TWO
 
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.vision_flags))
 				sight |= M.vision_flags
 
@@ -1570,8 +1570,8 @@
 	var/modifier_shift = 0
 	var/modifier_set
 
-	if(modifiers && modifiers.len)
-		for(var/datum/modifier/mod in modifiers)
+	if(legacy_modifiers && legacy_modifiers.len)
+		for(var/datum/legacy_modifier/mod in legacy_modifiers)
 			if(isnull(modifier_set) && !isnull(mod.pulse_set_level))
 				modifier_set = round(mod.pulse_set_level)	// Should be a whole number, but let's not take chances.
 			else if(mod.pulse_set_level > modifier_set)

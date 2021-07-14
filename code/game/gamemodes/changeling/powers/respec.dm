@@ -24,7 +24,7 @@
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
 	//	H.does_not_breathe = 0 //If self respiration was bought, revert that too.
-		H.remove_modifiers_of_type(/datum/modifier/endoarmor) //Revert endoarmor too.
+		H.remove_modifiers_of_type(/datum/legacy_modifier/endoarmor) //Revert endoarmor too.
 	src.make_changeling() //And give back our freebies.
 
 	to_chat(src, "<span class='notice'>We have removed our evolutions from this form, and are now ready to readapt.</span>")

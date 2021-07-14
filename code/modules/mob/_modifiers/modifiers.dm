@@ -2,7 +2,7 @@
 // The advantage of using this datum verses just setting a variable on the mob directly, is that there is no risk of two different procs overwriting
 // each other, or other weirdness.  An excellent example is adjusting max health.
 
-/datum/modifier
+/datum/legacy_modifier
 	var/name = null						// Mostly used to organize, might show up on the UI in the Future(tm)
 	var/desc = null						// Ditto.
 	var/icon_state = null				// See above.
@@ -65,7 +65,7 @@
 
 	var/vision_flags					// Vision flags to add to the mob. SEE_MOB, SEE_OBJ, etc.
 
-/datum/modifier/New(var/new_holder, var/new_origin)
+/datum/legacy_modifier/New(var/new_holder, var/new_origin)
 	holder = new_holder
 	if(new_origin)
 		origin = weakref(new_origin)
@@ -75,19 +75,19 @@
 
 // Checks if the modifier should be allowed to be applied to the mob before attaching it.
 // Override for special criteria, e.g. forbidding robots from receiving it.
-/datum/modifier/proc/can_apply(var/mob/living/L, var/suppress_output = FALSE)
+/datum/legacy_modifier/proc/can_apply(var/mob/living/L, var/suppress_output = FALSE)
 	return TRUE
 
 // Checks to see if this datum should continue existing.
-/datum/modifier/proc/check_if_valid()
+/datum/legacy_modifier/proc/check_if_valid()
 	if(expire_at && expire_at < world.time) // Is our time up?
 		src.expire()
 
-/datum/modifier/proc/expire(var/silent = FALSE)
+/datum/legacy_modifier/proc/expire(var/silent = FALSE)
 	if(on_expired_text && !silent)
 		to_chat(holder, on_expired_text)
 	on_expire()
-	holder.modifiers.Remove(src)
+	holder.legacy_modifiers.Remove(src)
 	if(mob_overlay_state) // We do this after removing ourselves from the list so that the overlay won't remain.
 		holder.update_modifier_visuals()
 	if(icon_scale_x_percent || icon_scale_y_percent) // Correct the scaling.
@@ -99,19 +99,19 @@
 	qdel(src)
 
 // Override this for special effects when it gets added to the mob.
-/datum/modifier/proc/on_applied()
+/datum/legacy_modifier/proc/on_applied()
 	return
 
 // Override this for special effects when it gets removed.
-/datum/modifier/proc/on_expire()
+/datum/legacy_modifier/proc/on_expire()
 	return
 
 // Called every Life() tick.  Override for special behaviour.
-/datum/modifier/proc/tick()
+/datum/legacy_modifier/proc/tick()
 	return
 
 /mob/living
-	var/list/modifiers = list() // A list of modifier datums, which can adjust certain mob numbers.
+	var/list/legacy_modifiers = list() // A list of modifier datums, which can adjust certain mob numbers.
 
 /mob/living/Destroy()
 	remove_all_modifiers(TRUE)
@@ -119,22 +119,22 @@
 
 // Called by Life().
 /mob/living/proc/handle_modifiers()
-	if(!modifiers.len) // No work to do.
+	if(!legacy_modifiers.len) // No work to do.
 		return
 	// Get rid of anything we shouldn't have.
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		M.check_if_valid()
-	// Remaining modifiers will now receive a tick().  This is in a second loop for safety in order to not tick() an expired modifier.
-	for(var/datum/modifier/M in modifiers)
+	// Remaining legacy_modifiers will now receive a tick().  This is in a second loop for safety in order to not tick() an expired modifier.
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		M.tick()
 
 // Call this to add a modifier to a mob. First argument is the modifier type you want, second is how long it should last, in ticks.
 // Third argument is the 'source' of the modifier, if it's from someone else.  If null, it will default to the mob being applied to.
-// The SECONDS/MINUTES macro is very helpful for this.  E.g. M.add_modifier(/datum/modifier/example, 5 MINUTES)
-// The fourth argument is a boolean to suppress failure messages, set it to true if the modifier is repeatedly applied (as chem-based modifiers are) to prevent chat-spam
+// The SECONDS/MINUTES macro is very helpful for this.  E.g. M.add_modifier(/datum/legacy_modifier/example, 5 MINUTES)
+// The fourth argument is a boolean to suppress failure messages, set it to true if the modifier is repeatedly applied (as chem-based legacy_modifiers are) to prevent chat-spam
 /mob/living/proc/add_modifier(var/modifier_type, var/expire_at = null, var/mob/living/origin = null, var/suppress_failure = FALSE)
 	// First, check if the mob already has this modifier.
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(ispath(modifier_type, M))
 			switch(M.stacks)
 				if(MODIFIER_STACK_FORBID)
@@ -148,7 +148,7 @@
 					return
 
 	// If we're at this point, the mob doesn't already have it, or it does but stacking is allowed.
-	var/datum/modifier/mod = new modifier_type(src, origin)
+	var/datum/legacy_modifier/mod = new modifier_type(src, origin)
 	if(!mod.can_apply(src, suppress_failure))
 		qdel(mod)
 		return
@@ -156,7 +156,7 @@
 		mod.expire_at = world.time + expire_at
 	if(mod.on_created_text)
 		to_chat(src, mod.on_created_text)
-	modifiers.Add(mod)
+	legacy_modifiers.Add(mod)
 	mod.on_applied()
 	if(mod.mob_overlay_state)
 		update_modifier_visuals()
@@ -171,25 +171,25 @@
 	return mod
 
 // Removes a specific instance of modifier
-/mob/living/proc/remove_specific_modifier(var/datum/modifier/M, var/silent = FALSE)
+/mob/living/proc/remove_specific_modifier(var/datum/legacy_modifier/M, var/silent = FALSE)
 	M.expire(silent)
 
 // Removes one modifier of a type
 /mob/living/proc/remove_a_modifier_of_type(var/modifier_type, var/silent = FALSE)
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(ispath(M.type, modifier_type))
 			M.expire(silent)
 			break
 
-// Removes all modifiers of a type
+// Removes all legacy_modifiers of a type
 /mob/living/proc/remove_modifiers_of_type(var/modifier_type, var/silent = FALSE)
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(ispath(M.type, modifier_type))
 			M.expire(silent)
 
-// Removes all modifiers, useful if the mob's being deleted
+// Removes all legacy_modifiers, useful if the mob's being deleted
 /mob/living/proc/remove_all_modifiers(var/silent = FALSE)
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		M.expire(silent)
 
 // Checks if the mob has a modifier type.
@@ -198,14 +198,14 @@
 
 // Gets the first instance of a specific modifier type or subtype.
 /mob/living/proc/get_modifier_of_type(var/modifier_type)
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(istype(M, modifier_type))
 			return M
 	return null
 
 // This displays the actual 'numbers' that a modifier is doing.  Should only be shown in OOC contexts.
 // When adding new effects, be sure to update this as well.
-/datum/modifier/proc/describe_modifier_effects()
+/datum/legacy_modifier/proc/describe_modifier_effects()
 	var/list/effects = list()
 	if(!isnull(max_health_flat))
 		effects += "You [max_health_flat > 0 ? "gain" : "lose"] [abs(max_health_flat)] maximum health."

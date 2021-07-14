@@ -65,7 +65,7 @@
 
 /obj/item/projectile/energy/blob/freezing
 	my_chems = list("frostoil")
-	modifier_type_to_apply = /datum/modifier/chilled
+	modifier_type_to_apply = /datum/legacy_modifier/chilled
 	modifier_duration = 1 MINUTE
 
 /obj/item/projectile/energy/blob/freezing/splattering

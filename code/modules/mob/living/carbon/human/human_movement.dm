@@ -13,7 +13,7 @@
 	if(force_max_speed)
 		return ..() + HUMAN_LOWEST_SLOWDOWN
 
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.haste) && M.haste == TRUE)
 			return ..() + HUMAN_LOWEST_SLOWDOWN // Returning -1 will actually result in a slowdown for Teshari.
 		if(!isnull(M.slowdown))

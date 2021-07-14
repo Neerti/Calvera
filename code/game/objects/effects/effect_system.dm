@@ -318,7 +318,7 @@ steam.start() -- spawns the effect
 
 /obj/effect/effect/smoke/elemental/fire/affect(mob/living/L)
 	L.inflict_heat_damage(strength)
-	L.add_modifier(/datum/modifier/fire, 6 SECONDS) // Around 15 damage per stack.
+	L.add_modifier(/datum/legacy_modifier/fire, 6 SECONDS) // Around 15 damage per stack.
 
 /obj/effect/effect/smoke/elemental/frost
 	name = "freezing cloud"

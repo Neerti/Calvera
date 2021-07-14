@@ -152,13 +152,13 @@
 	if(status_flags & GODMODE)	return 0	//godmode
 
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_damage_percent))
 				amount *= M.incoming_damage_percent
 			if(!isnull(M.incoming_brute_damage_percent))
 				amount *= M.incoming_brute_damage_percent
 	else if(amount < 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_healing_percent))
 				amount *= M.incoming_healing_percent
 
@@ -172,13 +172,13 @@
 	if(status_flags & GODMODE)	return 0	//godmode
 
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_damage_percent))
 				amount *= M.incoming_damage_percent
 			if(!isnull(M.incoming_oxy_damage_percent))
 				amount *= M.incoming_oxy_damage_percent
 	else if(amount < 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_healing_percent))
 				amount *= M.incoming_healing_percent
 
@@ -196,13 +196,13 @@
 	if(status_flags & GODMODE)	return 0	//godmode
 
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_damage_percent))
 				amount *= M.incoming_damage_percent
 			if(!isnull(M.incoming_tox_damage_percent))
 				amount *= M.incoming_tox_damage_percent
 	else if(amount < 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_healing_percent))
 				amount *= M.incoming_healing_percent
 
@@ -226,13 +226,13 @@
 /mob/living/proc/adjustFireLoss(var/amount,var/include_robo)
 	if(status_flags & GODMODE)	return 0	//godmode
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_damage_percent))
 				amount *= M.incoming_damage_percent
 			if(!isnull(M.incoming_fire_damage_percent))
 				amount *= M.incoming_fire_damage_percent
 	else if(amount < 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_healing_percent))
 				amount *= M.incoming_healing_percent
 
@@ -246,13 +246,13 @@
 	if(status_flags & GODMODE)	return 0	//godmode
 
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_damage_percent))
 				amount *= M.incoming_damage_percent
 			if(!isnull(M.incoming_clone_damage_percent))
 				amount *= M.incoming_clone_damage_percent
 	else if(amount < 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_healing_percent))
 				amount *= M.incoming_healing_percent
 
@@ -280,7 +280,7 @@
 /mob/living/proc/adjustHalLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_damage_percent))
 				amount *= M.incoming_damage_percent
 			if(!isnull(M.incoming_hal_damage_percent))
@@ -288,7 +288,7 @@
 			if(!isnull(M.disable_duration_percent))
 				amount *= M.disable_duration_percent
 	else if(amount < 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.incoming_healing_percent))
 				amount *= M.incoming_healing_percent
 	halloss = min(max(halloss + amount, 0),(getMaxHealth()*2))
@@ -298,14 +298,14 @@
 	if(status_flags & GODMODE)	return 0	//godmode
 	halloss = amount
 
-// Use this to get a mob's max health whenever possible.  Reading maxHealth directly will give inaccurate results if any modifiers exist.
+// Use this to get a mob's max health whenever possible.  Reading maxHealth directly will give inaccurate results if any legacy_modifiers exist.
 /mob/living/proc/getMaxHealth()
 	var/result = maxHealth
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.max_health_flat))
 			result += M.max_health_flat
 	// Second loop is so we can get all the flat adjustments first before multiplying, otherwise the result will be different.
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.max_health_percent))
 			result *= M.max_health_percent
 	return result
@@ -314,7 +314,7 @@
 	maxHealth = newMaxHealth
 
 /mob/living/Stun(amount)
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.disable_duration_percent))
 			amount = round(amount * M.disable_duration_percent)
 	..(amount)
@@ -330,7 +330,7 @@
 
 /mob/living/AdjustStunned(amount)
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.disable_duration_percent))
 				amount = round(amount * M.disable_duration_percent)
 	..(amount)
@@ -340,7 +340,7 @@
 		add_status_indicator("stunned")
 
 /mob/living/Weaken(amount)
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.disable_duration_percent))
 			amount = round(amount * M.disable_duration_percent)
 	..(amount)
@@ -356,7 +356,7 @@
 
 /mob/living/AdjustWeakened(amount)
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.disable_duration_percent))
 				amount = round(amount * M.disable_duration_percent)
 	..(amount)
@@ -366,7 +366,7 @@
 		add_status_indicator("weakened")
 
 /mob/living/Paralyse(amount)
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.disable_duration_percent))
 			amount = round(amount * M.disable_duration_percent)
 	..(amount)
@@ -382,7 +382,7 @@
 
 /mob/living/AdjustParalysis(amount)
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.disable_duration_percent))
 				amount = round(amount * M.disable_duration_percent)
 	..(amount)
@@ -392,7 +392,7 @@
 		add_status_indicator("paralysis")
 
 /mob/living/Sleeping(amount)
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.disable_duration_percent))
 			amount = round(amount * M.disable_duration_percent)
 	..(amount)
@@ -408,7 +408,7 @@
 
 /mob/living/AdjustSleeping(amount)
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.disable_duration_percent))
 				amount = round(amount * M.disable_duration_percent)
 	..(amount)
@@ -418,7 +418,7 @@
 		add_status_indicator("sleeping")
 
 /mob/living/Confuse(amount)
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.disable_duration_percent))
 			amount = round(amount * M.disable_duration_percent)
 	..(amount)
@@ -434,7 +434,7 @@
 
 /mob/living/AdjustConfused(amount)
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.disable_duration_percent))
 				amount = round(amount * M.disable_duration_percent)
 	..(amount)
@@ -444,7 +444,7 @@
 		add_status_indicator("confused")
 
 /mob/living/Blind(amount)
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.disable_duration_percent))
 			amount = round(amount * M.disable_duration_percent)
 	..(amount)
@@ -460,7 +460,7 @@
 
 /mob/living/AdjustBlinded(amount)
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.disable_duration_percent))
 				amount = round(amount * M.disable_duration_percent)
 	..(amount)
@@ -864,7 +864,7 @@
 /mob/living/proc/get_mob_riding_slots()
 	return list(back)
 
-// Adds overlays for specific modifiers.
+// Adds overlays for specific legacy_modifiers.
 // You'll have to add your own implementation for non-humans currently, just override this proc.
 /mob/living/proc/update_modifier_visuals()
 	return
@@ -891,13 +891,13 @@
 
 /mob/living/get_icon_scale_x()
 	. = ..()
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.icon_scale_x_percent))
 			. *= M.icon_scale_x_percent
 
 /mob/living/get_icon_scale_y()
 	. = ..()
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.icon_scale_y_percent))
 			. *= M.icon_scale_y_percent
 
@@ -920,7 +920,7 @@
 		return
 
 	var/list/colors_to_blend = list()
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.client_color))
 			if(islist(M.client_color)) //It's a color matrix! Forget it. Just use that one.
 				animate(client, color = M.client_color, time = 10)
