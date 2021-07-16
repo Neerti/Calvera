@@ -51,7 +51,6 @@
 	var/lastpuke = 0
 
 	var/evasion = 0 // Makes attacks harder to land. Negative numbers increase hit chance.
-	var/force_max_speed = 0 // If 1, the mob runs extremely fast and cannot be slowed.
 
 	var/image/dsoverlay = null //Overlay used for darksight eye adjustments
 

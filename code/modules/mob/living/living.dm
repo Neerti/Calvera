@@ -891,15 +891,11 @@
 
 /mob/living/get_icon_scale_x()
 	. = ..()
-	for(var/datum/legacy_modifier/M in legacy_modifiers)
-		if(!isnull(M.icon_scale_x_percent))
-			. *= M.icon_scale_x_percent
+	. *= get_modification(/decl/modifier_field/scale_x) || 1
 
 /mob/living/get_icon_scale_y()
 	. = ..()
-	for(var/datum/legacy_modifier/M in legacy_modifiers)
-		if(!isnull(M.icon_scale_y_percent))
-			. *= M.icon_scale_y_percent
+	. *= get_modification(/decl/modifier_field/scale_y) || 1
 
 /mob/living/update_transform()
 	// First, get the correct size.
@@ -920,7 +916,7 @@
 		return
 
 	var/list/colors_to_blend = list()
-	for(var/datum/legacy_modifier/M in legacy_modifiers)
+	for(var/datum/modifier/M in modifiers)
 		if(!isnull(M.client_color))
 			if(islist(M.client_color)) //It's a color matrix! Forget it. Just use that one.
 				animate(client, color = M.client_color, time = 10)

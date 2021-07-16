@@ -11,8 +11,11 @@
 		for(var/thing in modifiers)
 			var/datum/modifier/other_modifier = thing
 			var/other_value = other_modifier.modifications[key]
+			var/decl/modifier_field/field = GET_DECL(key)
+			new_value = field.sum(new_value, other_value)
 
 			// Some modifications are assoc lists, and need to be handled differently.
+			/*
 			if(islist(other_value))
 				new_value = sum_assoc(
 					islist(new_value) ? new_value : list(),
@@ -20,9 +23,10 @@
 				)
 			else
 				new_value += other_value
+			*/
 		
 		if(isnull(new_value))
 			// No other modifiers that modify the value exist, so remove it from the cache.
-			modifier_cache -= key // BAD
+			modifier_cache -= key // BAD?
 		else
 			modifier_cache[key] = new_value

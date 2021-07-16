@@ -36,6 +36,9 @@
 	/// Icon state for an overlay to be applied to the mob while the modifier exists.
 	var/mob_overlay_state = null
 
+	/// If set, the mob's client will have the world be shown in this color, from their perspective.
+	var/client_color = null
+
 //	var/expire_at = null	// world.time when holder's Life() will remove the datum.  If null, it lasts forever or until it gets deleted by something else.
 	
 	/// world.time that the modifier was attached to the mob.
@@ -71,8 +74,6 @@
 	/// Multiple instances can exist concurrently.
 	var/const/MODIFIER_STACKING_ALLOWED = 4
 
-//	var/flags = 0						// Flags for the modifier, see mobs.dm defines for more details.
-
 	/// A list of all modifications to apply to the mob. Note that if this is altered, you need to rebuild the cache.
 	var/list/modifications = list()
 
@@ -105,8 +106,11 @@
 	if(mob_overlay_state)
 		holder.update_modifier_visuals()
 	
-	if(modifications[MODIFIER_SCALE_X] || modifications[MODIFIER_SCALE_Y])
+	if(modifications[/decl/modifier_field/scale_x] || modifications[/decl/modifier_field/scale_y])
 		holder.update_transform()
+	
+	if(client_color)
+		holder.update_client_color()
 
 	on_attached()
 
@@ -142,8 +146,11 @@
 	if(mob_overlay_state)
 		holder.update_modifier_visuals()
 	
-	if(modifications[MODIFIER_SCALE_X] || modifications[MODIFIER_SCALE_Y])
+	if(modifications[/decl/modifier_field/scale_x] || modifications[/decl/modifier_field/scale_y])
 		holder.update_transform()
+	
+	if(client_color)
+		holder.update_client_color()
 	
 	on_detached()
 
@@ -219,7 +226,7 @@ Can be called multiple times to postpone expiration, or cancel it entirely by su
 
 	return new_modifier
 
-/mob/living/get_modification(key)
+/mob/living/proc/get_modification(key)
 	return modifier_cache[key]
 
 // Removes one modifier of a type
@@ -277,3 +284,87 @@ Can be called multiple times to postpone expiration, or cancel it entirely by su
 
 /mob/living/verb/test_modifier_stun()
 	add_modifier(/datum/modifier/stun, 1.5 SECONDS)
+
+
+/datum/modifier/berserk
+	name = "Berserk"
+	desc = "You are filled with an overwhelming rage."
+	client_color = "#FF5555"
+	mob_overlay_state = "berserk"
+	show_duration_bar = TRUE
+
+	on_attached_text = "<span class='critical'>You feel an intense and overwhelming rage overtake you as you go berserk!</span>"
+	on_detached_text = "<span class='notice'>The blaze of rage inside you has ran out.</span>"
+
+	stacks = MODIFIER_STACKING_EXTEND
+
+	modifications = list(
+		/decl/modifier_field/slowdown = -1,
+		/decl/modifier_field/attack_speed_percent = 0.66,
+		/decl/modifier_field/outgoing_melee_damage = 1.5,
+		/decl/modifier_field/max_health_percent = 1.5,
+		/decl/modifier_field/disable_duration = 0.25,
+		/decl/modifier_field/scale_x = 1.2,
+		/decl/modifier_field/scale_y = 1.2,
+		/decl/modifier_field/pain_immunity = TRUE,
+		/decl/modifier_field/gun_accuracy = -75,
+		/decl/modifier_field/gun_dispersion = 10,
+		/decl/modifier_field/evasion = -45
+	)
+
+/mob/living/verb/test_modifier_berserk()
+	add_modifier(/datum/modifier/berserk, 20 SECONDS)
+
+/datum/modifier/electrified
+	name = "Electrified"
+	desc = "Electricity courses through you, severely hindering your ability to manuover."
+	mob_overlay_state = "blue_electricity_constant"
+	show_duration_bar = TRUE
+
+	on_attached_text = "<span class='danger'>You feel electricity course through your body!</span>"
+	on_detached_text = "<span class='notice'>The shock seems to have dissipated.</span>"
+
+	modifications = list(
+		/decl/modifier_field/slowdown = 1,
+		/decl/modifier_field/attack_speed_percent = 1.2,
+		/decl/modifier_field/disable_duration = 1.2,
+		/decl/modifier_field/gun_accuracy = -30,
+		/decl/modifier_field/gun_dispersion = 5,
+		/decl/modifier_field/evasion = -20,
+		/decl/modifier_field/emp_suspectibility = -1
+
+	)
+
+/mob/living/verb/test_modifier_shocked()
+	add_modifier(/datum/modifier/electrified, 5 SECONDS)
+
+/*
+/datum/legacy_modifier/berserk
+	name = "berserk"
+	desc = "You are filled with an overwhelming rage."
+	client_color = "#FF5555" // Make everything red!
+	mob_overlay_state = "berserk"
+
+	on_created_text = "<span class='critical'>You feel an intense and overwhelming rage overtake you as you go berserk!</span>"
+	on_expired_text = "<span class='notice'>The blaze of rage inside you has ran out.</span>"
+	stacks = MODIFIER_STACK_EXTEND
+
+	// The good stuff.
+	slowdown = -1							// Move a bit faster.
+	attack_speed_percent = 0.66				// Attack at 2/3 the normal delay.
+	outgoing_melee_damage_percent = 1.5		// 50% more damage from melee.
+	max_health_percent = 1.5				// More health as a buffer, however the holder might fall into crit after this expires if they're mortally wounded.
+	disable_duration_percent = 0.25			// Disables only last 25% as long.
+	icon_scale_x_percent = 1.2				// Look scarier.
+	icon_scale_y_percent = 1.2
+	pain_immunity = TRUE					// Avoid falling over from shock (at least until it expires).
+
+	// The less good stuff.
+	accuracy = -75							// Aiming requires focus.
+	accuracy_dispersion = 3					// Ditto.
+	evasion = -45							// Too angry to dodge.
+
+	var/nutrition_cost = 150
+	var/exhaustion_duration = 2 MINUTES 	// How long the exhaustion modifier lasts after it expires. Set to 0 to not apply one.
+	var/last_shock_stage = 0
+*/

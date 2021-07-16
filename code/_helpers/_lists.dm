@@ -873,3 +873,9 @@ var/global/list/json_cache = list()
 	. = list()
 	for(var/k in (A|B))
 		.[k] = A[k] + B[k]
+
+/// Multiplies the values contained in two assoc lists.
+/proc/multiply_assoc(list/A, list/B)
+	. = list()
+	for(var/k in (A|B))
+		.[k] = A[k] * B[k]

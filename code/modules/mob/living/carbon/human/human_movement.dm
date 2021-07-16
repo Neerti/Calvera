@@ -9,15 +9,11 @@
 
 	if(species.slowdown)
 		. += species.slowdown
-
-	if(force_max_speed)
-		return ..() + HUMAN_LOWEST_SLOWDOWN
-
-	for(var/datum/legacy_modifier/M in legacy_modifiers)
-		if(!isnull(M.haste) && M.haste == TRUE)
-			return ..() + HUMAN_LOWEST_SLOWDOWN // Returning -1 will actually result in a slowdown for Teshari.
-		if(!isnull(M.slowdown))
-			. += M.slowdown
+	
+	if(get_modification(/decl/modifier_field/haste))
+		return ..() + HUMAN_LOWEST_SLOWDOWN // Returning -1 will actually result in a slowdown for Teshari.
+	
+	. += get_modification(/decl/modifier_field/slowdown)
 
 	var/health_deficiency = (getMaxHealth() - health)
 	if(health_deficiency >= 40) . += (health_deficiency / 25)
@@ -93,7 +89,7 @@
 			. *= 0.5
 		. -= chem_effects[CE_SPEEDBOOST]	// give 'em a buff on top.
 
-	. = max(HUMAN_LOWEST_SLOWDOWN, . + config.human_delay)	// Minimum return should be the same as force_max_speed
+	. = max(HUMAN_LOWEST_SLOWDOWN, . + config.human_delay)
 	. += ..()
 
 /mob/living/carbon/human/Moved()
