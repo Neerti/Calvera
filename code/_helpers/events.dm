@@ -1,18 +1,17 @@
 /proc/get_station_areas(var/list/area/excluded_areas)
-	var/list/area/grand_list_of_areas = list()
-	// Assemble areas that all exists (See DM reference if you are confused about loop labels)
-	looping_station_areas:
-		for(var/parentpath in global.the_station_areas)
+	. = list()
+	var/list/subtypes = subtypesof(/area)
+	for(var/thing in subtypes)
+		var/area/A = locate(thing)
+		if(istype(A) && (A.z in using_map.station_levels))
 			// Check its not excluded
+			var/bad_area = FALSE
 			for(var/excluded_path in excluded_areas)
-				if(ispath(parentpath, excluded_path))
-					continue looping_station_areas
-			// Otherwise add it and all subtypes that exist on the map to our grand list
-			for(var/areapath in typesof(parentpath))
-				var/area/A = locate(areapath) // Check if it actually exists
-				if(istype(A) && (A.z in using_map.player_levels))
-					grand_list_of_areas += A
-	return grand_list_of_areas
+				if(istype(A, excluded_path))
+					bad_area = TRUE
+					break
+			if(!bad_area)
+				. += A
 
 /** Checks if any living humans are in a given area! */
 /proc/is_area_occupied(var/area/myarea)

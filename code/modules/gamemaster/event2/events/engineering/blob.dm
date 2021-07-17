@@ -76,8 +76,7 @@
 		/area/submap,
 		/area/shuttle,
 		/area/crew_quarters,
-		/area/holodeck,
-		/area/engineering/engine_room
+		/area/holodeck
 	)
 	var/list/open_turfs = list()
 	var/spawn_blob_type = /obj/structure/blob/core/random_medium

@@ -25,10 +25,10 @@
 	)
 	var/static/list/SPECIAL_AREA_TYPES = list(
 		/area/shuttle,
-		/area/centcom,
-		/area/tdome,
-		/area/syndicate_station,
-		/area/wizard_station
+//		/area/centcom,
+//		/area/tdome,
+//		/area/syndicate_station,
+//		/area/wizard_station
 		// /area/derelict //commented out, all hail derelict-rebuilders!
 	)
 

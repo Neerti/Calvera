@@ -181,7 +181,7 @@
 
 /mob/New()
 	..()
-	ability_master = new /obj/screen/movable/ability_master(src)
+	ability_master = new /obj/screen/movable/ability_master(src, src)
 
 ///////////ACTUAL ABILITIES////////////
 //This is what you click to do things//

@@ -470,67 +470,6 @@
 	forbid_events = TRUE
 	flags = AREA_FLAG_IS_NOT_PERSISTENT
 
-/area/holodeck/alphadeck
-	name = "\improper Holodeck Alpha"
-
-/area/holodeck/source_plating
-	name = "\improper Holodeck - Off"
-
-/area/holodeck/source_emptycourt
-	name = "\improper Holodeck - Empty Court"
-	sound_env = ARENA
-
-/area/holodeck/source_boxingcourt
-	name = "\improper Holodeck - Boxing Court"
-	sound_env = ARENA
-
-/area/holodeck/source_basketball
-	name = "\improper Holodeck - Basketball Court"
-	sound_env = ARENA
-
-/area/holodeck/source_thunderdomecourt
-	name = "\improper Holodeck - Thunderdome Court"
-	requires_power = 0
-	sound_env = ARENA
-
-/area/holodeck/source_courtroom
-	name = "\improper Holodeck - Courtroom"
-	sound_env = AUDITORIUM
-
-/area/holodeck/source_beach
-	name = "\improper Holodeck - Beach"
-	sound_env = PLAIN
-
-/area/holodeck/source_wildlife
-	name = "\improper Holodeck - Wildlife Simulation"
-
-/area/holodeck/source_meetinghall
-	name = "\improper Holodeck - Meeting Hall"
-	sound_env = AUDITORIUM
-
-/area/holodeck/source_theatre
-	name = "\improper Holodeck - Theatre"
-	sound_env = CONCERT_HALL
-
-/area/holodeck/source_picnicarea
-	name = "\improper Holodeck - Picnic Area"
-	sound_env = PLAIN
-
-/area/holodeck/source_snowfield
-	name = "\improper Holodeck - Snow Field"
-	sound_env = FOREST
-
-/area/holodeck/source_desert
-	name = "\improper Holodeck - Desert"
-	sound_env = PLAIN
-
-/area/holodeck/source_space
-	name = "\improper Holodeck - Space"
-	has_gravity = 0
-	sound_env = SPACE
-
-/area/holodeck/source_chess
-	name = "\improper Holodeck - Chessboard"
 
 
 //Engineering
@@ -560,16 +499,6 @@
 	name = "\improper Engineering SMES"
 	icon_state = "engine_smes"
 	sound_env = SMALL_ENCLOSED
-
-/area/engineering/engine_room
-	name = "\improper Engine Room"
-	icon_state = "engine"
-	sound_env = LARGE_ENCLOSED
-	forbid_events = TRUE
-
-/area/engineering/engine_airlock
-	name = "\improper Engine Room Airlock"
-	icon_state = "engine"
 
 /area/engineering/engine_monitoring
 	name = "\improper Engine Monitoring Room"
