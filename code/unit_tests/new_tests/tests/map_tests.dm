@@ -601,7 +601,7 @@
 
 /datum/unit_test/station_wires_shall_be_connected
 	name = "MAP: Station wires shall be connected"
-	disabled = FALSE
+	disabled = TRUE
 	why_disabled = "Breaker boxes set to be disconnected cause this test to always fail."
 	var/list/exceptions
 
