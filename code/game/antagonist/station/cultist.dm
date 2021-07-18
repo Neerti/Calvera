@@ -48,10 +48,7 @@ var/datum/antagonist/cultist/cult
 		return
 
 	global_objectives = list()
-	if(prob(50))
-		global_objectives |= new /datum/objective/cult/survive
-	else
-		global_objectives |= new /datum/objective/cult/eldergod
+	global_objectives |= new /datum/objective/cult/eldergod
 
 	var/datum/objective/cult/sacrifice/sacrifice = new()
 	sacrifice.find_target()

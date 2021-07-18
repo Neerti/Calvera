@@ -59,11 +59,11 @@ var/list/all_technomancer_assistance = typesof(/datum/technomancer/assistance) -
 	if(!owner && technomancers.is_antagonist(new_owner.mind))
 		owner = new_owner
 
-// Proc: New()
-// Parameters: 0
+// Proc: Initialize()
+// Parameters: 1 (mapload - whether or not this object is being instanced while a map is being loaded)
 // Description: Sets up the catalog, as shown below.
-/obj/item/weapon/technomancer_catalog/New()
-	..()
+/obj/item/weapon/technomancer_catalog/Initialize(mapload)
+	. = ..()
 	set_up()
 
 // Proc: set_up()

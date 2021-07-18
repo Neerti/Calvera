@@ -21,19 +21,14 @@
 	var/const/ROOM_ERR_TOOLARGE = -2
 
 	var/static/list/SPACE_AREA_TYPES = list(
-		/area/space,
-		/area/mine
+		/area/space
 	)
 	var/static/list/SPECIAL_AREA_TYPES = list(
 		/area/shuttle,
-		/area/admin,
-		/area/arrival,
-		/area/centcom,
-		/area/asteroid,
-		/area/tdome,
-		/area/syndicate_station,
-		/area/wizard_station,
-		/area/prison
+//		/area/centcom,
+//		/area/tdome,
+//		/area/syndicate_station,
+//		/area/wizard_station
 		// /area/derelict //commented out, all hail derelict-rebuilders!
 	)
 

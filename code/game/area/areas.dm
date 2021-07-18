@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY_TYPED(areas, /area)
+
 // Areas.dm
 
 /area
@@ -54,6 +56,7 @@
 
 /area/Initialize()
 	. = ..()
+	GLOB.areas += src
 	luminosity = !(dynamic_lighting)
 	icon_state = ""
 	return INITIALIZE_HINT_LATELOAD // Areas tradiationally are initialized AFTER other atoms.
@@ -66,6 +69,15 @@
 	power_change()		// all machines set to current power level, also updates lighting icon
 	if(no_spoilers)
 		set_spoiler_obfuscation(TRUE)
+
+/area/Del()
+	GLOB.areas -= src
+	. = ..()
+	
+/area/Destroy()
+	GLOB.areas -= src
+	..()
+	return QDEL_HINT_HARDDEL
 
 // Changes the area of T to A. Do not do this manually.
 // Area is expected to be a non-null instance.
@@ -466,35 +478,7 @@ var/list/mob/living/forced_ambiance_list = new
 /*I am far too lazy to make it a proper list of areas so I'll just make it run the usual telepot routine at the start of the game*/
 var/list/teleportlocs = list()
 
-/hook/startup/proc/setupTeleportLocs()
-	for(var/area/AR in world)
-		if(istype(AR, /area/shuttle) || istype(AR, /area/syndicate_station) || istype(AR, /area/wizard_station)) continue
-		if(teleportlocs.Find(AR.name)) continue
-		var/turf/picked = pick(get_area_turfs(AR.type))
-		if (picked.z in using_map.station_levels)
-			teleportlocs += AR.name
-			teleportlocs[AR.name] = AR
-
-	teleportlocs = sortAssoc(teleportlocs)
-
-	return 1
-
 var/list/ghostteleportlocs = list()
-
-/hook/startup/proc/setupGhostTeleportLocs()
-	for(var/area/AR in world)
-		if(ghostteleportlocs.Find(AR.name)) continue
-		if(istype(AR, /area/aisat) || istype(AR, /area/derelict) || istype(AR, /area/tdome) || istype(AR, /area/shuttle/specops/centcom))
-			ghostteleportlocs += AR.name
-			ghostteleportlocs[AR.name] = AR
-		var/turf/picked = pick(get_area_turfs(AR.type))
-		if (picked.z in using_map.player_levels)
-			ghostteleportlocs += AR.name
-			ghostteleportlocs[AR.name] = AR
-
-	ghostteleportlocs = sortAssoc(ghostteleportlocs)
-
-	return 1
 
 /area/proc/get_name()
 	if(secret_name)

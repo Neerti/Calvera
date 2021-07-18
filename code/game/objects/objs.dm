@@ -1,6 +1,10 @@
 /obj
 	layer = OBJ_LAYER
 	plane = OBJ_PLANE
+	/// On initialization, the layer can be changed to this value.
+	var/init_layer = null
+	/// On initialization, the plane can be changed to this value.
+	var/init_plane = null
 	//Used to store information about the contents of the object.
 	var/list/matter
 	var/w_class // Size of the object.
@@ -19,6 +23,13 @@
 	var/can_speak = 0 //For MMIs and admin trickery. If an object has a brainmob in its contents, set this to 1 to allow it to speak.
 
 	var/show_examine = TRUE	// Does this pop up on a mob when the mob is examined?
+
+/obj/Initialize(mapload)
+	if(init_layer)
+		layer = init_layer
+	if(init_plane)
+		plane = init_plane
+	return ..()
 
 /obj/Destroy()
 	STOP_PROCESSING(SSobj, src)

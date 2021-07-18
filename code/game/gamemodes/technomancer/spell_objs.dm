@@ -133,8 +133,7 @@
 // Proc: New()
 // Parameters: 0
 // Description: Sets owner to equal its loc, links to the owner's core, then applies overlays if needed.
-/obj/item/weapon/spell/New()
-	..()
+/obj/item/weapon/spell/Initialize(mapload)
 	if(isliving(loc))
 		owner = loc
 	if(owner)
@@ -146,6 +145,7 @@
 //		if(istype(/obj/item/weapon/technomancer_core, owner.back))
 //			core = owner.back
 	update_icon()
+	return ..()
 
 // Proc: Destroy()
 // Parameters: 0

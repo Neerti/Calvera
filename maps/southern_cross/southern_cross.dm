@@ -36,7 +36,9 @@
 	#include "structures/closets/security.dm"
 	#include "turfs/outdoors.dm"
 	#include "overmap/sectors.dm"
+
 	#include "events/wildlife_encounter.dm"
+	#include "events/prison_break.dm"
 
 	#include "southern_cross-1.dmm"
 	#include "southern_cross-2.dmm"

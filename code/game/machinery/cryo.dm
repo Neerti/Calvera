@@ -27,14 +27,13 @@
 
 	var/image/fluid
 
-/obj/machinery/atmospherics/unary/cryo_cell/New()
-	..()
+/obj/machinery/atmospherics/unary/cryo_cell/Initialize()
+	. = ..()
+
 	icon = 'icons/obj/cryogenics_split.dmi'
 	icon_state = "base"
 	initialize_directions = dir
 
-/obj/machinery/atmospherics/unary/cryo_cell/Initialize()
-	. = ..()
 	var/image/tank = image(icon,"tank")
 	tank.alpha = 200
 	tank.pixel_y = 18

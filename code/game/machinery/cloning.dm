@@ -456,8 +456,8 @@
 		icon_state = "pod_g"
 
 
-/obj/machinery/clonepod/full/New()
-	..()
+/obj/machinery/clonepod/full/Initialize(mapload)
+	. = ..()
 	for(var/i = 1 to container_limit)
 		containers += new /obj/item/weapon/reagent_containers/glass/bottle/biomass(src)
 
@@ -514,17 +514,17 @@
 	name = "data disk - 'Mr. Muggles'"
 	read_only = 1
 
-	New()
-		..()
-		initializeDisk()
-		buf.types=DNA2_BUF_SE
-		var/list/new_SE=list(0x098,0x3E8,0x403,0x44C,0x39F,0x4B0,0x59D,0x514,0x5FC,0x578,0x5DC,0x640,0x6A4)
-		for(var/i=new_SE.len;i<=DNA_SE_LENGTH;i++)
-			new_SE += rand(1,1024)
-		buf.dna.SE=new_SE
-		buf.dna.SetSEValueRange(MONKEYBLOCK,0xDAC, 0xFFF)
+/obj/item/weapon/disk/data/monkey/Initialize(mapload)
+	. = ..()
+	initializeDisk()
+	buf.types=DNA2_BUF_SE
+	var/list/new_SE=list(0x098,0x3E8,0x403,0x44C,0x39F,0x4B0,0x59D,0x514,0x5FC,0x578,0x5DC,0x640,0x6A4)
+	for(var/i=new_SE.len;i<=DNA_SE_LENGTH;i++)
+		new_SE += rand(1,1024)
+	buf.dna.SE=new_SE
+	buf.dna.SetSEValueRange(MONKEYBLOCK,0xDAC, 0xFFF)
 
-/obj/item/weapon/disk/data/New()
+/obj/item/weapon/disk/data/Initialize(mapload)
 	..()
 	var/diskcolor = pick(0,1,2)
 	icon_state = "datadisk[diskcolor]"
@@ -545,8 +545,7 @@
 	name = "Diskette Box"
 	icon_state = "disk_kit"
 
-/obj/item/weapon/storage/box/disks/New()
-	..()
+/obj/item/weapon/storage/box/disks/Initialize(mapload)
 	new /obj/item/weapon/disk/data(src)
 	new /obj/item/weapon/disk/data(src)
 	new /obj/item/weapon/disk/data(src)
@@ -554,6 +553,7 @@
 	new /obj/item/weapon/disk/data(src)
 	new /obj/item/weapon/disk/data(src)
 	new /obj/item/weapon/disk/data(src)
+	return ..()
 
 /*
  *	Manual -- A big ol' manual.

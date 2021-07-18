@@ -33,7 +33,7 @@
 	HELMET_TYPE = /obj/item/clothing/head/helmet/space
 	MASK_TYPE = /obj/item/clothing/mask/breath
 
-/obj/machinery/suit_storage_unit/New()
+/obj/machinery/suit_storage_unit/Initialize(mapload)
 	update_icon()
 	if(SUIT_TYPE)
 		SUIT = new SUIT_TYPE(src)
@@ -41,6 +41,7 @@
 		HELMET = new HELMET_TYPE(src)
 	if(MASK_TYPE)
 		MASK = new MASK_TYPE(src)
+	return ..()
 
 /obj/machinery/suit_storage_unit/on_update_icon()
 	var/hashelmet = 0

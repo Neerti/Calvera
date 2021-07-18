@@ -29,6 +29,7 @@
 /obj/structure/prop/prism/Initialize()
 	if(degrees_from_north)
 		animate(src, transform = turn(NORTH, degrees_from_north), time = 3)
+	return ..()
 
 /obj/structure/prop/prism/Destroy()
 	if(remote_dial)

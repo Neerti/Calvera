@@ -336,6 +336,7 @@
 /area/engineering/engine_waste)
 "aK" = (
 /obj/machinery/camera/network/engine{
+	c_tag = "ENG - Engineering Waste Handling";
 	dir = 1
 	},
 /obj/structure/table/standard,
@@ -705,6 +706,7 @@
 /area/submap/pa_room)
 "bA" = (
 /obj/machinery/camera/network/engine{
+	c_tag = "ENG - Engine Room Fore";
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -800,6 +802,7 @@
 /area/engineering/engine_room)
 "bN" = (
 /obj/machinery/camera/network/engine{
+	c_tag = "ENG - Engine Exterior Fore";
 	dir = 8
 	},
 /turf/space,
@@ -860,6 +863,7 @@
 /area/submap/pa_room)
 "bU" = (
 /obj/machinery/camera/network/engine{
+	c_tag = "ENG - Particle Accelerator";
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -979,7 +983,9 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engine_room)
 "ch" = (
-/obj/machinery/camera/network/engine,
+/obj/machinery/camera/network/engine{
+	c_tag = "ENG - Engine Room Aft"
+	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -1589,6 +1595,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/engineering/engine_room)
+"vM" = (
+/obj/machinery/camera/network/engine{
+	c_tag = "ENG - Engine Exterior Aft";
+	dir = 8
+	},
+/turf/space,
+/area/space)
 "vV" = (
 /obj/effect/floor_decal/techfloor/orange,
 /obj/effect/floor_decal/techfloor/hole,
@@ -2329,7 +2342,7 @@ hF
 ab
 ab
 ab
-bN
+vM
 bl
 An
 aL

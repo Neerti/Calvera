@@ -57,8 +57,6 @@
 
 /turf/simulated/Initialize(mapload)
 	. = ..()
-	if(istype(loc, /area/chapel))
-		holy = 1
 	levelupdate()
 
 /turf/simulated/proc/AddTracks(var/typepath,var/bloodDNA,var/comingdir,var/goingdir,var/bloodcolor="#A10808")

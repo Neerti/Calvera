@@ -8,7 +8,7 @@
 	generic_filth = TRUE
 	persistent = FALSE
 
-/obj/effect/decal/cleanable/liquid_fuel/New(turf/newLoc,amt=1,nologs=1)
+/obj/effect/decal/cleanable/liquid_fuel/Initialize(mapload, turf/newLoc, amt = 1, nologs = 1)
 	if(!nologs)
 		message_admins("Liquid fuel has spilled in [newLoc.loc.name] ([newLoc.x],[newLoc.y],[newLoc.z]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[newLoc.x];Y=[newLoc.y];Z=[newLoc.z]'>JMP</a>)")
 		log_game("Liquid fuel has spilled in [newLoc.loc.name] ([newLoc.x],[newLoc.y],[newLoc.z])")
@@ -27,7 +27,7 @@
 	if(!has_spread)
 		Spread()
 	else
-		qdel(src)
+		return INITIALIZE_HINT_QDEL
 
 /obj/effect/decal/cleanable/liquid_fuel/proc/Spread(exclude=list())
 	//Allows liquid fuels to sometimes flow into other tiles.

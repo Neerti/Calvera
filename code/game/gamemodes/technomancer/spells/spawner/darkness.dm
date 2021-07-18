@@ -18,9 +18,9 @@
 		adjust_instability(4)
 		..()
 
-/obj/item/weapon/spell/spawner/darkness/New()
-	..()
+/obj/item/weapon/spell/spawner/darkness/Initialize(mapload)
 	set_light(6, -20, l_color = "#FFFFFF")
+	return ..()
 
 /obj/effect/temporary_effect/darkness
 	name = "darkness"

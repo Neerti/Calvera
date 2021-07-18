@@ -15,7 +15,7 @@
 	density = 1
 	anchored = 1
 	circuit = /obj/item/weapon/circuitboard/breakerbox
-	var/on = 0
+	var/on = FALSE
 	var/busy = 0
 	var/directions = list(1,2,4,8,5,6,9,10)
 	var/RCon_tag = "NO_TAG"
@@ -29,16 +29,17 @@
 		R.FindDevices()
 
 /obj/machinery/power/breakerbox/Initialize()
-	. = ..()
+	..()
 	default_apply_parts()
+	return INITIALIZE_HINT_LATELOAD
 
-/obj/machinery/power/breakerbox/activated
-	icon_state = "bbox_on"
+/obj/machinery/power/breakerbox/LateInitialize()
+	set_state(on)
 
 // Enabled on server startup. Used in substations to keep them in bypass mode.
-/obj/machinery/power/breakerbox/activated/Initialize()
-	. = ..()
-	set_state(1)
+/obj/machinery/power/breakerbox/activated
+	icon_state = "bbox_on"
+	on = TRUE
 
 /obj/machinery/power/breakerbox/examine(mob/user)
 	. = ..()

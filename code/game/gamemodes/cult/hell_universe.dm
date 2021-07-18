@@ -37,6 +37,7 @@ In short:
 		S.color = initial(S.color)
 
 // Apply changes when entering state
+/*
 /datum/universal_state/hell/OnEnter()
 	set background = 1
 //	garbage_collector.garbage_collect = 0
@@ -51,7 +52,7 @@ In short:
 	lightsout(0,0)
 
 	runedec += 9000	//basically removing the rune cap
-
+*/
 
 /datum/universal_state/hell/proc/AreaSet()
 	for(var/area/A in world)
