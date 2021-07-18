@@ -14,9 +14,9 @@
 	cast_methods = CAST_USE
 	aspect = ASPECT_UNSTABLE
 
-/obj/item/weapon/spell/instability_tap/New()
-	..()
+/obj/item/weapon/spell/instability_tap/Initialize(mapload)
 	set_light(3, 2, l_color = "#FA58F4")
+	return ..()
 
 /obj/item/weapon/spell/instability_tap/on_use_cast(mob/user)
 	var/amount = calculate_spell_power(5000)

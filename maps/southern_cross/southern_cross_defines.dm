@@ -87,8 +87,76 @@
 	overmap_event_areas = 	6
 	default_skybox = /datum/skybox_settings/southern_cross
 
-	unit_test_exempt_areas = list(/area/ninja_dojo, /area/ninja_dojo/firstdeck, /area/ninja_dojo/arrivals_dock)
-	unit_test_exempt_from_atmos = list(/area/tcomm/chamber)
+	// WONTFIX: A massive chunk of this could be cut down by repathing areas but that's too much work for a map that isn't gonna stick around.
+	machinery_test_exempt_areas = list(
+		/area/space = NO_MACHINES,
+		/area/turbolift = NO_MACHINES,
+		/area/submap = NO_MACHINES,
+		/area/holodeck = NO_MACHINES,
+		/area/surface/outside = NO_MACHINES,
+		/area/surface/cave = NO_MACHINES,
+		/area/mine = NO_MACHINES,
+		/area/construction = NO_ATMOS,
+		/area/construction/seconddeck/construction2 = 0,
+		/area/skipjack_station = NO_MACHINES,
+		/area/ninja_dojo = NO_MACHINES,
+		/area/derelict = NO_ATMOS,
+		/area/wreck = NO_MACHINES,
+		/area/shuttle = NO_MACHINES,
+		/area/shuttle/shuttle1/start = NO_APC|NO_SCRUBBER,
+		/area/shuttle/shuttle2/start = NO_APC|NO_SCRUBBER,
+		/area/syndicate_station = NO_MACHINES,
+		/area/solar = NO_MACHINES,
+		/area/solar/aftportsolar = NO_MACHINES,
+		/area/solar/aftstarboardsolar = NO_MACHINES,
+		/area/solar/foreportsolar = NO_MACHINES,
+		/area/solar/forestarboardsolar = NO_MACHINES,
+		/area/maintenance = NO_ATMOS,
+		/area/maintenance/medbay = NO_SCRUBBER,
+		/area/maintenance/security_port = NO_SCRUBBER,
+		/area/maintenance/research = NO_SCRUBBER,
+		/area/maintenance/cargo = NO_SCRUBBER,
+		/area/maintenance/solars/foreportsolar = NO_SCRUBBER,
+		/area/maintenance/solars/aftstarboardsolar = NO_SCRUBBER,
+		/area/maintenance/solars/forestarboardsolar = NO_SCRUBBER,
+		/area/maintenance/solars/aftportsolar = NO_SCRUBBER,
+		/area/maintenance/firstdeck/foreport = NO_SCRUBBER,
+		/area/maintenance/firstdeck/forestarboard = NO_SCRUBBER,
+		/area/storage/emergency_storage = NO_ATMOS,
+		/area/surface/outpost/research/xenoresearch/emergencystorage = NO_ATMOS,
+		/area/surface/outpost/research/xenoresearch/smes = NO_ATMOS,
+		/area/surface/outpost/research/xenoarcheology/emergencystorage = NO_ATMOS,
+		/area/surface/outpost/mining_main/exterior = NO_ATMOS,
+		/area/surface/outpost/mining_main/emergencystorage = NO_ATMOS,
+		/area/surface/outpost/main/gen_room = NO_ATMOS,
+		/area/surface/outpost/wall = NO_MACHINES,
+		/area/security/riot_control = NO_ATMOS,
+		/area/thirddeck/roof = NO_MACHINES,
+		/area/server = NO_SCRUBBER,
+		/area/tcomm/chamber = NO_SCRUBBER,
+		/area/surface/outpost/shelter = NO_ATMOS,
+		/area/surface/outpost/mining_main/cave = NO_ATMOS,
+		/area/rnd/test_area = NO_ATMOS,
+		/area/medical/genetics = NO_APC,
+		/area/hallway/secondary/entry/D2/arrivals = NO_APC|NO_SCRUBBER,
+		/area/submap/pa_room = 0,
+		/area/surface/outpost/main/landing_pad = NO_ATMOS
+
+
+
+	)
+
+	area_coherency_test_exempt_areas = list(
+		/area/space,
+		/area/thirddeck/roof,
+		/area/hallway/secondary/entry/D2/arrivals
+	)
+
+	area_coherency_test_exempted_root_areas = list(
+		/area/mine,
+		/area/surface/outside,
+		/area/surface/cave
+	)
 
 	planet_datums_to_make = list(/datum/planet/sif)
 

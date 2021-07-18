@@ -54,6 +54,7 @@
 	var/static/list/cannot_store_types = list(
 		/obj/machinery/power/supermatter
 	)
+	var/static/thinktank_number = 0 // Used to avoid duplicate names in inactive units.
 
 /mob/living/silicon/robot/platform/Login()
 	. = ..()
@@ -68,7 +69,7 @@
 	. = ..()
 	if(!mmi)
 		mmi = new /obj/item/device/mmi/digital/robot(src)
-	SetName("inactive [initial(name)]")
+	SetName("inactive [initial(name)] #[thinktank_number++]")
 	updateicon()
 
 // Copypasting from root proc to avoid calling ..() and accidentally creating duplicate armour etc.

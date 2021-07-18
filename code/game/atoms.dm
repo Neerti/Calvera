@@ -44,6 +44,7 @@
 	var/chat_color_hover
 
 /atom/New(loc, ...)
+//	SHOULD_NOT_OVERRIDE(TRUE)
 	// Don't call ..() unless /datum/New() ever exists
 
 	// During dynamic mapload (reader.dm) this assigns the var overrides from the .dmm file
@@ -75,6 +76,8 @@
 // Other parameters are passed from New (excluding loc), this does not happen if mapload is TRUE
 // Must return an Initialize hint. Defined in code/__defines/subsystems.dm
 /atom/proc/Initialize(mapload, ...)
+	SHOULD_CALL_PARENT(TRUE)
+//	SHOULD_NOT_SLEEP(TRUE)
 	if(QDELETED(src))
 		crash_with("GC: -- [type] had initialize() called after qdel() --")
 	if(initialized)

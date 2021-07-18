@@ -712,6 +712,7 @@
 	mask_ping.vis_contents.Add(bg)
 	frame.vis_contents.Add(powbutton,mapbutton)
 	vis_contents.Add(frame)
+	return ..()
 	
 
 /obj/screen/movable/mapper_holder/Destroy()

@@ -174,6 +174,9 @@
 	var/turf/below = GetBelow(src)
 	return !below || below.is_space()
 
+/turf/simulated/open/is_open()
+	return TRUE
+
 /turf/simulated/open/is_solid_structure()
 	return locate(/obj/structure/lattice, src) //counts as solid structure if it has a lattice (same as space)
 

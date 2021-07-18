@@ -1170,17 +1170,17 @@
 "cw" = (
 /obj/effect/map_effect/perma_light/concentrated/incandescent,
 /turf/simulated/shuttle/floor/voidcraft/external,
-/area/surface/outpost/wall/checkpoint)
+/area/surface/outpost/wall/checkpoint/inside)
 "cx" = (
 /turf/simulated/shuttle/wall/voidcraft,
-/area/surface/outpost/wall/checkpoint)
+/area/surface/outpost/wall/checkpoint/inside)
 "cy" = (
 /turf/simulated/wall/dungeon,
 /area/surface/cave/unexplored/deep)
 "cz" = (
 /obj/effect/map_effect/portal/master/side_a/caves_to_wilderness,
 /turf/simulated/shuttle/floor/voidcraft/external,
-/area/surface/outpost/wall/checkpoint)
+/area/surface/outpost/wall/checkpoint/inside)
 "cA" = (
 /turf/simulated/wall/r_wall,
 /area/surface/outpost/research/xenoarcheology/medical)
@@ -1460,17 +1460,17 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/shuttle/floor/voidcraft/external,
-/area/surface/outpost/wall/checkpoint)
+/area/surface/outpost/wall/checkpoint/inside)
 "cY" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
 	},
 /turf/simulated/shuttle/floor/voidcraft/external,
-/area/surface/outpost/wall/checkpoint)
+/area/surface/outpost/wall/checkpoint/inside)
 "cZ" = (
 /turf/simulated/shuttle/floor/voidcraft/external,
-/area/surface/outpost/wall/checkpoint)
+/area/surface/outpost/wall/checkpoint/inside)
 "da" = (
 /obj/machinery/newscaster{
 	pixel_x = -30;
@@ -1644,7 +1644,7 @@
 	name = "Wilderness Containment"
 	},
 /turf/simulated/shuttle/floor/voidcraft/external,
-/area/surface/outpost/wall/checkpoint)
+/area/surface/outpost/wall/checkpoint/inside)
 "du" = (
 /obj/structure/bed/chair/office/light,
 /obj/machinery/power/apc{
@@ -2082,17 +2082,17 @@
 /area/surface/outpost/research/xenoarcheology/isolation_b)
 "ef" = (
 /turf/simulated/shuttle/wall/voidcraft/hard_corner,
-/area/surface/outpost/wall/checkpoint)
+/area/surface/outpost/wall/checkpoint/inside)
 "eg" = (
 /obj/structure/showcase/sign{
 	pixel_y = -5
 	},
 /turf/simulated/shuttle/wall/voidcraft,
-/area/surface/outpost/wall/checkpoint)
+/area/surface/outpost/wall/checkpoint/inside)
 "eh" = (
 /obj/effect/map_effect/portal/line/side_a,
 /turf/simulated/shuttle/floor/voidcraft/external,
-/area/surface/outpost/wall/checkpoint)
+/area/surface/outpost/wall/checkpoint/inside)
 "ei" = (
 /obj/item/weapon/banner/nt,
 /turf/simulated/mineral/floor/ignore_mapgen/sif,

@@ -98,16 +98,16 @@
 	if(loc == H || (in_range(src, H) && istype(loc, /turf)))
 		H.set_machine(src)
 		if(href_list["spell_choice"])
-			if(href_list["spell_choice"] == "rememorize")
-				var/area/wizard_station/A = locate()
-				if(usr in A.contents)
-					uses = max_uses
-					H.spellremove()
-					temp = "All spells have been removed. You may now memorize a new set of spells."
-					feedback_add_details("wizard_spell_learned","UM") //please do not change the abbreviation to keep data processing consistent. Add a unique id to any new spells
-				else
-					temp = "You may only re-memorize spells whilst located inside the wizard sanctuary."
-			else if(uses >= 1 && max_uses >=1)
+//			if(href_list["spell_choice"] == "rememorize")
+//				var/area/wizard_station/A = locate()
+//				if(usr in A.contents)
+//					uses = max_uses
+//					H.spellremove()
+//					temp = "All spells have been removed. You may now memorize a new set of spells."
+//					feedback_add_details("wizard_spell_learned","UM") //please do not change the abbreviation to keep data processing consistent. Add a unique id to any new spells
+//				else
+//					temp = "You may only re-memorize spells whilst located inside the wizard sanctuary."
+			if(uses >= 1 && max_uses >=1)
 				if(href_list["spell_choice"] == "noclothes")
 					if(uses < 2)
 						return

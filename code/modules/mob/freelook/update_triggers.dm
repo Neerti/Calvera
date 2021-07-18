@@ -38,7 +38,7 @@
 	updateVisibility(src)
 	return ..()
 
-/obj/effect/Initialize()
+/obj/effect/Initialize(mapload)
 	. = ..()
 	updateVisibility(src)
 

@@ -4,7 +4,7 @@
 /area/space)
 "b" = (
 /turf/simulated/wall,
-/area/aisat)
+/area/example_map/first_floor)
 "c" = (
 /obj/machinery/atmospherics/pipe/zpipe/up{
 	dir = 4;
@@ -12,28 +12,28 @@
 	},
 /obj/structure/disposalpipe/up,
 /turf/simulated/floor/plating,
-/area/aisat)
+/area/example_map/first_floor)
 "d" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "e" = (
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "f" = (
 /obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "g" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 10;
@@ -41,34 +41,34 @@
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "h" = (
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "i" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "j" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
-/area/aisat)
+/area/example_map/first_floor)
 "k" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "l" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "m" = (
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 4;
@@ -77,20 +77,20 @@
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "n" = (
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "o" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "p" = (
 /obj/machinery/portable_atmospherics/canister/empty,
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "q" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 5;
@@ -98,7 +98,7 @@
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "r" = (
 /obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 4;
@@ -106,7 +106,7 @@
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "s" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 9;
@@ -114,21 +114,21 @@
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "t" = (
 /obj/structure/ladder/up,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "u" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "v" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "w" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -145,25 +145,25 @@
 	icon_state = "pipe-t"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "x" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "y" = (
 /obj/machinery/light_switch,
 /turf/simulated/wall,
-/area/aisat)
+/area/example_map/first_floor)
 "z" = (
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "A" = (
 /obj/machinery/light{
 	dir = 4;
@@ -179,13 +179,13 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "B" = (
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/structure/table/standard,
 /obj/item/device/multitool,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "C" = (
 /obj/machinery/light{
 	dir = 1
@@ -193,13 +193,13 @@
 /obj/structure/table/standard,
 /obj/item/weapon/storage/belt/utility/full,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "D" = (
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/structure/table/standard,
 /obj/item/clothing/gloves/yellow,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "E" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -208,18 +208,18 @@
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "F" = (
 /obj/effect/landmark{
 	name = "JoinLate"
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "G" = (
 /obj/effect/landmark/start,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "H" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -229,20 +229,20 @@
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/machinery/shield_gen,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "I" = (
 /obj/structure/stairs/spawner/south,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "J" = (
 /obj/effect/floor_decal/sign/a,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "K" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/aisat)
+/area/example_map/first_floor)
 "L" = (
 /obj/machinery/light,
 /obj/machinery/shield_capacitor{
@@ -255,7 +255,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
-/area/aisat)
+/area/example_map/first_floor)
 "M" = (
 /obj/machinery/shield_gen/external{
 	anchored = 1
@@ -266,7 +266,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/aisat)
+/area/example_map/first_floor)
 "N" = (
 /obj/machinery/shield_capacitor{
 	anchored = 1;
@@ -283,7 +283,7 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
-/area/aisat)
+/area/example_map/first_floor)
 "O" = (
 /obj/structure/cable/yellow,
 /obj/structure/cable/yellow{
@@ -297,17 +297,17 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
-/area/aisat)
+/area/example_map/first_floor)
 "P" = (
 /turf/simulated/floor/tiled/red,
-/area/aisat)
+/area/example_map/first_floor)
 "Q" = (
 /obj/turbolift_map_holder/example{
 	dir = 1;
 	icon = 'icons/obj/turbolift_preview_5x5.dmi'
 	},
 /turf/simulated/floor/tiled/red,
-/area/aisat)
+/area/example_map/first_floor)
 
 (1,1,1) = {"
 a

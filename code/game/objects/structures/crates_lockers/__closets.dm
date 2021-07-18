@@ -54,7 +54,7 @@
 		// adjust locker size to hold all items with 5 units of free store room
 		var/content_size = 0
 		for(I in contents)
-			content_size += CEILING(I.w_class/2, 1)
+			content_size += content_size(I)
 		if(content_size > storage_capacity-5)
 			storage_capacity = content_size + 5
 
@@ -71,7 +71,7 @@
 		var/content_size = 0
 		for(var/obj/item/I in contents)
 			if(!I.anchored)
-				content_size += CEILING(I.w_class/2, 1)
+				content_size += content_size(I)
 		if(!content_size)
 			. += "It is empty."
 		else if(storage_capacity > content_size*4)
@@ -85,6 +85,18 @@
 
 	if(!opened && isobserver(user))
 		. += "It contains: [counting_english_list(contents)]"
+
+// If you adjust any of the values below, please also update /proc/unit_test_weight_of_path(var/path)
+/obj/structure/closet/proc/content_size(atom/movable/AM)
+	if(ismob(AM))
+		var/mob/M = AM
+		return M.mob_size
+	if(istype(AM, /obj/item))
+		var/obj/item/I = AM
+		return CEILING(I.w_class / 2, 1)
+	if(istype(AM, /obj/structure) || istype(AM, /obj/machinery))
+		return MOB_LARGE
+	return 0
 
 /obj/structure/closet/CanPass(atom/movable/mover, turf/target)
 	if(wall_mounted)
@@ -120,6 +132,18 @@
 			M.client.eye = M.client.mob
 			M.client.perspective = MOB_PERSPECTIVE
 
+/obj/structure/closet/proc/store_contents()
+	var/stored_units = 0
+
+	if(store_misc)
+		stored_units += store_misc(stored_units)
+	if(store_items)
+		stored_units += store_items(stored_units)
+	if(store_mobs)
+		stored_units += store_mobs(stored_units)
+	if(max_closets)
+		stored_units += store_closets(stored_units)
+
 /obj/structure/closet/proc/open()
 	if(opened)
 		return 0
@@ -129,7 +153,7 @@
 
 	dump_contents()
 
-	opened = 1
+	opened = TRUE
 	playsound(src, open_sound, 15, 1, -3)
 	if(initial(density))
 		density = !density
@@ -142,18 +166,9 @@
 	if(!can_close())
 		return 0
 
-	var/stored_units = 0
+	store_contents()
 
-	if(store_misc)
-		stored_units += store_misc(stored_units)
-	if(store_items)
-		stored_units += store_items(stored_units)
-	if(store_mobs)
-		stored_units += store_mobs(stored_units)
-	if(max_closets)
-		stored_units += store_closets(stored_units)
-
-	opened = 0
+	opened = FALSE
 
 	playsound(src, close_sound, 15, 1, -3)
 	if(initial(density))
@@ -174,7 +189,7 @@
 /obj/structure/closet/proc/store_items(var/stored_units)
 	var/added_units = 0
 	for(var/obj/item/I in loc)
-		var/item_size = CEILING(I.w_class / 2, 1)
+		var/item_size = content_size(I)
 		if(stored_units + added_units + item_size > storage_capacity)
 			continue
 		if(!I.anchored)

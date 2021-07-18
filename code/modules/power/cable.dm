@@ -53,8 +53,10 @@ var/list/possible_cable_coil_colours = list(
 	icon_state = "0-1"
 	var/d1 = 0
 	var/d2 = 1
-	plane = PLATING_PLANE
-	layer = WIRES_LAYER
+	plane = ABOVE_PLANE
+	init_plane = PLATING_PLANE
+	layer = ABOVE_UTILITY
+	init_layer = WIRES_LAYER
 	color = COLOR_RED
 	var/obj/machinery/power/breakerbox/breaker_box
 
@@ -88,9 +90,8 @@ var/list/possible_cable_coil_colours = list(
 /obj/structure/cable/white
 	color = COLOR_WHITE
 
-/obj/structure/cable/New()
-	..()
-
+/obj/structure/cable/Initialize(mapload)
+	. = ..()
 	// ensure d1 & d2 reflect the icon_state for entering and exiting cable
 
 	var/dash = findtext(icon_state, "-")
@@ -100,9 +101,9 @@ var/list/possible_cable_coil_colours = list(
 	d2 = text2num( copytext( icon_state, dash+1 ) )
 
 	var/turf/T = src.loc			// hide if turf is not intact
-	if(level==1) hide(!T.is_plating())
+	if(level == 1)
+		hide(!T.is_plating())
 	cable_list += src //add it to the global cable list
-
 
 /obj/structure/cable/Destroy()					// called when a cable is deleted
 	if(powernet)

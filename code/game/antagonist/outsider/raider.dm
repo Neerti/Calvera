@@ -120,28 +120,6 @@ var/datum/antagonist/raider/raiders
 
 	if(!..())
 		return 0
-
-	var/i = 1
-	var/max_objectives = pick(2,2,2,2,3,3,3,4)
-	global_objectives = list()
-	while(i<= max_objectives)
-		var/list/goals = list("kidnap","loot","salvage")
-		var/goal = pick(goals)
-		var/datum/objective/heist/O
-
-		if(goal == "kidnap")
-			goals -= "kidnap"
-			O = new /datum/objective/heist/kidnap()
-		else if(goal == "loot")
-			O = new /datum/objective/heist/loot()
-		else
-			O = new /datum/objective/heist/salvage()
-		O.choose_target()
-		global_objectives |= O
-
-		i++
-
-	global_objectives |= new /datum/objective/heist/preserve_crew
 	return 1
 
 /datum/antagonist/raider/check_victory()
@@ -196,7 +174,7 @@ var/datum/antagonist/raider/raiders
 		return 0
 
 	for(var/datum/mind/player in current_antagonists)
-		if(!player.current || get_area(player.current) != locate(/area/skipjack_station/start))
+		if(!player.current || (player.current.z in using_map.station_levels))
 			return 0
 	return 1
 

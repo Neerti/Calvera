@@ -123,22 +123,21 @@
 	shattered = 1
 
 /obj/structure/mirror/raider/attack_hand(var/mob/living/carbon/human/user)
-	if(istype(get_area(src),/area/syndicate_mothership))
-		if(istype(user) && user.mind && user.mind.special_role == "Raider" && user.species.name != SPECIES_VOX && is_alien_whitelisted(user, SPECIES_VOX))
-			var/choice = input("Do you wish to become a true Vox of the Shoal? This is not reversible.") as null|anything in list("No","Yes")
-			if(choice && choice == "Yes")
-				var/mob/living/carbon/human/vox/vox = new(get_turf(src),SPECIES_VOX)
-				vox.gender = user.gender
-				raiders.equip(vox)
-				if(user.mind)
-					user.mind.transfer_to(vox)
-				spawn(1)
-					var/newname = sanitizeSafe(input(vox,"Enter a name, or leave blank for the default name.", "Name change","") as text, MAX_NAME_LEN)
-					if(!newname || newname == "")
-						var/datum/language/L = GLOB.all_languages[vox.species.default_language]
-						newname = L.get_random_name()
-					vox.real_name = newname
-					vox.name = vox.real_name
-					raiders.update_access(vox)
-				qdel(user)
+	if(istype(user) && user.mind && user.mind.special_role == "Raider" && user.species.name != SPECIES_VOX && is_alien_whitelisted(user, SPECIES_VOX))
+		var/choice = input("Do you wish to become a true Vox of the Shoal? This is not reversible.") as null|anything in list("No","Yes")
+		if(choice && choice == "Yes")
+			var/mob/living/carbon/human/vox/vox = new(get_turf(src),SPECIES_VOX)
+			vox.gender = user.gender
+			raiders.equip(vox)
+			if(user.mind)
+				user.mind.transfer_to(vox)
+			spawn(1)
+				var/newname = sanitizeSafe(input(vox,"Enter a name, or leave blank for the default name.", "Name change","") as text, MAX_NAME_LEN)
+				if(!newname || newname == "")
+					var/datum/language/L = GLOB.all_languages[vox.species.default_language]
+					newname = L.get_random_name()
+				vox.real_name = newname
+				vox.name = vox.real_name
+				raiders.update_access(vox)
+			qdel(user)
 	..()

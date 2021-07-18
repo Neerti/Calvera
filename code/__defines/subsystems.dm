@@ -81,6 +81,7 @@ var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_G
 #define INIT_ORDER_PERSISTENCE	-25
 #define INIT_ORDER_TICKER		-50
 #define INIT_ORDER_CHAT			-100 //Should be last to ensure chat remains smooth during init.
+#define INIT_ORDER_UNIT_TESTS	-1000 // This only shows up when UNIT_TEST is defined, so most of the time the above value is the last one.
 
 
 // Subsystem fire priority, from lowest to highest priority

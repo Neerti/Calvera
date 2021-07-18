@@ -214,7 +214,7 @@
 		if(existing == src)
 			continue
 		else
-			qdel(existing)
+			return INITIALIZE_HINT_QDEL
 
 	linked_node = src
 
@@ -277,7 +277,7 @@
 		var/turf/T1 = get_turf(src)
 		var/turf/T2 = get_step(src, dirn)
 
-		if(!istype(T2) || locate(/obj/effect/alien/weeds) in T2 || istype(T2.loc, /area/arrival) || isspace(T2))
+		if(!istype(T2) || locate(/obj/effect/alien/weeds) in T2 || isspace(T2))
 			continue
 
 		if(T1.c_airblock(T2) == BLOCKED)

@@ -1,5 +1,5 @@
 //not a computer
-obj/machinery/scanner
+/obj/machinery/scanner
 	name = "identity analyzer"
 	var/outputdir = 0
 	icon = 'icons/obj/stationobjs.dmi'
@@ -8,7 +8,7 @@ obj/machinery/scanner
 	anchored = 1
 	var/lastuser = null
 
-obj/machinery/scanner/New()
+/obj/machinery/scanner/Initialize(mapload)
 	if(!outputdir)
 		switch(dir)
 			if(1)
@@ -21,6 +21,7 @@ obj/machinery/scanner/New()
 				outputdir = 4
 		if(!outputdir)
 			outputdir = 8
+	return ..()
 
 /obj/machinery/scanner/process()
 	if(stat & NOPOWER)

@@ -272,11 +272,15 @@
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	power_draw_idle = 5 // Raises to 80 when on.
 	var/obj/machinery/camera/network/circuits/camera
+	var/default_c_tag = null
+	var/static/cameras_made = 0
 
-/obj/item/integrated_circuit/output/video_camera/New()
-	..()
+/obj/item/integrated_circuit/output/video_camera/Initialize(mapload)
+	cameras_made++
 	camera = new(src)
+	default_c_tag = "circuit camera #[cameras_made]"
 	on_data_written()
+	return ..()
 
 /obj/item/integrated_circuit/output/video_camera/Destroy()
 	QDEL_NULL(camera)
@@ -295,7 +299,7 @@
 		var/cam_name = get_pin_data(IC_INPUT, 1)
 		var/cam_active = get_pin_data(IC_INPUT, 2)
 		if(!isnull(cam_name))
-			camera.c_tag = cam_name
+			camera.c_tag = "[cam_name] ([default_c_tag])"
 		set_camera_status(cam_active)
 
 /obj/item/integrated_circuit/output/video_camera/power_fail()
