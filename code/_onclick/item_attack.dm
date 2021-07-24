@@ -59,7 +59,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	var/speed = base_attack_cooldown
 	if(W && istype(W))
 		speed = W.attackspeed
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.attack_speed_percent))
 			speed *= M.attack_speed_percent
 	return speed
@@ -100,7 +100,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 		playsound(src, hitsound, 50, 1, -1)
 
 	var/power = force
-	for(var/datum/modifier/M in user.modifiers)
+	for(var/datum/legacy_modifier/M in user.legacy_modifiers)
 		if(!isnull(M.outgoing_melee_damage_percent))
 			power *= M.outgoing_melee_damage_percent
 

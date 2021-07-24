@@ -217,7 +217,7 @@
 
 	sight = initial(sight)
 
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.vision_flags))
 			sight |= M.vision_flags
 

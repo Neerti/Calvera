@@ -103,7 +103,7 @@
 	if(!blinded)
 		flash_eyes()
 
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.explosion_modifier))
 			severity = CLAMP(severity + M.explosion_modifier, 1, 4)
 
@@ -1473,7 +1473,7 @@
 /mob/living/carbon/human/can_feel_pain(var/obj/item/organ/check_organ)
 	if(isSynthetic())
 		return 0
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(M.pain_immunity == TRUE)
 			return 0
 	if(check_organ)

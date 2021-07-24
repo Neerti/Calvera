@@ -214,15 +214,11 @@
 */
 /mob/living/simple_mob/movement_delay()
 	. = movement_cooldown
-
-	if(force_max_speed)
+	
+	if(get_modification(/decl/modifier_field/haste))
 		return -3
-
-	for(var/datum/modifier/M in modifiers)
-		if(!isnull(M.haste) && M.haste == TRUE)
-			return -3
-		if(!isnull(M.slowdown))
-			. += M.slowdown
+	
+	. += get_modification(/decl/modifier_field/slowdown)
 
 	// Turf related slowdown
 	var/turf/T = get_turf(src)

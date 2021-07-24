@@ -36,5 +36,5 @@
 		B.forceMove(T)
 
 /datum/blob_type/shifting_fragments/on_chunk_use(obj/item/weapon/blobcore_chunk/B, mob/living/user)
-	user.add_modifier(/datum/modifier/sprinting, 2 MINUTES)
+	user.add_legacy_modifier(/datum/legacy_modifier/sprinting, 2 MINUTES)
 	return

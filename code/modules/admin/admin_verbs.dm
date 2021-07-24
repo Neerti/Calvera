@@ -301,7 +301,7 @@
 		to_chat(usr, "<span class='warning'>Looks like you didn't select a mob.</span>")
 		return
 
-	var/list/possible_modifiers = typesof(/datum/modifier) - /datum/modifier
+	var/list/possible_modifiers = typesof(/datum/legacy_modifier) - /datum/legacy_modifier
 
 	var/new_modifier_type = input("What modifier should we add to [L]?", "Modifier Type") as null|anything in possible_modifiers
 	if(!new_modifier_type)
@@ -312,7 +312,7 @@
 	else
 		duration = duration SECONDS
 
-	L.add_modifier(new_modifier_type, duration)
+	L.add_legacy_modifier(new_modifier_type, duration)
 	log_and_message_admins("has given [key_name(L)] the modifer [new_modifier_type], with a duration of [duration ? "[duration / 600] minutes" : "forever"].")
 
 /client/proc/make_sound(var/obj/O in world) // -- TLE

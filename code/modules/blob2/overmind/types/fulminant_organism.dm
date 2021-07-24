@@ -49,4 +49,4 @@
 		S.blob_type = src
 		S.update_icons()
 		S.ai_holder.forget_everything()
-		S.add_modifier(/datum/modifier/doomed, 2 MINUTES)
+		S.add_legacy_modifier(/datum/legacy_modifier/doomed, 2 MINUTES)

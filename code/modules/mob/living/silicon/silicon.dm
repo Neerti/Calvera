@@ -287,7 +287,7 @@
 	if(!blinded)
 		flash_eyes()
 
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.explosion_modifier))
 			severity = CLAMP(severity + M.explosion_modifier, 1, 4)
 

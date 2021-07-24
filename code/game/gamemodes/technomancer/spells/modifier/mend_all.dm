@@ -7,10 +7,10 @@
 	cast_methods = CAST_MELEE
 	aspect = ASPECT_BIOMED
 	light_color = "#FF5C5C"
-	modifier_type = /datum/modifier/technomancer/mend_life
+	modifier_type = /datum/legacy_modifier/technomancer/mend_life
 	modifier_duration = 1 MINUTE
 
-/datum/modifier/technomancer/mend_all
+/datum/legacy_modifier/technomancer/mend_all
 	name = "mend all"
 	desc = "You feel serene and well rested."
 	mob_overlay_state = "green_sparkles"
@@ -19,7 +19,7 @@
 	on_expired_text = "<span class='notice'>The sparkles have faded, although you feel much healthier than before.</span>"
 	stacks = MODIFIER_STACK_EXTEND
 
-/datum/modifier/technomancer/mend_all/tick()
+/datum/legacy_modifier/technomancer/mend_all/tick()
 	if(!holder.getBruteLoss() && !holder.getFireLoss() && !holder.getToxLoss() && !holder.getOxyLoss() && !holder.getCloneLoss()) // No point existing if the spell can't heal.
 		expire()
 		return

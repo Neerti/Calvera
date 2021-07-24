@@ -9,13 +9,13 @@
 	if(!L.is_sentient())
 		return FALSE // Drons are presumably deaf to any psionic things.
 
-	if(L.add_modifier(/datum/modifier/feysight, 30 SECONDS))
+	if(L.add_legacy_modifier(/datum/legacy_modifier/feysight, 30 SECONDS))
 		to_chat(L, "<span class='alien'>An otherworldly feeling seems to enter your mind, and you feel at peace.</span>")
 		L.adjustHalLoss(10)
 		to_chat(L, "<span class='danger'>The inside of your head hurts...</span>")
 		return TRUE
 	else
-		if(L.has_modifier_of_type(/datum/modifier/feysight))
+		if(L.has_legacy_modifier_of_type(/datum/legacy_modifier/feysight))
 			to_chat(L, "<span class='warning'>An otherworldly feeling seems to enter your mind again, and it holds the visions in place.</span>")
 		else
 			to_chat(L, "<span class='warning'>An otherworldly feeling seems to enter your mind, and you briefly feel peace, but \

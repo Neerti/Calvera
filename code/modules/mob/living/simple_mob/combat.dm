@@ -43,7 +43,7 @@
 
 	damage_to_do = apply_bonus_melee_damage(A, damage_to_do)
 
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.outgoing_melee_damage_percent))
 			damage_to_do *= M.outgoing_melee_damage_percent
 
@@ -154,7 +154,7 @@
 	. = projectile_dispersion // Start with the basic var.
 
 	// Some modifiers change dispersion. This makes simple_mobs respect that.
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.accuracy_dispersion))
 			. += M.accuracy_dispersion
 
@@ -165,7 +165,7 @@
 	. = projectile_accuracy // Start with the basic var.
 
 	// Some modifiers make it harder or easier to hit things.
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.accuracy))
 			. += M.accuracy
 
@@ -227,10 +227,10 @@
 /mob/living/simple_mob/proc/handle_attack_delay(atom/A, delay_amount)
 	set_AI_busy(TRUE)
 
-	// Click delay modifiers also affect telegraphing time.
+	// Click delay legacy_modifiers also affect telegraphing time.
 	// This means berserked enemies will leave less time to dodge.
 	var/true_attack_delay = delay_amount
-	for(var/datum/modifier/M in modifiers)
+	for(var/datum/legacy_modifier/M in legacy_modifiers)
 		if(!isnull(M.attack_speed_percent))
 			true_attack_delay *= M.attack_speed_percent
 

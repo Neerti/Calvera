@@ -11,14 +11,14 @@
 	color = "#ff5555"
 	metabolism = REM
 
-	var/modifier_to_add = /datum/modifier/berserk
+	var/modifier_to_add = /datum/legacy_modifier/berserk
 	var/modifier_duration = 3 SECONDS	// How long, per unit dose, will this last?
 										// 2 SECONDS is the resolution of life code, and the modifier will expire before chemical processing tries to re-add it
 
 /datum/reagent/modapplying/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
 		return
-	M.add_modifier(modifier_to_add, modifier_duration, suppress_failure = TRUE)
+	M.add_legacy_modifier(modifier_to_add, modifier_duration, suppress_failure = TRUE)
 
 /datum/reagent/modapplying/cryofluid
 	name = "cryogenic slurry"
@@ -28,7 +28,7 @@
 	color = "#4CDBDB"
 	metabolism = REM * 0.5
 
-	modifier_to_add = /datum/modifier/cryogelled
+	modifier_to_add = /datum/legacy_modifier/cryogelled
 	modifier_duration = 3 SECONDS
 
 /datum/reagent/modapplying/cryofluid/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
@@ -45,7 +45,7 @@
 	if(isliving(M))
 		var/mob/living/L = M
 		for(var/I = 1 to rand(1, round(amount + 1)))
-			L.add_modifier(modifier_to_add, amount * rand(modifier_duration / 2, modifier_duration * 2))
+			L.add_legacy_modifier(modifier_to_add, amount * rand(modifier_duration / 2, modifier_duration * 2))
 	return
 
 /datum/reagent/modapplying/cryofluid/touch_turf(var/turf/T, var/amount)
@@ -66,5 +66,5 @@
 	color = "#060501"
 	metabolism = REM * 0.2
 
-	modifier_to_add = /datum/modifier/clone_stabilizer
+	modifier_to_add = /datum/legacy_modifier/clone_stabilizer
 	modifier_duration = 30 SECONDS

@@ -37,4 +37,4 @@
 			var/mob/living/L = user
 			L.visible_message("<span class='danger'>[L] convulses, the very letters of \the [src] searing themselves into their eyes!</span>", \
 				"<span class='critical'>You convulse, the very letters of \the [src] searing themselves into your eyes!</span>")
-			L.add_modifier(/datum/modifier/grievous_wounds, 10 MINUTES)
+			L.add_legacy_modifier(/datum/legacy_modifier/grievous_wounds, 10 MINUTES)

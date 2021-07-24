@@ -16,10 +16,10 @@
 	cast_methods = CAST_MELEE
 	aspect = ASPECT_BIOMED // sorta??
 	light_color = "#FF5C5C"
-	modifier_type = /datum/modifier/technomancer/mend_synthetic
+	modifier_type = /datum/legacy_modifier/technomancer/mend_synthetic
 	modifier_duration = 10 SECONDS
 
-/datum/modifier/technomancer/mend_synthetic
+/datum/legacy_modifier/technomancer/mend_synthetic
 	name = "mend synthetic"
 	desc = "Something seems to be repairing you."
 	mob_overlay_state = "cyan_sparkles"
@@ -28,7 +28,7 @@
 	on_expired_text = "<span class='notice'>The sparkles have faded, although your systems seem to be better than before.</span>"
 	stacks = MODIFIER_STACK_EXTEND
 
-/datum/modifier/technomancer/mend_synthetic/tick()
+/datum/legacy_modifier/technomancer/mend_synthetic/tick()
 	if(!holder.getActualBruteLoss() && !holder.getActualFireLoss()) // No point existing if the spell can't heal.
 		expire()
 		return

@@ -2,7 +2,7 @@
 	see_invisible = SEE_INVISIBLE_LIVING
 
 	//Health and life related vars
-	var/maxHealth = 100 //Maximum health that should be possible.  Avoid adjusting this if you can, and instead use modifiers datums.
+	var/maxHealth = 100 //Maximum health that should be possible.  Avoid adjusting this if you can, and instead use modifier datums.
 	var/health = 100 	//A mob's health
 
 	var/mob_class = null	// A mob's "class", e.g. human, mechanical, animal, etc. Used for certain projectile effects. See __defines/mob.dm for available classes.
@@ -51,7 +51,6 @@
 	var/lastpuke = 0
 
 	var/evasion = 0 // Makes attacks harder to land. Negative numbers increase hit chance.
-	var/force_max_speed = 0 // If 1, the mob runs extremely fast and cannot be slowed.
 
 	var/image/dsoverlay = null //Overlay used for darksight eye adjustments
 

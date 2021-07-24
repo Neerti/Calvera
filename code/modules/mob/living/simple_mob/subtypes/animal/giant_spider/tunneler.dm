@@ -159,7 +159,7 @@
 			to_chat(src, span("critical", "You hit something really solid!"))
 			playsound(src, "punch", 75, 1)
 			Weaken(5)
-			add_modifier(/datum/modifier/tunneler_vulnerable, 10 SECONDS)
+			add_legacy_modifier(/datum/legacy_modifier/tunneler_vulnerable, 10 SECONDS)
 			return FALSE // Hit a wall.
 
 		// Stun anyone in our way.
@@ -196,7 +196,7 @@
 	icon_state = "tunnel_hole"
 	time_to_die = 1 MINUTE
 
-/datum/modifier/tunneler_vulnerable
+/datum/legacy_modifier/tunneler_vulnerable
 	name = "Vulnerable"
 	desc = "You are vulnerable to more harm than usual."
 	on_created_text = "<span class='warning'>You feel vulnerable...</span>"

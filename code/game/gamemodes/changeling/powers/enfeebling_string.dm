@@ -7,7 +7,7 @@
 	genomecost = 1
 	verbpath = /mob/proc/changeling_enfeebling_string
 
-/datum/modifier/enfeeble
+/datum/legacy_modifier/enfeeble
 	name = "enfeebled"
 	desc = "You feel really weak and frail for some reason."
 
@@ -19,7 +19,7 @@
 	on_expired_text = "<span class='notice'>You no longer feel extremly weak.</span>"
 
 // Now YOU'RE the Teshari!
-/datum/modifier/enfeeble/strong
+/datum/legacy_modifier/enfeeble/strong
 	max_health_percent = 0.5
 	outgoing_melee_damage_percent = 0.5
 	incoming_damage_percent = 1.35
@@ -37,10 +37,10 @@
 
 		add_attack_logs(src,T,"Enfeebling sting (changeling)")
 
-		var/type_to_give = /datum/modifier/enfeeble
+		var/type_to_give = /datum/legacy_modifier/enfeeble
 		if(src.mind.changeling.recursive_enhancement)
-			type_to_give = /datum/modifier/enfeeble/strong
+			type_to_give = /datum/legacy_modifier/enfeeble/strong
 			to_chat(src, "<span class='notice'>We make them extremely weak.</span>")
-		H.add_modifier(type_to_give, 2 MINUTES)
+		H.add_legacy_modifier(type_to_give, 2 MINUTES)
 	feedback_add_details("changeling_powers","ES")
 	return 1

@@ -6,7 +6,7 @@
 	isVerb = 0
 	verbpath = /mob/proc/changeling_endoarmor
 
-/datum/modifier/endoarmor
+/datum/legacy_modifier/endoarmor
 	name = "endoarmor"
 	desc = "We have hard plating underneath our skin, making us more durable."
 
@@ -17,6 +17,6 @@
 /mob/proc/changeling_endoarmor()
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
-		H.add_modifier(/datum/modifier/endoarmor)
+		H.add_legacy_modifier(/datum/legacy_modifier/endoarmor)
 	//	H.maxHealth += 50
 	return 1

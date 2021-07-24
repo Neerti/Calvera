@@ -76,7 +76,7 @@
 			if(H.getToxLoss() == 0)	// We don't exactly care about the bag being 'used' when containing a synth, unless it's got work.
 				used = FALSE
 			else
-				H.add_modifier(/datum/modifier/fbp_debug/robobag)
+				H.add_legacy_modifier(/datum/legacy_modifier/fbp_debug/robobag)
 
 /obj/structure/closet/body_bag/cryobag/robobag/attackby(obj/item/W, mob/user)
 	if(opened)
@@ -105,7 +105,7 @@
 		else
 			..()
 
-/datum/modifier/fbp_debug
+/datum/legacy_modifier/fbp_debug
 	name = "defragmenting"
 	desc = "Your software is being debugged."
 	mob_overlay_state = "signal_blue"
@@ -114,21 +114,21 @@
 	on_expired_text = "<span class='notice'>Your mind is clear once more.</span>"
 	stacks = MODIFIER_STACK_FORBID
 
-/datum/modifier/fbp_debug/tick()
+/datum/legacy_modifier/fbp_debug/tick()
 	if(holder.getToxLoss())
 		holder.adjustToxLoss(rand(-1,-5))
 
-/datum/modifier/fbp_debug/can_apply(mob/living/L)
+/datum/legacy_modifier/fbp_debug/can_apply(mob/living/L)
 	if(!L.isSynthetic())
 		return FALSE
 	return TRUE
 
-/datum/modifier/fbp_debug/check_if_valid()
+/datum/legacy_modifier/fbp_debug/check_if_valid()
 	..()
 	if(!holder.getToxLoss())
 		src.expire()
 
-/datum/modifier/fbp_debug/robobag/check_if_valid()
+/datum/legacy_modifier/fbp_debug/robobag/check_if_valid()
 	..()
 	if(!istype(holder.loc, /obj/structure/closet/body_bag/cryobag/robobag))
 		src.expire()

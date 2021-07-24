@@ -75,7 +75,7 @@
 
 		holder.Beam(L, icon_state = "drainbeam", time = 1 SECOND)
 
-		L.add_modifier(/datum/modifier/agonize, 5 SECONDS)
+		L.add_legacy_modifier(/datum/legacy_modifier/agonize, 5 SECONDS)
 
 	if(charges >= 0.1)
 		if(prob(5))

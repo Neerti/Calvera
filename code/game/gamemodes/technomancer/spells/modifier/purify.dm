@@ -16,10 +16,10 @@
 	cast_methods = CAST_MELEE
 	aspect = ASPECT_BIOMED
 	light_color = "#FF5C5C"
-	modifier_type = /datum/modifier/technomancer/purify
+	modifier_type = /datum/legacy_modifier/technomancer/purify
 	modifier_duration = 10 SECONDS
 
-/datum/modifier/technomancer/purify
+/datum/legacy_modifier/technomancer/purify
 	name = "purify"
 	desc = "You feel rather clean and pure."
 	mob_overlay_state = "green_sparkles"
@@ -28,7 +28,7 @@
 	on_expired_text = "<span class='notice'>The sparkles have faded, although you feel healthier than before.</span>"
 	stacks = MODIFIER_STACK_EXTEND
 
-/datum/modifier/technomancer/purify/tick()
+/datum/legacy_modifier/technomancer/purify/tick()
 	if(!holder.getToxLoss()) // No point existing if the spell can't heal.
 		expire()
 		return

@@ -121,11 +121,8 @@ var/global/list/damage_icon_parts = list() //see UpdateDamageIcon()
 	desired_scale_x *= species.icon_scale_x
 	desired_scale_y *= species.icon_scale_y
 
-	for(var/datum/modifier/M in modifiers)
-		if(!isnull(M.icon_scale_x_percent))
-			desired_scale_x *= M.icon_scale_x_percent
-		if(!isnull(M.icon_scale_y_percent))
-			desired_scale_y *= M.icon_scale_y_percent
+	desired_scale_x *= get_modification(/decl/modifier_field/scale_x) || 1
+	desired_scale_y *= get_modification(/decl/modifier_field/scale_y) || 1
 
 	// Regular stuff again.
 	var/matrix/M = matrix()

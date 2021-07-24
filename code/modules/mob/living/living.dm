@@ -152,15 +152,10 @@
 	if(status_flags & GODMODE)	return 0	//godmode
 
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.incoming_damage_percent))
-				amount *= M.incoming_damage_percent
-			if(!isnull(M.incoming_brute_damage_percent))
-				amount *= M.incoming_brute_damage_percent
+		amount *= get_modification(/decl/modifier_field/incoming_damage)
+		amount *= get_modification(/decl/modifier_field/incoming_bruteloss)
 	else if(amount < 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.incoming_healing_percent))
-				amount *= M.incoming_healing_percent
+		amount *= get_modification(/decl/modifier_field/incoming_healing)
 
 	bruteloss = min(max(bruteloss + amount, 0),(getMaxHealth()*2))
 	updatehealth()
@@ -172,15 +167,10 @@
 	if(status_flags & GODMODE)	return 0	//godmode
 
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.incoming_damage_percent))
-				amount *= M.incoming_damage_percent
-			if(!isnull(M.incoming_oxy_damage_percent))
-				amount *= M.incoming_oxy_damage_percent
+		amount *= get_modification(/decl/modifier_field/incoming_damage)
+		amount *= get_modification(/decl/modifier_field/incoming_oxyloss)
 	else if(amount < 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.incoming_healing_percent))
-				amount *= M.incoming_healing_percent
+		amount *= get_modification(/decl/modifier_field/incoming_healing)
 
 	oxyloss = min(max(oxyloss + amount, 0),(getMaxHealth()*2))
 	updatehealth()
@@ -196,15 +186,10 @@
 	if(status_flags & GODMODE)	return 0	//godmode
 
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.incoming_damage_percent))
-				amount *= M.incoming_damage_percent
-			if(!isnull(M.incoming_tox_damage_percent))
-				amount *= M.incoming_tox_damage_percent
+		amount *= get_modification(/decl/modifier_field/incoming_damage)
+		amount *= get_modification(/decl/modifier_field/incoming_toxloss)
 	else if(amount < 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.incoming_healing_percent))
-				amount *= M.incoming_healing_percent
+		amount *= get_modification(/decl/modifier_field/incoming_healing)
 
 	toxloss = min(max(toxloss + amount, 0),(getMaxHealth()*2))
 	updatehealth()
@@ -226,15 +211,10 @@
 /mob/living/proc/adjustFireLoss(var/amount,var/include_robo)
 	if(status_flags & GODMODE)	return 0	//godmode
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.incoming_damage_percent))
-				amount *= M.incoming_damage_percent
-			if(!isnull(M.incoming_fire_damage_percent))
-				amount *= M.incoming_fire_damage_percent
+		amount *= get_modification(/decl/modifier_field/incoming_damage)
+		amount *= get_modification(/decl/modifier_field/incoming_fireloss)
 	else if(amount < 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.incoming_healing_percent))
-				amount *= M.incoming_healing_percent
+		amount *= get_modification(/decl/modifier_field/incoming_healing)
 
 	fireloss = min(max(fireloss + amount, 0),(getMaxHealth()*2))
 	updatehealth()
@@ -246,15 +226,10 @@
 	if(status_flags & GODMODE)	return 0	//godmode
 
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.incoming_damage_percent))
-				amount *= M.incoming_damage_percent
-			if(!isnull(M.incoming_clone_damage_percent))
-				amount *= M.incoming_clone_damage_percent
+		amount *= get_modification(/decl/modifier_field/incoming_damage)
+		amount *= get_modification(/decl/modifier_field/incoming_cloneloss)
 	else if(amount < 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.incoming_healing_percent))
-				amount *= M.incoming_healing_percent
+		amount *= get_modification(/decl/modifier_field/incoming_healing)
 
 	cloneloss = min(max(cloneloss + amount, 0),(getMaxHealth()*2))
 	updatehealth()
@@ -280,17 +255,12 @@
 /mob/living/proc/adjustHalLoss(var/amount)
 	if(status_flags & GODMODE)	return 0	//godmode
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.incoming_damage_percent))
-				amount *= M.incoming_damage_percent
-			if(!isnull(M.incoming_hal_damage_percent))
-				amount *= M.incoming_hal_damage_percent
-			if(!isnull(M.disable_duration_percent))
-				amount *= M.disable_duration_percent
+		amount *= get_modification(/decl/modifier_field/incoming_damage)
+		amount *= get_modification(/decl/modifier_field/incoming_halloss)
+		amount *= get_modification(/decl/modifier_field/disable_duration)
 	else if(amount < 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.incoming_healing_percent))
-				amount *= M.incoming_healing_percent
+		amount *= get_modification(/decl/modifier_field/incoming_healing)
+	
 	halloss = min(max(halloss + amount, 0),(getMaxHealth()*2))
 	updatehealth()
 
@@ -301,22 +271,17 @@
 // Use this to get a mob's max health whenever possible.  Reading maxHealth directly will give inaccurate results if any modifiers exist.
 /mob/living/proc/getMaxHealth()
 	var/result = maxHealth
-	for(var/datum/modifier/M in modifiers)
-		if(!isnull(M.max_health_flat))
-			result += M.max_health_flat
-	// Second loop is so we can get all the flat adjustments first before multiplying, otherwise the result will be different.
-	for(var/datum/modifier/M in modifiers)
-		if(!isnull(M.max_health_percent))
-			result *= M.max_health_percent
+	
+	result += get_modification(/decl/modifier_field/max_health_flat)
+	// The percentage health change comes after the flat changes, otherwise the result will be different.
+	result *= get_modification(/decl/modifier_field/max_health_percent)
 	return result
 
 /mob/living/proc/setMaxHealth(var/newMaxHealth)
 	maxHealth = newMaxHealth
 
 /mob/living/Stun(amount)
-	for(var/datum/modifier/M in modifiers)
-		if(!isnull(M.disable_duration_percent))
-			amount = round(amount * M.disable_duration_percent)
+	amount *= get_modification(/decl/modifier_field/disable_duration)
 	..(amount)
 	if(stunned > 0)
 		add_status_indicator("stunned")
@@ -330,9 +295,7 @@
 
 /mob/living/AdjustStunned(amount)
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.disable_duration_percent))
-				amount = round(amount * M.disable_duration_percent)
+		amount *= get_modification(/decl/modifier_field/disable_duration)
 	..(amount)
 	if(stunned <= 0)
 		remove_status_indicator("stunned")
@@ -340,9 +303,7 @@
 		add_status_indicator("stunned")
 
 /mob/living/Weaken(amount)
-	for(var/datum/modifier/M in modifiers)
-		if(!isnull(M.disable_duration_percent))
-			amount = round(amount * M.disable_duration_percent)
+	amount *= get_modification(/decl/modifier_field/disable_duration)
 	..(amount)
 	if(weakened > 0)
 		add_status_indicator("weakened")
@@ -356,9 +317,7 @@
 
 /mob/living/AdjustWeakened(amount)
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.disable_duration_percent))
-				amount = round(amount * M.disable_duration_percent)
+		amount *= get_modification(/decl/modifier_field/disable_duration)
 	..(amount)
 	if(weakened <= 0)
 		remove_status_indicator("weakened")
@@ -366,9 +325,7 @@
 		add_status_indicator("weakened")
 
 /mob/living/Paralyse(amount)
-	for(var/datum/modifier/M in modifiers)
-		if(!isnull(M.disable_duration_percent))
-			amount = round(amount * M.disable_duration_percent)
+	amount *= get_modification(/decl/modifier_field/disable_duration)
 	..(amount)
 	if(paralysis > 0)
 		add_status_indicator("paralysis")
@@ -382,9 +339,7 @@
 
 /mob/living/AdjustParalysis(amount)
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.disable_duration_percent))
-				amount = round(amount * M.disable_duration_percent)
+		amount *= get_modification(/decl/modifier_field/disable_duration)
 	..(amount)
 	if(paralysis <= 0)
 		remove_status_indicator("paralysis")
@@ -392,9 +347,7 @@
 		add_status_indicator("paralysis")
 
 /mob/living/Sleeping(amount)
-	for(var/datum/modifier/M in modifiers)
-		if(!isnull(M.disable_duration_percent))
-			amount = round(amount * M.disable_duration_percent)
+	amount *= get_modification(/decl/modifier_field/disable_duration)
 	..(amount)
 	if(sleeping > 0)
 		add_status_indicator("sleeping")
@@ -408,9 +361,7 @@
 
 /mob/living/AdjustSleeping(amount)
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.disable_duration_percent))
-				amount = round(amount * M.disable_duration_percent)
+		amount *= get_modification(/decl/modifier_field/disable_duration)
 	..(amount)
 	if(sleeping <= 0)
 		remove_status_indicator("sleeping")
@@ -418,9 +369,7 @@
 		add_status_indicator("sleeping")
 
 /mob/living/Confuse(amount)
-	for(var/datum/modifier/M in modifiers)
-		if(!isnull(M.disable_duration_percent))
-			amount = round(amount * M.disable_duration_percent)
+	amount *= get_modification(/decl/modifier_field/disable_duration)
 	..(amount)
 	if(confused > 0)
 		add_status_indicator("confused")
@@ -434,9 +383,7 @@
 
 /mob/living/AdjustConfused(amount)
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.disable_duration_percent))
-				amount = round(amount * M.disable_duration_percent)
+		amount *= get_modification(/decl/modifier_field/disable_duration)
 	..(amount)
 	if(confused <= 0)
 		remove_status_indicator("confused")
@@ -444,9 +391,7 @@
 		add_status_indicator("confused")
 
 /mob/living/Blind(amount)
-	for(var/datum/modifier/M in modifiers)
-		if(!isnull(M.disable_duration_percent))
-			amount = round(amount * M.disable_duration_percent)
+	amount *= get_modification(/decl/modifier_field/disable_duration)
 	..(amount)
 	if(eye_blind > 0)
 		add_status_indicator("blinded")
@@ -460,9 +405,7 @@
 
 /mob/living/AdjustBlinded(amount)
 	if(amount > 0)
-		for(var/datum/modifier/M in modifiers)
-			if(!isnull(M.disable_duration_percent))
-				amount = round(amount * M.disable_duration_percent)
+		amount *= get_modification(/decl/modifier_field/disable_duration)
 	..(amount)
 	if(eye_blind <= 0)
 		remove_status_indicator("blinded")
@@ -864,7 +807,7 @@
 /mob/living/proc/get_mob_riding_slots()
 	return list(back)
 
-// Adds overlays for specific modifiers.
+// Adds overlays for specific legacy_modifiers.
 // You'll have to add your own implementation for non-humans currently, just override this proc.
 /mob/living/proc/update_modifier_visuals()
 	return
@@ -891,15 +834,11 @@
 
 /mob/living/get_icon_scale_x()
 	. = ..()
-	for(var/datum/modifier/M in modifiers)
-		if(!isnull(M.icon_scale_x_percent))
-			. *= M.icon_scale_x_percent
+	. *= get_modification(/decl/modifier_field/scale_x) || 1
 
 /mob/living/get_icon_scale_y()
 	. = ..()
-	for(var/datum/modifier/M in modifiers)
-		if(!isnull(M.icon_scale_y_percent))
-			. *= M.icon_scale_y_percent
+	. *= get_modification(/decl/modifier_field/scale_y) || 1
 
 /mob/living/update_transform()
 	// First, get the correct size.

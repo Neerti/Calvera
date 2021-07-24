@@ -29,7 +29,7 @@
 	return 1
 
 
-/datum/modifier/unit_test
+/datum/legacy_modifier/unit_test
 
 /datum/unit_test_legacy/modifier
 	name = "modifier test template"
@@ -37,14 +37,14 @@
 	var/subject_type = /mob/living/carbon/human
 	var/list/inputs = list(1.00, 0.75, 0.50, 0.25, 0.00, -0.50, -1.0, -2.0)
 	var/list/expected_outputs = list(1.00, 0.75, 0.50, 0.25, 0.00, -0.50, -1.0, -2.0)
-	var/datum/modifier/test_modifier = null
+	var/datum/legacy_modifier/test_modifier = null
 	var/issues = 0
 
 /datum/unit_test_legacy/modifier/start_test()
 	// Arrange.
 	subject = new subject_type(get_standard_turf())
-	subject.add_modifier(/datum/modifier/unit_test)
-	test_modifier = subject.get_modifier_of_type(/datum/modifier/unit_test)
+	subject.add_legacy_modifier(/datum/legacy_modifier/unit_test)
+	test_modifier = subject.get_legacy_modifier_of_type(/datum/legacy_modifier/unit_test)
 
 	// Act,
 	for(var/i = 1 to inputs.len)

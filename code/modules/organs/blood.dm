@@ -152,9 +152,9 @@ var/const/CE_STABLE_THRESHOLD = 0.5
 		// Some species bleed out differently
 		blood_loss_divisor /= species.bloodloss_rate
 
-		// Some modifiers can make bleeding better or worse.  Higher multiplers = more bleeding.
+		// Some legacy_modifiers can make bleeding better or worse.  Higher multiplers = more bleeding.
 		var/blood_loss_modifier_multiplier = 1.0
-		for(var/datum/modifier/M in modifiers)
+		for(var/datum/legacy_modifier/M in legacy_modifiers)
 			if(!isnull(M.bleeding_rate_percent))
 				blood_loss_modifier_multiplier += (M.bleeding_rate_percent - 1.0)
 

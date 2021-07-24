@@ -7,7 +7,7 @@
 	genomecost = 2
 	verbpath = /mob/proc/changeling_epinephrine_overdose
 
-/datum/modifier/unstoppable
+/datum/legacy_modifier/unstoppable
 	name = "unstoppable"
 	desc = "We feel limitless amounts of energy surge in our veins.  Nothing can stop us!"
 
@@ -39,7 +39,7 @@
 	C.reagents.add_reagent("epinephrine", 20)
 
 	if(src.mind.changeling.recursive_enhancement)
-		C.add_modifier(/datum/modifier/unstoppable, 30 SECONDS)
+		C.add_legacy_modifier(/datum/legacy_modifier/unstoppable, 30 SECONDS)
 
 	feedback_add_details("changeling_powers","UNS")
 	return 1

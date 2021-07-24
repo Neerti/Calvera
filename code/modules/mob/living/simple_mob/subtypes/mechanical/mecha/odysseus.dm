@@ -55,7 +55,7 @@
 		if(L.can_inject(src, null, target_zone))
 			to_chat(L, span("warning", "You feel a tiny prick."))
 			if(L.get_poison_protection() < 1)
-				L.add_modifier(/datum/modifier/poisoned, 30 SECONDS)
+				L.add_legacy_modifier(/datum/legacy_modifier/poisoned, 30 SECONDS)
 				L.inflict_poison_damage(5)
 
 
@@ -77,7 +77,7 @@
 
 // Fake syringe, which inflicts a long lasting modifier that slowly kills them.
 /obj/item/projectile/fake_syringe/poison
-	modifier_type_to_apply = /datum/modifier/poisoned
+	modifier_type_to_apply = /datum/legacy_modifier/poisoned
 	modifier_duration = 1 MINUTE // About 30 damage per stack over a minute.
 
 

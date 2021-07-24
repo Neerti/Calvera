@@ -77,7 +77,7 @@
 
 	to_chat(src, "<span class='notice'>We can now re-adapt, reverting our evolution so that we may start anew, if needed.</span>")
 
-	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages, T.identifying_gender, T.flavor_texts, T.modifiers)
+	var/datum/absorbed_dna/newDNA = new(T.real_name, T.dna, T.species.name, T.languages, T.identifying_gender, T.flavor_texts, T.legacy_modifiers)
 	absorbDNA(newDNA)
 
 	if(T.mind && T.mind.changeling)

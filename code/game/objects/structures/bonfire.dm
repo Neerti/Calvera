@@ -241,7 +241,7 @@
 						removed.add_thermal_energy(heat_transfer)
 
 				for(var/mob/living/L in view(3, src))
-					L.add_modifier(/datum/modifier/endothermic, 10 SECONDS, null, TRUE)
+					L.add_legacy_modifier(/datum/legacy_modifier/endothermic, 10 SECONDS, null, TRUE)
 
 				for(var/obj/item/stack/wetleather/WL in view(2, src))
 					if(WL.wetness >= 0)

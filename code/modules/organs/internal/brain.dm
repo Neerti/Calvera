@@ -104,9 +104,9 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 			brainmob.timeofhostdeath = H.timeofdeath
 
 		// Copy modifiers.
-		for(var/datum/modifier/M in H.modifiers)
+		for(var/datum/legacy_modifier/M in H.legacy_modifiers)
 			if(M.flags & MODIFIER_GENETIC)
-				brainmob.add_modifier(M.type)
+				brainmob.add_legacy_modifier(M.type)
 
 	if(H.mind)
 		H.mind.transfer_to(brainmob)
@@ -212,7 +212,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	R.flavor = list()
 	if(islist(owner_flavor_text))
 		R.flavor = owner_flavor_text.Copy()
-	for(var/datum/modifier/mod in brainmob.modifiers)
+	for(var/datum/legacy_modifier/mod in brainmob.legacy_modifiers)
 		if(mod.flags & MODIFIER_GENETIC)
 			R.genetic_modifiers.Add(mod.type)
 
@@ -234,7 +234,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 					return 0
 
 	for(var/modifier_type in R.genetic_modifiers)	//Can't be revived. Probably won't happen...?
-		if(istype(modifier_type, /datum/modifier/no_clone))
+		if(istype(modifier_type, /datum/legacy_modifier/no_clone))
 			return 0
 
 	var/mob/living/carbon/human/H = new /mob/living/carbon/human(get_turf(src), R.dna.species)
@@ -264,7 +264,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	H.regenerate_icons()
 	clonemind.transfer_to(H)
 	for(var/modifier_type in R.genetic_modifiers)
-		H.add_modifier(modifier_type)
+		H.add_legacy_modifier(modifier_type)
 
 	for(var/datum/language/L in R.languages)
 		H.add_language(L.name)

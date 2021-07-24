@@ -33,7 +33,7 @@
 		var/weapon_damage = I.force
 		var/modified_damage_percent = 1
 
-		for(var/datum/modifier/M in user.modifiers)
+		for(var/datum/legacy_modifier/M in user.legacy_modifiers)
 			if(!isnull(M.outgoing_melee_damage_percent))
 				weapon_damage *= M.outgoing_melee_damage_percent
 				modified_damage_percent *= M.outgoing_melee_damage_percent

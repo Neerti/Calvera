@@ -26,12 +26,12 @@
 	if(active)
 		src.mind.changeling.chem_charges -= 5
 		to_chat(C, "<span class='notice'>We feel a minute twitch in our eyes, and a hidden layer to the world is revealed.</span>")
-		C.add_modifier(/datum/modifier/changeling/thermal_sight, 0, src)
+		C.add_legacy_modifier(/datum/legacy_modifier/changeling/thermal_sight, 0, src)
 //		C.permanent_sight_flags |= SEE_MOBS
 //		C.dna.species.invis_sight = SEE_INVISIBLE_MINIMUM
 	else
 		to_chat(C, "<span class='notice'>Our vision dulls.</span>")
-		C.remove_modifiers_of_type(/datum/modifier/changeling/thermal_sight)
+		C.remove_legacy_modifiers_of_type(/datum/legacy_modifier/changeling/thermal_sight)
 //		C.permanent_sight_flags &= ~SEE_MOBS
 //		C.dna.species.invis_sight = initial(user.dna.species.invis_sight)
 	return 1
