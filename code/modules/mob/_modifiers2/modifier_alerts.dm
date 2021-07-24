@@ -18,9 +18,9 @@
 		to_chat(usr, SPAN_NOTICE("<b>[modifier.name]</b>"))
 		to_chat(usr, SPAN_NOTICE(modifier.desc))
 
-		for(var/decl_path in modifier.modifications)
+		for(var/decl_path in modifier.fields)
 			var/decl/modifier_field/field = GET_DECL(decl_path)
-			to_chat(usr, field.describe_effect(modifier.modifications[decl_path]))
+			to_chat(usr, field.describe_effect(modifier.fields[decl_path]))
 
 		if(modifier.show_time_left && modifier.predicted_time_to_remove)
 			var/time_left = modifier.predicted_time_to_remove - world.time

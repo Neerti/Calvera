@@ -3228,6 +3228,7 @@
 #include "code\unit_tests\new_tests\tests\equipment_tests.dm"
 #include "code\unit_tests\new_tests\tests\language_tests.dm"
 #include "code\unit_tests\new_tests\tests\map_tests.dm"
+#include "code\unit_tests\new_tests\tests\modifier_tests.dm"
 #include "code\unit_tests\new_tests\tests\power_tests.dm"
 #include "code\unit_tests\new_tests\tests\research_tests.dm"
 #include "code\unit_tests\new_tests\tests\subsystem_tests.dm"
@@ -3261,6 +3262,7 @@
 #include "maps\submaps\surface_submaps\plains\plains_areas.dm"
 #include "maps\submaps\surface_submaps\wilderness\wilderness.dm"
 #include "maps\submaps\surface_submaps\wilderness\wilderness_areas.dm"
+#include "maps\unit_testing\unit_testing.dm"
 #include "maps\~map_system\maps.dm"
 #include "maps\~map_system\maps_unit_testing.dm"
 // END_INCLUDE

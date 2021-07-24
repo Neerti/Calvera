@@ -29,6 +29,14 @@
 	emergency_shuttle_called_message = "An emergency evacuation shuttle has been called. It will arrive at docks one and two in approximately %ETA%."
 	emergency_shuttle_recall_message = "The emergency shuttle has been recalled."
 
+	machinery_test_exempt_areas = list(
+		/area/space = NO_MACHINES,
+		/area/example_map/first_floor = NO_ATMOS,
+		/area/example_map/second_floor = NO_ATMOS,
+		/area/turbolift/example_ground = NO_MACHINES,
+		/area/turbolift/example_top = NO_MACHINES
+	)
+
 /datum/map_z_level/example/first
 	z = Z_LEVEL_FIRST_EXAMPLE
 	name = "First Floor"

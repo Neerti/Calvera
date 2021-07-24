@@ -27,6 +27,7 @@
 	M.Scale(0, bar_height)
 	animate(src, transform = M, time = duration)
 	QDEL_IN_CLIENT_TIME(src, duration)
+	return ..()
 
 
 /obj/screen/modifier_duration_bar/Destroy()

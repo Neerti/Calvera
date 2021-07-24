@@ -125,6 +125,13 @@ For example, two +20% outgoing damage modifiers would stack to produce +44% outg
 	effect_desc = "You take %VALUE_PERCENT %WORD oxy damage."
 	summation_strategy = SUMMATION_MULTIPLICITIVE
 
+/decl/modifier_field/incoming_cloneloss
+	desc = "Modifies clone damage received by a percentage."
+	positive_word = "more"
+	negative_word = "less"
+	effect_desc = "You take %VALUE_PERCENT %WORD clone damage."
+	summation_strategy = SUMMATION_MULTIPLICITIVE
+
 /decl/modifier_field/incoming_halloss
 	desc = "Modifies holo damage received by a percentage."
 	positive_word = "more"

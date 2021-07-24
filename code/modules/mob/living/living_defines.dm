@@ -2,7 +2,7 @@
 	see_invisible = SEE_INVISIBLE_LIVING
 
 	//Health and life related vars
-	var/maxHealth = 100 //Maximum health that should be possible.  Avoid adjusting this if you can, and instead use modifiers datums.
+	var/maxHealth = 100 //Maximum health that should be possible.  Avoid adjusting this if you can, and instead use modifier datums.
 	var/health = 100 	//A mob's health
 
 	var/mob_class = null	// A mob's "class", e.g. human, mechanical, animal, etc. Used for certain projectile effects. See __defines/mob.dm for available classes.

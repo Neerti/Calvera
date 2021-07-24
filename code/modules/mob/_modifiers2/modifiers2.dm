@@ -75,7 +75,7 @@
 	var/const/MODIFIER_STACKING_ALLOWED = 4
 
 	/// A list of all modifications to apply to the mob. Note that if this is altered, you need to rebuild the cache.
-	var/list/modifications = list()
+	var/list/fields = list()
 
 
 /datum/modifier/New(new_holder)
@@ -106,7 +106,7 @@
 	if(mob_overlay_state)
 		holder.update_modifier_visuals()
 	
-	if(modifications[/decl/modifier_field/scale_x] || modifications[/decl/modifier_field/scale_y])
+	if(fields[/decl/modifier_field/scale_x] || fields[/decl/modifier_field/scale_y])
 		holder.update_transform()
 	
 	if(client_color)
@@ -146,13 +146,23 @@
 	if(mob_overlay_state)
 		holder.update_modifier_visuals()
 	
-	if(modifications[/decl/modifier_field/scale_x] || modifications[/decl/modifier_field/scale_y])
+	if(fields[/decl/modifier_field/scale_x] || fields[/decl/modifier_field/scale_y])
 		holder.update_transform()
 	
 	if(client_color)
 		holder.update_client_color()
 	
 	on_detached()
+
+/// Replaces what the modifier changes, while keeping the cache consistant.
+/datum/modifier/proc/overwrite_fields(list/new_fields)
+	holder.modifiers -= src
+	holder.update_modifier_cache(src)
+
+	fields = new_fields.Copy()
+	
+	holder.modifiers += src
+	holder.update_modifier_cache(src)
 
 /**
 Makes a modifier have a limited lifespan, after which it will delete itself. 
@@ -227,7 +237,11 @@ Can be called multiple times to postpone expiration, or cancel it entirely by su
 	return new_modifier
 
 /mob/living/proc/get_modification(key)
-	return modifier_cache[key]
+	var/result = modifier_cache[key]
+	if(isnull(result))
+		var/decl/modifier_field/field = GET_DECL(key)
+		return field.get_neutral_value()
+	return result
 
 // Removes one modifier of a type
 /mob/living/proc/remove_a_modifier_of_type(var/modifier_type, var/silent = FALSE)
@@ -257,34 +271,6 @@ Can be called multiple times to postpone expiration, or cancel it entirely by su
 			return M
 	return null
 
-/datum/modifier/testing
-	name = "Test Modifier"
-	desc = "This should be readable in the HUD hopefully."
-	modifications = list(MODIFIER_MAX_HEALTH_FLAT = 50)
-	stacks = MODIFIER_STACKING_ALLOWED
-	on_attached_text = "You got the modifier!"
-	on_detached_text = "You lost the modifier..."
-
-/mob/living/verb/test_modifier_adding()
-	add_modifier(/datum/modifier/testing, 10 SECONDS)
-
-
-/datum/modifier/stun
-	name = "Stunned"
-	desc = "You're stunned, and cannot act!"
-	modifications = list("stun" = 1)
-	stacks = MODIFIER_STACKING_EXTEND
-
-// TESTING
-/datum/modifier/stun/on_attached()
-	holder.SetWeakened(20)
-
-/datum/modifier/stun/on_detached()
-	holder.SetWeakened(0)
-
-/mob/living/verb/test_modifier_stun()
-	add_modifier(/datum/modifier/stun, 1.5 SECONDS)
-
 
 /datum/modifier/berserk
 	name = "Berserk"
@@ -298,7 +284,7 @@ Can be called multiple times to postpone expiration, or cancel it entirely by su
 
 	stacks = MODIFIER_STACKING_EXTEND
 
-	modifications = list(
+	fields = list(
 		/decl/modifier_field/slowdown = -1,
 		/decl/modifier_field/attack_speed_percent = 0.66,
 		/decl/modifier_field/outgoing_melee_damage = 1.5,
@@ -324,7 +310,7 @@ Can be called multiple times to postpone expiration, or cancel it entirely by su
 	on_attached_text = "<span class='danger'>You feel electricity course through your body!</span>"
 	on_detached_text = "<span class='notice'>The shock seems to have dissipated.</span>"
 
-	modifications = list(
+	fields = list(
 		/decl/modifier_field/slowdown = 1,
 		/decl/modifier_field/attack_speed_percent = 1.2,
 		/decl/modifier_field/disable_duration = 1.2,
@@ -332,7 +318,6 @@ Can be called multiple times to postpone expiration, or cancel it entirely by su
 		/decl/modifier_field/gun_dispersion = 5,
 		/decl/modifier_field/evasion = -20,
 		/decl/modifier_field/emp_suspectibility = -1
-
 	)
 
 /mob/living/verb/test_modifier_shocked()
