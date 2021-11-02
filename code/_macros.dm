@@ -42,3 +42,5 @@
 #define isTaurTail(A)	istype(A, /datum/sprite_accessory/tail/taur)
 
 #define any2ref(x) "\ref[x]"
+
+#define PRINT_STACK_TRACE(X) get_stack_trace(X, __FILE__, __LINE__)

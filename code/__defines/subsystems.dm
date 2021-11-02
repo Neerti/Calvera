@@ -60,8 +60,9 @@ var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_G
 #define INIT_ORDER_DECALS		20
 #define INIT_ORDER_PLANETS		18
 #define INIT_ORDER_JOB			17
-#define INIT_ORDER_ALARM		16 // Must initialize before atoms.
-#define INIT_ORDER_ATOMS		15
+#define INIT_ORDER_GRAPHS		16
+#define INIT_ORDER_ALARM		15 // Must initialize before atoms.
+#define INIT_ORDER_ATOMS		14
 #define INIT_ORDER_MACHINES		10
 #define INIT_ORDER_SHUTTLES		3
 #define INIT_ORDER_TIMER		1
@@ -94,7 +95,8 @@ var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_G
 #define FIRE_PRIORITY_AI			10
 #define FIRE_PRIORITY_GARBAGE		15
 #define FIRE_PRIORITY_ALARM			20
-#define FIRE_PRIORITY_CHARSETUP     25
+#define FIRE_PRIORITY_CHARSETUP		25
+#define FIRE_PRIORITY_GRAPHS		30
 #define FIRE_PRIORITY_AIRFLOW		30
 #define FIRE_PRIORITY_AIR			35
 #define FIRE_PRIORITY_OBJ			40
