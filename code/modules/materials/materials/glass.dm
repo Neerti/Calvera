@@ -1,4 +1,4 @@
-/datum/material/glass
+/datum/legacy_material/glass
 	name = "glass"
 	stack_type = /obj/item/stack/material/glass
 	flags = MATERIAL_BRITTLE
@@ -19,7 +19,7 @@
 	created_fulltile_window = /obj/structure/window/basic/full
 	rod_product = /obj/item/stack/material/glass/reinforced
 
-/datum/material/glass/build_windows(var/mob/living/user, var/obj/item/stack/used_stack)
+/datum/legacy_material/glass/build_windows(var/mob/living/user, var/obj/item/stack/used_stack)
 
 	if(!user || !used_stack || !created_window || !created_fulltile_window || !window_options.len)
 		return 0
@@ -90,10 +90,10 @@
 	new build_path(T, build_dir, 1)
 	return 1
 
-/datum/material/glass/proc/is_reinforced()
+/datum/legacy_material/glass/proc/is_reinforced()
 	return (hardness > 35) //todo
 
-/datum/material/glass/reinforced
+/datum/legacy_material/glass/reinforced
 	name = "rglass"
 	display_name = "reinforced glass"
 	stack_type = /obj/item/stack/material/glass/reinforced
@@ -113,7 +113,7 @@
 	wire_product = null
 	rod_product = null
 
-/datum/material/glass/phoron
+/datum/legacy_material/glass/phoron
 	name = "borosilicate glass"
 	display_name = "borosilicate glass"
 	stack_type = /obj/item/stack/material/glass/phoronglass
@@ -127,7 +127,7 @@
 	wire_product = null
 	rod_product = /obj/item/stack/material/glass/phoronrglass
 
-/datum/material/glass/phoron/reinforced
+/datum/legacy_material/glass/phoron/reinforced
 	name = "reinforced borosilicate glass"
 	display_name = "reinforced borosilicate glass"
 	stack_type = /obj/item/stack/material/glass/phoronrglass

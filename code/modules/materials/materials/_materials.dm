@@ -45,16 +45,16 @@ var/list/name_to_material
 
 //mostly for convenience
 /obj/proc/get_material_name()
-	var/datum/material/material = get_material()
-	if(material)
-		return material.name
+	var/datum/legacy_material/legacy_material = get_material()
+	if(legacy_material)
+		return legacy_material.name
 
 // Builds the datum list above.
 /proc/populate_material_list(force_remake=0)
 	if(name_to_material && !force_remake) return // Already set up!
 	name_to_material = list()
-	for(var/type in subtypesof(/datum/material))
-		var/datum/material/new_mineral = new type
+	for(var/type in subtypesof(/datum/legacy_material))
+		var/datum/legacy_material/new_mineral = new type
 		if(!new_mineral.name)
 			continue
 		name_to_material[lowertext(new_mineral.name)] = new_mineral
@@ -67,13 +67,13 @@ var/list/name_to_material
 	return name_to_material[name]
 
 /proc/material_display_name(name)
-	var/datum/material/material = get_material_by_name(name)
-	if(material)
-		return material.display_name
+	var/datum/legacy_material/legacy_material = get_material_by_name(name)
+	if(legacy_material)
+		return legacy_material.display_name
 	return null
 
 // Material definition and procs follow.
-/datum/material
+/datum/legacy_material
 	var/name	                          // Unique name for use in indexing the list.
 	var/display_name                      // Prettier name for display.
 	var/use_name
@@ -137,7 +137,7 @@ var/list/name_to_material
 	var/rotting_touch_message = "crumbles under your touch"
 
 // Placeholders for light tiles and rglass.
-/datum/material/proc/build_rod_product(var/mob/user, var/obj/item/stack/used_stack, var/obj/item/stack/target_stack)
+/datum/legacy_material/proc/build_rod_product(var/mob/user, var/obj/item/stack/used_stack, var/obj/item/stack/target_stack)
 	if(!rod_product)
 		to_chat(user, "<span class='warning'>You cannot make anything out of \the [target_stack]</span>")
 		return
@@ -150,7 +150,7 @@ var/list/name_to_material
 	S.add_fingerprint(user)
 	S.add_to_stacks(user)
 
-/datum/material/proc/build_wired_product(var/mob/living/user, var/obj/item/stack/used_stack, var/obj/item/stack/target_stack)
+/datum/legacy_material/proc/build_wired_product(var/mob/living/user, var/obj/item/stack/used_stack, var/obj/item/stack/target_stack)
 	if(!wire_product)
 		to_chat(user, "<span class='warning'>You cannot make anything out of \the [target_stack]</span>")
 		return
@@ -165,7 +165,7 @@ var/list/name_to_material
 	user.put_in_hands(product)
 
 // Make sure we have a display name and shard icon even if they aren't explicitly set.
-/datum/material/New()
+/datum/legacy_material/New()
 	..()
 	if(!display_name)
 		display_name = name
@@ -175,15 +175,15 @@ var/list/name_to_material
 		shard_icon = shard_type
 
 // This is a placeholder for proper integration of windows/windoors into the system.
-/datum/material/proc/build_windows(var/mob/living/user, var/obj/item/stack/used_stack)
+/datum/legacy_material/proc/build_windows(var/mob/living/user, var/obj/item/stack/used_stack)
 	return 0
 
 // Weapons handle applying a divisor for this value locally.
-/datum/material/proc/get_blunt_damage()
+/datum/legacy_material/proc/get_blunt_damage()
 	return weight //todo
 
 // Return the matter comprising this material.
-/datum/material/proc/get_matter()
+/datum/legacy_material/proc/get_matter()
 	var/list/temp_matter = list()
 	if(islist(composite_material))
 		for(var/material_string in composite_material)
@@ -193,65 +193,65 @@ var/list/name_to_material
 	return temp_matter
 
 // As above.
-/datum/material/proc/get_edge_damage()
+/datum/legacy_material/proc/get_edge_damage()
 	return hardness //todo
 
 // Snowflakey, only checked for alien doors at the moment.
-/datum/material/proc/can_open_material_door(var/mob/living/user)
+/datum/legacy_material/proc/can_open_material_door(var/mob/living/user)
 	return 1
 
 // Currently used for weapons and objects made of uranium to irradiate things.
-/datum/material/proc/products_need_process()
+/datum/legacy_material/proc/products_need_process()
 	return (radioactivity>0) //todo
 
 // Used by walls when qdel()ing to avoid neighbor merging.
-/datum/material/placeholder
+/datum/legacy_material/placeholder
 	name = "placeholder"
 
 // Places a girder object when a wall is dismantled, also applies reinforced material.
-/datum/material/proc/place_dismantled_girder(var/turf/target, var/datum/material/reinf_material, var/datum/material/girder_material)
+/datum/legacy_material/proc/place_dismantled_girder(var/turf/target, var/datum/legacy_material/reinf_material, var/datum/legacy_material/girder_material)
 	var/obj/structure/girder/G = new(target)
 	if(reinf_material)
 		G.reinf_material = reinf_material
 		G.reinforce_girder()
 	if(girder_material)
-		if(istype(girder_material, /datum/material))
+		if(istype(girder_material, /datum/legacy_material))
 			girder_material = girder_material.name
 		G.set_material(girder_material)
 
 
 // General wall debris product placement.
 // Not particularly necessary aside from snowflakey cult girders.
-/datum/material/proc/place_dismantled_product(var/turf/target)
+/datum/legacy_material/proc/place_dismantled_product(var/turf/target)
 	place_sheet(target)
 
 // Debris product. Used ALL THE TIME.
-/datum/material/proc/place_sheet(var/turf/target)
+/datum/legacy_material/proc/place_sheet(var/turf/target)
 	if(stack_type)
 		return new stack_type(target)
 
 // As above.
-/datum/material/proc/place_shard(var/turf/target)
+/datum/legacy_material/proc/place_shard(var/turf/target)
 	if(shard_type)
 		return new /obj/item/weapon/material/shard(target, src.name)
 
 // Used by walls and weapons to determine if they break or not.
-/datum/material/proc/is_brittle()
+/datum/legacy_material/proc/is_brittle()
 	return !!(flags & MATERIAL_BRITTLE)
 
-/datum/material/proc/combustion_effect(var/turf/T, var/temperature)
+/datum/legacy_material/proc/combustion_effect(var/turf/T, var/temperature)
 	return
 
 // Used by walls to do on-touch things, after checking for crumbling and open-ability.
-/datum/material/proc/wall_touch_special(var/turf/simulated/wall/W, var/mob/living/L)
+/datum/legacy_material/proc/wall_touch_special(var/turf/simulated/wall/W, var/mob/living/L)
 	return
 
-/datum/material/proc/get_recipes()
+/datum/legacy_material/proc/get_recipes()
 	if(!recipes)
 		generate_recipes()
 	return recipes
 
-/datum/material/proc/generate_recipes()
+/datum/legacy_material/proc/generate_recipes()
 	// If is_brittle() returns true, these are only good for a single strike.
 	recipes = list(
 		new /datum/stack_recipe("[display_name] baseball bat", /obj/item/weapon/material/twohanded/baseballbat, 10, time = 20, one_per_turf = 0, on_floor = 1, supplied_material = "[name]", pass_stack_color = TRUE),

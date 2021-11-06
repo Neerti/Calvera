@@ -1,4 +1,4 @@
-/datum/material/plasteel
+/datum/legacy_material/plasteel
 	name = "plasteel"
 	stack_type = /obj/item/stack/material/plasteel
 	integrity = 400
@@ -15,7 +15,7 @@
 	composite_material = list(DEFAULT_WALL_MATERIAL = SHEET_MATERIAL_AMOUNT, "platinum" = SHEET_MATERIAL_AMOUNT) //todo
 	supply_conversion_value = 6
 
-/datum/material/plasteel/generate_recipes()
+/datum/legacy_material/plasteel/generate_recipes()
 	..()
 	recipes += list(
 		new /datum/stack_recipe("AI core", /obj/structure/AIcore, 4, time = 50, one_per_turf = 1, recycle_material = "[name]"),

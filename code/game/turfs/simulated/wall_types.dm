@@ -281,8 +281,8 @@
 		name = T.name
 		desc = T.desc
 		
-		var/datum/material/B = T.material
-		var/datum/material/R = T.reinf_material
+		var/datum/legacy_material/B = T.legacy_material
+		var/datum/legacy_material/R = T.reinf_material
 		
 		if(B?.icon_colour)
 			color = B.icon_colour

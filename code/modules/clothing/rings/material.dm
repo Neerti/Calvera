@@ -8,16 +8,16 @@
 	..(newloc)
 	if(!new_material)
 		new_material = DEFAULT_WALL_MATERIAL
-	material = get_material_by_name(new_material)
-	if(!istype(material))
+	legacy_material = get_material_by_name(new_material)
+	if(!istype(legacy_material))
 		qdel(src)
 		return
-	name = "[material.display_name] ring"
-	desc = "A ring made from [material.display_name]."
-	color = material.icon_colour
+	name = "[legacy_material.display_name] ring"
+	desc = "A ring made from [legacy_material.display_name]."
+	color = legacy_material.icon_colour
 
 /obj/item/clothing/gloves/ring/material/get_material()
-	return material
+	return legacy_material
 
 /obj/item/clothing/gloves/ring/material/wood/New(var/newloc)
 	..(newloc, "wood")

@@ -12,8 +12,8 @@ var/global/list/stool_cache = list() //haha stool
 	throwforce = 10
 	w_class = ITEMSIZE_HUGE
 	var/base_icon = "stool_base"
-	var/datum/material/material
-	var/datum/material/padding_material
+	var/datum/legacy_material/legacy_material
+	var/datum/legacy_material/padding_material
 
 /obj/item/weapon/stool/padded
 	icon_state = "stool_padded_preview" //set for the map
@@ -22,13 +22,13 @@ var/global/list/stool_cache = list() //haha stool
 	..(newloc)
 	if(!new_material)
 		new_material = DEFAULT_WALL_MATERIAL
-	material = get_material_by_name(new_material)
+	legacy_material = get_material_by_name(new_material)
 	if(new_padding_material)
 		padding_material = get_material_by_name(new_padding_material)
-	if(!istype(material))
+	if(!istype(legacy_material))
 		qdel(src)
 		return
-	force = round(material.get_blunt_damage()*0.4)
+	force = round(legacy_material.get_blunt_damage()*0.4)
 	update_icon()
 
 /obj/item/weapon/stool/padded/New(var/newloc, var/new_material)
@@ -39,10 +39,10 @@ var/global/list/stool_cache = list() //haha stool
 	icon_state = ""
 	cut_overlays()
 	// Base icon.
-	var/cache_key = "stool-[material.name]"
+	var/cache_key = "stool-[legacy_material.name]"
 	if(isnull(stool_cache[cache_key]))
 		var/image/I = image(icon, base_icon)
-		I.color = material.icon_colour
+		I.color = legacy_material.icon_colour
 		stool_cache[cache_key] = I
 	add_overlay(stool_cache[cache_key])
 	// Padding overlay.
@@ -56,10 +56,10 @@ var/global/list/stool_cache = list() //haha stool
 	// Strings.
 	if(padding_material)
 		name = "[padding_material.display_name] [initial(name)]" //this is not perfect but it will do for now.
-		desc = "A padded stool. Apply butt. It's made of [material.use_name] and covered with [padding_material.use_name]."
+		desc = "A padded stool. Apply butt. It's made of [legacy_material.use_name] and covered with [padding_material.use_name]."
 	else
-		name = "[material.display_name] [initial(name)]"
-		desc = "A stool. Apply butt with care. It's made of [material.use_name]."
+		name = "[legacy_material.display_name] [initial(name)]"
+		desc = "A stool. Apply butt with care. It's made of [legacy_material.use_name]."
 
 /obj/item/weapon/stool/proc/add_padding(var/padding_type)
 	padding_material = get_material_by_name(padding_type)
@@ -103,8 +103,8 @@ var/global/list/stool_cache = list() //haha stool
 				return
 
 /obj/item/weapon/stool/proc/dismantle()
-	if(material)
-		material.place_sheet(get_turf(src))
+	if(legacy_material)
+		legacy_material.place_sheet(get_turf(src))
 	if(padding_material)
 		padding_material.place_sheet(get_turf(src))
 	qdel(src)
@@ -128,8 +128,8 @@ var/global/list/stool_cache = list() //haha stool
 			padding_type = "carpet"
 		else if(istype(W,/obj/item/stack/material))
 			var/obj/item/stack/material/M = W
-			if(M.material && (M.material.flags & MATERIAL_PADDING))
-				padding_type = "[M.material.name]"
+			if(M.legacy_material && (M.legacy_material.flags & MATERIAL_PADDING))
+				padding_type = "[M.legacy_material.name]"
 		if(!padding_type)
 			to_chat(user, "You cannot pad \the [src] with that.")
 			return

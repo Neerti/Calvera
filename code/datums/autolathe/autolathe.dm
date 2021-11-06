@@ -74,12 +74,12 @@ var/datum/category_collection/autolathe/autolathe_recipes
 	..()
 
 	for(var/Name in name_to_material)
-		var/datum/material/M = name_to_material[Name]
+		var/datum/legacy_material/M = name_to_material[Name]
 
 		if(!M.stack_type)	// Shouldn't happen, but might. Never know.
 			continue
 
-		if(istype(M, /datum/material/alienalloy))
+		if(istype(M, /datum/legacy_material/alienalloy))
 			continue
 
 		var/obj/item/stack/material/S = M.stack_type

@@ -1,4 +1,4 @@
-/datum/material/plastic
+/datum/legacy_material/plastic
 	name = "plastic"
 	stack_type = /obj/item/stack/material/plastic
 	flags = MATERIAL_BRITTLE
@@ -13,7 +13,7 @@
 	melting_point = T0C+371 //assuming heat resistant plastic
 	stack_origin_tech = list(TECH_MATERIAL = 3)
 
-/datum/material/plastic/generate_recipes()
+/datum/legacy_material/plastic/generate_recipes()
 	..()
 	recipes += list(
 		new /datum/stack_recipe("plastic crate", /obj/structure/closet/crate/plastic, 10, one_per_turf = 1, on_floor = 1, pass_stack_color = TRUE, recycle_material = "[name]"),
@@ -33,7 +33,7 @@
 		new /datum/stack_recipe("reagent tubing", /obj/item/stack/hose, 1, 4, 20, pass_stack_color = TRUE, recycle_material = "[name]")
 	)
 
-/datum/material/cardboard
+/datum/legacy_material/cardboard
 	name = "cardboard"
 	stack_type = /obj/item/stack/material/cardboard
 	flags = MATERIAL_BRITTLE
@@ -53,7 +53,7 @@
 	radiation_resistance = 1
 	pass_stack_colors = TRUE
 
-/datum/material/cardboard/generate_recipes()
+/datum/legacy_material/cardboard/generate_recipes()
 	..()
 	recipes += list(
 		new /datum/stack_recipe("box", /obj/item/weapon/storage/box, pass_stack_color = TRUE, recycle_material = "[name]"),
@@ -74,7 +74,7 @@
 		))
 	)
 
-/datum/material/toy_foam
+/datum/legacy_material/toy_foam
 	name = "foam"
 	display_name = "foam"
 	use_name = "foam"

@@ -86,12 +86,12 @@
 		if(reinf_material)
 			to_chat(user, "<span class='danger'>\The [reinf_material.display_name] feels porous and crumbly.</span>")
 		else
-			to_chat(user, "<span class='danger'>\The [material.display_name] crumbles under your touch!</span>")
+			to_chat(user, "<span class='danger'>\The [legacy_material.display_name] crumbles under your touch!</span>")
 			dismantle_wall()
 			return 1
 
 	if(!can_open)
-		if(!material.wall_touch_special(src, user))
+		if(!legacy_material.wall_touch_special(src, user))
 			to_chat(user, "<span class='notice'>You push the wall, but nothing happens.</span>")
 			playsound(src, 'sound/weapons/Genhit.ogg', 25, 1)
 	else
@@ -106,7 +106,7 @@
 	user.setClickCooldown(user.get_attack_speed())
 	var/rotting = (locate(/obj/effect/overlay/wallrot) in src)
 	if (HULK in user.mutations)
-		if (rotting || !prob(material.hardness))
+		if (rotting || !prob(legacy_material.hardness))
 			success_smash(user)
 		else
 			fail_smash(user)
@@ -127,9 +127,9 @@
 		return success_smash(user)
 
 	if(reinf_material)
-		if(damage >= max(material.hardness, reinf_material.hardness) )
+		if(damage >= max(legacy_material.hardness, reinf_material.hardness) )
 			return success_smash(user)
-	else if(damage >= material.hardness)
+	else if(damage >= legacy_material.hardness)
 		return success_smash(user)
 	return fail_smash(user)
 
@@ -247,7 +247,7 @@
 	// Basic dismantling.
 	if(isnull(construction_stage) || !reinf_material)
 
-		var/cut_delay = 60 - material.cut_delay
+		var/cut_delay = 60 - legacy_material.cut_delay
 		var/dismantle_verb
 		var/dismantle_sound
 

@@ -20,7 +20,7 @@
 			to_chat(user, "<span class='notice'>\The [SK] is not ready to be attached!</span>")
 			return
 		user.drop_item()
-		var/obj/structure/bed/chair/e_chair/E = new (src.loc, material.name)
+		var/obj/structure/bed/chair/e_chair/E = new (src.loc, legacy_material.name)
 		playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
 		E.set_dir(dir)
 		E.part = SK
@@ -239,7 +239,7 @@
 
 /obj/structure/bed/chair/sofa/on_update_icon()
 	if(applies_material_colour && sofa_material)
-		var/datum/material/color_material = get_material_by_name(sofa_material)
+		var/datum/legacy_material/color_material = get_material_by_name(sofa_material)
 		color = color_material.icon_colour
 
 		if(sofa_material == "carpet")

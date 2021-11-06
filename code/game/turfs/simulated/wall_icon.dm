@@ -1,29 +1,29 @@
 /turf/simulated/wall/proc/update_material()
 
-	if(!material)
+	if(!legacy_material)
 		return
 
 	if(reinf_material)
 		construction_stage = 6
 	else
 		construction_stage = null
-	if(!material)
-		material = get_material_by_name(DEFAULT_WALL_MATERIAL)
-	if(material)
-		explosion_resistance = material.explosion_resistance
+	if(!legacy_material)
+		legacy_material = get_material_by_name(DEFAULT_WALL_MATERIAL)
+	if(legacy_material)
+		explosion_resistance = legacy_material.explosion_resistance
 	if(reinf_material && reinf_material.explosion_resistance > explosion_resistance)
 		explosion_resistance = reinf_material.explosion_resistance
 
 	if(reinf_material)
-		name = "reinforced [material.display_name] wall"
-		desc = "It seems to be a section of hull reinforced with [reinf_material.display_name] and plated with [material.display_name]."
+		name = "reinforced [legacy_material.display_name] wall"
+		desc = "It seems to be a section of hull reinforced with [reinf_material.display_name] and plated with [legacy_material.display_name]."
 	else
-		name = "[material.display_name] wall"
-		desc = "It seems to be a section of hull plated with [material.display_name]."
+		name = "[legacy_material.display_name] wall"
+		desc = "It seems to be a section of hull plated with [legacy_material.display_name]."
 
-	if(material.opacity > 0.5 && !opacity)
+	if(legacy_material.opacity > 0.5 && !opacity)
 		set_light(1)
-	else if(material.opacity < 0.5 && opacity)
+	else if(legacy_material.opacity < 0.5 && opacity)
 		set_light(0)
 
 	SSradiation.resistance_cache.Remove(src)
@@ -31,8 +31,8 @@
 	update_icon()
 
 
-/turf/simulated/wall/proc/set_material(var/datum/material/newmaterial, var/datum/material/newrmaterial, var/datum/material/newgmaterial)
-	material = newmaterial
+/turf/simulated/wall/proc/set_material(var/datum/legacy_material/newmaterial, var/datum/legacy_material/newrmaterial, var/datum/legacy_material/newgmaterial)
+	legacy_material = newmaterial
 	reinf_material = newrmaterial
 	if(!newgmaterial)
 		girder_material = DEFAULT_WALL_MATERIAL
@@ -41,7 +41,7 @@
 	update_material()
 
 /turf/simulated/wall/on_update_icon()
-	if(!material)
+	if(!legacy_material)
 		return
 
 	if(!damage_overlays[1]) //list hasn't been populated
@@ -51,14 +51,14 @@
 	var/image/I
 
 	if(!density)
-		I = image('icons/turf/wall_masks.dmi', "[material.icon_base]fwall_open")
-		I.color = material.icon_colour
+		I = image('icons/turf/wall_masks.dmi', "[legacy_material.icon_base]fwall_open")
+		I.color = legacy_material.icon_colour
 		add_overlay(I)
 		return
 
 	for(var/i = 1 to 4)
-		I = image('icons/turf/wall_masks.dmi', "[material.icon_base][wall_connections[i]]", dir = 1<<(i-1))
-		I.color = material.icon_colour
+		I = image('icons/turf/wall_masks.dmi', "[legacy_material.icon_base][wall_connections[i]]", dir = 1<<(i-1))
+		I.color = legacy_material.icon_colour
 		add_overlay(I)
 
 	if(reinf_material)
@@ -79,7 +79,7 @@
 				add_overlay(I)
 
 	if(damage != 0)
-		var/integrity = material.integrity
+		var/integrity = legacy_material.integrity
 		if(reinf_material)
 			integrity += reinf_material.integrity
 
@@ -101,11 +101,11 @@
 
 
 /turf/simulated/wall/proc/update_connections(propagate = 0)
-	if(!material)
+	if(!legacy_material)
 		return
 	var/list/dirs = list()
 	for(var/turf/simulated/wall/W in orange(src, 1))
-		if(!W.material)
+		if(!W.legacy_material)
 			continue
 		if(propagate)
 			W.update_connections()
@@ -113,7 +113,7 @@
 		if(can_join_with(W))
 			dirs += get_dir(src, W)
 
-	if(material.icon_base == "hull") // Could be improved...
+	if(legacy_material.icon_base == "hull") // Could be improved...
 		var/additional_dirs = 0
 		for(var/direction in alldirs)
 			var/turf/T = get_step(src,direction)
@@ -128,6 +128,6 @@
 	wall_connections = dirs_to_corner_states(dirs)
 
 /turf/simulated/wall/proc/can_join_with(var/turf/simulated/wall/W)
-	if(material && W.material && material.icon_base == W.material.icon_base)
+	if(legacy_material && W.legacy_material && legacy_material.icon_base == W.legacy_material.icon_base)
 		return 1
 	return 0

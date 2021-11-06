@@ -18,7 +18,7 @@
 	return
 
 /obj/machinery/r_n_d/proc/getMaterialType(var/name)
-	var/datum/material/M = get_material_by_name(name)
+	var/datum/legacy_material/M = get_material_by_name(name)
 	if(M && M.stack_type)
 		return M.stack_type
 	return null
@@ -26,7 +26,7 @@
 /obj/machinery/r_n_d/proc/getMaterialName(var/type)
 	if(istype(type, /obj/item/stack/material))
 		var/obj/item/stack/material/M = type
-		return M.material.name
+		return M.legacy_material.name
 	return null
 
 /obj/machinery/r_n_d/proc/eject(var/material, var/amount)

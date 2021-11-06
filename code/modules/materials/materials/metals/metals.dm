@@ -3,7 +3,7 @@
 
 
 // Very rare alloy that is reflective, should be used sparingly.
-/datum/material/durasteel
+/datum/legacy_material/durasteel
 	name = "durasteel"
 	stack_type = /obj/item/stack/material/durasteel
 	integrity = 600
@@ -20,7 +20,7 @@
 	composite_material = list("plasteel" = SHEET_MATERIAL_AMOUNT, "diamond" = SHEET_MATERIAL_AMOUNT) //shrug
 	supply_conversion_value = 9
 
-/datum/material/titanium
+/datum/legacy_material/titanium
 	name = MAT_TITANIUM
 	stack_type = /obj/item/stack/material/titanium
 	conductivity = 2.38
@@ -30,7 +30,7 @@
 	icon_reinf = "reinf_metal"
 	composite_material = null
 
-/datum/material/iron
+/datum/legacy_material/iron
 	name = "iron"
 	stack_type = /obj/item/stack/material/iron
 	icon_colour = "#5C5454"
@@ -39,7 +39,7 @@
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
 
-/datum/material/lead
+/datum/legacy_material/lead
 	name = MAT_LEAD
 	stack_type = /obj/item/stack/material/lead
 	icon_colour = "#273956"
@@ -50,7 +50,7 @@
 	radiation_resistance = 25 // Lead is Special and so gets to block more radiation than it normally would with just weight, totalling in 48 protection.
 	supply_conversion_value = 2
 
-/datum/material/gold
+/datum/legacy_material/gold
 	name = "gold"
 	stack_type = /obj/item/stack/material/gold
 	icon_colour = "#EDD12F"
@@ -62,7 +62,7 @@
 	sheet_plural_name = "ingots"
 	supply_conversion_value = 2
 
-/datum/material/silver
+/datum/legacy_material/silver
 	name = "silver"
 	stack_type = /obj/item/stack/material/silver
 	icon_colour = "#D1E6E3"
@@ -74,7 +74,7 @@
 	sheet_plural_name = "ingots"
 	supply_conversion_value = 2
 
-/datum/material/platinum
+/datum/legacy_material/platinum
 	name = "platinum"
 	stack_type = /obj/item/stack/material/platinum
 	icon_colour = "#9999FF"
@@ -85,7 +85,7 @@
 	sheet_plural_name = "ingots"
 	supply_conversion_value = 5
 
-/datum/material/uranium
+/datum/legacy_material/uranium
 	name = "uranium"
 	stack_type = /obj/item/stack/material/uranium
 	radioactivity = 12
@@ -97,7 +97,7 @@
 	door_icon_base = "stone"
 	supply_conversion_value = 2
 
-/datum/material/mhydrogen
+/datum/legacy_material/mhydrogen
 	name = "mhydrogen"
 	stack_type = /obj/item/stack/material/mhydrogen
 	icon_colour = "#E6C5DE"
@@ -106,7 +106,7 @@
 	is_fusion_fuel = 1
 	supply_conversion_value = 6
 
-/datum/material/deuterium
+/datum/legacy_material/deuterium
 	name = "deuterium"
 	stack_type = /obj/item/stack/material/deuterium
 	icon_colour = "#999999"
@@ -116,7 +116,7 @@
 	is_fusion_fuel = 1
 	conductive = 0
 
-/datum/material/tritium
+/datum/legacy_material/tritium
 	name = "tritium"
 	stack_type = /obj/item/stack/material/tritium
 	icon_colour = "#777777"
@@ -126,7 +126,7 @@
 	is_fusion_fuel = 1
 	conductive = 0
 
-/datum/material/osmium
+/datum/legacy_material/osmium
 	name = "osmium"
 	stack_type = /obj/item/stack/material/osmium
 	icon_colour = "#9999FF"
@@ -136,7 +136,7 @@
 	conductivity = 100
 	supply_conversion_value = 6
 
-/datum/material/graphite
+/datum/legacy_material/graphite
 	name = MAT_GRAPHITE
 	stack_type = /obj/item/stack/material/graphite
 	flags = MATERIAL_BRITTLE
@@ -152,7 +152,7 @@
 	radiation_resistance = 15
 	stack_origin_tech = list(TECH_MATERIAL = 2, TECH_MAGNET = 2)
 
-/datum/material/bronze
+/datum/legacy_material/bronze
 	name = "bronze"
 	stack_type = /obj/item/stack/material/bronze
 	icon_colour = "#EDD12F"
@@ -162,7 +162,7 @@
 	conductivity = 12
 	protectiveness = 9 // 33%
 
-/datum/material/tin
+/datum/legacy_material/tin
 	name = "tin"
 	display_name = "tin"
 	use_name = "tin"
@@ -174,7 +174,7 @@
 	hardness = 50
 	weight = 13
 
-/datum/material/copper
+/datum/legacy_material/copper
 	name = "copper"
 	display_name = "copper"
 	use_name = "copper"
@@ -187,7 +187,7 @@
 	weight = 13
 	hardness = 50
 
-/datum/material/aluminium
+/datum/legacy_material/aluminium
 	name = "aluminium"
 	display_name = "aluminium"
 	use_name = "aluminium"

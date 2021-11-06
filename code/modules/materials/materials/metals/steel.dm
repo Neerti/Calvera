@@ -1,4 +1,4 @@
-/datum/material/steel
+/datum/legacy_material/steel
 	name = DEFAULT_WALL_MATERIAL
 	stack_type = /obj/item/stack/material/steel
 	integrity = 150
@@ -8,7 +8,7 @@
 	icon_reinf = "reinf_over"
 	icon_colour = "#666666"
 
-/datum/material/steel/generate_recipes()
+/datum/legacy_material/steel/generate_recipes()
 	..()
 	recipes += list(
 		new /datum/stack_recipe_list("office chairs",list(

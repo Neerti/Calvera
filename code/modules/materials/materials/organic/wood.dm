@@ -1,4 +1,4 @@
-/datum/material/wood
+/datum/legacy_material/wood
 	name = MAT_WOOD
 	stack_type = /obj/item/stack/material/wood
 	icon_colour = "#9c5930"
@@ -21,7 +21,7 @@
 	sheet_singular_name = "plank"
 	sheet_plural_name = "planks"
 
-/datum/material/wood/generate_recipes()
+/datum/legacy_material/wood/generate_recipes()
 	..()
 	recipes += list(
 		new /datum/stack_recipe("oar", /obj/item/weapon/oar, 2, time = 30, supplied_material = "[name]", pass_stack_color = TRUE),
@@ -45,13 +45,13 @@
 		new /datum/stack_recipe("tanning rack", /obj/structure/tanning_rack, 3, one_per_turf = TRUE, time = 20, on_floor = TRUE, supplied_material = "[name]")
 	)
 
-/datum/material/wood/sif
+/datum/legacy_material/wood/sif
 	name = MAT_SIFWOOD
 	stack_type = /obj/item/stack/material/wood/sif
 	icon_colour = "#0099cc" // Cyan-ish
 	stack_origin_tech = list(TECH_MATERIAL = 2, TECH_BIO = 2) // Alien wood would presumably be more interesting to the analyzer.
 
-/datum/material/wood/sif/generate_recipes()
+/datum/legacy_material/wood/sif/generate_recipes()
 	..()
 	recipes += new /datum/stack_recipe("alien wood floor tile", /obj/item/stack/tile/wood/sif, 1, 4, 20, pass_stack_color = TRUE)
 	for(var/datum/stack_recipe/r_recipe in recipes)
@@ -62,7 +62,7 @@
 			recipes -= r_recipe
 			continue
 
-/datum/material/wood/log
+/datum/legacy_material/wood/log
 	name = MAT_LOG
 	icon_base = "log"
 	stack_type = /obj/item/stack/material/log
@@ -71,12 +71,12 @@
 	pass_stack_colors = TRUE
 	supply_conversion_value = 1
 
-/datum/material/wood/log/generate_recipes()
+/datum/legacy_material/wood/log/generate_recipes()
 	recipes = list(
 		new /datum/stack_recipe("bonfire", /obj/structure/bonfire, 5, time = 50, supplied_material = "[name]", pass_stack_color = TRUE, recycle_material = "[name]")
 	)
 
-/datum/material/wood/log/sif
+/datum/legacy_material/wood/log/sif
 	name = MAT_SIFLOG
 	icon_colour = "#0099cc" // Cyan-ish
 	stack_origin_tech = list(TECH_MATERIAL = 2, TECH_BIO = 2)

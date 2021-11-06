@@ -1,5 +1,5 @@
 // Adminspawn only, do not let anyone get this.
-/datum/material/alienalloy
+/datum/legacy_material/alienalloy
 	name = "alienalloy"
 	display_name = "durable alloy"
 	stack_type = null
@@ -12,24 +12,24 @@
 	weight = 500
 	protectiveness = 80 // 80%
 
-/datum/material/alienalloy/elevatorium
+/datum/legacy_material/alienalloy/elevatorium
 	name = "elevatorium"
 	display_name = "elevator panelling"
 	icon_colour = "#666666"
 
-/datum/material/alienalloy/dungeonium
+/datum/legacy_material/alienalloy/dungeonium
 	name = "dungeonium"
 	display_name = "ultra-durable"
 	icon_base = "dungeon"
 	icon_colour = "#FFFFFF"
 
-/datum/material/alienalloy/bedrock
+/datum/legacy_material/alienalloy/bedrock
 	name = "bedrock"
 	display_name = "impassable rock"
 	icon_base = "rock"
 	icon_colour = "#FFFFFF"
 
-/datum/material/alienalloy/alium
+/datum/legacy_material/alienalloy/alium
 	name = "alium"
 	display_name = "alien"
 	icon_base = "alien"

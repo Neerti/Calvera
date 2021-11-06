@@ -1,4 +1,4 @@
-/datum/material/leather
+/datum/legacy_material/leather
 	name = MAT_LEATHER
 	display_name = "plainleather"
 	icon_colour = "#5C4831"
@@ -12,7 +12,7 @@
 	integrity = 40
 	supply_conversion_value = 3
 
-/datum/material/leather/generate_recipes()
+/datum/legacy_material/leather/generate_recipes()
 	recipes = list(
 		new /datum/stack_recipe("bedsheet", /obj/item/weapon/bedsheet, 10, time = 30 SECONDS, pass_stack_color = TRUE, recycle_material = "[name]"),
 		new /datum/stack_recipe("uniform", /obj/item/clothing/under/color/white, 8, time = 15 SECONDS, pass_stack_color = TRUE, recycle_material = "[name]"),

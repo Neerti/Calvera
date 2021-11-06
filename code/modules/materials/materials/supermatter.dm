@@ -1,5 +1,5 @@
 //R-UST port
-/datum/material/supermatter
+/datum/legacy_material/supermatter
 	name = "supermatter"
 	icon_colour = "#FFFF00"
 	stack_type = /obj/item/stack/material/supermatter
@@ -17,7 +17,7 @@
 	is_fusion_fuel = 1
 	stack_origin_tech = list(TECH_MATERIAL = 8, TECH_PHORON = 5, TECH_BLUESPACE = 4)
 
-/datum/material/supermatter/generate_recipes()
+/datum/legacy_material/supermatter/generate_recipes()
 	recipes = list(
 		new /datum/stack_recipe("supermatter shard", /obj/machinery/power/supermatter/shard, 30 , one_per_turf = 1, time = 600, on_floor = 1, recycle_material = "[name]")
 	)

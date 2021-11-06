@@ -38,7 +38,7 @@
 	update_icon()
 	if(bag_mat)
 		bag_material = bag_mat
-	var/datum/material/M = get_material_by_name("[bag_material]")
+	var/datum/legacy_material/M = get_material_by_name("[bag_material]")
 	if(!M)
 		return INITIALIZE_HINT_QDEL
 	color = M.icon_colour
@@ -106,7 +106,7 @@ var/global/list/datum/stack_recipe/sandbag_recipes = list( \
 		if ((pass_color || recipe.pass_color))
 			if(!color)
 				if(recipe.use_material)
-					var/datum/material/MAT = get_material_by_name(recipe.use_material)
+					var/datum/legacy_material/MAT = get_material_by_name(recipe.use_material)
 					if(MAT.icon_colour)
 						O.color = MAT.icon_colour
 				else
@@ -136,7 +136,7 @@ var/global/list/datum/stack_recipe/sandbag_recipes = list( \
 	. = ..(ml, amt)
 	if(bag_mat)
 		bag_material = bag_mat
-	var/datum/material/M = get_material_by_name("[bag_material]")
+	var/datum/legacy_material/M = get_material_by_name("[bag_material]")
 	if(!M)
 		return INITIALIZE_HINT_QDEL
 	color = M.icon_colour

@@ -147,20 +147,20 @@
 
 	if(istype(I,/obj/item/stack/material))
 		var/obj/item/stack/material/S = I
-		if(!(S.material.name in materials))
-			to_chat(user, "<span class='warning'>The [src] doesn't accept [S.material]!</span>")
+		if(!(S.legacy_material.name in materials))
+			to_chat(user, "<span class='warning'>The [src] doesn't accept [S.legacy_material]!</span>")
 			return
 
 		var/sname = "[S.name]"
 		var/amnt = S.perunit
-		if(materials[S.material.name] + amnt <= res_max_amount)
+		if(materials[S.legacy_material.name] + amnt <= res_max_amount)
 			if(S && S.get_amount() >= 1)
 				var/count = 0
 				overlays += "mechfab-load-metal"
 				spawn(10)
 					overlays -= "mechfab-load-metal"
-				while(materials[S.material.name] + amnt <= res_max_amount && S.get_amount() >= 1)
-					materials[S.material.name] += amnt
+				while(materials[S.legacy_material.name] + amnt <= res_max_amount && S.get_amount() >= 1)
+					materials[S.legacy_material.name] += amnt
 					S.use(1)
 					count++
 				to_chat(user, "You insert [count] [sname] into the fabricator.")
@@ -284,7 +284,7 @@
 /obj/machinery/mecha_part_fabricator/proc/eject_materials(var/material, var/amount) // 0 amount = 0 means ejecting a full stack; -1 means eject everything
 	var/recursive = amount == -1 ? 1 : 0
 	var/matstring = lowertext(material)
-	var/datum/material/M = get_material_by_name(matstring)
+	var/datum/legacy_material/M = get_material_by_name(matstring)
 
 	var/obj/item/stack/material/S = M.place_sheet(get_turf(src))
 	if(amount <= 0)

@@ -1,4 +1,4 @@
-/datum/material/resin
+/datum/legacy_material/resin
 	name = "resin"
 	icon_colour = "#35343a"
 	icon_base = "resin"
@@ -14,13 +14,13 @@
 	stack_origin_tech = list(TECH_MATERIAL = 8, TECH_PHORON = 4, TECH_BLUESPACE = 4, TECH_BIO = 7)
 	stack_type = /obj/item/stack/material/resin
 
-/datum/material/resin/can_open_material_door(var/mob/living/user)
+/datum/legacy_material/resin/can_open_material_door(var/mob/living/user)
 	var/mob/living/carbon/M = user
 	if(istype(M) && locate(/obj/item/organ/internal/xenos/hivenode) in M.internal_organs)
 		return TRUE
 	return FALSE
 
-/datum/material/resin/wall_touch_special(var/turf/simulated/wall/W, var/mob/living/L)
+/datum/legacy_material/resin/wall_touch_special(var/turf/simulated/wall/W, var/mob/living/L)
 	var/mob/living/carbon/M = L
 	if(istype(M) && locate(/obj/item/organ/internal/xenos/hivenode) in M.internal_organs)
 		to_chat(M, "<span class='alien'>\The [W] shudders under your touch, starting to become porous.</span>")
@@ -32,7 +32,7 @@
 		return TRUE
 	return FALSE
 
-/datum/material/resin/generate_recipes()
+/datum/legacy_material/resin/generate_recipes()
 	recipes = list(
 		new /datum/stack_recipe("[display_name] door", /obj/structure/simple_door/resin, 10, one_per_turf = 1, on_floor = 1, supplied_material = "[name]", pass_stack_color = TRUE),
 		new /datum/stack_recipe("[display_name] barricade", /obj/effect/alien/resin/wall, 5, time = 5 SECONDS, one_per_turf = 1, on_floor = 1, pass_stack_color = TRUE, recycle_material = "[name]"),

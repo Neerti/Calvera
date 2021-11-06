@@ -18,8 +18,8 @@
 	var/can_plate = 1
 
 	var/manipulating = 0
-	var/datum/material/material = null
-	var/datum/material/reinforced = null
+	var/datum/legacy_material/legacy_material = null
+	var/datum/legacy_material/reinforced = null
 
 	// Gambling tables. I'd prefer reinforced with carpet/felt/cloth/whatever, but AFAIK it's either harder or impossible to get /obj/item/stack/material of those.
 	// Convert if/when you can easily get stacks of these.
@@ -33,19 +33,19 @@
 
 /obj/structure/table/proc/update_material()
 	var/old_maxhealth = maxhealth
-	if(!material)
+	if(!legacy_material)
 		maxhealth = 10
 	else
-		maxhealth = material.integrity / 2
+		maxhealth = legacy_material.integrity / 2
 
 		if(reinforced)
-			maxhealth += reinforced.integrity / 2
+			maxhealth += legacy_material.integrity / 2
 
 	health += maxhealth - old_maxhealth
 
 /obj/structure/table/take_damage(amount)
 	// If the table is made of a brittle material, and is *not* reinforced with a non-brittle material, damage is multiplied by TABLE_BRITTLE_MATERIAL_MULTIPLIER
-	if(material && material.is_brittle())
+	if(legacy_material && legacy_material.is_brittle())
 		if(reinforced)
 			if(reinforced.is_brittle())
 				amount *= TABLE_BRITTLE_MATERIAL_MULTIPLIER
@@ -79,7 +79,7 @@
 	update_material()
 
 /obj/structure/table/Destroy()
-	material = null
+	legacy_material = null
 	reinforced = null
 	update_connections(1) // Update tables around us to ignore us (material=null forces no connections)
 	for(var/obj/structure/table/T in oview(src, 1))
@@ -115,7 +115,7 @@
 		update_icon()
 		return 1
 
-	if(!carpeted && material && istype(W, /obj/item/stack/tile/carpet))
+	if(!carpeted && legacy_material && istype(W, /obj/item/stack/tile/carpet))
 		var/obj/item/stack/tile/carpet/C = W
 		if(C.use(1))
 			user.visible_message("<span class='notice'>\The [user] adds \the [C] to \the [src].</span>",
@@ -127,9 +127,9 @@
 		else
 			to_chat(user, "<span class='warning'>You don't have enough carpet!</span>")
 
-	if(!reinforced && !carpeted && material && W.is_wrench())
+	if(!reinforced && !carpeted && legacy_material && W.is_wrench())
 		remove_material(W, user)
-		if(!material)
+		if(!legacy_material)
 			update_connections(1)
 			update_icon()
 			for(var/obj/structure/table/T in oview(src, 1))
@@ -138,7 +138,7 @@
 			update_material()
 		return 1
 
-	if(!carpeted && !reinforced && !material && W.is_wrench())
+	if(!carpeted && !reinforced && !legacy_material && W.is_wrench())
 		dismantle(W, user)
 		return 1
 
@@ -154,9 +154,9 @@
 			health = max(health+(maxhealth/5), maxhealth) // 20% repair per application
 			return 1
 
-	if(!material && can_plate && istype(W, /obj/item/stack/material))
-		material = common_material_add(W, user, "plat")
-		if(material)
+	if(!legacy_material && can_plate && istype(W, /obj/item/stack/material))
+		legacy_material = common_material_add(W, user, "plat")
+		if(legacy_material)
 			update_connections(1)
 			update_icon()
 			update_desc()
@@ -207,7 +207,7 @@
 		to_chat(user, "<span class='warning'>\The [src] cannot be reinforced!</span>")
 		return
 
-	if(!material)
+	if(!legacy_material)
 		to_chat(user, "<span class='warning'>Plate \the [src] before reinforcing it!</span>")
 		return
 
@@ -222,8 +222,8 @@
 		update_material()
 
 /obj/structure/table/proc/update_desc()
-	if(material)
-		name = "[material.display_name] table"
+	if(legacy_material)
+		name = "[legacy_material.display_name] table"
 	else
 		name = "table frame"
 
@@ -235,7 +235,7 @@
 
 // Returns the material to set the table to.
 /obj/structure/table/proc/common_material_add(obj/item/stack/material/S, mob/user, verb) // Verb is actually verb without 'e' or 'ing', which is added. Works for 'plate'/'plating' and 'reinforce'/'reinforcing'.
-	var/datum/material/M = S.get_material()
+	var/datum/legacy_material/M = S.get_material()
 	if(!istype(M))
 		to_chat(user, "<span class='warning'>You cannot [verb]e \the [src] with \the [S].</span>")
 		return null
@@ -251,7 +251,7 @@
 	return M
 
 // Returns the material to set the table to.
-/obj/structure/table/proc/common_material_remove(mob/user, datum/material/M, delay, what, type_holding, sound)
+/obj/structure/table/proc/common_material_remove(mob/user, datum/legacy_material/M, delay, what, type_holding, sound)
 	if(!M.stack_type)
 		to_chat(user, "<span class='warning'>You are unable to remove the [what] from this [src]!</span>")
 		return M
@@ -275,7 +275,7 @@
 	reinforced = common_material_remove(user, reinforced, 40 * S.toolspeed, "reinforcements", "screws", S.usesound)
 
 /obj/structure/table/proc/remove_material(obj/item/weapon/W, mob/user)
-	material = common_material_remove(user, material, 20 * W.toolspeed, "plating", "bolts", W.usesound)
+	legacy_material = common_material_remove(user, legacy_material, 20 * W.toolspeed, "plating", "bolts", W.usesound)
 
 /obj/structure/table/proc/dismantle(obj/item/W, mob/user)
 	if(manipulating) return
@@ -309,18 +309,18 @@
 		else
 			S = reinforced.place_shard(loc)
 			if(S) shards += S
-	if(material)
-		if(material.stack_type && (full_return || prob(20)))
-			material.place_sheet(loc)
+	if(legacy_material)
+		if(legacy_material.stack_type && (full_return || prob(20)))
+			legacy_material.place_sheet(loc)
 		else
-			S = material.place_shard(loc)
+			S = legacy_material.place_shard(loc)
 			if(S) shards += S
 	if(carpeted && (full_return || prob(50))) // Higher chance to get the carpet back intact, since there's no non-intact option
 		new carpeted_type(src.loc)
 	if(full_return || prob(20))
 		new /obj/item/stack/material/steel(src.loc)
 	else
-		var/datum/material/M = get_material_by_name(DEFAULT_WALL_MATERIAL)
+		var/datum/legacy_material/M = get_material_by_name(DEFAULT_WALL_MATERIAL)
 		S = M.place_shard(loc)
 		if(S) shards += S
 	qdel(src)
@@ -348,11 +348,11 @@
 			overlays += I
 
 		// Standard table image
-		if(material)
+		if(legacy_material)
 			for(var/i = 1 to 4)
-				I = image(icon, "[material.icon_base]_[connections[i]]", dir = 1<<(i-1))
-				if(material.icon_colour) I.color = material.icon_colour
-				I.alpha = 255 * material.opacity
+				I = image(icon, "[legacy_material.icon_base]_[connections[i]]", dir = 1<<(i-1))
+				if(legacy_material.icon_colour) I.color = legacy_material.icon_colour
+				I.alpha = 255 * legacy_material.opacity
 				overlays += I
 
 		// Reinforcements
@@ -373,7 +373,7 @@
 		var/tabledirs = 0
 		for(var/direction in list(turn(dir,90), turn(dir,-90)) )
 			var/obj/structure/table/T = locate(/obj/structure/table ,get_step(src,direction))
-			if (T && T.flipped == 1 && T.dir == src.dir && material && T.material && T.material.name == material.name)
+			if (T && T.flipped == 1 && T.dir == src.dir && legacy_material && T.legacy_material && T.legacy_material.name == legacy_material.name)
 				type++
 				tabledirs |= direction
 
@@ -385,12 +385,12 @@
 				type += "+"
 
 		icon_state = "flip[type]"
-		if(material)
-			var/image/I = image(icon, "[material.icon_base]_flip[type]")
-			I.color = material.icon_colour
-			I.alpha = 255 * material.opacity
+		if(legacy_material)
+			var/image/I = image(icon, "[legacy_material.icon_base]_flip[type]")
+			I.color = legacy_material.icon_colour
+			I.alpha = 255 * legacy_material.opacity
 			overlays += I
-			name = "[material.display_name] table"
+			name = "[legacy_material.display_name] table"
 		else
 			name = "table frame"
 

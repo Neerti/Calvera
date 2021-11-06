@@ -89,8 +89,8 @@
 					if (prob(15))	M.Weaken(5)
 					M.apply_damage(8,def_zone = BP_HEAD)
 					visible_message("<span class='danger'>[G.assailant] slams [G.affecting]'s face against \the [src]!</span>")
-					if(material)
-						playsound(src, material.tableslam_noise, 50, 1)
+					if(legacy_material)
+						playsound(src, legacy_material.tableslam_noise, 50, 1)
 					else
 						playsound(src, 'sound/weapons/tablehit1.ogg', 50, 1)
 					var/list/L = take_damage(rand(1,5))
@@ -134,7 +134,7 @@
 		break_to_parts()
 		return
 
-	if(can_plate && !material)
+	if(can_plate && !legacy_material)
 		to_chat(user, "<span class='warning'>There's nothing to put \the [W] on! Try adding plating to \the [src] first.</span>")
 		return
 

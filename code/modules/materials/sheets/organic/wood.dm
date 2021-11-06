@@ -43,7 +43,7 @@
 			playsound(src, 'sound/effects/woodcutting.ogg', 50, 1)
 			var/obj/item/stack/material/wood/existing_wood = null
 			for(var/obj/item/stack/material/wood/M in user.loc)
-				if(M.material.name == src.material.name)
+				if(M.legacy_material.name == src.legacy_material.name)
 					existing_wood = M
 					break
 

@@ -7,7 +7,7 @@
 	icon = 'icons/obj/doors/material_doors.dmi'
 	icon_state = "metal"
 
-	var/datum/material/material
+	var/datum/legacy_material/legacy_material
 	var/state = 0 //closed, 1 == open
 	var/isSwitchingStates = 0
 	var/hardness = 1
@@ -17,26 +17,26 @@
 	TemperatureAct(exposed_temperature)
 
 /obj/structure/simple_door/proc/TemperatureAct(temperature)
-	hardness -= material.combustion_effect(get_turf(src),temperature, 0.3)
+	hardness -= legacy_material.combustion_effect(get_turf(src),temperature, 0.3)
 	CheckHardness()
 
 /obj/structure/simple_door/New(var/newloc, var/material_name)
 	..()
 	if(!material_name)
 		material_name = DEFAULT_WALL_MATERIAL
-	material = get_material_by_name(material_name)
-	if(!material)
+	legacy_material = get_material_by_name(material_name)
+	if(!legacy_material)
 		qdel(src)
 		return
-	hardness = max(1,round(material.integrity/10))
-	icon_state = material.door_icon_base
-	name = "[material.display_name] door"
-	color = material.icon_colour
-	if(material.opacity < 0.5)
+	hardness = max(1,round(legacy_material.integrity/10))
+	icon_state = legacy_material.door_icon_base
+	name = "[legacy_material.display_name] door"
+	color = legacy_material.icon_colour
+	if(legacy_material.opacity < 0.5)
 		set_opacity(0)
 	else
 		set_opacity(1)
-	if(material.products_need_process())
+	if(legacy_material.products_need_process())
 		START_PROCESSING(SSobj, src)
 	update_nearby_tiles(need_rebuild=1)
 
@@ -46,7 +46,7 @@
 	return ..()
 
 /obj/structure/simple_door/get_material()
-	return material
+	return legacy_material
 
 /obj/structure/simple_door/Bumped(atom/user)
 	..()
@@ -73,7 +73,7 @@
 	if(isSwitchingStates) return
 	if(ismob(user))
 		var/mob/M = user
-		if(!material.can_open_material_door(user))
+		if(!legacy_material.can_open_material_door(user))
 			return
 		if(world.time - user.last_bumped <= 60)
 			return
@@ -95,8 +95,8 @@
 
 /obj/structure/simple_door/proc/Open()
 	isSwitchingStates = 1
-	playsound(src, material.dooropen_noise, 100, 1)
-	flick("[material.door_icon_base]opening",src)
+	playsound(src, legacy_material.dooropen_noise, 100, 1)
+	flick("[legacy_material.door_icon_base]opening",src)
 	sleep(10)
 	density = 0
 	set_opacity(0)
@@ -107,8 +107,8 @@
 
 /obj/structure/simple_door/proc/Close()
 	isSwitchingStates = 1
-	playsound(src, material.dooropen_noise, 100, 1)
-	flick("[material.door_icon_base]closing",src)
+	playsound(src, legacy_material.dooropen_noise, 100, 1)
+	flick("[legacy_material.door_icon_base]closing",src)
 	sleep(10)
 	density = 1
 	set_opacity(1)
@@ -119,9 +119,9 @@
 
 /obj/structure/simple_door/on_update_icon()
 	if(state)
-		icon_state = "[material.door_icon_base]open"
+		icon_state = "[legacy_material.door_icon_base]open"
 	else
-		icon_state = material.door_icon_base
+		icon_state = legacy_material.door_icon_base
 
 /obj/structure/simple_door/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -134,16 +134,16 @@
 	else if(istype(W,/obj/item/weapon)) //not sure, can't not just weapons get passed to this proc?
 		hardness -= W.force/10
 		visible_message("<span class='danger'>[user] hits [src] with [W]!</span>")
-		if(material == get_material_by_name("resin"))
+		if(legacy_material == get_material_by_name("resin"))
 			playsound(src, 'sound/effects/attackblob.ogg', 100, 1)
-		else if(material == (get_material_by_name(MAT_WOOD) || get_material_by_name(MAT_SIFWOOD)))
+		else if(legacy_material == (get_material_by_name(MAT_WOOD) || get_material_by_name(MAT_SIFWOOD)))
 			playsound(src, 'sound/effects/woodcutting.ogg', 100, 1)
 		else
 			playsound(src, 'sound/weapons/smash.ogg', 50, 1)
 		CheckHardness()
 	else if(istype(W,/obj/item/weapon/weldingtool))
 		var/obj/item/weapon/weldingtool/WT = W
-		if(material.ignition_point && WT.remove_fuel(0, user))
+		if(legacy_material.ignition_point && WT.remove_fuel(0, user))
 			TemperatureAct(150)
 	else
 		attack_hand(user)
@@ -159,9 +159,9 @@
 
 /obj/structure/simple_door/attack_generic(var/mob/user, var/damage, var/attack_verb)
 	visible_message("<span class='danger'>[user] [attack_verb] the [src]!</span>")
-	if(material == get_material_by_name("resin"))
+	if(legacy_material == get_material_by_name("resin"))
 		playsound(src, 'sound/effects/attackblob.ogg', 100, 1)
-	else if(material == (get_material_by_name(MAT_WOOD) || get_material_by_name(MAT_SIFWOOD)))
+	else if(legacy_material == (get_material_by_name(MAT_WOOD) || get_material_by_name(MAT_SIFWOOD)))
 		playsound(src, 'sound/effects/woodcutting.ogg', 100, 1)
 	else
 		playsound(src, 'sound/weapons/smash.ogg', 50, 1)
@@ -174,7 +174,7 @@
 		Dismantle(1)
 
 /obj/structure/simple_door/proc/Dismantle(devastated = 0)
-	material.place_dismantled_product(get_turf(src))
+	legacy_material.place_dismantled_product(get_turf(src))
 	visible_message("<span class='danger'>The [src] is destroyed!</span>")
 	qdel(src)
 
@@ -194,9 +194,9 @@
 	return
 
 /obj/structure/simple_door/process()
-	if(!material.radioactivity)
+	if(!legacy_material.radioactivity)
 		return
-	SSradiation.radiate(src, round(material.radioactivity/3))
+	SSradiation.radiate(src, round(legacy_material.radioactivity/3))
 
 /obj/structure/simple_door/iron/New(var/newloc,var/material_name)
 	..(newloc, "iron")

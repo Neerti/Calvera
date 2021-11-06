@@ -17,8 +17,8 @@
 	can_buckle = 1
 	buckle_dir = SOUTH
 	buckle_lying = 1
-	var/datum/material/material
-	var/datum/material/padding_material
+	var/datum/legacy_material/legacy_material
+	var/datum/legacy_material/padding_material
 	var/base_icon = "bed"
 	var/applies_material_colour = 1
 
@@ -27,8 +27,8 @@
 	color = null
 	if(!new_material)
 		new_material = DEFAULT_WALL_MATERIAL
-	material = get_material_by_name(new_material)
-	if(!istype(material))
+	legacy_material = get_material_by_name(new_material)
+	if(!istype(legacy_material))
 		qdel(src)
 		return
 	if(new_padding_material)
@@ -36,7 +36,7 @@
 	update_icon()
 
 /obj/structure/bed/get_material()
-	return material
+	return legacy_material
 
 // Reuse the cache/code from stools, todo maybe unify.
 /obj/structure/bed/on_update_icon()
@@ -44,11 +44,11 @@
 	icon_state = ""
 	cut_overlays()
 	// Base icon.
-	var/cache_key = "[base_icon]-[material.name]"
+	var/cache_key = "[base_icon]-[legacy_material.name]"
 	if(isnull(stool_cache[cache_key]))
 		var/image/I = image(icon, base_icon)
 		if(applies_material_colour) //VOREStation Add - Goes with added var
-			I.color = material.icon_colour
+			I.color = legacy_material.icon_colour
 		stool_cache[cache_key] = I
 	add_overlay(stool_cache[cache_key])
 	// Padding overlay.
@@ -63,10 +63,10 @@
 	desc = initial(desc)
 	if(padding_material)
 		name = "[padding_material.display_name] [initial(name)]" //this is not perfect but it will do for now.
-		desc += " It's made of [material.use_name] and covered with [padding_material.use_name]."
+		desc += " It's made of [legacy_material.use_name] and covered with [padding_material.use_name]."
 	else
-		name = "[material.display_name] [initial(name)]"
-		desc += " It's made of [material.use_name]."
+		name = "[legacy_material.display_name] [initial(name)]"
+		desc += " It's made of [legacy_material.use_name]."
 
 /obj/structure/bed/CanPass(atom/movable/mover, turf/target)
 	if(istype(mover) && mover.checkpass(PASSTABLE))
@@ -106,8 +106,8 @@
 			padding_type = "carpet"
 		else if(istype(W,/obj/item/stack/material))
 			var/obj/item/stack/material/M = W
-			if(M.material && (M.material.flags & MATERIAL_PADDING))
-				padding_type = "[M.material.name]"
+			if(M.legacy_material && (M.legacy_material.flags & MATERIAL_PADDING))
+				padding_type = "[M.legacy_material.name]"
 		if(!padding_type)
 			to_chat(user, "You cannot pad \the [src] with that.")
 			return
@@ -157,7 +157,7 @@
 	update_icon()
 
 /obj/structure/bed/proc/dismantle()
-	material.place_sheet(get_turf(src))
+	legacy_material.place_sheet(get_turf(src))
 	if(padding_material)
 		padding_material.place_sheet(get_turf(src))
 

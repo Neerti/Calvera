@@ -1,4 +1,4 @@
-/datum/material/diona
+/datum/legacy_material/diona
 	name = "biomass"
 	icon_colour = null
 	stack_type = null
@@ -6,13 +6,13 @@
 	icon_base = "diona"
 	icon_reinf = "noreinf"
 
-/datum/material/diona/place_dismantled_product()
+/datum/legacy_material/diona/place_dismantled_product()
 	return
 
-/datum/material/diona/place_dismantled_girder(var/turf/target)
+/datum/legacy_material/diona/place_dismantled_girder(var/turf/target)
 	spawn_diona_nymph(target)
 
-/datum/material/chitin
+/datum/legacy_material/chitin
 	name = MAT_CHITIN
 	icon_colour = "#8d6653"
 	stack_type = /obj/item/stack/material/chitin

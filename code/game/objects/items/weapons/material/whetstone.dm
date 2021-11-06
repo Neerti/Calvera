@@ -18,7 +18,7 @@
 			if(do_after(user, 70))
 				M.use(5)
 				var/obj/item/SK
-				SK = new /obj/item/weapon/material/sharpeningkit(get_turf(user), M.material.name)
+				SK = new /obj/item/weapon/material/sharpeningkit(get_turf(user), M.legacy_material.name)
 				to_chat(user, "You sharpen and refine the [src] into \a [SK].")
 				qdel(src)
 				if(SK)
@@ -41,24 +41,24 @@
 
 /obj/item/weapon/material/sharpeningkit/examine(mob/user, distance)
 	. = ..()
-	. += "There [uses == 1 ? "is" : "are"] [uses] [material] [uses == 1 ? src.material.sheet_singular_name : src.material.sheet_plural_name] left for use."
+	. += "There [uses == 1 ? "is" : "are"] [uses] [legacy_material] [uses == 1 ? src.legacy_material.sheet_singular_name : src.legacy_material.sheet_plural_name] left for use."
 
 /obj/item/weapon/material/sharpeningkit/Initialize()
 	. = ..()
 	setrepair()
 
 /obj/item/weapon/material/sharpeningkit/proc/setrepair()
-	repair_amount = material.hardness * 0.1
-	repair_time = material.weight * 0.5
-	sharpen_time = material.weight * 3
+	repair_amount = legacy_material.hardness * 0.1
+	repair_time = legacy_material.weight * 0.5
+	sharpen_time = legacy_material.weight * 3
 
 /obj/item/weapon/material/sharpeningkit/attackby(obj/item/weapon/W, mob/user)
 	if(istype(W, /obj/item/stack/material))
 		var/obj/item/stack/material/S = W
-		if(S.material == material)
+		if(S.legacy_material == legacy_material)
 			S.use(1)
 			uses += 1
-			to_chat(user, "You add a [S.material.name] [S.material.sheet_singular_name] to [src].")
+			to_chat(user, "You add a [S.legacy_material.name] [S.legacy_material.sheet_singular_name] to [src].")
 			return
 
 	if(istype(W, /obj/item/weapon/material))
@@ -67,11 +67,11 @@
 			return
 		var/obj/item/weapon/material/M = W
 		if(uses >= M.w_class*2)
-			if(M.sharpen(src.material.name, sharpen_time, src, user))
+			if(M.sharpen(src.legacy_material.name, sharpen_time, src, user))
 				uses -= M.w_class*2
 				return
 		else
-			to_chat(user, "Not enough material to sharpen [M]. You need [M.w_class*2] [M.material.sheet_plural_name].")
+			to_chat(user, "Not enough material to sharpen [M]. You need [M.w_class*2] [M.legacy_material.sheet_plural_name].")
 			return
 	else
 		to_chat(user, "You can't sharpen [W] with [src]!") 

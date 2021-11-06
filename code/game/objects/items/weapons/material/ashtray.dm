@@ -12,10 +12,10 @@ var/global/list/ashtray_cache = list()
 
 /obj/item/weapon/material/ashtray/New(var/newloc, var/material_name)
 	..(newloc, material_name)
-	if(!material)
+	if(!legacy_material)
 		qdel(src)
 		return
-	max_butts = round(material.hardness/5) //This is arbitrary but whatever.
+	max_butts = round(legacy_material.hardness/5) //This is arbitrary but whatever.
 	randpixel_xy()
 	update_icon()
 	return
@@ -23,10 +23,10 @@ var/global/list/ashtray_cache = list()
 /obj/item/weapon/material/ashtray/on_update_icon()
 	color = null
 	overlays.Cut()
-	var/cache_key = "base-[material.name]"
+	var/cache_key = "base-[legacy_material.name]"
 	if(!ashtray_cache[cache_key])
 		var/image/I = image('icons/obj/objects.dmi',"ashtray")
-		I.color = material.icon_colour
+		I.color = legacy_material.icon_colour
 		ashtray_cache[cache_key] = I
 	overlays |= ashtray_cache[cache_key]
 
@@ -41,7 +41,7 @@ var/global/list/ashtray_cache = list()
 		overlays |= ashtray_cache["half"]
 		desc = "It's half-filled."
 	else
-		desc = "An ashtray made of [material.display_name]."
+		desc = "An ashtray made of [legacy_material.display_name]."
 
 /obj/item/weapon/material/ashtray/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (health <= 0)

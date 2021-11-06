@@ -14,7 +14,7 @@
 		)
 
 	var/default_type = DEFAULT_WALL_MATERIAL
-	var/datum/material/material
+	var/datum/legacy_material/legacy_material
 	var/perunit = SHEET_MATERIAL_AMOUNT
 	var/apply_colour //temp pending icon rewrite
 	drop_sound = 'sound/items/drop/axe.ogg'
@@ -27,38 +27,38 @@
 
 	if(!default_type)
 		default_type = DEFAULT_WALL_MATERIAL
-	material = get_material_by_name("[default_type]")
-	if(!material)
+	legacy_material = get_material_by_name("[default_type]")
+	if(!legacy_material)
 		return INITIALIZE_HINT_QDEL
 
-	recipes = material.get_recipes()
-	stacktype = material.stack_type
-	if(islist(material.stack_origin_tech))
-		origin_tech = material.stack_origin_tech.Copy()
+	recipes = legacy_material.get_recipes()
+	stacktype = legacy_material.stack_type
+	if(islist(legacy_material.stack_origin_tech))
+		origin_tech = legacy_material.stack_origin_tech.Copy()
 
 	if(apply_colour)
-		color = material.icon_colour
+		color = legacy_material.icon_colour
 
-	if(!material.conductive)
+	if(!legacy_material.conductive)
 		flags |= NOCONDUCT
 
-	matter = material.get_matter()
+	matter = legacy_material.get_matter()
 	update_strings()
 
 /obj/item/stack/material/get_material()
-	return material
+	return legacy_material
 
 /obj/item/stack/material/proc/update_strings()
 	// Update from material datum.
-	singular_name = material.sheet_singular_name
+	singular_name = legacy_material.sheet_singular_name
 
 	if(amount>1)
-		name = "[material.use_name] [material.sheet_plural_name]"
-		desc = "A stack of [material.use_name] [material.sheet_plural_name]."
+		name = "[legacy_material.use_name] [legacy_material.sheet_plural_name]"
+		desc = "A stack of [legacy_material.use_name] [legacy_material.sheet_plural_name]."
 		gender = PLURAL
 	else
-		name = "[material.use_name] [material.sheet_singular_name]"
-		desc = "A [material.sheet_singular_name] of [material.use_name]."
+		name = "[legacy_material.use_name] [legacy_material.sheet_singular_name]"
+		desc = "A [legacy_material.sheet_singular_name] of [legacy_material.use_name]."
 		gender = NEUTER
 
 /obj/item/stack/material/use(var/used)
@@ -68,7 +68,7 @@
 
 /obj/item/stack/material/transfer_to(obj/item/stack/S, var/tamount=null, var/type_verified)
 	var/obj/item/stack/material/M = S
-	if(!istype(M) || material.name != M.material.name)
+	if(!istype(M) || legacy_material.name != M.legacy_material.name)
 		return 0
 	var/transfer = ..(S,tamount,1)
 	if(src) update_strings()
@@ -76,14 +76,14 @@
 	return transfer
 
 /obj/item/stack/material/attack_self(var/mob/user)
-	if(!material.build_windows(user, src))
+	if(!legacy_material.build_windows(user, src))
 		..()
 
 /obj/item/stack/material/attackby(var/obj/item/W, var/mob/user)
 	if(istype(W,/obj/item/stack/cable_coil))
-		material.build_wired_product(user, W, src)
+		legacy_material.build_wired_product(user, W, src)
 		return
 	else if(istype(W, /obj/item/stack/rods))
-		material.build_rod_product(user, W, src)
+		legacy_material.build_rod_product(user, W, src)
 		return
 	return ..()

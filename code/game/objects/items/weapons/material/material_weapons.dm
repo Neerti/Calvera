@@ -24,7 +24,7 @@
 	var/thrown_force_divisor = 0.5
 	var/dulled_divisor = 0.5	//Just drops the damage by half
 	var/default_material = DEFAULT_WALL_MATERIAL
-	var/datum/material/material
+	var/datum/legacy_material/legacy_material
 	var/drops_debris = 1
 
 /obj/item/weapon/material/New(var/newloc, var/material_key)
@@ -32,44 +32,44 @@
 	if(!material_key)
 		material_key = default_material
 	set_material(material_key)
-	if(!material)
+	if(!legacy_material)
 		qdel(src)
 		return
 
-	matter = material.get_matter()
+	matter = legacy_material.get_matter()
 	if(matter.len)
 		for(var/material_type in matter)
 			if(!isnull(matter[material_type]))
 				matter[material_type] *= force_divisor // May require a new var instead.
 
-	if(!(material.conductive))
+	if(!(legacy_material.conductive))
 		src.flags |= NOCONDUCT
 
 /obj/item/weapon/material/get_material()
-	return material
+	return legacy_material
 
 /obj/item/weapon/material/proc/update_force()
 	if(edge || sharp)
-		force = material.get_edge_damage()
+		force = legacy_material.get_edge_damage()
 	else
-		force = material.get_blunt_damage()
+		force = legacy_material.get_blunt_damage()
 	force = round(force*force_divisor)
 	if(dulled)
 		force = round(force*dulled_divisor)
-	throwforce = round(material.get_blunt_damage()*thrown_force_divisor)
+	throwforce = round(legacy_material.get_blunt_damage()*thrown_force_divisor)
 	//spawn(1)
 	//	to_world("[src] has force [force] and throwforce [throwforce] when made from default material [material.name]")
 
 /obj/item/weapon/material/proc/set_material(var/new_material)
-	material = get_material_by_name(new_material)
-	if(!material)
+	legacy_material = get_material_by_name(new_material)
+	if(!legacy_material)
 		qdel(src)
 	else
-		name = "[material.display_name] [initial(name)]"
-		health = round(material.integrity/10)
+		name = "[legacy_material.display_name] [initial(name)]"
+		health = round(legacy_material.integrity/10)
 		if(applies_material_colour)
-			color = material.icon_colour
-		if(material.products_need_process())
+			color = legacy_material.icon_colour
+		if(legacy_material.products_need_process())
 			START_PROCESSING(SSobj, src)
 		update_force()
 
@@ -80,9 +80,9 @@
 /obj/item/weapon/material/apply_hit_effect()
 	..()
 	if(!unbreakable)
-		if(material.is_brittle())
+		if(legacy_material.is_brittle())
 			health = 0
-		else if(!prob(material.hardness))
+		else if(!prob(legacy_material.hardness))
 			health--
 		check_health()
 
@@ -106,12 +106,12 @@
 
 /obj/item/weapon/material/proc/shatter(var/consumed)
 	var/turf/T = get_turf(src)
-	T.visible_message("<span class='danger'>\The [src] [material.destruction_desc]!</span>")
+	T.visible_message("<span class='danger'>\The [src] [legacy_material.destruction_desc]!</span>")
 	if(istype(loc, /mob/living))
 		var/mob/living/M = loc
 		M.drop_from_inventory(src)
 	playsound(src, "shatter", 70, 1)
-	if(!consumed && drops_debris) material.place_shard(T)
+	if(!consumed && drops_debris) legacy_material.place_shard(T)
 	qdel(src)
 
 /obj/item/weapon/material/proc/dull()

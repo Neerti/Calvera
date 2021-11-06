@@ -248,7 +248,7 @@
 	. = ..()
 	recipes = wax_recipes
 
-/datum/material/wax
+/datum/legacy_material/wax
 	name = "wax"
 	stack_type = /obj/item/stack/material/wax
 	icon_colour = "#fff343"

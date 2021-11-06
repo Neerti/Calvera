@@ -1,4 +1,4 @@
-/datum/material/snow
+/datum/legacy_material/snow
 	name = MAT_SNOW
 	stack_type = /obj/item/stack/material/snow
 	flags = MATERIAL_BRITTLE
@@ -16,7 +16,7 @@
 	sheet_plural_name = "pile" //Just a bigger pile
 	radiation_resistance = 1
 
-/datum/material/snow/generate_recipes()
+/datum/legacy_material/snow/generate_recipes()
 	recipes = list(
 		new /datum/stack_recipe("snowball", /obj/item/weapon/material/snow/snowball, 1, time = 10, recycle_material = "[name]"),
 		new /datum/stack_recipe("snow brick", /obj/item/stack/material/snowbrick, 2, time = 10, recycle_material = "[name]"),
@@ -25,7 +25,7 @@
 		new /datum/stack_recipe("snow spider", /obj/structure/snowman/spider, 3, time = 20, recycle_material = "[name]")
 	)
 
-/datum/material/snowbrick //only slightly stronger than snow, used to make igloos mostly
+/datum/legacy_material/snowbrick //only slightly stronger than snow, used to make igloos mostly
 	name = "packed snow"
 	flags = MATERIAL_BRITTLE
 	stack_type = /obj/item/stack/material/snowbrick
@@ -43,7 +43,7 @@
 	sheet_plural_name = "bricks"
 	radiation_resistance = 1
 
-/datum/material/snowbrick/generate_recipes()
+/datum/legacy_material/snowbrick/generate_recipes()
 	recipes = list(
 		new /datum/stack_recipe("[display_name] door", /obj/structure/simple_door, 10, one_per_turf = 1, on_floor = 1, supplied_material = "[name]"),
 		new /datum/stack_recipe("[display_name] barricade", /obj/structure/barricade, 5, time = 50, one_per_turf = 1, on_floor = 1, supplied_material = "[name]"),

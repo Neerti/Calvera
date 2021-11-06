@@ -1,4 +1,4 @@
-/datum/material/phoron
+/datum/legacy_material/phoron
 	name = "phoron"
 	stack_type = /obj/item/stack/material/phoron
 	ignition_point = PHORON_MINIMUM_BURN_TEMPERATURE
@@ -14,7 +14,7 @@
 
 /*
 // Commenting this out while fires are so spectacularly lethal, as I can't seem to get this balanced appropriately.
-/datum/material/phoron/combustion_effect(var/turf/T, var/temperature, var/effect_multiplier)
+/datum/legacy_material/phoron/combustion_effect(var/turf/T, var/temperature, var/effect_multiplier)
 	if(isnull(ignition_point))
 		return 0
 	if(temperature < ignition_point)
@@ -29,7 +29,7 @@
 	return round(totalPhoron/100)
 */
 
-/datum/material/diamond
+/datum/legacy_material/diamond
 	name = "diamond"
 	stack_type = /obj/item/stack/material/diamond
 	flags = MATERIAL_UNMELTABLE
@@ -45,7 +45,7 @@
 	stack_origin_tech = list(TECH_MATERIAL = 6)
 	supply_conversion_value = 8
 
-/datum/material/quartz
+/datum/legacy_material/quartz
 	name = "quartz"
 	display_name = "quartz"
 	use_name = "quartz"
@@ -56,7 +56,7 @@
 	sheet_plural_name = "crystals"
 	supply_conversion_value = 4
 
-/datum/material/painite
+/datum/legacy_material/painite
 	name = "painite"
 	display_name = "painite"
 	use_name = "painite"
@@ -69,7 +69,7 @@
 	sheet_plural_name = "gems"
 	supply_conversion_value = 4
 
-/datum/material/void_opal
+/datum/legacy_material/void_opal
 	name = "void opal"
 	display_name = "void opal"
 	use_name = "void opal"
@@ -88,7 +88,7 @@
 	supply_conversion_value = 30	// These are hilariously rare.
 
 // Particle Smasher and other exotic materials.
-/datum/material/valhollide
+/datum/legacy_material/valhollide
 	name = MAT_VALHOLLIDE
 	stack_type = /obj/item/stack/material/valhollide
 	icon_base = "stone"
@@ -109,7 +109,7 @@
 	sheet_singular_name = "gem"
 	sheet_plural_name = "gems"
 
-/datum/material/verdantium
+/datum/legacy_material/verdantium
 	name = MAT_VERDANTIUM
 	stack_type = /obj/item/stack/material/verdantium
 	icon_base = "metal"
@@ -130,7 +130,7 @@
 	sheet_plural_name = "sheets"
 	supply_conversion_value = 8
 
-/datum/material/morphium
+/datum/legacy_material/morphium
 	name = MAT_MORPHIUM
 	stack_type = /obj/item/stack/material/morphium
 	icon_base = "metal"

@@ -190,8 +190,8 @@
 	..()
 
 	if(!QDELETED(src))
-		health = round(material.integrity / 3)
-		name = (material.get_edge_damage() * force_divisor > 15) ?  "[material.display_name] razor wire" : "[material.display_name] [initial(name)]"
+		health = round(legacy_material.integrity / 3)
+		name = (legacy_material.get_edge_damage() * force_divisor > 15) ?  "[legacy_material.display_name] razor wire" : "[legacy_material.display_name] [initial(name)]"
 
 /obj/item/weapon/material/barbedwire/proc/can_use(mob/user)
 	return (user.IsAdvancedToolUser() && !issilicon(user) && !user.stat && !user.restrained())
@@ -201,7 +201,7 @@
 		user.visible_message(
 			"<span class='danger'>[user] starts to collect \the [src].</span>",
 			"<span class='notice'>You begin collecting \the [src]!</span>",
-			"You hear the sound of rustling [material.name]."
+			"You hear the sound of rustling [legacy_material.name]."
 			)
 		playsound(src, 'sound/machines/click.ogg', 50, 1)
 
@@ -221,14 +221,14 @@
 		user.visible_message(
 			"<span class='danger'>[user] starts to deploy \the [src].</span>",
 			"<span class='danger'>You begin deploying \the [src]!</span>",
-			"You hear the rustling of [material.name]."
+			"You hear the rustling of [legacy_material.name]."
 			)
 
 		if (do_after(user, 60))
 			user.visible_message(
 				"<span class='danger'>[user] has deployed \the [src].</span>",
 				"<span class='danger'>You have deployed \the [src]!</span>",
-				"You hear the rustling of [material.name]."
+				"You hear the rustling of [legacy_material.name]."
 				)
 			playsound(src, 'sound/items/Wirecutter.ogg',70, 1)
 			spawn(2)
@@ -289,7 +289,7 @@
 /obj/item/weapon/material/barbedwire/proc/shock(mob/user as mob, prb, var/target_zone = BP_TORSO)
 	if(!anchored || health == 0)		// anchored/destroyed grilles are never connected
 		return 0
-	if(material.conductivity <= 0)
+	if(legacy_material.conductivity <= 0)
 		return 0
 	if(!prob(prb))
 		return 0
@@ -304,7 +304,7 @@
 			if(PN)
 				PN.trigger_warning()
 
-				var/PN_damage = PN.get_electrocute_damage() * (material.conductivity / 50)
+				var/PN_damage = PN.get_electrocute_damage() * (legacy_material.conductivity / 50)
 
 				var/drained_energy = PN_damage * 10 / CELLRATE
 
@@ -388,9 +388,9 @@
 				return
 			check -= picked
 
-	if(material.is_brittle() && prob(material.hardness))
+	if(legacy_material.is_brittle() && prob(legacy_material.hardness))
 		health = 0
-	else if(!prob(material.hardness))
+	else if(!prob(legacy_material.hardness))
 		health--
 	check_health()
 

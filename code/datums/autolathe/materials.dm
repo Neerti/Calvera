@@ -9,8 +9,8 @@
 		resources = M.matter.Copy()
 		max_stack = M.max_amount
 		path = M.type
-	else if(istype(mat, /datum/material))
-		var/datum/material/M = mat
+	else if(istype(mat, /datum/legacy_material))
+		var/datum/legacy_material/M = mat
 		var/obj/item/stack/material/S = M.stack_type
 		name = initial(S.name)
 		resources = M.get_matter()

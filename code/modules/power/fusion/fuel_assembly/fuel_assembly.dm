@@ -19,18 +19,18 @@
 
 /obj/item/weapon/fuel_assembly/Initialize()
 	. = ..()
-	var/datum/material/material = get_material_by_name(fuel_type)
-	if(istype(material))
-		name = "[material.use_name] fuel rod assembly"
-		desc = "A fuel rod for a fusion reactor. This one is made from [material.use_name]."
-		fuel_colour = material.icon_colour
-		fuel_type = material.use_name
-		if(material.radioactivity)
-			radioactivity = material.radioactivity
+	var/datum/legacy_material/legacy_material = get_material_by_name(fuel_type)
+	if(istype(legacy_material))
+		name = "[legacy_material.use_name] fuel rod assembly"
+		desc = "A fuel rod for a fusion reactor. This one is made from [legacy_material.use_name]."
+		fuel_colour = legacy_material.icon_colour
+		fuel_type = legacy_material.use_name
+		if(legacy_material.radioactivity)
+			radioactivity = legacy_material.radioactivity
 			desc += " It is warm to the touch."
 			START_PROCESSING(SSobj, src)
-		if(material.luminescence)
-			set_light(material.luminescence, material.luminescence, material.icon_colour)
+		if(legacy_material.luminescence)
+			set_light(legacy_material.luminescence, legacy_material.luminescence, legacy_material.icon_colour)
 	else
 		name = "[fuel_type] fuel rod assembly"
 		desc = "A fuel rod for a fusion reactor. This one is made from [fuel_type]."

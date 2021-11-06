@@ -263,7 +263,7 @@
 			return
 
 		if(repairing && I.is_crowbar())
-			var/datum/material/mat = get_material()
+			var/datum/legacy_material/mat = get_material()
 			var/obj/item/stack/material/repairing_sheet = mat.place_sheet(loc)
 			repairing_sheet.amount += repairing-1
 			repairing = 0

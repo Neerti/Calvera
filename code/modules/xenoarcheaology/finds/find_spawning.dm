@@ -617,10 +617,10 @@
 
 		if(istype(new_item, /obj/item/weapon/material))
 			var/obj/item/weapon/material/MW = new_item
-			source_material = MW.material.display_name
+			source_material = MW.legacy_material.display_name
 		if(istype(new_item, /obj/vehicle/boat))
 			var/obj/vehicle/boat/B = new_item
-			source_material = B.material.display_name
+			source_material = B.legacy_material.display_name
 		desc = "A [material_descriptor ? "[material_descriptor] " : ""][item_type] made of [source_material], all craftsmanship is of [pick("the lowest","low","average","high","the highest")] quality."
 
 		var/list/descriptors = list()

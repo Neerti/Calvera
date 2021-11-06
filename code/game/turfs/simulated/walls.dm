@@ -14,9 +14,9 @@
 	var/global/damage_overlays[16]
 	var/active
 	var/can_open = 0
-	var/datum/material/girder_material
-	var/datum/material/material
-	var/datum/material/reinf_material
+	var/datum/legacy_material/girder_material
+	var/datum/legacy_material/legacy_material
+	var/datum/legacy_material/reinf_material
 	var/last_state
 	var/construction_stage
 
@@ -32,7 +32,7 @@
 	icon_state = "blank"
 	if(!materialtype)
 		materialtype = DEFAULT_WALL_MATERIAL
-	material = get_material_by_name(materialtype)
+	legacy_material = get_material_by_name(materialtype)
 	if(!girdertype)
 		girdertype = DEFAULT_WALL_MATERIAL
 	girder_material = get_material_by_name(girdertype)
@@ -55,7 +55,7 @@
 		return PROCESS_KILL
 
 /turf/simulated/wall/proc/get_material()
-	return material
+	return legacy_material
 
 /turf/simulated/wall/bullet_act(var/obj/item/projectile/Proj)
 	if(istype(Proj,/obj/item/projectile/beam))
@@ -73,8 +73,8 @@
 			thermitemelt()
 
 	if(istype(Proj,/obj/item/projectile/beam))
-		if(material && material.reflectivity >= 0.5) // Time to reflect lasers.
-			var/new_damage = damage * material.reflectivity
+		if(legacy_material && legacy_material.reflectivity >= 0.5) // Time to reflect lasers.
+			var/new_damage = damage * legacy_material.reflectivity
 			var/outgoing_damage = damage - new_damage
 			damage = new_damage
 			Proj.damage = outgoing_damage
@@ -128,7 +128,7 @@
 	if(!damage)
 		. += "<span class='notice'>It looks fully intact.</span>"
 	else
-		var/dam = damage / material.integrity
+		var/dam = damage / legacy_material.integrity
 		if(dam <= 0.3)
 			. += "<span class='warning'>It looks slightly damaged.</span>"
 		else if(dam <= 0.6)
@@ -163,7 +163,7 @@
 	return
 
 /turf/simulated/wall/proc/update_damage()
-	var/cap = material.integrity
+	var/cap = legacy_material.integrity
 	if(reinf_material)
 		cap += reinf_material.integrity
 
@@ -182,8 +182,8 @@
 
 /turf/simulated/wall/adjacent_fire_act(turf/simulated/floor/adj_turf, datum/gas_mixture/adj_air, adj_temp, adj_volume)
 	burn(adj_temp)
-	if(adj_temp > material.melting_point)
-		take_damage(log(RAND_F(0.9, 1.1) * (adj_temp - material.melting_point)))
+	if(adj_temp > legacy_material.melting_point)
+		take_damage(log(RAND_F(0.9, 1.1) * (adj_temp - legacy_material.melting_point)))
 
 	return ..()
 
@@ -194,11 +194,11 @@
 		if(reinf_material)
 			reinf_material.place_dismantled_girder(src, reinf_material, girder_material)
 		else
-			material.place_dismantled_girder(src, null, girder_material)
+			legacy_material.place_dismantled_girder(src, null, girder_material)
 		if(!devastated)
-			material.place_dismantled_product(src)
+			legacy_material.place_dismantled_product(src)
 			if (!reinf_material)
-				material.place_dismantled_product(src)
+				legacy_material.place_dismantled_product(src)
 
 	for(var/obj/O in src.contents) //Eject contents!
 		if(istype(O,/obj/structure/sign/poster))
@@ -208,7 +208,7 @@
 			O.loc = src
 
 	clear_plants()
-	material = get_material_by_name("placeholder")
+	legacy_material = get_material_by_name("placeholder")
 	reinf_material = null
 	girder_material = null
 	update_connections(1)
@@ -255,7 +255,7 @@
 	return TRUE
 
 /turf/simulated/wall/proc/can_melt()
-	if(material.flags & MATERIAL_UNMELTABLE)
+	if(legacy_material.flags & MATERIAL_UNMELTABLE)
 		return 0
 	return 1
 
@@ -288,7 +288,7 @@
 	return
 
 /turf/simulated/wall/proc/radiate()
-	var/total_radiation = material.radioactivity + (reinf_material ? reinf_material.radioactivity / 2 : 0) + (girder_material ? girder_material.radioactivity / 2 : 0)
+	var/total_radiation = legacy_material.radioactivity + (reinf_material ? reinf_material.radioactivity / 2 : 0) + (girder_material ? girder_material.radioactivity / 2 : 0)
 	if(!total_radiation)
 		return
 
@@ -296,7 +296,7 @@
 	return total_radiation
 
 /turf/simulated/wall/proc/burn(temperature)
-	if(material.combustion_effect(src, temperature, 0.7))
+	if(legacy_material.combustion_effect(src, temperature, 0.7))
 		spawn(2)
 			new /obj/structure/girder(src, girder_material.name)
 			src.ChangeTurf(/turf/simulated/floor)
@@ -306,16 +306,16 @@
 				D.ignite(temperature/4)
 
 /turf/simulated/wall/can_engrave()
-	return (material && material.hardness >= 10 && material.hardness <= 100)
+	return (legacy_material && legacy_material.hardness >= 10 && legacy_material.hardness <= 100)
 
 /turf/simulated/wall/rcd_values(mob/living/user, obj/item/weapon/rcd/the_rcd, passed_mode)
-	if(material.integrity > 1000) // Don't decon things like elevatorium.
+	if(legacy_material.integrity > 1000) // Don't decon things like elevatorium.
 		return FALSE
 	if(reinf_material && !the_rcd.can_remove_rwalls) // Gotta do it the old fashioned way if your RCD can't.
 		return FALSE
 
 	if(passed_mode == RCD_DECONSTRUCT)
-		var/delay_to_use = material.integrity / 3 // Steel has 150 integrity, so it'll take five seconds to down a regular wall.
+		var/delay_to_use = legacy_material.integrity / 3 // Steel has 150 integrity, so it'll take five seconds to down a regular wall.
 		if(reinf_material)
 			delay_to_use += reinf_material.integrity / 3
 		return list(
