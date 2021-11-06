@@ -16,7 +16,6 @@
 			)
 
 	var/applies_material_colour = 1
-	var/unbreakable = 0		//Doesn't lose health
 	var/fragile = 0			//Shatters when it dies
 	var/dulled = 0			//Has gone dull
 	var/can_dull = 1		//Can it go dull?

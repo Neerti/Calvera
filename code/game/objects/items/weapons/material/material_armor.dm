@@ -28,8 +28,6 @@ Protectiveness | Armor %
 // Putting these at /clothing/ level saves a lot of code duplication in armor/helmets/gauntlets/etc
 /obj/item/clothing
 	var/datum/legacy_material/legacy_material = null // Why isn't this a datum?
-	var/applies_material_color = TRUE
-	var/unbreakable = FALSE
 	var/default_material = null // Set this to something else if you want material attributes on init.
 	var/material_armor_modifier = 1 // Adjust if you want seperate types of armor made from the same material to have different protectiveness (e.g. makeshift vs real armor)
 	var/material_slowdown_modifier = 0
