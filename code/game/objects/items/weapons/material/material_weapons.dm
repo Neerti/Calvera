@@ -30,7 +30,7 @@
 	..(newloc)
 	if(!material_key)
 		material_key = default_material
-	set_material(material_key)
+	set_legacy_material(material_key)
 	if(!legacy_material)
 		qdel(src)
 		return
@@ -47,7 +47,7 @@
 /obj/item/weapon/material/get_material()
 	return legacy_material
 
-/obj/item/weapon/material/proc/update_force()
+/obj/item/weapon/material/proc/update_legacy_force()
 	if(edge || sharp)
 		force = legacy_material.get_edge_damage()
 	else
@@ -59,7 +59,7 @@
 	//spawn(1)
 	//	to_world("[src] has force [force] and throwforce [throwforce] when made from default material [material.name]")
 
-/obj/item/weapon/material/proc/set_material(var/new_material)
+/obj/item/weapon/material/proc/set_legacy_material(var/new_material)
 	legacy_material = get_material_by_name(new_material)
 	if(!legacy_material)
 		qdel(src)
@@ -70,7 +70,7 @@
 			color = legacy_material.icon_colour
 		if(legacy_material.products_need_process())
 			START_PROCESSING(SSobj, src)
-		update_force()
+		update_legacy_force()
 
 /obj/item/weapon/material/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -146,7 +146,7 @@
 		M.visible_message("[M] begins to replace parts of [src] with [kit].", "You begin to replace parts of [src] with [kit].")
 		if(do_after(usr, sharpen_time))
 			M.visible_message("[M] has finished replacing parts of [src].", "You finish replacing parts of [src].")
-			src.set_material(material)
+			src.set_legacy_material(material)
 			return TRUE
 	else
 		to_chat(M, "<span class = 'warning'>You can't sharpen and re-edge [src].</span>")

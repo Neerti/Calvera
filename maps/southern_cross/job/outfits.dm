@@ -22,7 +22,7 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 /decl/hierarchy/outfit/job/explorer2/post_equip(mob/living/carbon/human/H)
 	..()
 	for(var/obj/item/clothing/accessory/permit/gun/planetside/permit in H.back.contents)
-		permit.set_name(H.real_name)
+		permit.set_permit_name(H.real_name)
 
 /decl/hierarchy/outfit/job/explorer2/technician
 	name = OUTFIT_JOB_NAME("Explorer Technician")

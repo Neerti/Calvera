@@ -62,10 +62,16 @@
 
 #define TABLE_BRITTLE_MATERIAL_MULTIPLIER 4 // Amount table damage is multiplied by if it is made of a brittle material (e.g. glass)
 
+/** Makes it easy to choose a specific number for how much damage a specific object should do. 
+First argument is the max damage the object should do. 
+Second is what multiplier value is being used as the 'baseline'.*/
+#define MATERIAL_FORCE_SCALING(FORCE_VALUE, MATERIAL_MULTIPLIER) (FORCE_VALUE / MATERIAL_MULTIPLIER) / 100
+
+
 //Arbitrary weight thresholds
 #define MATERIAL_WEIGHT_EXTREMELY_LIGHT	10
-#define MATERIAL_WEIGHT_VERY_LIGHT		30
-#define MATERIAL_WEIGHT_LIGHT			40
+#define MATERIAL_WEIGHT_VERY_LIGHT		20
+#define MATERIAL_WEIGHT_LIGHT			30
 #define MATERIAL_WEIGHT_NORMAL			50
 #define MATERIAL_WEIGHT_HEAVY			70
 #define MATERIAL_WEIGHT_VERY_HEAVY		80
@@ -93,3 +99,8 @@
 #define MATERIAL_REFLECTIVITY_VERY_SHINY		60
 #define MATERIAL_REFLECTIVITY_MIRROR			80
 #define MATERIAL_REFLECTIVITY_PERFECT_MIRROR	100
+
+// Note that these don't act as the default for material values, 
+// but instead are the values for the 'default material', which is steel.
+#define DEFAULT_MATERIAL_HARDNESS MATERIAL_WEIGHT_HEAVY
+#define DEFAULT_MATERIAL_WEIGHT MATERIAL_WEIGHT_NORMAL

@@ -44,7 +44,7 @@
 	update_icon()
 	..()
 
-/obj/item/weapon/material/twohanded/update_force()
+/obj/item/weapon/material/twohanded/update_legacy_force()
 	base_name = name
 	if(sharp || edge)
 		force_wielded = legacy_material.get_edge_damage()

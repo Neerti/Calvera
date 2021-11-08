@@ -216,7 +216,7 @@ badges
 	var/mob/living/carbon/human/H
 	H = get_holder_of_type(src, /mob/living/carbon/human)
 	if(H)
-		set_name(H.real_name)
+		set_badge_name(H.real_name)
 		set_desc(H)
 
 /obj/item/clothing/accessory/badge/solgov/tags/set_desc(var/mob/living/carbon/human/H)

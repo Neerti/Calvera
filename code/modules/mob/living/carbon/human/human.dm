@@ -1499,7 +1499,7 @@
 	if(braintype == FBP_DRONE)
 		var/turf/T = get_turf(src)
 		var/obj/item/clothing/accessory/permit/drone/permit = new(T)
-		permit.set_name(real_name)
+		permit.set_permit_name(real_name)
 		equip_to_appropriate_slot(permit) // If for some reason it can't find room, it'll still be on the floor.
 
 /mob/living/carbon/human/proc/update_icon_special() //For things such as teshari hiding and whatnot.

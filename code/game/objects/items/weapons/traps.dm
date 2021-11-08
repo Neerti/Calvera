@@ -186,7 +186,7 @@
 
 	sharp = TRUE
 
-/obj/item/weapon/material/barbedwire/set_material(var/new_material)
+/obj/item/weapon/material/barbedwire/set_legacy_material(var/new_material)
 	..()
 
 	if(!QDELETED(src))

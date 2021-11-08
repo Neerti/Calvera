@@ -12,12 +12,12 @@
 /obj/item/clothing/accessory/permit/attack_self(mob/user as mob)
 	if(isliving(user))
 		if(!owner)
-			set_name(user.name)
+			set_permit_name(user.name)
 			to_chat(user, "[src] registers your name.")
 		else
 			to_chat(user, "[src] already has an owner!")
 
-/obj/item/clothing/accessory/permit/proc/set_name(var/new_name)
+/obj/item/clothing/accessory/permit/proc/set_permit_name(var/new_name)
 	owner = 1
 	if(new_name)
 		src.name += " ([new_name])"

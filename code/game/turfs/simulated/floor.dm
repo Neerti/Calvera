@@ -153,10 +153,10 @@
 			to_chat(user, span("notice", "You build a wall."))
 			ChangeTurf(/turf/simulated/wall)
 			var/turf/simulated/wall/T = get_turf(src) // Ref to the wall we just built.
-			// Apparently set_material(...) for walls requires refs to the material singletons and not strings.
-			// This is different from how other material objects with their own set_material(...) do it, but whatever.
+			// Apparently set_legacy_material(...) for walls requires refs to the material singletons and not strings.
+			// This is different from how other material objects with their own set_legacy_material(...) do it, but whatever.
 			var/datum/legacy_material/M = name_to_material[the_rcd.material_to_use]
-			T.set_material(M, the_rcd.make_rwalls ? M : null, M)
+			T.set_legacy_material(M, the_rcd.make_rwalls ? M : null, M)
 			T.add_hiddenprint(user)
 			return TRUE
 		if(RCD_AIRLOCK)

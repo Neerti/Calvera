@@ -31,7 +31,7 @@
 	update_icon()
 
 
-/turf/simulated/wall/proc/set_material(var/datum/legacy_material/newmaterial, var/datum/legacy_material/newrmaterial, var/datum/legacy_material/newgmaterial)
+/turf/simulated/wall/proc/set_legacy_material(var/datum/legacy_material/newmaterial, var/datum/legacy_material/newrmaterial, var/datum/legacy_material/newgmaterial)
 	legacy_material = newmaterial
 	reinf_material = newrmaterial
 	if(!newgmaterial)

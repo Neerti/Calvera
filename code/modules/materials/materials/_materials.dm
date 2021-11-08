@@ -217,7 +217,7 @@ var/list/name_to_material
 	if(girder_material)
 		if(istype(girder_material, /datum/legacy_material))
 			girder_material = girder_material.name
-		G.set_material(girder_material)
+		G.set_legacy_material(girder_material)
 
 
 // General wall debris product placement.

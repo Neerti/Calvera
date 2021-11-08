@@ -23,7 +23,7 @@
 	                      "<span class='danger'>\The [user] is slitting [TU.his] throat with \the [src]! It looks like [TU.hes] trying to commit suicide.</span>"))
 	return (BRUTELOSS)
 
-/obj/item/weapon/material/shard/set_material(var/new_material)
+/obj/item/weapon/material/shard/set_legacy_material(var/new_material)
 	..(new_material)
 	if(!istype(legacy_material))
 		return

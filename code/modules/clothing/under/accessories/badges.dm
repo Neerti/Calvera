@@ -19,7 +19,7 @@
 	desc = "A faded badge, backed with leather. It bears the emblem of the Forensic division."
 	icon_state = "badge_round"
 
-/obj/item/clothing/accessory/badge/proc/set_name(var/new_name)
+/obj/item/clothing/accessory/badge/proc/set_badge_name(var/new_name)
 	stored_name = new_name
 	name = "[initial(name)] ([stored_name])"
 
@@ -29,7 +29,7 @@
 
 	if(!stored_name)
 		to_chat(user, "You polish your old badge fondly, shining up the surface.")
-		set_name(user.real_name)
+		set_badge_name(user.real_name)
 		return
 
 	if(isliving(user))
@@ -100,7 +100,7 @@
 
 		if(access_security in id_card.access || emagged)
 			to_chat(user, "You imprint your ID details onto the badge.")
-			set_name(user.real_name)
+			set_badge_name(user.real_name)
 		else
 			to_chat(user, "[src] rejects your insufficient access rights.")
 		return

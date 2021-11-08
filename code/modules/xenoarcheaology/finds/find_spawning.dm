@@ -603,7 +603,7 @@
 			))
 		var/obj/item/weapon/material/MW = new_item
 		MW.applies_material_colour = TRUE
-		MW.set_material(new_item_mat)
+		MW.set_legacy_material(new_item_mat)
 		if(istype(MW, /obj/item/weapon/material/twohanded))
 			var/obj/item/weapon/material/twohanded/TH = MW
 			TH.force_unwielded *= 0.7

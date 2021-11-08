@@ -1,7 +1,7 @@
 /obj/item
 	// Material handling for material weapons (not used by default, unless material is supplied or set)
 	/// Reference to material decl. If set to a path corresponding to a material /decl, will init the item with that material.
-//	var/decl/material/material
+	var/decl/material/material
 
 	/// Whether or not the material recolors this icon.
 	var/applies_material_color = FALSE
@@ -19,6 +19,94 @@
 
 	/// Whether or not this weapon degrades.
 	var/unbreakable = FALSE
+
+/obj/item/Initialize(mapload, material_key)
+	if(!ispath(material_key, /decl/material))
+		material_key = material
+	if(material_key)
+		set_material(material_key)
+	. = ..()
+
+/obj/item/Destroy()
+	if(istype(material))
+		if(material.products_need_process())
+			STOP_PROCESSING(SSobj, src)
+		material = null
+	return ..()
+
+
+/obj/item/process()
+	if(material)
+		material.process(src)
+
+/obj/item/proc/set_material(var/new_material)
+	if(new_material)
+		material = GET_DECL(new_material)
+	if(istype(material))
+//		health = round(material_health_multiplier * material.integrity)
+//		max_health = health
+		if(material.products_need_process())
+			START_PROCESSING(SSobj, src)
+//		if(material.conductive)
+//			obj_flags |= OBJ_FLAG_CONDUCTIBLE
+//		else
+//			obj_flags &= (~OBJ_FLAG_CONDUCTIBLE)
+		update_force()
+		if(applies_material_name)
+			set_name("[material.adjective_name] [initial(name)]")
+//		if(material_armor_multiplier)
+//			armor = material.get_armor(material_armor_multiplier)
+//			armor_degradation_speed = material.armor_degradation_speed
+//			if(length(armor))
+//				set_extension(src, armor_type, armor, armor_degradation_speed)
+//			else
+//				remove_extension(src, armor_type)
+	//queue_icon_update() // Someday...
+	update_icon()
+
+/obj/item/proc/interactive_set_material()
+	var/list/material_decls = decls_repository.get_decls_of_subtype(/decl/material)
+	var/answer = input(usr, "What material should \the [src] be made out of?", "Alchemy", material ? material.type : /decl/material/solid/metal/steel) as null|anything in material_decls
+	if(!isnull(answer))
+		set_material(answer)
+
+/obj/item/proc/update_force()
+	var/new_force
+//	if(!max_force)
+//		max_force = 5 * min(w_class, ITEM_SIZE_GARGANTUAN)
+	if(material)
+//		if(edge || sharp)
+//			new_force = material.get_edge_damage()
+//		else
+//			new_force = material.get_blunt_damage()
+//			if(item_flags & ITEM_FLAG_HOLLOW)
+//				new_force *= HOLLOW_OBJECT_MATTER_MULTIPLIER
+		new_force = round(new_force*material_force_multiplier)
+//		force = min(new_force, max_force)
+//	if(new_force > max_force)
+//		armor_penetration = initial(armor_penetration) + new_force - max_force
+//	attack_cooldown = initial(attack_cooldown)
+	if(material)
+//		armor_penetration += 2*max(0, material.brute_armor - 2)
+//		throwforce = material.get_blunt_damage() * thrown_material_force_multiplier
+//		if(item_flags & ITEM_FLAG_HOLLOW)
+//			throwforce *= HOLLOW_OBJECT_MATTER_MULTIPLIER
+		throwforce = round(throwforce)
+//		attack_cooldown += material.get_attack_cooldown()
+
+
+/obj/item/on_update_icon()
+	if(applies_material_color && material)
+		color = material.color
+		alpha = 100 + material.opacity * 255
+
+// Testing.
+/obj/item/weapon/tool/wrench/radical
+	material = /decl/material/solid/metal/uranium
+	applies_material_name = TRUE
+	applies_material_color = TRUE
+
+
 /*
 /obj/item/on_update_icon()
 //	overlays.Cut()

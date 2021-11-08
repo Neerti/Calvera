@@ -11,15 +11,15 @@
 
 	/** What the material is called when it is in the solid phase, such as "ice".
 	If null, a name will be generated automatically.*/
-	var/solid_name = null
+//	var/solid_name = null
 
 	/** What the material is called when it is in the gaseous phase, such as "steam".
 	If null, a name will be generated automatically.*/
-	var/gas_name = null
+//	var/gas_name = null
 
 	/** What the material is called when it is in the liquid phase, such as "water".
 	If null, a name will be generated automatically.*/
-	var/liquid_name = null
+//	var/liquid_name = null
 
 	/// Optional text based on ingame lore for this material.
 	var/lore_text = null
@@ -46,7 +46,7 @@
 	var/integrity = 150
 
 	/// Determines damage in bladed/edged weapons.
-	var/hardness = MATERIAL_HARDNESS_HARD
+	var/hardness = MATERIAL_HARDNESS_NORMAL
 
 	/// Determines damage in blunt weapons.
 	var/weight = MATERIAL_HARDNESS_NORMAL
@@ -79,19 +79,28 @@
 	// (Simplified) Thermodynamics.
 	// Pressure is not taken into account, so no triple point or boiling in space, sorry.
 
-	/// °K. Point which the element turns from a liquid to a solid.
-	var/melting_point = null
+	/// What material something made from this material will turn into if made too hot, if any.
+	var/high_energy_transition_material = null
 
-	/// °K. Point which the element turns from a liquid to a gas.
-	var/vaporization_point = null
+	/// °K. Point which the material turns into another material due to getting too hot, acting as the melting or vaporization point.
+	var/high_energy_transition_temperature = null
+
+	/// What material something made from this material will turn into if made too cold, if any.
+	var/low_energy_transition_material = null
+
+	/// °K. Point which the material turns into another material due to getting too cold, acting as the solidification or condensation point.
+	var/low_energy_transition_temperature
+
 
 	/// °K. Used to artificially prevent the material from oscillating between two phases constantly.
 	var/thermodynamic_hysteresis = 2
 
-	/// J/°K. Amount of energy that one gram of the material must absorb or lose to change its temperature by one degree kelvin/celcius.
+	/** J/°K. Amount of energy that one gram of the material must absorb or lose to change its temperature by one degree kelvin/celcius.
+	A high heat capacity makes a material able to 'hold onto' more heat, and thus slower to change temperature.*/
 	var/specific_heat_capacity = null
 
-	/// W/(m*K). Higher numbers make heat transfer happen faster.
+	/** W/(m*K). Higher numbers make heat transfer happen faster between two objects.
+	Note that, generally, conductivity on both objects is taken into account.*/
 	var/thermal_conductivity = null
 
 	/** J/Kg. How much heat is released when this material is burned.
@@ -110,6 +119,17 @@
 		symbol_html = symbol
 	else if(!symbol && symbol_html)
 		symbol = strip_html_properly(symbol_html)
+
+// Currently used for weapons and objects made of uranium to irradiate things.
+/decl/material/proc/products_need_process()
+	if(radioactivity > 0)
+		return TRUE
+	return FALSE
+
+/decl/material/process(atom/holder)
+	if(radioactivity > 0)
+		// TODO: Calculate mass and scale radiation from that?
+		SSradiation.radiate(holder, radioactivity * 0.1)
 
 
 /*

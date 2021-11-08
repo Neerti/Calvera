@@ -5,37 +5,37 @@
 	randpixel = 8
 	w_class = ITEMSIZE_SMALL
 	var/datum/geosample/geologic_data
-	var/material
+	var/material_string
 
 /obj/item/weapon/ore/uranium
 	name = "pitchblende"
 	icon_state = "ore_uranium"
 	origin_tech = list(TECH_MATERIAL = 5)
-	material = "uranium"
+	material_string = "uranium"
 
 /obj/item/weapon/ore/iron
 	name = "hematite"
 	icon_state = "ore_iron"
 	origin_tech = list(TECH_MATERIAL = 1)
-	material = "hematite"
+	material_string = "hematite"
 
 /obj/item/weapon/ore/coal
 	name = "raw carbon"
 	icon_state = "ore_coal"
 	origin_tech = list(TECH_MATERIAL = 1)
-	material = "carbon"
+	material_string = "carbon"
 
 /obj/item/weapon/ore/marble
 	name = "recrystallized carbonate"
 	icon_state = "ore_marble"
 	origin_tech = list(TECH_MATERIAL = 1)
-	material = "marble"
+	material_string = "marble"
 
 /obj/item/weapon/ore/glass
 	name = "sand"
 	icon_state = "ore_glass"
 	origin_tech = list(TECH_MATERIAL = 1)
-	material = "sand"
+	material_string = "sand"
 	slot_flags = SLOT_HOLSTER
 
 // POCKET SAND!
@@ -54,40 +54,40 @@
 	name = "phoron crystals"
 	icon_state = "ore_phoron"
 	origin_tech = list(TECH_MATERIAL = 2)
-	material = "phoron"
+	material_string = "phoron"
 
 /obj/item/weapon/ore/silver
 	name = "native silver ore"
 	icon_state = "ore_silver"
 	origin_tech = list(TECH_MATERIAL = 3)
-	material = "silver"
+	material_string = "silver"
 
 /obj/item/weapon/ore/gold
 	name = "native gold ore"
 	icon_state = "ore_gold"
 	origin_tech = list(TECH_MATERIAL = 4)
-	material = "gold"
+	material_string = "gold"
 
 /obj/item/weapon/ore/diamond
 	name = "diamonds"
 	icon_state = "ore_diamond"
 	origin_tech = list(TECH_MATERIAL = 6)
-	material = "diamond"
+	material_string = "diamond"
 
 /obj/item/weapon/ore/osmium
 	name = "raw platinum"
 	icon_state = "ore_platinum"
-	material = "platinum"
+	material_string = "platinum"
 
 /obj/item/weapon/ore/hydrogen
 	name = "raw hydrogen"
 	icon_state = "ore_hydrogen"
-	material = "mhydrogen"
+	material_string = "mhydrogen"
 
 /obj/item/weapon/ore/verdantium
 	name = "verdantite dust"
 	icon_state = "ore_verdantium"
-	material = MAT_VERDANTIUM
+	material_string = MAT_VERDANTIUM
 	origin_tech = list(TECH_MATERIAL = 7)
 
 // POCKET ... Crystal dust.
@@ -104,49 +104,49 @@
 /obj/item/weapon/ore/lead
 	name = "lead glance"
 	icon_state = "ore_lead"
-	material = MAT_LEAD
+	material_string = MAT_LEAD
 	origin_tech = list(TECH_MATERIAL = 3)
 
 /obj/item/weapon/ore/copper
 	name = "raw copper"
 	icon_state = "ore_copper"
-	material = "copper"
+	material_string = "copper"
 
 /obj/item/weapon/ore/tin
 	name = "raw tin"
 	icon_state = "ore_tin"
-	material = "tin"
+	material_string = "tin"
 
 /obj/item/weapon/ore/bauxite
 	name = "raw bauxite"
 	icon_state = "ore_bauxite"
-	material = "bauxite"
+	material_string = "bauxite"
 
 /obj/item/weapon/ore/rutile
 	name = "raw rutile"
 	icon_state = "ore_rutile"
-	material = "rutile"
+	material_string = "rutile"
 
 /obj/item/weapon/ore/void_opal
 	name = "raw void opal"
 	icon_state = "ore_void_opal"
-	material = "void opal"
+	material_string = "void opal"
 
 /obj/item/weapon/ore/painite
 	name = "raw painite"
 	icon_state = "ore_painite"
-	material = "painite"
+	material_string = "painite"
 
 /obj/item/weapon/ore/quartz
 	name = "raw quartz"
 	icon_state = "ore_quartz"
-	material = "quartz"
+	material_string = "quartz"
 
 /obj/item/weapon/ore/slag
 	name = "Slag"
 	desc = "Someone screwed up..."
 	icon_state = "slag"
-	material = null
+	material_string = null
 
 /obj/item/weapon/ore/Initialize()
 	. = ..()

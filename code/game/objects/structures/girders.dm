@@ -20,7 +20,7 @@
 	..(newloc)
 	if(!material_key)
 		material_key = default_material
-	set_material(material_key)
+	set_legacy_material(material_key)
 	update_icon()
 
 /obj/structure/girder/Destroy()
@@ -42,7 +42,7 @@
 	return total_radiation
 
 
-/obj/structure/girder/proc/set_material(var/new_material)
+/obj/structure/girder/proc/set_legacy_material(var/new_material)
 	girder_material = get_material_by_name(new_material)
 	if(!girder_material)
 		qdel(src)
@@ -251,7 +251,7 @@
 	var/turf/Tsrc = get_turf(src)
 	Tsrc.ChangeTurf(/turf/simulated/wall)
 	var/turf/simulated/wall/T = get_turf(src)
-	T.set_material(M, reinf_material, girder_material)
+	T.set_legacy_material(M, reinf_material, girder_material)
 	if(wall_fake)
 		T.can_open = 1
 	T.add_hiddenprint(usr)
@@ -399,10 +399,10 @@
 			// This is mostly the same as using on a floor. The girder's material is preserved, however.
 			T.ChangeTurf(/turf/simulated/wall)
 			var/turf/simulated/wall/new_T = get_turf(src) // Ref to the wall we just built.
-			// Apparently set_material(...) for walls requires refs to the material singletons and not strings.
-			// This is different from how other material objects with their own set_material(...) do it, but whatever.
+			// Apparently set_legacy_material(...) for walls requires refs to the material singletons and not strings.
+			// This is different from how other material objects with their own set_legacy_material(...) do it, but whatever.
 			var/datum/legacy_material/M = name_to_material[the_rcd.material_to_use]
-			new_T.set_material(M, the_rcd.make_rwalls ? M : null, girder_material)
+			new_T.set_legacy_material(M, the_rcd.make_rwalls ? M : null, girder_material)
 			new_T.add_hiddenprint(user)
 			qdel(src)
 			return TRUE

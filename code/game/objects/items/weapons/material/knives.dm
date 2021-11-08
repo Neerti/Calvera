@@ -12,7 +12,7 @@
 	drop_sound = 'sound/items/drop/knife.ogg'
 	pickup_sound = 'sound/items/pickup/knife.ogg'
 
-/obj/item/weapon/material/butterfly/update_force()
+/obj/item/weapon/material/butterfly/update_legacy_force()
 	if(active)
 		edge = 1
 		sharp = 1
@@ -50,7 +50,7 @@
 		playsound(src, 'sound/weapons/flipblade.ogg', 15, 1)
 	else
 		to_chat(user, "<span class='notice'>\The [src] can now be concealed.</span>")
-	update_force()
+	update_legacy_force()
 	add_fingerprint(user)
 
 /*

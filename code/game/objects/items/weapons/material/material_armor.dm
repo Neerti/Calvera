@@ -38,7 +38,7 @@ Protectiveness | Armor %
 	if(!material_key)
 		material_key = default_material
 	if(material_key) // May still be null if a material was not specified as a default.
-		set_material(material_key)
+		set_legacy_material(material_key)
 
 /obj/item/clothing/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -48,7 +48,7 @@ Protectiveness | Armor %
 	return legacy_material
 
 // Debating if this should be made an /obj/item/ proc.
-/obj/item/clothing/proc/set_material(var/new_material)
+/obj/item/clothing/proc/set_legacy_material(var/new_material)
 	legacy_material = get_material_by_name(new_material)
 	if(!legacy_material)
 		qdel(src)
