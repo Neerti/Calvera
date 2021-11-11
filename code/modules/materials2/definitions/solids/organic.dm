@@ -1,6 +1,6 @@
 /decl/material/solid/meat
 	name = "meat"
-	color = "#AA0000"
+	color = "#aa0000"
 	integrity = 60
 	value = 0.8
 	hardness = MATERIAL_HARDNESS_SOFT
@@ -9,6 +9,9 @@
 	high_energy_transition_temperature = T0C+300
 	//default_solid_form = /obj/item/stack/material/slab
 
+/decl/material/solid/meat/cooked
+	name = "cooked meat"
+	color = "#552d00"
 
 /*
 // Nebula
@@ -31,3 +34,6 @@
 	value = 0.8
 	default_solid_form = /obj/item/stack/material/slab
 */
+
+
+

@@ -72,6 +72,7 @@
 	Commonly used as fuel in fission reactors."
 	mechanics_text = "Uranium ingots are used as fuel in some forms of portable generators.\
 	Objects made from uranium will also be radioactive."
+	antag_text = "Most things made from this will emit radiation, proportional to its mass."
 	symbol = "U"
 	taste_description = "the inside of a reactor"
 	radioactivity = 12

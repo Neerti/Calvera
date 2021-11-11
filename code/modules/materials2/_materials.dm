@@ -9,18 +9,6 @@
 	If null, it will default to the base name.*/
 	var/use_name = null
 
-	/** What the material is called when it is in the solid phase, such as "ice".
-	If null, a name will be generated automatically.*/
-//	var/solid_name = null
-
-	/** What the material is called when it is in the gaseous phase, such as "steam".
-	If null, a name will be generated automatically.*/
-//	var/gas_name = null
-
-	/** What the material is called when it is in the liquid phase, such as "water".
-	If null, a name will be generated automatically.*/
-//	var/liquid_name = null
-
 	/// Optional text based on ingame lore for this material.
 	var/lore_text = null
 
@@ -36,7 +24,7 @@
 	/// The element symbol, or formula for this material, with html elements allowed, such as "CO<sub>2</sub>".
 	var/symbol_html = null
 
-	/// What color the material is, which things made out of that material will generally adopt the color of.
+	/// What color the material is, which things made out of that material will generally adopt the color of. Note that some objects can choose to not use this.
 	var/color = null
 
 	/// If ingested, this describes how the material tastes. Leave null if it is tasteless.
