@@ -18,7 +18,7 @@
 "r" = (/obj/random/mob/spider/mutant,/turf/simulated/floor/wood,/area/submap/DJOutpost1)
 "s" = (/obj/structure/bed/chair/office/dark{ icon_state = "officechair_dark"; dir = 8},/turf/simulated/floor/wood,/area/submap/DJOutpost1)
 "t" = (/obj/machinery/light{dir = 4; icon_state = "tube1"; pixel_x = 0},/obj/structure/bed/chair/office/dark{dir = 1},/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/wood,/area/submap/DJOutpost1)
-"u" = (/obj/effect/overlay/snow/floor,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/closet/crate,/obj/item/stack/material/phoron{amount = 25},/turf/simulated/floor{outdoors = 1},/area/submap/DJOutpost1)
+"u" = (/obj/effect/overlay/snow/floor,/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/closet/crate,/obj/item/stack/legacy_material/phoron{amount = 25},/turf/simulated/floor{outdoors = 1},/area/submap/DJOutpost1)
 "v" = (/obj/structure/table/woodentable,/obj/item/trash/candle,/turf/simulated/floor/wood,/area/submap/DJOutpost1)
 "w" = (/obj/structure/bed/chair/wood{ icon_state = "wooden_chair"; dir = 8},/turf/simulated/floor/wood,/area/submap/DJOutpost1)
 "x" = (/obj/structure/bookcase,/obj/item/weapon/book/codex/lore/vir,/obj/item/weapon/book/manual/excavation,/obj/item/weapon/book/manual/engineering_construction,/obj/item/weapon/storage/bible,/turf/simulated/floor/wood,/area/submap/DJOutpost1)

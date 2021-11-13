@@ -945,7 +945,7 @@
 	
 	plating_type = null
 
-	//build_type = /obj/item/stack/material/underplating
+	//build_type = /obj/item/stack/legacy_material/underplating
 	
 	/* Eris features we lack on flooring decls
 	removal_time = 250
@@ -977,7 +977,7 @@
 	flags = TURF_HAS_EDGES | TURF_HAS_CORNERS | TURF_REMOVE_WRENCH | TURF_CAN_BURN | TURF_CAN_BREAK
 	has_base_range = 35
 	is_plating = FALSE
-	build_type = /obj/item/stack/material/plasteel
+	build_type = /obj/item/stack/legacy_material/plasteel
 	
 	/* Eris features we lack on flooring decls
 	try_update_icon = 0

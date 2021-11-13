@@ -135,7 +135,7 @@
 	var/lore_text
 	var/mechanics_text
 	var/antag_text
-	var/default_solid_form = /obj/item/stack/material/sheet
+	var/default_solid_form = /obj/item/stack/legacy_material/sheet
 	var/affect_blood_on_ingest = TRUE
 	var/narcosis = 0 // Not a great word for it. Constant for causing mild confusion when ingested.
 	var/toxicity = 0 // Organ damage from ingestion.

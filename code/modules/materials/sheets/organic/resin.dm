@@ -1,4 +1,4 @@
-/obj/item/stack/material/resin
+/obj/item/stack/legacy_material/resin
 	name = "resin"
 	icon_state = "sheet-resin"
 	default_type = "resin"

@@ -522,7 +522,7 @@
 						Gun.power_supply.charge = gun_charge
 						Gun.update_icon()
 					if(prob(50))
-						new /obj/item/stack/material/steel(loc, rand(1,4))
+						new /obj/item/stack/legacy_material/steel(loc, rand(1,4))
 					if(prob(50))
 						new /obj/item/device/assembly/prox_sensor(loc)
 				else
@@ -978,12 +978,12 @@
 			else if(I.is_crowbar() && !anchored)
 				playsound(src, I.usesound, 75, 1)
 				to_chat(user, "<span class='notice'>You dismantle the turret construction.</span>")
-				new /obj/item/stack/material/steel(loc, 5)
+				new /obj/item/stack/legacy_material/steel(loc, 5)
 				qdel(src)
 				return
 
 		if(1)
-			if(istype(I, /obj/item/stack/material) && I.get_material_name() == DEFAULT_WALL_MATERIAL)
+			if(istype(I, /obj/item/stack/legacy_material) && I.get_material_name() == DEFAULT_WALL_MATERIAL)
 				var/obj/item/stack/M = I
 				if(M.use(2))
 					to_chat(user, "<span class='notice'>You add some metal armor to the interior frame.</span>")
@@ -1020,7 +1020,7 @@
 					if(!src || !WT.remove_fuel(5, user)) return
 					build_step = 1
 					to_chat(user, "You remove the turret's interior metal armor.")
-					new /obj/item/stack/material/steel(loc, 2)
+					new /obj/item/stack/legacy_material/steel(loc, 2)
 					return
 
 		if(3)
@@ -1069,7 +1069,7 @@
 			//attack_hand() removes the prox sensor
 
 		if(6)
-			if(istype(I, /obj/item/stack/material) && I.get_material_name() == DEFAULT_WALL_MATERIAL)
+			if(istype(I, /obj/item/stack/legacy_material) && I.get_material_name() == DEFAULT_WALL_MATERIAL)
 				var/obj/item/stack/M = I
 				if(M.use(2))
 					to_chat(user, "<span class='notice'>You add some metal armor to the exterior frame.</span>")
@@ -1111,7 +1111,7 @@
 			else if(I.is_crowbar())
 				playsound(src, I.usesound, 75, 1)
 				to_chat(user, "<span class='notice'>You pry off the turret's exterior armor.</span>")
-				new /obj/item/stack/material/steel(loc, 2)
+				new /obj/item/stack/legacy_material/steel(loc, 2)
 				build_step = 6
 				return
 

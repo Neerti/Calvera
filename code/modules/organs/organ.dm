@@ -119,7 +119,7 @@ var/list/organ_cache = list()
 	if(owner)
 		if(!meat_type)
 			if(owner.isSynthetic())
-				meat_type = /obj/item/stack/material/steel
+				meat_type = /obj/item/stack/legacy_material/steel
 			else if(ishuman(owner))
 				var/mob/living/carbon/human/H = owner
 				meat_type = H?.species?.meat_type

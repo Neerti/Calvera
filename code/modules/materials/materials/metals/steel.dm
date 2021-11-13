@@ -1,6 +1,6 @@
 /datum/legacy_material/steel
 	name = DEFAULT_WALL_MATERIAL
-	stack_type = /obj/item/stack/material/steel
+	stack_type = /obj/item/stack/legacy_material/steel
 	integrity = 150
 	conductivity = 11 // Assuming this is carbon steel, it would actually be slightly less conductive than iron, but lets ignore that.
 	protectiveness = 10 // 33%

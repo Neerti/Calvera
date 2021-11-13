@@ -1,18 +1,18 @@
-/obj/item/stack/material/steel
+/obj/item/stack/legacy_material/steel
 	name = DEFAULT_WALL_MATERIAL
 	icon_state = "sheet-refined"
 	default_type = DEFAULT_WALL_MATERIAL
 	no_variants = FALSE
 	apply_colour = TRUE
 
-/obj/item/stack/material/plasteel
+/obj/item/stack/legacy_material/plasteel
 	name = "plasteel"
 	icon_state = "sheet-reinforced"
 	default_type = "plasteel"
 	no_variants = FALSE
 	apply_colour = TRUE
 
-/obj/item/stack/material/durasteel
+/obj/item/stack/legacy_material/durasteel
 	name = "durasteel"
 	icon_state = "sheet-reinforced"
 	item_state = "sheet-metal"
@@ -20,7 +20,7 @@
 	no_variants = FALSE
 	apply_colour = TRUE
 
-/obj/item/stack/material/titanium
+/obj/item/stack/legacy_material/titanium
 	name = MAT_TITANIUM
 	icon_state = "sheet-refined"
 	apply_colour = TRUE
@@ -28,28 +28,28 @@
 	default_type = MAT_TITANIUM
 	no_variants = FALSE
 
-/obj/item/stack/material/iron
+/obj/item/stack/legacy_material/iron
 	name = "iron"
 	icon_state = "sheet-ingot"
 	default_type = "iron"
 	apply_colour = 1
 	no_variants = FALSE
 
-/obj/item/stack/material/lead
+/obj/item/stack/legacy_material/lead
 	name = "lead"
 	icon_state = "sheet-ingot"
 	default_type = "lead"
 	apply_colour = 1
 	no_variants = FALSE
 
-/obj/item/stack/material/gold
+/obj/item/stack/legacy_material/gold
 	name = "gold"
 	icon_state = "sheet-ingot"
 	default_type = "gold"
 	no_variants = FALSE
 	apply_colour = TRUE
 
-/obj/item/stack/material/silver
+/obj/item/stack/legacy_material/silver
 	name = "silver"
 	icon_state = "sheet-ingot"
 	default_type = "silver"
@@ -57,28 +57,28 @@
 	apply_colour = TRUE
 
 //Valuable resource, cargo can sell it.
-/obj/item/stack/material/platinum
+/obj/item/stack/legacy_material/platinum
 	name = "platinum"
 	icon_state = "sheet-adamantine"
 	default_type = "platinum"
 	no_variants = FALSE
 	apply_colour = TRUE
 
-/obj/item/stack/material/uranium
+/obj/item/stack/legacy_material/uranium
 	name = "uranium"
 	icon_state = "sheet-uranium"
 	default_type = "uranium"
 	no_variants = FALSE
 
 //Extremely valuable to Research.
-/obj/item/stack/material/mhydrogen
+/obj/item/stack/legacy_material/mhydrogen
 	name = "metallic hydrogen"
 	icon_state = "sheet-mythril"
 	default_type = "mhydrogen"
 	no_variants = FALSE
 
 // Fusion fuel.
-/obj/item/stack/material/deuterium
+/obj/item/stack/legacy_material/deuterium
 	name = "deuterium"
 	icon_state = "sheet-puck"
 	default_type = "deuterium"
@@ -86,28 +86,28 @@
 	no_variants = FALSE
 
 //Fuel for MRSPACMAN generator.
-/obj/item/stack/material/tritium
+/obj/item/stack/legacy_material/tritium
 	name = "tritium"
 	icon_state = "sheet-puck"
 	default_type = "tritium"
 	apply_colour = TRUE
 	no_variants = FALSE
 
-/obj/item/stack/material/osmium
+/obj/item/stack/legacy_material/osmium
 	name = "osmium"
 	icon_state = "sheet-ingot"
 	default_type = "osmium"
 	apply_colour = 1
 	no_variants = FALSE
 
-/obj/item/stack/material/graphite
+/obj/item/stack/legacy_material/graphite
 	name = "graphite"
 	icon_state = "sheet-puck"
 	default_type = MAT_GRAPHITE
 	apply_colour = 1
 	no_variants = FALSE
 
-/obj/item/stack/material/bronze
+/obj/item/stack/legacy_material/bronze
 	name = "bronze"
 	icon_state = "sheet-ingot"
 	singular_name = "bronze ingot"
@@ -115,7 +115,7 @@
 	apply_colour = 1
 	no_variants = FALSE
 
-/obj/item/stack/material/tin
+/obj/item/stack/legacy_material/tin
 	name = "tin"
 	icon_state = "sheet-ingot"
 	singular_name = "tin ingot"
@@ -123,7 +123,7 @@
 	apply_colour = 1
 	no_variants = FALSE
 
-/obj/item/stack/material/copper
+/obj/item/stack/legacy_material/copper
 	name = "copper"
 	icon_state = "sheet-ingot"
 	singular_name = "copper ingot"
@@ -131,7 +131,7 @@
 	apply_colour = 1
 	no_variants = FALSE
 
-/obj/item/stack/material/aluminium
+/obj/item/stack/legacy_material/aluminium
 	name = "aluminium"
 	icon_state = "sheet-ingot"
 	singular_name = "aluminium ingot"

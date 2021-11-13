@@ -189,8 +189,8 @@
 				qdel(I)
 		return
 
-	if(istype(I,/obj/item/stack/material))
-		var/obj/item/stack/material/S = I
+	if(istype(I,/obj/item/stack/legacy_material))
+		var/obj/item/stack/legacy_material/S = I
 		if(!(S.legacy_material.name in materials))
 			to_chat(user, "<span class='warning'>The [src] doesn't accept [S.legacy_material]!</span>")
 			return
@@ -328,7 +328,7 @@
 	var/matstring = lowertext(material)
 	var/datum/legacy_material/M = get_material_by_name(matstring)
 
-	var/obj/item/stack/material/S = M.place_sheet(get_turf(src))
+	var/obj/item/stack/legacy_material/S = M.place_sheet(get_turf(src))
 	if(amount <= 0)
 		amount = S.max_amount
 	var/ejected = min(round(materials[matstring] / S.perunit), amount)

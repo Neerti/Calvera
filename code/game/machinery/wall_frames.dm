@@ -5,7 +5,7 @@
 	icon_state = "frame_bitem"
 	var/build_machine_type
 	var/refund_amt = 5
-	var/refund_type = /obj/item/stack/material/steel
+	var/refund_type = /obj/item/stack/legacy_material/steel
 	var/reverse = 0 //if resulting object faces opposite its dir (like light fixtures)
 	var/list/frame_types_floor
 	var/list/frame_types_wall
@@ -36,7 +36,7 @@
 		build_machine_type = /obj/structure/frame
 
 		if(frame_type.frame_size != 5)
-			new /obj/item/stack/material/steel(user.loc, (5 - frame_type.frame_size))
+			new /obj/item/stack/legacy_material/steel(user.loc, (5 - frame_type.frame_size))
 
 	var/ndir
 	ndir = user.dir
@@ -90,7 +90,7 @@
 		build_machine_type = /obj/structure/frame
 
 		if(frame_type.frame_size != 5)
-			new /obj/item/stack/material/steel(user.loc, (5 - frame_type.frame_size))
+			new /obj/item/stack/legacy_material/steel(user.loc, (5 - frame_type.frame_size))
 
 	var/obj/machinery/M = new build_machine_type(loc, ndir, 1, frame_type)
 	M.fingerprints = fingerprints
@@ -129,7 +129,7 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "nboard00"
 	refund_amt = 4
-	refund_type = /obj/item/stack/material/wood
+	refund_type = /obj/item/stack/legacy_material/wood
 	build_machine_type = /obj/structure/noticeboard
 
 /obj/item/frame/mirror

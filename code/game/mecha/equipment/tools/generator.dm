@@ -7,8 +7,8 @@
 	energy_drain = 0
 	range = MELEE
 	var/coeff = 100
-	var/obj/item/stack/material/fuel
-	var/fuel_type = /obj/item/stack/material/phoron
+	var/obj/item/stack/legacy_material/fuel
+	var/fuel_type = /obj/item/stack/legacy_material/phoron
 	var/max_fuel = 150000
 	var/fuel_per_cycle_idle = 100
 	var/fuel_per_cycle_active = 500
@@ -85,7 +85,7 @@
 		occupant_message(message)
 	return
 
-/obj/item/mecha_parts/mecha_equipment/generator/proc/load_fuel(var/obj/item/stack/material/P)
+/obj/item/mecha_parts/mecha_equipment/generator/proc/load_fuel(var/obj/item/stack/legacy_material/P)
 	if(P.type == fuel.type && P.amount)
 		var/to_load = max(max_fuel - fuel.amount*fuel.perunit,0)
 		if(to_load)
@@ -134,7 +134,7 @@
 	fuel_per_cycle_idle = 10
 	fuel_per_cycle_active = 30
 	power_per_cycle = 50
-	fuel_type = /obj/item/stack/material/uranium
+	fuel_type = /obj/item/stack/legacy_material/uranium
 	var/rad_per_cycle = 0.3
 
 /obj/item/mecha_parts/mecha_equipment/generator/nuclear/process()

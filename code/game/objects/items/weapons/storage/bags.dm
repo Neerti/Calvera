@@ -223,12 +223,12 @@
 	allow_quick_empty = 1 // this function is superceded
 
 /obj/item/weapon/storage/bag/sheetsnatcher/can_be_inserted(obj/item/W as obj, stop_messages = 0)
-	if(!istype(W,/obj/item/stack/material))
+	if(!istype(W,/obj/item/stack/legacy_material))
 		if(!stop_messages)
 			to_chat(usr, "The snatcher does not accept [W].")
 		return 0
 	var/current = 0
-	for(var/obj/item/stack/material/S in contents)
+	for(var/obj/item/stack/legacy_material/S in contents)
 		current += S.amount
 	if(capacity == current)//If it's full, you're done
 		if(!stop_messages)
@@ -239,20 +239,20 @@
 
 // Modified handle_item_insertion.  Would prefer not to, but...
 /obj/item/weapon/storage/bag/sheetsnatcher/handle_item_insertion(obj/item/W as obj, prevent_warning = 0)
-	var/obj/item/stack/material/S = W
+	var/obj/item/stack/legacy_material/S = W
 	if(!istype(S)) return 0
 
 	var/amount
 	var/inserted = 0
 	var/current = 0
-	for(var/obj/item/stack/material/S2 in contents)
+	for(var/obj/item/stack/legacy_material/S2 in contents)
 		current += S2.amount
 	if(capacity < current + S.amount)//If the stack will fill it up
 		amount = capacity - current
 	else
 		amount = S.amount
 
-	for(var/obj/item/stack/material/sheet in contents)
+	for(var/obj/item/stack/legacy_material/sheet in contents)
 		if(S.type == sheet.type) // we are violating the amount limitation because these are not sane objects
 			sheet.amount += amount	// they should only be removed through procs in this file, which split them up.
 			S.amount -= amount
@@ -286,7 +286,7 @@
 	if(display_contents_with_number)
 		numbered_contents = list()
 		adjusted_contents = 0
-		for(var/obj/item/stack/material/I in contents)
+		for(var/obj/item/stack/legacy_material/I in contents)
 			adjusted_contents++
 			var/datum/numbered_display/D = new/datum/numbered_display(I)
 			D.number = I.amount
@@ -302,9 +302,9 @@
 // Modified quick_empty verb drops appropriate sized stacks
 /obj/item/weapon/storage/bag/sheetsnatcher/quick_empty()
 	var/location = get_turf(src)
-	for(var/obj/item/stack/material/S in contents)
+	for(var/obj/item/stack/legacy_material/S in contents)
 		while(S.amount)
-			var/obj/item/stack/material/N = new S.type(location)
+			var/obj/item/stack/legacy_material/N = new S.type(location)
 			var/stacksize = min(S.amount,N.max_amount)
 			N.amount = stacksize
 			S.amount -= stacksize
@@ -318,7 +318,7 @@
 
 // Instead of removing
 /obj/item/weapon/storage/bag/sheetsnatcher/remove_from_storage(obj/item/W as obj, atom/new_location)
-	var/obj/item/stack/material/S = W
+	var/obj/item/stack/legacy_material/S = W
 	if(!istype(S)) return 0
 
 	//I would prefer to drop a new stack, but the item/attack_hand code
@@ -327,7 +327,7 @@
 	// -Sayu
 
 	if(S.amount > S.max_amount)
-		var/obj/item/stack/material/temp = new S.type(src)
+		var/obj/item/stack/legacy_material/temp = new S.type(src)
 		temp.amount = S.amount - S.max_amount
 		S.amount = S.max_amount
 

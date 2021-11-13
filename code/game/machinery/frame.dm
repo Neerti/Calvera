@@ -332,7 +332,7 @@
 				if(do_after(user, 20 * P.toolspeed))
 					if(src && WT.isOn())
 						to_chat(user, "<span class='notice'>You deconstruct the frame.</span>")
-						new /obj/item/stack/material/steel(src.loc, frame_type.frame_size)
+						new /obj/item/stack/legacy_material/steel(src.loc, frame_type.frame_size)
 						qdel(src)
 						return
 			else if(!WT.remove_fuel(0, user))
@@ -482,13 +482,13 @@
 				playsound(src, P.usesound, 50, 1)
 				to_chat(user, "<span class='notice'>You remove the glass panel.</span>")
 				state = FRAME_WIRED
-				new /obj/item/stack/material/glass(src.loc, 2)
+				new /obj/item/stack/legacy_material/glass(src.loc, 2)
 
 			else if(frame_type.frame_class == FRAME_CLASS_DISPLAY)
 				playsound(src, P.usesound, 50, 1)
 				to_chat(user, "<span class='notice'>You remove the glass panel.</span>")
 				state = FRAME_WIRED
-				new /obj/item/stack/material/glass(src.loc, 2)
+				new /obj/item/stack/legacy_material/glass(src.loc, 2)
 
 	else if(istype(P, /obj/item/stack/cable_coil))
 		if(state == FRAME_FASTENED)
@@ -550,7 +550,7 @@
 				state = FRAME_FASTENED
 				new /obj/item/stack/cable_coil(src.loc, 5)
 
-	else if(istype(P, /obj/item/stack/material) && P.get_material_name() == "glass")
+	else if(istype(P, /obj/item/stack/legacy_material) && P.get_material_name() == "glass")
 		if(state == FRAME_WIRED)
 			if(frame_type.frame_class == FRAME_CLASS_COMPUTER)
 				var/obj/item/stack/G = P
@@ -602,7 +602,7 @@
 						update_desc()
 						break
 				to_chat(user, desc)
-				if(P && P.loc != src && !istype(P, /obj/item/stack/material))
+				if(P && P.loc != src && !istype(P, /obj/item/stack/legacy_material))
 					to_chat(user, "<span class='warning'>You cannot add that component to the machine!</span>")
 					return
 

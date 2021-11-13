@@ -5,7 +5,7 @@
 // Very rare alloy that is reflective, should be used sparingly.
 /datum/legacy_material/durasteel
 	name = "durasteel"
-	stack_type = /obj/item/stack/material/durasteel
+	stack_type = /obj/item/stack/legacy_material/durasteel
 	integrity = 600
 	melting_point = 7000
 	icon_base = "metal"
@@ -22,7 +22,7 @@
 
 /datum/legacy_material/titanium
 	name = MAT_TITANIUM
-	stack_type = /obj/item/stack/material/titanium
+	stack_type = /obj/item/stack/legacy_material/titanium
 	conductivity = 2.38
 	icon_base = "metal"
 	door_icon_base = "metal"
@@ -32,7 +32,7 @@
 
 /datum/legacy_material/iron
 	name = "iron"
-	stack_type = /obj/item/stack/material/iron
+	stack_type = /obj/item/stack/legacy_material/iron
 	icon_colour = "#5C5454"
 	weight = 22
 	conductivity = 10
@@ -41,7 +41,7 @@
 
 /datum/legacy_material/lead
 	name = MAT_LEAD
-	stack_type = /obj/item/stack/material/lead
+	stack_type = /obj/item/stack/legacy_material/lead
 	icon_colour = "#273956"
 	weight = 23 // Lead is a bit more dense than silver IRL, and silver has 22 ingame.
 	conductivity = 10
@@ -52,7 +52,7 @@
 
 /datum/legacy_material/gold
 	name = "gold"
-	stack_type = /obj/item/stack/material/gold
+	stack_type = /obj/item/stack/legacy_material/gold
 	icon_colour = "#EDD12F"
 	weight = 24
 	hardness = 40
@@ -64,7 +64,7 @@
 
 /datum/legacy_material/silver
 	name = "silver"
-	stack_type = /obj/item/stack/material/silver
+	stack_type = /obj/item/stack/legacy_material/silver
 	icon_colour = "#D1E6E3"
 	weight = 22
 	hardness = 50
@@ -76,7 +76,7 @@
 
 /datum/legacy_material/platinum
 	name = "platinum"
-	stack_type = /obj/item/stack/material/platinum
+	stack_type = /obj/item/stack/legacy_material/platinum
 	icon_colour = "#9999FF"
 	weight = 27
 	conductivity = 9.43
@@ -87,7 +87,7 @@
 
 /datum/legacy_material/uranium
 	name = "uranium"
-	stack_type = /obj/item/stack/material/uranium
+	stack_type = /obj/item/stack/legacy_material/uranium
 	radioactivity = 12
 	icon_base = "stone"
 	icon_reinf = "reinf_stone"
@@ -99,7 +99,7 @@
 
 /datum/legacy_material/mhydrogen
 	name = "mhydrogen"
-	stack_type = /obj/item/stack/material/mhydrogen
+	stack_type = /obj/item/stack/legacy_material/mhydrogen
 	icon_colour = "#E6C5DE"
 	stack_origin_tech = list(TECH_MATERIAL = 6, TECH_POWER = 6, TECH_MAGNET = 5)
 	conductivity = 100
@@ -108,7 +108,7 @@
 
 /datum/legacy_material/deuterium
 	name = "deuterium"
-	stack_type = /obj/item/stack/material/deuterium
+	stack_type = /obj/item/stack/legacy_material/deuterium
 	icon_colour = "#999999"
 	stack_origin_tech = list(TECH_MATERIAL = 3)
 	sheet_singular_name = "ingot"
@@ -118,7 +118,7 @@
 
 /datum/legacy_material/tritium
 	name = "tritium"
-	stack_type = /obj/item/stack/material/tritium
+	stack_type = /obj/item/stack/legacy_material/tritium
 	icon_colour = "#777777"
 	stack_origin_tech = list(TECH_MATERIAL = 5)
 	sheet_singular_name = "ingot"
@@ -128,7 +128,7 @@
 
 /datum/legacy_material/osmium
 	name = "osmium"
-	stack_type = /obj/item/stack/material/osmium
+	stack_type = /obj/item/stack/legacy_material/osmium
 	icon_colour = "#9999FF"
 	stack_origin_tech = list(TECH_MATERIAL = 5)
 	sheet_singular_name = "ingot"
@@ -138,7 +138,7 @@
 
 /datum/legacy_material/graphite
 	name = MAT_GRAPHITE
-	stack_type = /obj/item/stack/material/graphite
+	stack_type = /obj/item/stack/legacy_material/graphite
 	flags = MATERIAL_BRITTLE
 	icon_base = "solid"
 	icon_reinf = "reinf_mesh"
@@ -154,7 +154,7 @@
 
 /datum/legacy_material/bronze
 	name = "bronze"
-	stack_type = /obj/item/stack/material/bronze
+	stack_type = /obj/item/stack/legacy_material/bronze
 	icon_colour = "#EDD12F"
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
@@ -166,7 +166,7 @@
 	name = "tin"
 	display_name = "tin"
 	use_name = "tin"
-	stack_type = /obj/item/stack/material/tin
+	stack_type = /obj/item/stack/legacy_material/tin
 	icon_colour = "#b2afaf"
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
@@ -178,7 +178,7 @@
 	name = "copper"
 	display_name = "copper"
 	use_name = "copper"
-	stack_type = /obj/item/stack/material/copper
+	stack_type = /obj/item/stack/legacy_material/copper
 	conductivity = 52
 	icon_colour = "#af633e"
 	sheet_singular_name = "ingot"
@@ -192,7 +192,7 @@
 	display_name = "aluminium"
 	use_name = "aluminium"
 	icon_colour = "#e5e2d0"
-	stack_type = /obj/item/stack/material/aluminium
+	stack_type = /obj/item/stack/legacy_material/aluminium
 	sheet_singular_name = "ingot"
 	sheet_plural_name = "ingots"
 	supply_conversion_value = 2

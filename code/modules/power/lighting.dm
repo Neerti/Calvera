@@ -109,7 +109,7 @@ var/global/list/light_type_cache = list()
 			to_chat(usr, "You begin deconstructing [src].")
 			if (!do_after(usr, 30 * W.toolspeed))
 				return
-			new /obj/item/stack/material/steel( get_turf(src.loc), sheets_refunded )
+			new /obj/item/stack/legacy_material/steel( get_turf(src.loc), sheets_refunded )
 			user.visible_message("[user.name] deconstructs [src].", \
 				"You deconstruct [src].", "You hear a noise.")
 			playsound(src, 'sound/items/Deconstruct.ogg', 75, 1)

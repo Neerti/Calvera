@@ -7,7 +7,7 @@
 	weight = MATERIAL_WEIGHT_NORMAL
 	reflectiveness = MATERIAL_REFLECTIVITY_DULL
 	high_energy_transition_temperature = T0C+300
-	//default_solid_form = /obj/item/stack/material/slab
+	//default_solid_form = /obj/item/stack/legacy_material/slab
 
 /decl/material/solid/meat/cooked
 	name = "cooked meat"
@@ -32,7 +32,7 @@
 	reflectiveness = MAT_VALUE_DULL
 	wall_support_value = MAT_VALUE_LIGHT
 	value = 0.8
-	default_solid_form = /obj/item/stack/material/slab
+	default_solid_form = /obj/item/stack/legacy_material/slab
 */
 
 

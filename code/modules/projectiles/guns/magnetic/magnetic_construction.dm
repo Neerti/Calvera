@@ -9,8 +9,8 @@
 
 /obj/item/weapon/coilgun_assembly/attackby(var/obj/item/thing, var/mob/user)
 
-	if(istype(thing, /obj/item/stack/material) && construction_stage == 1)
-		var/obj/item/stack/material/reinforcing = thing
+	if(istype(thing, /obj/item/stack/legacy_material) && construction_stage == 1)
+		var/obj/item/stack/legacy_material/reinforcing = thing
 		var/datum/legacy_material/reinforcing_with = reinforcing.get_material()
 		if(reinforcing_with.name == DEFAULT_WALL_MATERIAL) // Steel
 			if(reinforcing.get_amount() < 5)

@@ -283,8 +283,8 @@ GLOBAL_LIST_BOILERPLATE(all_janitorial_carts, /obj/structure/janitorialcart)
 		if (has_items)
 			spill()
 
-		new /obj/item/stack/material/steel(src.loc, 10)
-		new /obj/item/stack/material/plastic(src.loc, 10)
+		new /obj/item/stack/legacy_material/steel(src.loc, 10)
+		new /obj/item/stack/legacy_material/plastic(src.loc, 10)
 		new /obj/item/stack/rods(src.loc, 20)
 		dismantled = 1
 		qdel(src)

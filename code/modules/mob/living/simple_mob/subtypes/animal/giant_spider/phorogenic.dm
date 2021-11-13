@@ -47,7 +47,7 @@
 
 	tame_items = list(
 	/obj/item/weapon/tank/phoron = 20,
-	/obj/item/stack/material/phoron = 30
+	/obj/item/stack/legacy_material/phoron = 30
 	)
 
 	var/exploded = FALSE

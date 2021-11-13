@@ -3211,19 +3211,19 @@
 /area/hallway/primary/firstdeck/fore)
 "agL" = (
 /obj/structure/closet/crate,
-/obj/item/stack/material/gold,
+/obj/item/stack/legacy_material/gold,
 /obj/item/weapon/storage/belt/champion,
-/obj/item/stack/material/gold,
-/obj/item/stack/material/gold,
-/obj/item/stack/material/gold,
-/obj/item/stack/material/gold,
-/obj/item/stack/material/gold,
-/obj/item/stack/material/silver,
-/obj/item/stack/material/silver,
-/obj/item/stack/material/silver,
-/obj/item/stack/material/silver,
-/obj/item/stack/material/silver,
-/obj/item/stack/material/silver,
+/obj/item/stack/legacy_material/gold,
+/obj/item/stack/legacy_material/gold,
+/obj/item/stack/legacy_material/gold,
+/obj/item/stack/legacy_material/gold,
+/obj/item/stack/legacy_material/gold,
+/obj/item/stack/legacy_material/silver,
+/obj/item/stack/legacy_material/silver,
+/obj/item/stack/legacy_material/silver,
+/obj/item/stack/legacy_material/silver,
+/obj/item/stack/legacy_material/silver,
+/obj/item/stack/legacy_material/silver,
 /turf/simulated/floor/tiled/dark,
 /area/security/nuke_storage)
 "agM" = (
@@ -8710,14 +8710,14 @@
 /area/hallway/primary/firstdeck/starboard)
 "arG" = (
 /obj/structure/table,
-/obj/item/stack/material/steel{
+/obj/item/stack/legacy_material/steel{
 	amount = 2
 	},
 /obj/random/maintenance/engineering,
 /turf/simulated/floor,
 /area/construction/firstdeck/construction4)
 "arH" = (
-/obj/item/stack/material/wood{
+/obj/item/stack/legacy_material/wood{
 	amount = 24
 	},
 /turf/simulated/floor/wood,
@@ -21272,10 +21272,10 @@
 /area/engineering/auxiliary_engineering)
 "aQe" = (
 /obj/structure/table/steel,
-/obj/item/stack/material/glass{
+/obj/item/stack/legacy_material/glass{
 	amount = 50
 	},
-/obj/item/stack/material/steel{
+/obj/item/stack/legacy_material/steel{
 	amount = 50;
 	pixel_x = -2;
 	pixel_y = -2
@@ -37633,7 +37633,7 @@
 /obj/item/device/radio/off,
 /obj/item/device/radio/off,
 /obj/effect/floor_decal/industrial/warning,
-/obj/item/stack/material/copper{
+/obj/item/stack/legacy_material/copper{
 	amount = 10
 	},
 /turf/simulated/floor/tiled/dark,
@@ -37668,7 +37668,7 @@
 /area/shuttle/shuttle2/start)
 "bsl" = (
 /obj/structure/table/reinforced,
-/obj/item/stack/material/glass/reinforced{
+/obj/item/stack/legacy_material/glass/reinforced{
 	amount = 50
 	},
 /obj/item/stack/rods{
@@ -41598,10 +41598,10 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/obj/item/stack/material/steel{
+/obj/item/stack/legacy_material/steel{
 	amount = 50
 	},
-/obj/item/stack/material/glass{
+/obj/item/stack/legacy_material/glass{
 	amount = 50
 	},
 /obj/item/clothing/gloves/black,
@@ -43527,7 +43527,7 @@
 /area/maintenance/research)
 "bCB" = (
 /obj/structure/table,
-/obj/item/stack/material/plastic,
+/obj/item/stack/legacy_material/plastic,
 /obj/item/weapon/tool/wrench,
 /obj/item/weapon/weldingtool/hugetank,
 /turf/simulated/floor/plating,
@@ -47532,7 +47532,7 @@
 /area/engineering/storage)
 "bJJ" = (
 /obj/structure/closet/crate,
-/obj/item/stack/material/phoron{
+/obj/item/stack/legacy_material/phoron{
 	amount = 25
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -51493,12 +51493,12 @@
 /area/rnd/lab)
 "bRc" = (
 /obj/structure/table/standard,
-/obj/item/stack/material/glass{
+/obj/item/stack/legacy_material/glass{
 	amount = 50;
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/stack/material/steel{
+/obj/item/stack/legacy_material/steel{
 	amount = 50
 	},
 /obj/item/clothing/glasses/welding,
@@ -51511,7 +51511,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
 	},
-/obj/item/stack/material/copper{
+/obj/item/stack/legacy_material/copper{
 	amount = 10
 	},
 /turf/simulated/floor/tiled/white,
@@ -51640,45 +51640,45 @@
 	name = "materials"
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/item/stack/material/steel{
+/obj/item/stack/legacy_material/steel{
 	amount = 50
 	},
-/obj/item/stack/material/steel{
+/obj/item/stack/legacy_material/steel{
 	amount = 50
 	},
-/obj/item/stack/material/steel{
+/obj/item/stack/legacy_material/steel{
 	amount = 50
 	},
-/obj/item/stack/material/steel{
+/obj/item/stack/legacy_material/steel{
 	amount = 50
 	},
-/obj/item/stack/material/steel{
+/obj/item/stack/legacy_material/steel{
 	amount = 50
 	},
-/obj/item/stack/material/glass{
+/obj/item/stack/legacy_material/glass{
 	amount = 50;
 	pixel_x = -2;
 	pixel_y = 2
 	},
-/obj/item/stack/material/glass{
+/obj/item/stack/legacy_material/glass{
 	amount = 50;
 	pixel_x = -2;
 	pixel_y = 2
 	},
-/obj/item/stack/material/glass{
+/obj/item/stack/legacy_material/glass{
 	amount = 50;
 	pixel_x = -2;
 	pixel_y = 2
 	},
-/obj/item/stack/material/glass{
+/obj/item/stack/legacy_material/glass{
 	amount = 50;
 	pixel_x = -2;
 	pixel_y = 2
 	},
-/obj/item/stack/material/plasteel{
+/obj/item/stack/legacy_material/plasteel{
 	amount = 10
 	},
-/obj/item/stack/material/plasteel{
+/obj/item/stack/legacy_material/plasteel{
 	amount = 10
 	},
 /obj/machinery/light{
@@ -51690,7 +51690,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
 	},
-/obj/item/stack/material/copper{
+/obj/item/stack/legacy_material/copper{
 	amount = 10
 	},
 /turf/simulated/floor/tiled/white,
@@ -55955,13 +55955,13 @@
 /area/engineering/atmos)
 "bZN" = (
 /obj/structure/table/reinforced,
-/obj/item/stack/material/plasteel{
+/obj/item/stack/legacy_material/plasteel{
 	amount = 10
 	},
-/obj/item/stack/material/steel{
+/obj/item/stack/legacy_material/steel{
 	amount = 50
 	},
-/obj/item/stack/material/steel{
+/obj/item/stack/legacy_material/steel{
 	amount = 50
 	},
 /obj/effect/floor_decal/industrial/warning,
@@ -55978,10 +55978,10 @@
 /area/teleporter)
 "bZP" = (
 /obj/structure/table/reinforced,
-/obj/item/stack/material/glass{
+/obj/item/stack/legacy_material/glass{
 	amount = 50
 	},
-/obj/item/stack/material/glass{
+/obj/item/stack/legacy_material/glass{
 	amount = 50
 	},
 /obj/effect/floor_decal/industrial/warning,
@@ -56457,7 +56457,7 @@
 /obj/item/weapon/airlock_electronics,
 /obj/item/weapon/airlock_electronics,
 /obj/item/weapon/cell/high,
-/obj/item/stack/material/glass/phoronrglass{
+/obj/item/stack/legacy_material/glass/phoronrglass{
 	amount = 20
 	},
 /turf/simulated/floor/tiled/dark,
@@ -59621,7 +59621,7 @@
 /area/maintenance/research_medical)
 "cgV" = (
 /obj/structure/table/steel,
-/obj/item/stack/material/glass{
+/obj/item/stack/legacy_material/glass{
 	amount = 50;
 	pixel_x = 3;
 	pixel_y = 3
@@ -71826,11 +71826,11 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "cEV" = (
-/obj/item/stack/material/phoron,
-/obj/item/stack/material/phoron,
-/obj/item/stack/material/phoron,
-/obj/item/stack/material/phoron,
-/obj/item/stack/material/phoron,
+/obj/item/stack/legacy_material/phoron,
+/obj/item/stack/legacy_material/phoron,
+/obj/item/stack/legacy_material/phoron,
+/obj/item/stack/legacy_material/phoron,
+/obj/item/stack/legacy_material/phoron,
 /obj/structure/table/glass,
 /obj/machinery/light,
 /obj/effect/floor_decal/borderfloorwhite/corner{
@@ -79616,7 +79616,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/cargo)
 "cSh" = (
-/obj/item/stack/material/glass/reinforced,
+/obj/item/stack/legacy_material/glass/reinforced,
 /turf/simulated/floor/plating,
 /area/maintenance/cargo)
 "cSi" = (
@@ -91159,7 +91159,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/secondary/docking_hallway2)
 "dnx" = (
-/obj/item/stack/material/steel,
+/obj/item/stack/legacy_material/steel,
 /turf/simulated/floor/plating,
 /area/construction/seconddeck/construction2)
 "dny" = (
@@ -95907,14 +95907,14 @@
 /area/hallway/secondary/entry/D2)
 "dxl" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/stack/material/plastic{
+/obj/item/stack/legacy_material/plastic{
 	amount = 50
 	},
 /obj/item/device/radio/intercom{
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
-/obj/item/stack/material/copper{
+/obj/item/stack/legacy_material/copper{
 	amount = 20
 	},
 /turf/simulated/floor/tiled/dark,
@@ -96134,10 +96134,10 @@
 /area/hallway/secondary/entry/D1)
 "dxC" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/stack/material/glass{
+/obj/item/stack/legacy_material/glass{
 	amount = 50
 	},
-/obj/item/stack/material/glass{
+/obj/item/stack/legacy_material/glass{
 	amount = 50
 	},
 /obj/machinery/requests_console{
@@ -96977,16 +96977,16 @@
 /area/hallway/secondary/entry/D1)
 "dze" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/stack/material/steel{
+/obj/item/stack/legacy_material/steel{
 	amount = 50
 	},
-/obj/item/stack/material/steel{
+/obj/item/stack/legacy_material/steel{
 	amount = 50
 	},
-/obj/item/stack/material/plasteel{
+/obj/item/stack/legacy_material/plasteel{
 	amount = 15
 	},
-/obj/item/stack/material/plasteel{
+/obj/item/stack/legacy_material/plasteel{
 	amount = 15
 	},
 /turf/simulated/floor/tiled/dark,
@@ -108972,9 +108972,9 @@
 /area/construction/seconddeck/construction2)
 "dVb" = (
 /obj/machinery/light,
-/obj/item/stack/material/plastic,
-/obj/item/stack/material/plastic,
-/obj/item/stack/material/plastic,
+/obj/item/stack/legacy_material/plastic,
+/obj/item/stack/legacy_material/plastic,
+/obj/item/stack/legacy_material/plastic,
 /turf/simulated/floor/plating,
 /area/construction/seconddeck/construction2)
 "dVc" = (
@@ -111628,7 +111628,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/stack/material/phoron{
+/obj/item/stack/legacy_material/phoron{
 	amount = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -112667,7 +112667,7 @@
 /obj/item/clothing/glasses/meson,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light,
-/obj/item/stack/material/lead{
+/obj/item/stack/legacy_material/lead{
 	amount = 30
 	},
 /turf/simulated/floor,

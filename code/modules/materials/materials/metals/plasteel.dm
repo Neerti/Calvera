@@ -1,6 +1,6 @@
 /datum/legacy_material/plasteel
 	name = "plasteel"
-	stack_type = /obj/item/stack/material/plasteel
+	stack_type = /obj/item/stack/legacy_material/plasteel
 	integrity = 400
 	melting_point = 6000
 	icon_base = "solid"

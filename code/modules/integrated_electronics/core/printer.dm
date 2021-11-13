@@ -34,8 +34,8 @@
 		return ..()
 
 /obj/item/device/integrated_circuit_printer/attackby(var/obj/item/O, var/mob/user)
-	if(istype(O,/obj/item/stack/material))
-		var/obj/item/stack/material/stack = O
+	if(istype(O,/obj/item/stack/legacy_material))
+		var/obj/item/stack/legacy_material/stack = O
 		if(stack.legacy_material.name == DEFAULT_WALL_MATERIAL)
 			if(debug)
 				to_chat(user, span("warning", "\The [src] does not need any material."))

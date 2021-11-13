@@ -11,8 +11,8 @@
 	var/repair_time = 40
 	
 /obj/item/weapon/whetstone/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/stack/material))
-		var/obj/item/stack/material/M = I
+	if(istype(I, /obj/item/stack/legacy_material))
+		var/obj/item/stack/legacy_material/M = I
 		if(M.amount >= 5)
 			to_chat(user, "You begin to refine the [src] with [M]...")
 			if(do_after(user, 70))
@@ -53,8 +53,8 @@
 	sharpen_time = legacy_material.weight * 3
 
 /obj/item/weapon/material/sharpeningkit/attackby(obj/item/weapon/W, mob/user)
-	if(istype(W, /obj/item/stack/material))
-		var/obj/item/stack/material/S = W
+	if(istype(W, /obj/item/stack/legacy_material))
+		var/obj/item/stack/legacy_material/S = W
 		if(S.legacy_material == legacy_material)
 			S.use(1)
 			uses += 1

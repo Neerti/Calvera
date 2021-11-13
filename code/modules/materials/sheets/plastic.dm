@@ -1,10 +1,10 @@
-/obj/item/stack/material/plastic
+/obj/item/stack/legacy_material/plastic
 	name = "plastic"
 	icon_state = "sheet-plastic"
 	default_type = "plastic"
 	no_variants = FALSE
 
-/obj/item/stack/material/cardboard
+/obj/item/stack/legacy_material/cardboard
 	name = "cardboard"
 	icon_state = "sheet-card"
 	default_type = "cardboard"

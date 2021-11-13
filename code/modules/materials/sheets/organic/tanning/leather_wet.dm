@@ -14,7 +14,7 @@
 	max_amount = 20
 	stacktype = "wetleather"
 
-	var/dry_type = /obj/item/stack/material/leather
+	var/dry_type = /obj/item/stack/legacy_material/leather
 
 /obj/item/stack/wetleather/examine(var/mob/user)
 	. = ..()
@@ -38,7 +38,7 @@
 			dry()
 
 /obj/item/stack/wetleather/proc/dry()
-	var/obj/item/stack/material/leather/L = new(src.loc)
+	var/obj/item/stack/legacy_material/leather/L = new(src.loc)
 	L.amount = amount
 	use(amount)
 	return L

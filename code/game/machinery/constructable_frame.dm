@@ -44,7 +44,7 @@
 					if(P.is_wrench())
 						playsound(src, W.usesound, 75, 1)
 						to_chat(user, "<span class='notice'>You dismantle the frame</span>")
-						new /obj/item/stack/material/steel(src.loc, 5)
+						new /obj/item/stack/legacy_material/steel(src.loc, 5)
 						qdel(src)
 			if(2)
 				if(istype(P, /obj/item/weapon/circuitboard))

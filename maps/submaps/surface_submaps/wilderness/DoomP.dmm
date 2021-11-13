@@ -33,7 +33,7 @@
 "aG" = (/obj/machinery/power/apc{dir = 1; name = "PAPC"; pixel_x = 0; pixel_y = 24},/obj/structure/cable/green{d2 = 8; icon_state = "0-8"},/turf/simulated/floor/tiled/techfloor/grid,/area/submap/DoomP)
 "aH" = (/obj/structure/cable{icon_state = "0-2"; d2 = 2},/obj/machinery/power/port_gen/pacman,/turf/simulated/floor/plating,/area/submap/DoomP)
 "aI" = (/obj/structure/table/standard,/obj/random/toolbox,/turf/simulated/floor/tiled/techfloor/grid,/area/submap/DoomP)
-"aJ" = (/obj/structure/table/standard,/obj/item/stack/material/phoron{amount = 25},/turf/simulated/floor/tiled/techfloor/grid,/area/submap/DoomP)
+"aJ" = (/obj/structure/table/standard,/obj/item/stack/legacy_material/phoron{amount = 25},/turf/simulated/floor/tiled/techfloor/grid,/area/submap/DoomP)
 "aK" = (/obj/structure/closet/secure_closet/engineering_electrical,/turf/simulated/floor/tiled/techfloor/grid,/area/submap/DoomP)
 "aL" = (/obj/structure/lattice,/turf/simulated/floor/outdoors/rocks,/area/submap/DoomP)
 "aM" = (/obj/structure/bed/chair{dir = 4},/obj/effect/floor_decal/borderfloor{dir = 8},/turf/simulated/floor/tiled,/area/submap/DoomP)

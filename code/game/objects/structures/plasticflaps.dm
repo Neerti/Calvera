@@ -22,7 +22,7 @@
 		to_chat(user, "<span class='notice'>You start to cut the plastic flaps.</span>")
 		if(do_after(user, 10 * P.toolspeed))
 			to_chat(user, "<span class='notice'>You cut the plastic flaps.</span>")
-			var/obj/item/stack/material/plastic/A = new /obj/item/stack/material/plastic( src.loc )
+			var/obj/item/stack/legacy_material/plastic/A = new /obj/item/stack/legacy_material/plastic( src.loc )
 			A.amount = 4
 			qdel(src)
 		return

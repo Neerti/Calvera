@@ -1,5 +1,5 @@
 // Ok, technically not stones, but the snowbrick's function is similar to sandstone and marble
-/obj/item/stack/material/snow
+/obj/item/stack/legacy_material/snow
 	name = "snow"
 	desc = "The temptation to build a snowman rises."
 	icon_state = "sheet-snow"
@@ -7,7 +7,7 @@
 	pickup_sound = 'sound/items/pickup/clothing.ogg'
 	default_type = "snow"
 
-/obj/item/stack/material/snowbrick
+/obj/item/stack/legacy_material/snowbrick
 	name = "snow brick"
 	desc = "For all of your igloo building needs."
 	icon_state = "sheet-snowbrick"

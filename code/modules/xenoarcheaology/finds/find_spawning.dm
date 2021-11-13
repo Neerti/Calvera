@@ -171,16 +171,16 @@
 		if(ARCHAEO_METAL)
 			apply_material_decorations = 0
 			var/list/possible_spawns = list()
-			possible_spawns += /obj/item/stack/material/steel
-			possible_spawns += /obj/item/stack/material/plasteel
-			possible_spawns += /obj/item/stack/material/glass
-			possible_spawns += /obj/item/stack/material/glass/reinforced
-			possible_spawns += /obj/item/stack/material/phoron
-			possible_spawns += /obj/item/stack/material/gold
-			possible_spawns += /obj/item/stack/material/silver
-			possible_spawns += /obj/item/stack/material/uranium
-			possible_spawns += /obj/item/stack/material/sandstone
-			possible_spawns += /obj/item/stack/material/silver
+			possible_spawns += /obj/item/stack/legacy_material/steel
+			possible_spawns += /obj/item/stack/legacy_material/plasteel
+			possible_spawns += /obj/item/stack/legacy_material/glass
+			possible_spawns += /obj/item/stack/legacy_material/glass/reinforced
+			possible_spawns += /obj/item/stack/legacy_material/phoron
+			possible_spawns += /obj/item/stack/legacy_material/gold
+			possible_spawns += /obj/item/stack/legacy_material/silver
+			possible_spawns += /obj/item/stack/legacy_material/uranium
+			possible_spawns += /obj/item/stack/legacy_material/sandstone
+			possible_spawns += /obj/item/stack/legacy_material/silver
 
 			var/new_type = pick(possible_spawns)
 			new_item = new new_type(src.loc)

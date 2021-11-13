@@ -44,8 +44,8 @@
 
 	switch(build_stage)
 		if(0)
-			if(istype(W, /obj/item/stack/material/plastic))
-				var/obj/item/stack/material/plastic/P = W
+			if(istype(W, /obj/item/stack/legacy_material/plastic))
+				var/obj/item/stack/legacy_material/plastic/P = W
 				if (P.get_amount() < 8)
 					to_chat(user, "<span class='warning'>You need eight sheets of plastic to add tires to \the [src].</span>")
 					return
@@ -71,8 +71,8 @@
 				to_chat(user, "<span class='notice'>You add the control system to \the [src].</span>")
 				increase_step()
 				return
-			if(istype(W, /obj/item/stack/material/steel))
-				var/obj/item/stack/material/steel/S = W
+			if(istype(W, /obj/item/stack/legacy_material/steel))
+				var/obj/item/stack/legacy_material/steel/S = W
 				if(S.get_amount() < 5)
 					to_chat(user, "<span class='warning'>You need five sheets of steel to convert \the [src] into a trailer.</span>")
 				if(do_after(user, 80) && build_stage == 2)
@@ -116,8 +116,8 @@
 				return
 
 		if(6)
-			if(istype(W, /obj/item/stack/material/plasteel))
-				var/obj/item/stack/material/plasteel/PL = W
+			if(istype(W, /obj/item/stack/legacy_material/plasteel))
+				var/obj/item/stack/legacy_material/plasteel/PL = W
 				if (PL.get_amount() < 2)
 					to_chat(user, "<span class='warning'>You need two sheets of plasteel to add reinforcement to \the [src].</span>")
 					return
@@ -220,8 +220,8 @@
 				return
 
 		if(2)
-			if(istype(W, /obj/item/stack/material/plastic))
-				var/obj/item/stack/material/plastic/P = W
+			if(istype(W, /obj/item/stack/legacy_material/plastic))
+				var/obj/item/stack/legacy_material/plastic/P = W
 				if (P.get_amount() < 3)
 					to_chat(user, "<span class='warning'>You need three sheets of plastic to add a seat to \the [src].</span>")
 					return

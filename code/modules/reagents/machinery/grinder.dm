@@ -15,19 +15,19 @@
 	var/limit = 10
 	var/list/holdingitems = list()
 	var/list/sheet_reagents = list( //have a number of reageents divisible by REAGENTS_PER_SHEET (default 20) unless you like decimals,
-		/obj/item/stack/material/iron = list("iron"),
-		/obj/item/stack/material/uranium = list("uranium"),
-		/obj/item/stack/material/phoron = list("phoron"),
-		/obj/item/stack/material/gold = list("gold"),
-		/obj/item/stack/material/silver = list("silver"),
-		/obj/item/stack/material/platinum = list("platinum"),
-		/obj/item/stack/material/mhydrogen = list("hydrogen"),
-		/obj/item/stack/material/steel = list("iron", "carbon"),
-		/obj/item/stack/material/plasteel = list("iron", "iron", "carbon", "carbon", "platinum"), //8 iron, 8 carbon, 4 platinum,
-		/obj/item/stack/material/snow = list("water"),
-		/obj/item/stack/material/sandstone = list("silicon", "oxygen"),
-		/obj/item/stack/material/glass = list("silicon"),
-		/obj/item/stack/material/glass/phoronglass = list("platinum", "silicon", "silicon", "silicon"), //5 platinum, 15 silicon,
+		/obj/item/stack/legacy_material/iron = list("iron"),
+		/obj/item/stack/legacy_material/uranium = list("uranium"),
+		/obj/item/stack/legacy_material/phoron = list("phoron"),
+		/obj/item/stack/legacy_material/gold = list("gold"),
+		/obj/item/stack/legacy_material/silver = list("silver"),
+		/obj/item/stack/legacy_material/platinum = list("platinum"),
+		/obj/item/stack/legacy_material/mhydrogen = list("hydrogen"),
+		/obj/item/stack/legacy_material/steel = list("iron", "carbon"),
+		/obj/item/stack/legacy_material/plasteel = list("iron", "iron", "carbon", "carbon", "platinum"), //8 iron, 8 carbon, 4 platinum,
+		/obj/item/stack/legacy_material/snow = list("water"),
+		/obj/item/stack/legacy_material/sandstone = list("silicon", "oxygen"),
+		/obj/item/stack/legacy_material/glass = list("silicon"),
+		/obj/item/stack/legacy_material/glass/phoronglass = list("platinum", "silicon", "silicon", "silicon"), //5 platinum, 15 silicon,
 		)
 
 	var/static/radial_examine = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_examine")

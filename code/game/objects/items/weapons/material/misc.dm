@@ -75,7 +75,7 @@
 /obj/item/weapon/material/snow/snowball/attack_self(mob/user as mob)
 	if(user.a_intent == I_HURT)
 		to_chat(user, SPAN_NOTICE("You smash the snowball in your hand."))
-		var/atom/S = new /obj/item/stack/material/snow(user.loc)
+		var/atom/S = new /obj/item/stack/legacy_material/snow(user.loc)
 		qdel(src)
 		user.put_in_hands(S)
 	else

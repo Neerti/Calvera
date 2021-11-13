@@ -57,7 +57,7 @@
 	if(href_list["release_stack"])
 		if(machine.stack_storage[href_list["release_stack"]] > 0)
 			var/stacktype = machine.stack_paths[href_list["release_stack"]]
-			var/obj/item/stack/material/S = new stacktype (get_turf(machine.output))
+			var/obj/item/stack/legacy_material/S = new stacktype (get_turf(machine.output))
 			S.amount = machine.stack_storage[href_list["release_stack"]]
 			machine.stack_storage[href_list["release_stack"]] = 0
 			S.update_icon()
@@ -86,8 +86,8 @@
 /obj/machinery/mineral/stacking_machine/New()
 	..()
 
-	for(var/stacktype in (subtypesof(/obj/item/stack/material) - typesof(/obj/item/stack/material/cyborg)))
-		var/obj/item/stack/material/S = stacktype
+	for(var/stacktype in (subtypesof(/obj/item/stack/legacy_material) - typesof(/obj/item/stack/legacy_material/cyborg)))
+		var/obj/item/stack/legacy_material/S = stacktype
 		var/s_matname = initial(S.default_type)
 		stack_storage[s_matname] = 0
 		stack_paths[s_matname] = stacktype
@@ -119,8 +119,8 @@
 		var/turf/T = get_turf(input)
 		for(var/obj/item/O in T.contents)
 			if(!O) return
-			if(istype(O,/obj/item/stack/material))
-				var/obj/item/stack/material/S = O
+			if(istype(O,/obj/item/stack/legacy_material))
+				var/obj/item/stack/legacy_material/S = O
 				var/matname = S.legacy_material.name
 				if(!isnull(stack_storage[matname]))
 					stack_storage[matname] += S.amount
@@ -134,7 +134,7 @@
 	for(var/sheet in stack_storage)
 		if(stack_storage[sheet] >= stack_amt)
 			var/stacktype = stack_paths[sheet]
-			var/obj/item/stack/material/S = new stacktype (get_turf(output))
+			var/obj/item/stack/legacy_material/S = new stacktype (get_turf(output))
 			S.amount = stack_amt
 			stack_storage[sheet] -= stack_amt
 			S.update_icon()

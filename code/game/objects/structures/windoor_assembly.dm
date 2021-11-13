@@ -97,9 +97,9 @@ obj/structure/windoor_assembly/Destroy()
 						if(!src || !WT.isOn()) return
 						to_chat(user,"<span class='notice'>You disassembled the windoor assembly!</span>")
 						if(secure)
-							new /obj/item/stack/material/glass/reinforced(get_turf(src), 2)
+							new /obj/item/stack/legacy_material/glass/reinforced(get_turf(src), 2)
 						else
-							new /obj/item/stack/material/glass(get_turf(src), 2)
+							new /obj/item/stack/legacy_material/glass(get_turf(src), 2)
 						qdel(src)
 				else
 					to_chat(user,"<span class='notice'>You need more welding fuel to disassemble the windoor assembly.</span>")

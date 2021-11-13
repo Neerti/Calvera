@@ -239,7 +239,7 @@
 	pixel_x = -24
 	},
 /obj/structure/cable,
-/obj/item/stack/material/phoron,
+/obj/item/stack/legacy_material/phoron,
 /turf/simulated/floor/plating/external,
 /area/surface/outpost/shelter)
 "bh" = (

@@ -168,7 +168,7 @@
 
 	if(istype(A, /obj/item/stack/tile/floor))
 		return (amount < maxAmount && eattiles)
-	if(istype(A, /obj/item/stack/material/steel))
+	if(istype(A, /obj/item/stack/legacy_material/steel))
 		return (amount < maxAmount && maketiles)
 
 	// Don't pave over all of space, build there only if in bridge mode
@@ -278,8 +278,8 @@
 		target = null
 		busy = 0
 		update_icons()
-	else if(istype(A, /obj/item/stack/material) && amount + 4 <= maxAmount)
-		var/obj/item/stack/material/M = A
+	else if(istype(A, /obj/item/stack/legacy_material) && amount + 4 <= maxAmount)
+		var/obj/item/stack/legacy_material/M = A
 		if(M.get_material_name() == DEFAULT_WALL_MATERIAL)
 			visible_message("<span class='notice'>\The [src] begins to make tiles.</span>")
 			busy = 1

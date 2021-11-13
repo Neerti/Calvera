@@ -82,7 +82,7 @@ var/datum/category_collection/autolathe/autolathe_recipes
 		if(istype(M, /datum/legacy_material/alienalloy))
 			continue
 
-		var/obj/item/stack/material/S = M.stack_type
+		var/obj/item/stack/legacy_material/S = M.stack_type
 		if(initial(S.name) in items_by_name)
 			continue
 

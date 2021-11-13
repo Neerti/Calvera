@@ -1,6 +1,6 @@
 /datum/legacy_material/stone
 	name = "sandstone"
-	stack_type = /obj/item/stack/material/sandstone
+	stack_type = /obj/item/stack/legacy_material/sandstone
 	icon_base = "stone"
 	icon_reinf = "reinf_stone"
 	icon_colour = "#D9C179"
@@ -24,7 +24,7 @@
 	weight = 26
 	hardness = 70
 	integrity = 201 //hack to stop kitchen benches being flippable, todo: refactor into weight system
-	stack_type = /obj/item/stack/material/marble
+	stack_type = /obj/item/stack/legacy_material/marble
 	supply_conversion_value = 2
 
 /datum/legacy_material/stone/marble/generate_recipes()

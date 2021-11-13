@@ -3345,7 +3345,7 @@
 /turf/simulated/floor/tiled,
 /area/surface/outpost/main/security)
 "hc" = (
-/obj/item/stack/material/phoron{
+/obj/item/stack/legacy_material/phoron{
 	amount = 25
 	},
 /obj/random/crate,
@@ -5785,8 +5785,8 @@
 /area/surface/outpost/main/bar)
 "mq" = (
 /obj/structure/table,
-/obj/item/stack/material/wood,
-/obj/item/stack/material/wood,
+/obj/item/stack/legacy_material/wood,
+/obj/item/stack/legacy_material/wood,
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/bar)
 "mr" = (

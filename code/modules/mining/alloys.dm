@@ -17,7 +17,7 @@
 		"hematite" = 2
 		)
 	product_mod = 0.3
-	product = /obj/item/stack/material/durasteel
+	product = /obj/item/stack/legacy_material/durasteel
 
 /datum/alloy/plasteel
 	metaltag = "plasteel"
@@ -27,7 +27,7 @@
 		"hematite" = 2
 		)
 	product_mod = 0.3
-	product = /obj/item/stack/material/plasteel
+	product = /obj/item/stack/legacy_material/plasteel
 
 /datum/alloy/steel
 	metaltag = DEFAULT_WALL_MATERIAL
@@ -35,7 +35,7 @@
 		"carbon" = 1,
 		"hematite" = 1
 		)
-	product = /obj/item/stack/material/steel
+	product = /obj/item/stack/legacy_material/steel
 
 /datum/alloy/borosilicate
 	metaltag = "borosilicate glass"
@@ -43,7 +43,7 @@
 		"platinum" = 1,
 		"sand" = 2
 		)
-	product = /obj/item/stack/material/glass/phoronglass
+	product = /obj/item/stack/legacy_material/glass/phoronglass
 
 /datum/alloy/bronze
 	metaltag = "bronze"
@@ -51,4 +51,4 @@
 		"copper" = 2,
 		"tin" = 1
 		)
-	product = /obj/item/stack/material/bronze
+	product = /obj/item/stack/legacy_material/bronze

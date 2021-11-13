@@ -195,7 +195,7 @@ var/list/_cat_default_emotes = list(
 	var/turf/catturf = get_turf(src)
 	to_chat(user, "<span class='notice'>You peek into \the [name]-- and a cat jumps out!</span>")
 	new cattype(catturf)
-	new /obj/item/stack/material/cardboard(catturf) //if i fits i sits
+	new /obj/item/stack/legacy_material/cardboard(catturf) //if i fits i sits
 	qdel(src)
 
 /obj/item/weapon/cat_box/black

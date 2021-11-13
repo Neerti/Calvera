@@ -358,8 +358,8 @@ Protectiveness | Armor %
 		qdel(src)
 		return
 
-	if(istype(O, /obj/item/stack/material))
-		var/obj/item/stack/material/S = O
+	if(istype(O, /obj/item/stack/legacy_material))
+		var/obj/item/stack/legacy_material/S = O
 		if(S.legacy_material == get_material_by_name("leather"))
 			if(S.use(2))
 				to_chat(user, "<span class='notice'>You curve the plate inwards, and add a strap for adjustment.</span>")
@@ -382,8 +382,8 @@ Protectiveness | Armor %
 	icon_state = "woodbucket"
 
 /obj/item/clothing/head/helmet/bucket/attackby(var/obj/O, mob/user)
-	if(istype(O, /obj/item/stack/material))
-		var/obj/item/stack/material/S = O
+	if(istype(O, /obj/item/stack/legacy_material))
+		var/obj/item/stack/legacy_material/S = O
 		if(S.use(2))
 			to_chat(user, "<span class='notice'>You apply some [S.legacy_material.use_name] to \the [src].  Hopefully it'll make the makeshift helmet stronger.</span>")
 			var/obj/item/clothing/head/helmet/material/makeshift/helmet = new(null, S.legacy_material.name)

@@ -285,7 +285,7 @@
 			if(do_after(user, 20 * WT.toolspeed))
 				if(!src || !WT.isOn()) return
 				to_chat(user, "<span class='notice'>You deconstruct the frame.</span>")
-				new /obj/item/stack/material/steel( src.loc, 2 )
+				new /obj/item/stack/legacy_material/steel( src.loc, 2 )
 				qdel(src)
 				return
 

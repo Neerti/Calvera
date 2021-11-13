@@ -10,7 +10,7 @@
 		to_chat(user, "<span class='notice'>In one hit, [src] easily crumples into a pile of snow. You monster.</span>")
 		var/turf/simulated/floor/F = get_turf(src)
 		if (istype(F))
-			new /obj/item/stack/material/snow(F)
+			new /obj/item/stack/legacy_material/snow(F)
 		qdel(src)
 
 /obj/structure/snowman/borg

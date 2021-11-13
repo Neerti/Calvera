@@ -127,7 +127,7 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 		return 1
 	if(O.is_open_container())
 		return 0
-	if(!istype(O, /obj/item/stack/material)) //Previously checked for specific material sheets, for some reason? Made the check on 133 redundant.
+	if(!istype(O, /obj/item/stack/legacy_material)) //Previously checked for specific material sheets, for some reason? Made the check on 133 redundant.
 		to_chat(user, "<span class='notice'>You cannot insert this item into \the [src].</span>")
 		return 1
 	if(stat)
@@ -137,7 +137,7 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 		to_chat(user, "<span class='notice'>\The [src]'s material bin is full. Please remove material before adding more.</span>")
 		return 1
 
-	var/obj/item/stack/material/S = O
+	var/obj/item/stack/legacy_material/S = O
 	if(!(S.legacy_material.name in materials))
 		to_chat(user, "<span class='warning'>The [src] doesn't accept [S.legacy_material]!</span>")
 		return

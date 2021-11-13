@@ -118,11 +118,11 @@
 	N.synths = list(nanite)
 	src.modules += N
 
-	var/obj/item/stack/material/cyborg/steel/M = new (src)
+	var/obj/item/stack/legacy_material/cyborg/steel/M = new (src)
 	M.synths = list(metal)
 	src.modules += M
 
-	var/obj/item/stack/material/cyborg/glass/G = new (src)
+	var/obj/item/stack/legacy_material/cyborg/glass/G = new (src)
 	G.synths = list(glass)
 	src.modules += G
 
@@ -134,7 +134,7 @@
 	C.synths = list(wire)
 	src.modules += C
 
-	var/obj/item/stack/material/cyborg/glass/reinforced/RG = new (src)
+	var/obj/item/stack/legacy_material/cyborg/glass/reinforced/RG = new (src)
 	RG.synths = list(metal, glass)
 	src.modules += RG
 

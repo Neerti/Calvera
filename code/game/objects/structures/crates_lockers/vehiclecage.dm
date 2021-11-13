@@ -84,7 +84,7 @@
 
 /obj/structure/vehiclecage/proc/disassemble(obj/item/weapon/W as obj, mob/user as mob)
 	var/turf/T = get_turf(src)
-	new /obj/item/stack/material/steel(src.loc, 5)
+	new /obj/item/stack/legacy_material/steel(src.loc, 5)
 
 	for(var/atom/movable/AM in contents)
 		if(AM.simulated)

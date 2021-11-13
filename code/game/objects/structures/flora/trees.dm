@@ -10,7 +10,7 @@
 	var/health = 200		// Used for chopping down trees.
 	var/max_health = 200
 	var/shake_animation_degrees = 4	// How much to shake the tree when struck.  Larger trees should have smaller numbers or it looks weird.
-	var/obj/item/stack/material/product = null	// What you get when chopping this tree down.  Generally it will be a type of wood.
+	var/obj/item/stack/legacy_material/product = null	// What you get when chopping this tree down.  Generally it will be a type of wood.
 	var/product_amount = 10 // How much of a stack you get, if the above is defined.
 	var/is_stump = FALSE // If true, suspends damage tracking and most other effects.
 	var/indestructable = FALSE // If true, the tree cannot die.
@@ -101,7 +101,7 @@
 		return
 
 	if(product && product_amount) // Make wooden logs.
-		var/obj/item/stack/material/M = new product(get_turf(src))
+		var/obj/item/stack/legacy_material/M = new product(get_turf(src))
 		M.amount = product_amount
 		M.update_icon()
 	visible_message("<span class='danger'>\The [src] is felled!</span>")
@@ -148,7 +148,7 @@
 	icon = 'icons/obj/flora/pinetrees.dmi'
 	icon_state = "pine_1"
 	base_state = "pine"
-	product = /obj/item/stack/material/log
+	product = /obj/item/stack/legacy_material/log
 	shake_animation_degrees = 3
 
 /obj/structure/flora/tree/pine/choose_icon_state()
@@ -191,7 +191,7 @@
 	icon = 'icons/obj/flora/palmtrees.dmi'
 	icon_state = "palm1"
 	base_state = "palm"
-	product = /obj/item/stack/material/log
+	product = /obj/item/stack/legacy_material/log
 	product_amount = 5
 	health = 200
 	max_health = 200
@@ -207,7 +207,7 @@
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "tree_1"
 	base_state = "tree"
-	product = /obj/item/stack/material/log
+	product = /obj/item/stack/legacy_material/log
 	product_amount = 5
 	health = 200
 	max_health = 200
@@ -221,7 +221,7 @@
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
 	icon_state = "tree"
 	base_state = "tree"
-	product = /obj/item/stack/material/log
+	product = /obj/item/stack/legacy_material/log
 	product_amount = 10
 	health = 400
 	max_health = 400
@@ -236,7 +236,7 @@
 	icon = 'icons/obj/flora/jungletree.dmi'
 	icon_state = "tree"
 	base_state = "tree"
-	product = /obj/item/stack/material/log
+	product = /obj/item/stack/legacy_material/log
 	product_amount = 20
 	health = 800
 	max_health = 800
@@ -265,7 +265,7 @@
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "tree_sif"
 	base_state = "tree_sif"
-	product = /obj/item/stack/material/log/sif
+	product = /obj/item/stack/legacy_material/log/sif
 	catalogue_data = list(/datum/category_item/catalogue/flora/sif_tree)
 	randomize_size = TRUE
 

@@ -90,7 +90,7 @@
 		if(do_after(5))
 			if(!src) return
 			to_chat(user, "<span class='notice'>You dissasemble the desk bell</span>")
-			new /obj/item/stack/material/steel(get_turf(src), 1)
+			new /obj/item/stack/legacy_material/steel(get_turf(src), 1)
 			qdel(src)
 			return
 	if(!broken)

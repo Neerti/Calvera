@@ -104,8 +104,8 @@
 		var/padding_type //This is awful but it needs to be like this until tiles are given a material var.
 		if(istype(W,/obj/item/stack/tile/carpet))
 			padding_type = "carpet"
-		else if(istype(W,/obj/item/stack/material))
-			var/obj/item/stack/material/M = W
+		else if(istype(W,/obj/item/stack/legacy_material))
+			var/obj/item/stack/legacy_material/M = W
 			if(M.legacy_material && (M.legacy_material.flags & MATERIAL_PADDING))
 				padding_type = "[M.legacy_material.name]"
 		if(!padding_type)

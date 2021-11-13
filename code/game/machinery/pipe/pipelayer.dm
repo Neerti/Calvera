@@ -102,7 +102,7 @@
 			to_chat(user, "<span class='notice'>You recycle \the [W].</span>")
 			qdel(W)
 		return
-	if(istype(W, /obj/item/stack/material) && W.get_material_name() == DEFAULT_WALL_MATERIAL)
+	if(istype(W, /obj/item/stack/legacy_material) && W.get_material_name() == DEFAULT_WALL_MATERIAL)
 		var/result = load_metal(W)
 		if(isnull(result))
 			to_chat(user, "<span class='warning'>Unable to load [W] - no metal found.</span>")
@@ -146,7 +146,7 @@
 	var/amount_ejected = 0
 	while (metal >= 1)
 		var/datum/legacy_material/M = get_material_by_name(DEFAULT_WALL_MATERIAL)
-		var/obj/item/stack/material/S = new M.stack_type(get_turf(src))
+		var/obj/item/stack/legacy_material/S = new M.stack_type(get_turf(src))
 		S.amount = min(metal, S.max_amount)
 		metal -= S.amount
 		amount_ejected += S.amount

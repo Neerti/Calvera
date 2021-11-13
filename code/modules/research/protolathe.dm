@@ -123,13 +123,13 @@
 	if(!linked_console)
 		to_chat(user, "<span class='notice'>\The [src] must be linked to an R&D console first!</span>")
 		return 1
-	if(!istype(O, /obj/item/stack/material))
+	if(!istype(O, /obj/item/stack/legacy_material))
 		to_chat(user, "<span class='notice'>You cannot insert this item into \the [src]!</span>")
 		return 1
 	if(stat)
 		return 1
 
-	var/obj/item/stack/material/S = O
+	var/obj/item/stack/legacy_material/S = O
 	if(!(S.legacy_material.name in materials))
 		to_chat(user, "<span class='warning'>The [src] doesn't accept [S.legacy_material]!</span>")
 		return
@@ -216,7 +216,7 @@
 /obj/machinery/r_n_d/protolathe/proc/eject_materials(var/material, var/amount) // 0 amount = 0 means ejecting a full stack; -1 means eject everything
 	var/recursive = amount == -1 ? 1 : 0
 	material = lowertext(material)
-	var/obj/item/stack/material/mattype
+	var/obj/item/stack/legacy_material/mattype
 	var/datum/legacy_material/MAT = get_material_by_name(material)
 
 	if(!MAT)
@@ -227,7 +227,7 @@
 	if(!mattype)
 		return
 
-	var/obj/item/stack/material/S = new mattype(loc)
+	var/obj/item/stack/legacy_material/S = new mattype(loc)
 	if(amount <= 0)
 		amount = S.max_amount
 	var/ejected = min(round(materials[material] / S.perunit), amount)

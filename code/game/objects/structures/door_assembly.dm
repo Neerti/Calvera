@@ -179,7 +179,7 @@
 				if(do_after(user, 40 * WT.toolspeed))
 					if(!src || !WT.isOn()) return
 					to_chat(user, "<span class='notice'>You welded the [glass] plating off!</span>")
-					var/M = text2path("/obj/item/stack/material/[glass]")
+					var/M = text2path("/obj/item/stack/legacy_material/[glass]")
 					new M(src.loc, 2)
 					glass = 0
 			else if(glass == 1)
@@ -187,14 +187,14 @@
 				if(do_after(user, 40 * WT.toolspeed))
 					if(!src || !WT.isOn()) return
 					to_chat(user, "<span class='notice'>You welded the glass panel out!</span>")
-					new /obj/item/stack/material/glass/reinforced(src.loc)
+					new /obj/item/stack/legacy_material/glass/reinforced(src.loc)
 					glass = 0
 			else if(!anchored)
 				user.visible_message("[user] dissassembles the airlock assembly.", "You start to dissassemble the airlock assembly.")
 				if(do_after(user, 40 * WT.toolspeed))
 					if(!src || !WT.isOn()) return
 					to_chat(user, "<span class='notice'>You dissasembled the airlock assembly!</span>")
-					new /obj/item/stack/material/steel(src.loc, 4)
+					new /obj/item/stack/legacy_material/steel(src.loc, 4)
 					qdel (src)
 		else
 			to_chat(user, "<span class='notice'>You need more welding fuel.</span>")
@@ -262,7 +262,7 @@
 			electronics.loc = src.loc
 			electronics = null
 
-	else if(istype(W, /obj/item/stack/material) && !glass)
+	else if(istype(W, /obj/item/stack/legacy_material) && !glass)
 		var/obj/item/stack/S = W
 		var/material_name = S.get_material_name()
 		if (S)

@@ -3597,7 +3597,7 @@
 /area/surface/outpost/research/xenoarcheology/emergencystorage)
 "hg" = (
 /obj/structure/closet/crate,
-/obj/item/stack/material/phoron{
+/obj/item/stack/legacy_material/phoron{
 	amount = 25
 	},
 /turf/simulated/floor/plating,

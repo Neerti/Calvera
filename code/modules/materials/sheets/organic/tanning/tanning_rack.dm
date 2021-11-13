@@ -52,7 +52,7 @@
 	if(drying)
 		var/obj/item/stack/S = drying
 		if(!drying.wetness) // If it's dry, make a stack of dry leather and prepare to put that in their hands
-			var/obj/item/stack/material/leather/L = new(src)
+			var/obj/item/stack/legacy_material/leather/L = new(src)
 			L.amount = drying.amount
 			drying.use(drying.amount)
 			S = L

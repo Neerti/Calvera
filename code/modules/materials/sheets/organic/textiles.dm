@@ -1,4 +1,4 @@
-/obj/item/stack/material/leather
+/obj/item/stack/legacy_material/leather
 	name = "leather"
 	desc = "The by-product of mob grinding."
 	icon_state = "sheet-leather"
@@ -9,7 +9,7 @@
 	drop_sound = 'sound/items/drop/leather.ogg'
 	pickup_sound = 'sound/items/pickup/leather.ogg'
 
-/obj/item/stack/material/cloth
+/obj/item/stack/legacy_material/cloth
 	name = "cloth"
 	icon_state = "sheet-cloth"
 	default_type = "cloth"
@@ -19,5 +19,5 @@
 	drop_sound = 'sound/items/drop/clothing.ogg'
 	pickup_sound = 'sound/items/pickup/clothing.ogg'
 
-/obj/item/stack/material/cloth/diyaab
+/obj/item/stack/legacy_material/cloth/diyaab
 	color = "#c6ccf0"

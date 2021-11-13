@@ -35,8 +35,8 @@
 					var/obj/item/res = resource
 					if(material_needs[resource] > 0)
 						var/res_name = ""
-						if(ispath(res,/obj/item/stack/material))
-							var/obj/item/stack/material/mat_stack = res
+						if(ispath(res,/obj/item/stack/legacy_material))
+							var/obj/item/stack/legacy_material/mat_stack = res
 							var/datum/legacy_material/mat = get_material_by_name("[initial(mat_stack.default_type)]")
 							if(material_needs[resource]>1)
 								res_name = "[mat.use_name] [mat.sheet_plural_name]"
@@ -68,7 +68,7 @@
 		material_needs = list()
 
 	if(prob(40))
-		var/chosen_mat = pick(/obj/item/stack/material/plastic, /obj/item/stack/material/plasteel, /obj/item/stack/material/glass)
+		var/chosen_mat = pick(/obj/item/stack/legacy_material/plastic, /obj/item/stack/legacy_material/plasteel, /obj/item/stack/legacy_material/glass)
 		material_needs[chosen_mat] = rand(1, 3)
 
 	if(prob(30))
@@ -87,7 +87,7 @@
 		var/component_needed = pick(/obj/item/weapon/smes_coil, /obj/item/device/assembly/prox_sensor, /obj/item/weapon/module/power_control)
 		material_needs[component_needed] = 1
 
-	material_needs[/obj/item/stack/material/steel] = rand(1,5)
+	material_needs[/obj/item/stack/legacy_material/steel] = rand(1,5)
 
 /obj/item/weapon/broken_gun/attackby(obj/item/W as obj, mob/user as mob)
 	if(can_repair_with(W, user))

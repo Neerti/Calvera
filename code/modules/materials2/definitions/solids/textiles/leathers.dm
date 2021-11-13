@@ -6,7 +6,7 @@ as an umbrella term for materials that are generally used to make clothing, bags
 	color = "#5c4831"
 	hardness = MATERIAL_HARDNESS_FLEXIBLE
 	reflectiveness = MATERIAL_REFLECTIVITY_MATTE
-	// default_solid_form = /obj/item/stack/material/skin
+	// default_solid_form = /obj/item/stack/legacy_material/skin
 
 /decl/material/solid/textile/leather/synth
 	name = "synthleather"

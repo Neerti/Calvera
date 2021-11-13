@@ -4,4 +4,4 @@
 	reflectiveness = MATERIAL_REFLECTIVITY_DULL
 	weight = MATERIAL_WEIGHT_EXTREMELY_LIGHT
 	hardness = MATERIAL_HARDNESS_SOFT
-//	default_solid_form = /obj/item/stack/material/bolt
+//	default_solid_form = /obj/item/stack/legacy_material/bolt

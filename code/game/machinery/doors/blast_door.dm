@@ -183,7 +183,7 @@
 					take_damage(W.force*0.35) //it's a blast door, it should take a while. -Luke
 				return
 
-	else if(istype(C, /obj/item/stack/material) && C.get_material_name() == "plasteel") // Repairing.
+	else if(istype(C, /obj/item/stack/legacy_material) && C.get_material_name() == "plasteel") // Repairing.
 		var/amt = CEILING((maxhealth - health)/150, 1)
 		if(!amt)
 			to_chat(user, "<span class='notice'>\The [src] is already fully repaired.</span>")

@@ -54,7 +54,7 @@
 	harvest_verb = "sheared"
 	// Associative list of paths and their chances. path = straws in the lot
 	harvest_results = list(
-		/obj/item/stack/material/cloth/diyaab = 10
+		/obj/item/stack/legacy_material/cloth/diyaab = 10
 		)
 
 /datum/say_list/diyaab

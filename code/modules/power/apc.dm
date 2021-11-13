@@ -630,7 +630,7 @@ GLOBAL_LIST_EMPTY(apcs)
 		if(do_after(user, 50 * WT.toolspeed))
 			if(!src || !WT.remove_fuel(3, user)) return
 			if(emagged || (stat & BROKEN) || opened==2)
-				new /obj/item/stack/material/steel(loc)
+				new /obj/item/stack/legacy_material/steel(loc)
 				user.visible_message(\
 					"<span class='warning'>[src] has been cut apart by [user.name] with the [WT.name].</span>",\
 					"<span class='notice'>You disassembled the broken APC frame.</span>",\

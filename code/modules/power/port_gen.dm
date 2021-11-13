@@ -99,7 +99,7 @@
 	desc = "A power generator that runs on solid phoron sheets. Rated for 80 kW max safe output."
 	circuit = /obj/item/weapon/circuitboard/pacman
 	var/sheet_name = "Phoron Sheets"
-	var/sheet_path = /obj/item/stack/material/phoron
+	var/sheet_path = /obj/item/stack/legacy_material/phoron
 
 	/*
 		These values were chosen so that the generator can run safely up to 80 kW
@@ -163,7 +163,7 @@
 //Removes one stack's worth of material from the generator.
 /obj/machinery/power/port_gen/pacman/DropFuel()
 	if(sheets)
-		var/obj/item/stack/material/S = new sheet_path(loc)
+		var/obj/item/stack/legacy_material/S = new sheet_path(loc)
 		var/amount = min(sheets, S.max_amount)
 		S.amount = amount
 		sheets -= amount
@@ -373,7 +373,7 @@
 	name = "S.U.P.E.R.P.A.C.M.A.N.-type Portable Generator"
 	desc = "A power generator that utilizes uranium sheets as fuel. Can run for much longer than the standard PACMAN type generators. Rated for 80 kW max safe output."
 	icon_state = "portgen1"
-	sheet_path = /obj/item/stack/material/uranium
+	sheet_path = /obj/item/stack/legacy_material/uranium
 	sheet_name = "Uranium Sheets"
 	time_per_sheet = 576 //same power output, but a 50 sheet stack will last 2 hours at max safe power
 	circuit = /obj/item/weapon/circuitboard/pacman/super
@@ -396,7 +396,7 @@
 	name = "M.R.S.P.A.C.M.A.N.-type Portable Generator"
 	desc = "An advanced power generator that runs on tritium. Rated for 200 kW maximum safe output!"
 	icon_state = "portgen2"
-	sheet_path = /obj/item/stack/material/tritium
+	sheet_path = /obj/item/stack/legacy_material/tritium
 	sheet_name = "Tritium Fuel Sheets"
 
 	//I don't think tritium has any other use, so we might as well make this rewarding for players

@@ -444,7 +444,7 @@
 /turf/simulated/floor/airless,
 /area/wreck/ufoship)
 "bx" = (
-/obj/item/stack/material/steel,
+/obj/item/stack/legacy_material/steel,
 /turf/simulated/floor/airless,
 /area/wreck/ufoship)
 "by" = (
@@ -564,8 +564,8 @@
 /turf/simulated/floor/tiled/airless,
 /area/wreck/ufoship)
 "bZ" = (
-/obj/item/stack/material/wood,
-/obj/item/stack/material/wood,
+/obj/item/stack/legacy_material/wood,
+/obj/item/stack/legacy_material/wood,
 /obj/structure/ore_box,
 /obj/item/weapon/ore/iron,
 /obj/item/weapon/ore/iron,
@@ -718,7 +718,7 @@
 /turf/simulated/floor/tiled/airless,
 /area/wreck/ufoship)
 "cB" = (
-/obj/item/stack/material/steel,
+/obj/item/stack/legacy_material/steel,
 /turf/simulated/floor/tiled/airless,
 /area/wreck/ufoship)
 "cC" = (
@@ -743,7 +743,7 @@
 /turf/simulated/floor/tiled/airless,
 /area/wreck/ufoship)
 "cG" = (
-/obj/item/stack/material/glass{
+/obj/item/stack/legacy_material/glass{
 	amount = 50;
 	pixel_x = -2;
 	pixel_y = 2
@@ -803,8 +803,8 @@
 /turf/simulated/floor/tiled/airless,
 /area/wreck/ufoship)
 "cO" = (
-/obj/item/stack/material/steel,
-/obj/item/stack/material/steel,
+/obj/item/stack/legacy_material/steel,
+/obj/item/stack/legacy_material/steel,
 /turf/simulated/floor/tiled/airless,
 /area/wreck/ufoship)
 "cP" = (
@@ -818,7 +818,7 @@
 /turf/simulated/floor/airless,
 /area/wreck/ufoship)
 "cR" = (
-/obj/item/stack/material/steel,
+/obj/item/stack/legacy_material/steel,
 /obj/item/stack/rods,
 /turf/simulated/floor/airless,
 /area/wreck/ufoship)
@@ -854,9 +854,9 @@
 /turf/simulated/floor/airless,
 /area/wreck/supplyshuttle)
 "da" = (
-/obj/item/stack/material/wood,
-/obj/item/stack/material/wood,
-/obj/item/stack/material/wood,
+/obj/item/stack/legacy_material/wood,
+/obj/item/stack/legacy_material/wood,
+/obj/item/stack/legacy_material/wood,
 /obj/effect/decal/mecha_wreckage/hoverpod,
 /turf/simulated/floor/airless,
 /area/wreck/supplyshuttle)

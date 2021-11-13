@@ -21,7 +21,7 @@
 	var/datum/legacy_material/legacy_material = null
 	var/datum/legacy_material/reinforced = null
 
-	// Gambling tables. I'd prefer reinforced with carpet/felt/cloth/whatever, but AFAIK it's either harder or impossible to get /obj/item/stack/material of those.
+	// Gambling tables. I'd prefer reinforced with carpet/felt/cloth/whatever, but AFAIK it's either harder or impossible to get /obj/item/stack/legacy_material of those.
 	// Convert if/when you can easily get stacks of these.
 	var/carpeted = 0
 	var/carpeted_type = /obj/item/stack/tile/carpet
@@ -154,7 +154,7 @@
 			health = max(health+(maxhealth/5), maxhealth) // 20% repair per application
 			return 1
 
-	if(!legacy_material && can_plate && istype(W, /obj/item/stack/material))
+	if(!legacy_material && can_plate && istype(W, /obj/item/stack/legacy_material))
 		legacy_material = common_material_add(W, user, "plat")
 		if(legacy_material)
 			update_connections(1)
@@ -192,13 +192,13 @@
 	visible_message("<span class='notice'>\The [user] scratches at \the [src]!</span>")
 	return ..()
 
-/obj/structure/table/MouseDrop_T(obj/item/stack/material/what)
+/obj/structure/table/MouseDrop_T(obj/item/stack/legacy_material/what)
 	if(can_reinforce && isliving(usr) && (!usr.stat) && istype(what) && usr.get_active_hand() == what && Adjacent(usr))
 		reinforce_table(what, usr)
 	else
 		return ..()
 
-/obj/structure/table/proc/reinforce_table(obj/item/stack/material/S, mob/user)
+/obj/structure/table/proc/reinforce_table(obj/item/stack/legacy_material/S, mob/user)
 	if(reinforced)
 		to_chat(user, "<span class='warning'>\The [src] is already reinforced!</span>")
 		return
@@ -234,7 +234,7 @@
 		desc = initial(desc)
 
 // Returns the material to set the table to.
-/obj/structure/table/proc/common_material_add(obj/item/stack/material/S, mob/user, verb) // Verb is actually verb without 'e' or 'ing', which is added. Works for 'plate'/'plating' and 'reinforce'/'reinforcing'.
+/obj/structure/table/proc/common_material_add(obj/item/stack/legacy_material/S, mob/user, verb) // Verb is actually verb without 'e' or 'ing', which is added. Works for 'plate'/'plating' and 'reinforce'/'reinforcing'.
 	var/datum/legacy_material/M = S.get_material()
 	if(!istype(M))
 		to_chat(user, "<span class='warning'>You cannot [verb]e \the [src] with \the [S].</span>")
@@ -288,7 +288,7 @@
 		return
 	user.visible_message("<span class='notice'>\The [user] dismantles \the [src].</span>",
 	                              "<span class='notice'>You dismantle \the [src].</span>")
-	new /obj/item/stack/material/steel(src.loc)
+	new /obj/item/stack/legacy_material/steel(src.loc)
 	qdel(src)
 	return
 
@@ -318,7 +318,7 @@
 	if(carpeted && (full_return || prob(50))) // Higher chance to get the carpet back intact, since there's no non-intact option
 		new carpeted_type(src.loc)
 	if(full_return || prob(20))
-		new /obj/item/stack/material/steel(src.loc)
+		new /obj/item/stack/legacy_material/steel(src.loc)
 	else
 		var/datum/legacy_material/M = get_material_by_name(DEFAULT_WALL_MATERIAL)
 		S = M.place_shard(loc)

@@ -492,21 +492,21 @@
 	var/final_amount = 10 // Don't use the {amount = 10} method to set amount, since these need to be typepaths and not instances.
 
 /obj/random/material/item_to_spawn()
-	return pick(/obj/item/stack/material/steel,
-				/obj/item/stack/material/glass,
-				/obj/item/stack/material/glass/reinforced,
-				/obj/item/stack/material/plastic,
-				/obj/item/stack/material/wood,
-				/obj/item/stack/material/wood/sif,
-				/obj/item/stack/material/cardboard,
+	return pick(/obj/item/stack/legacy_material/steel,
+				/obj/item/stack/legacy_material/glass,
+				/obj/item/stack/legacy_material/glass/reinforced,
+				/obj/item/stack/legacy_material/plastic,
+				/obj/item/stack/legacy_material/wood,
+				/obj/item/stack/legacy_material/wood/sif,
+				/obj/item/stack/legacy_material/cardboard,
 				/obj/item/stack/rods,
-				/obj/item/stack/material/sandstone,
-				/obj/item/stack/material/marble,
-				/obj/item/stack/material/plasteel)
+				/obj/item/stack/legacy_material/sandstone,
+				/obj/item/stack/legacy_material/marble,
+				/obj/item/stack/legacy_material/plasteel)
 
 /obj/random/material/apply_adjustments(atom/A)
 	. = ..()
-	var/obj/item/stack/material/stack = A
+	var/obj/item/stack/legacy_material/stack = A
 	stack.amount = final_amount
 	stack.update_icon()
 
@@ -518,29 +518,29 @@
 	final_amount = 5
 
 /obj/random/material/refined/item_to_spawn()
-	return pick(/obj/item/stack/material/steel,
-				/obj/item/stack/material/glass,
-				/obj/item/stack/material/glass/reinforced,
-				/obj/item/stack/material/glass/phoronglass,
-				/obj/item/stack/material/glass/phoronrglass,
-				/obj/item/stack/material/plasteel,
-				/obj/item/stack/material/durasteel,
-				/obj/item/stack/material/gold,
-				/obj/item/stack/material/iron,
-				/obj/item/stack/material/copper,
-				/obj/item/stack/material/aluminium,
-				/obj/item/stack/material/lead,
-				/obj/item/stack/material/diamond,
-				/obj/item/stack/material/deuterium,
-				/obj/item/stack/material/uranium,
-				/obj/item/stack/material/phoron,
-				/obj/item/stack/material/silver,
-				/obj/item/stack/material/platinum,
-				/obj/item/stack/material/mhydrogen,
-				/obj/item/stack/material/osmium,
-				/obj/item/stack/material/titanium,
-				/obj/item/stack/material/tritium,
-				/obj/item/stack/material/verdantium)
+	return pick(/obj/item/stack/legacy_material/steel,
+				/obj/item/stack/legacy_material/glass,
+				/obj/item/stack/legacy_material/glass/reinforced,
+				/obj/item/stack/legacy_material/glass/phoronglass,
+				/obj/item/stack/legacy_material/glass/phoronrglass,
+				/obj/item/stack/legacy_material/plasteel,
+				/obj/item/stack/legacy_material/durasteel,
+				/obj/item/stack/legacy_material/gold,
+				/obj/item/stack/legacy_material/iron,
+				/obj/item/stack/legacy_material/copper,
+				/obj/item/stack/legacy_material/aluminium,
+				/obj/item/stack/legacy_material/lead,
+				/obj/item/stack/legacy_material/diamond,
+				/obj/item/stack/legacy_material/deuterium,
+				/obj/item/stack/legacy_material/uranium,
+				/obj/item/stack/legacy_material/phoron,
+				/obj/item/stack/legacy_material/silver,
+				/obj/item/stack/legacy_material/platinum,
+				/obj/item/stack/legacy_material/mhydrogen,
+				/obj/item/stack/legacy_material/osmium,
+				/obj/item/stack/legacy_material/titanium,
+				/obj/item/stack/legacy_material/tritium,
+				/obj/item/stack/legacy_material/verdantium)
 
 /obj/random/material/precious //Precious metals, go figure
 	name = "random precious metal"
@@ -550,11 +550,11 @@
 	final_amount = 5
 
 /obj/random/material/precious/item_to_spawn()
-	return pick(/obj/item/stack/material/gold,
-				/obj/item/stack/material/copper,
-				/obj/item/stack/material/silver,
-				/obj/item/stack/material/platinum,
-				/obj/item/stack/material/osmium)
+	return pick(/obj/item/stack/legacy_material/gold,
+				/obj/item/stack/legacy_material/copper,
+				/obj/item/stack/legacy_material/silver,
+				/obj/item/stack/legacy_material/platinum,
+				/obj/item/stack/legacy_material/osmium)
 
 /obj/random/tank
 	name = "random tank"

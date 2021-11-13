@@ -303,7 +303,7 @@
 					to_chat(user, "<span class='notice'>You need more welding fuel to complete this task.</span>")
 					return
 			playsound(src, WT.usesound, 50)
-			new /obj/item/stack/material/steel(loc)
+			new /obj/item/stack/legacy_material/steel(loc)
 			for(var/mob/M in viewers(src))
 				M.show_message("<span class='notice'>\The [src] has been cut apart by [user] with \the [WT].</span>", 3, "You hear welding.", 2)
 			qdel(src)

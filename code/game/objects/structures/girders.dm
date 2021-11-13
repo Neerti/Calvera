@@ -201,7 +201,7 @@
 			to_chat(user, "<span class='notice'>You dislodged the girder!</span>")
 			displace()
 
-	else if(istype(W, /obj/item/stack/material))
+	else if(istype(W, /obj/item/stack/legacy_material))
 		if(reinforcing && !reinf_material)
 			if(!reinforce_with_material(W, user))
 				return ..()
@@ -220,7 +220,7 @@
 		current_damage = current_damage + damage //Rather than calculate this every time we need to use it, just calculate it here and save it.
 
 
-/obj/structure/girder/proc/construct_wall(obj/item/stack/material/S, mob/user)
+/obj/structure/girder/proc/construct_wall(obj/item/stack/legacy_material/S, mob/user)
 	var/amount_to_use = reinf_material ? 1 : 2
 	if(S.get_amount() < amount_to_use)
 		to_chat(user, "<span class='notice'>There isn't enough material here to construct a wall.</span>")
@@ -258,7 +258,7 @@
 	qdel(src)
 	return 1
 
-/obj/structure/girder/proc/reinforce_with_material(obj/item/stack/material/S, mob/user) //if the verb is removed this can be renamed.
+/obj/structure/girder/proc/reinforce_with_material(obj/item/stack/legacy_material/S, mob/user) //if the verb is removed this can be renamed.
 	if(reinf_material)
 		to_chat(user, "<span class='notice'>\The [src] is already reinforced.</span>")
 		return 0

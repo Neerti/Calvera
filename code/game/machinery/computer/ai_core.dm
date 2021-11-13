@@ -29,7 +29,7 @@
 				if(do_after(user, 20 * WT.toolspeed))
 					if(!src || !WT.remove_fuel(0, user)) return
 					to_chat(user, "<span class='notice'>You deconstruct the frame.</span>")
-					new /obj/item/stack/material/plasteel( loc, 4)
+					new /obj/item/stack/legacy_material/plasteel( loc, 4)
 					qdel(src)
 		if(1)
 			if(P.is_wrench())
@@ -88,7 +88,7 @@
 					var/obj/item/stack/cable_coil/A = new /obj/item/stack/cable_coil( loc )
 					A.amount = 5
 
-			if(istype(P, /obj/item/stack/material) && P.get_material_name() == "rglass")
+			if(istype(P, /obj/item/stack/legacy_material) && P.get_material_name() == "rglass")
 				var/obj/item/stack/RG = P
 				if (RG.get_amount() < 2)
 					to_chat(user, "<span class='warning'>You need two sheets of glass to put in the glass panel.</span>")
@@ -161,7 +161,7 @@
 					icon_state = "3b"
 				else
 					icon_state = "3"
-				new /obj/item/stack/material/glass/reinforced( loc, 2 )
+				new /obj/item/stack/legacy_material/glass/reinforced( loc, 2 )
 				return
 
 			if(P.is_screwdriver())

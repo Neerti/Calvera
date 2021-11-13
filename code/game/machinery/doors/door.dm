@@ -173,7 +173,7 @@
 			visible_message("<span class='danger'>\The [src.name] disintegrates!</span>")
 			switch (Proj.damage_type)
 				if(BRUTE)
-					new /obj/item/stack/material/steel(src.loc, 2)
+					new /obj/item/stack/legacy_material/steel(src.loc, 2)
 					new /obj/item/stack/rods(src.loc, 3)
 				if(BURN)
 					new /obj/effect/decal/cleanable/ash(src.loc) // Turn it to ashes!
@@ -213,7 +213,7 @@
 	src.add_fingerprint(user)
 
 	if(istype(I))
-		if(istype(I, /obj/item/stack/material) && I.get_material_name() == src.get_material_name())
+		if(istype(I, /obj/item/stack/legacy_material) && I.get_material_name() == src.get_material_name())
 			if(stat & BROKEN)
 				to_chat(user, "<span class='notice'>It looks like \the [src] is pretty busted. It's going to need more than just patching up now.</span>")
 				return
@@ -264,7 +264,7 @@
 
 		if(repairing && I.is_crowbar())
 			var/datum/legacy_material/mat = get_material()
-			var/obj/item/stack/material/repairing_sheet = mat.place_sheet(loc)
+			var/obj/item/stack/legacy_material/repairing_sheet = mat.place_sheet(loc)
 			repairing_sheet.amount += repairing-1
 			repairing = 0
 			to_chat(user, "<span class='notice'>You remove \the [repairing_sheet].</span>")

@@ -387,9 +387,9 @@ datum/objective/steal
 		"diamond drill" = /obj/item/weapon/pickaxe/diamonddrill,
 		"bag of holding" = /obj/item/weapon/storage/backpack/holding,
 		"hyper-capacity cell" = /obj/item/weapon/cell/hyper,
-		"10 diamonds" = /obj/item/stack/material/diamond,
-		"50 gold bars" = /obj/item/stack/material/gold,
-		"25 refined uranium bars" = /obj/item/stack/material/uranium,
+		"10 diamonds" = /obj/item/stack/legacy_material/diamond,
+		"50 gold bars" = /obj/item/stack/legacy_material/gold,
+		"25 refined uranium bars" = /obj/item/stack/legacy_material/uranium,
 	)
 
 

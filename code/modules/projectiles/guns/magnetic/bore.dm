@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/magnetic/matfed
 	power_cost = 750
-	load_type = list(/obj/item/stack/material, /obj/item/weapon/ore)
+	load_type = list(/obj/item/stack/legacy_material, /obj/item/weapon/ore)
 	var/mat_storage = 0			// How much material is stored inside? Input in multiples of 2000 as per auto/protolathe.
 	var/max_mat_storage = 8000	// How much material can be stored inside?
 	var/mat_cost = 500			// How much material is used per-shot?
@@ -114,7 +114,7 @@
 
 
 	if(is_type_in_list(thing, load_type))
-		var/obj/item/stack/material/M = thing
+		var/obj/item/stack/legacy_material/M = thing
 		var/success = FALSE
 		if(istype(M)) //stack
 			if(!M.legacy_material || M.legacy_material.name != ammo_material || loading)

@@ -75,6 +75,6 @@
 	var/datum/matter_synth/wood = new /datum/matter_synth/wood(25000)
 	synths += wood
 
-	var/obj/item/stack/material/cyborg/wood/W = new (src)
+	var/obj/item/stack/legacy_material/cyborg/wood/W = new (src)
 	W.synths = list(wood)
 	src.modules += W

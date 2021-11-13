@@ -7,7 +7,7 @@
 	weight = MATERIAL_WEIGHT_HEAVY
 	hardness = MATERIAL_HARDNESS_RIGID
 //	wall_support_value = MATERIAL_WEIGHT_HEAVY
-//	default_solid_form = /obj/item/stack/material2/ingot
+//	default_solid_form = /obj/item/stack/legacy_material2/ingot
 
 /// Generally the 'default' material.
 /decl/material/solid/metal/steel
@@ -20,7 +20,7 @@
 	integrity = 150
 	color = COLOR_STEEL
 	value = 1.1
-	//default_solid_form = /obj/item/stack/material/sheet
+	//default_solid_form = /obj/item/stack/legacy_material/sheet
 
 /*
 /decl/material/solid/metal/steel
@@ -43,7 +43,7 @@
 		/decl/material/solid/metal/iron = 0.98,
 		/decl/material/solid/carbon = 0.02
 	)
-	default_solid_form = /obj/item/stack/material/sheet
+	default_solid_form = /obj/item/stack/legacy_material/sheet
 */
 
 /decl/material/solid/metal/iron
@@ -83,7 +83,7 @@
 	density = 19.1
 	high_energy_transition_temperature = 1405
 //	high_energy_transition_material = /decl/material/liquid/uranium
-//	default_solid_form = /obj/item/stack/material2/puck
+//	default_solid_form = /obj/item/stack/legacy_material2/puck
 
 /*
 // Nebula
@@ -100,11 +100,11 @@
 	stack_origin_tech = "{'materials':5}"
 	reflectiveness = MAT_VALUE_MATTE
 	value = 1.5
-	default_solid_form = /obj/item/stack/material/puck
+	default_solid_form = /obj/item/stack/legacy_material/puck
 // Polaris
 /datum/material/uranium
 	name = "uranium"
-	stack_type = /obj/item/stack/material/uranium
+	stack_type = /obj/item/stack/legacy_material/uranium
 	radioactivity = 12
 	icon_base = "stone"
 	icon_reinf = "reinf_stone"
@@ -154,7 +154,7 @@
 // Polaris
 /datum/legacy_material/gold
 	name = "gold"
-	stack_type = /obj/item/stack/material/gold
+	stack_type = /obj/item/stack/legacy_material/gold
 	icon_colour = "#EDD12F"
 	weight = 24
 	hardness = 40

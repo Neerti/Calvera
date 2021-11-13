@@ -136,7 +136,7 @@
 "cF" = (/obj/structure/simple_door/wood,/turf/simulated/floor/tiled/hydro,/area/submap/Manor1)
 "cG" = (/obj/structure/toilet{icon_state = "toilet00"; dir = 8},/turf/simulated/floor/tiled/hydro,/area/submap/Manor1)
 "cH" = (/obj/machinery/shower{icon_state = "shower"; dir = 8},/obj/structure/curtain/open/shower,/turf/simulated/floor/tiled/hydro,/area/submap/Manor1)
-"cI" = (/obj/item/stack/material/wood,/turf/simulated/floor/holofloor/wood,/area/submap/Manor1)
+"cI" = (/obj/item/stack/legacy_material/wood,/turf/simulated/floor/holofloor/wood,/area/submap/Manor1)
 "cJ" = (/obj/machinery/shower{icon_state = "shower"; dir = 8},/obj/structure/curtain/open/shower,/obj/random/soap,/turf/simulated/floor/tiled/hydro,/area/submap/Manor1)
 "cK" = (/obj/structure/table/standard,/turf/simulated/floor/tiled/hydro,/area/submap/Manor1)
 "cL" = (/obj/structure/toilet{icon_state = "toilet00"; dir = 1},/turf/simulated/floor/tiled/hydro,/area/submap/Manor1)

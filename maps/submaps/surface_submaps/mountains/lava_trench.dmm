@@ -100,7 +100,7 @@
 "bX" = (/obj/effect/floor_decal/corner_oldtile/purple/full{icon_state = "corner_oldtile_full"; dir = 4},/obj/item/weapon/storage/box/samplebags,/obj/structure/table/steel,/obj/item/stack/flag/red,/turf/simulated/floor/tiled/old_tile,/area/submap/lava_trench/outpost)
 "bY" = (/obj/machinery/crystal,/turf/simulated/floor/tiled/asteroid_steel,/area/submap/lava_trench)
 "bZ" = (/obj/structure/table/steel,/obj/item/weapon/stock_parts/subspace/crystal,/turf/simulated/floor/tiled/asteroid_steel,/area/submap/lava_trench)
-"ca" = (/obj/structure/table/steel,/obj/item/stack/material/diamond,/turf/simulated/floor/tiled/asteroid_steel,/area/submap/lava_trench)
+"ca" = (/obj/structure/table/steel,/obj/item/stack/legacy_material/diamond,/turf/simulated/floor/tiled/asteroid_steel,/area/submap/lava_trench)
 "cb" = (/obj/structure/loot_pile/surface/bones,/turf/simulated/floor/tiled/old_tile,/area/submap/lava_trench/outpost)
 "ce" = (/obj/effect/floor_decal/corner_oldtile/blue/full,/obj/structure/table/standard,/turf/simulated/floor/tiled/old_tile,/area/submap/lava_trench/outpost)
 "ch" = (/obj/structure/loot_pile/maint/trash,/turf/simulated/floor/outdoors/rocks/caves,/area/submap/lava_trench)

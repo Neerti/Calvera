@@ -17,7 +17,7 @@
 	var/image/reagent_layer		// Holds the image used for showing a contained beaker.
 	var/energy = 0				// How many 'energy' units does this have? Acquired by a Particle Accelerator like a Singularity.
 	var/max_energy = 600
-	var/obj/item/stack/material/target	// The material being bombarded.
+	var/obj/item/stack/legacy_material/target	// The material being bombarded.
 	var/obj/item/weapon/reagent_containers/reagent_container		// Holds the beaker. The process will consume ALL reagents inside it.
 	var/beaker_type = /obj/item/weapon/reagent_containers/glass/beaker
 	var/list/storage		// Holds references to items allowed to be used in the fabrication phase.
@@ -49,8 +49,8 @@
 /obj/machinery/particle_smasher/attackby(obj/item/W as obj, mob/user as mob)
 	if(W.type == /obj/item/device/analyzer)
 		return
-	else if(istype(W, /obj/item/stack/material))
-		var/obj/item/stack/material/M = W
+	else if(istype(W, /obj/item/stack/legacy_material))
+		var/obj/item/stack/legacy_material/M = W
 		if(M.uses_charge)
 			to_chat(user, "<span class='notice'>You cannot fill \the [src] with a synthesizer!</span>")
 			return
@@ -234,7 +234,7 @@
 					break
 
 	var/result = recipe.result
-	var/obj/item/stack/material/M = new result(src)
+	var/obj/item/stack/legacy_material/M = new result(src)
 	target = M
 	update_icon()
 
@@ -267,8 +267,8 @@
 	var/list/reagents	// example: = list("pacid" = 5)
 	var/list/items		// example: = list(/obj/item/weapon/tool/crowbar, /obj/item/weapon/welder) Place /foo/bar before /foo. Do not include fruit. Maximum of 3 items.
 
-	var/result = /obj/item/stack/material/iron		// The sheet this will produce.
-	var/required_material = /obj/item/stack/material/iron	// The required material sheet.
+	var/result = /obj/item/stack/legacy_material/iron		// The sheet this will produce.
+	var/required_material = /obj/item/stack/legacy_material/iron	// The required material sheet.
 	var/required_energy_min = 0			// The minimum energy this recipe can process at.
 	var/required_energy_max = 600		// The maximum energy this recipe can process at.
 	var/required_atmos_temp_min = 0		// The minimum ambient atmospheric temperature required, in kelvin.
@@ -314,8 +314,8 @@
 /datum/particle_smasher_recipe/deuterium_tritium
 	reagents = list("hydrogen" = 15)
 
-	result = /obj/item/stack/material/tritium
-	required_material = /obj/item/stack/material/deuterium
+	result = /obj/item/stack/legacy_material/tritium
+	required_material = /obj/item/stack/legacy_material/deuterium
 
 	required_energy_min = 200
 	required_energy_max = 400
@@ -324,8 +324,8 @@
 	probability = 30
 
 /datum/particle_smasher_recipe/verdantium_morphium
-	result = /obj/item/stack/material/morphium
-	required_material = /obj/item/stack/material/verdantium
+	result = /obj/item/stack/legacy_material/morphium
+	required_material = /obj/item/stack/legacy_material/verdantium
 
 	required_energy_min = 400
 	required_energy_max = 500
@@ -334,8 +334,8 @@
 /datum/particle_smasher_recipe/plasteel_morphium
 	items = list(/obj/item/prop/alien/junk)
 
-	result = /obj/item/stack/material/morphium
-	required_material = /obj/item/stack/material/plasteel
+	result = /obj/item/stack/legacy_material/morphium
+	required_material = /obj/item/stack/legacy_material/plasteel
 
 	required_energy_min = 100
 	required_energy_max = 300
@@ -344,8 +344,8 @@
 /datum/particle_smasher_recipe/osmium_lead
 	reagents = list("tungsten" = 10)
 
-	result = /obj/item/stack/material/lead
-	required_material = /obj/item/stack/material/osmium
+	result = /obj/item/stack/legacy_material/lead
+	required_material = /obj/item/stack/legacy_material/osmium
 
 	required_energy_min = 200
 	required_energy_max = 400
@@ -357,8 +357,8 @@
 /datum/particle_smasher_recipe/phoron_valhollide
 	reagents = list("phoron" = 10, "pacid" = 10)
 
-	result = /obj/item/stack/material/valhollide
-	required_material = /obj/item/stack/material/phoron
+	result = /obj/item/stack/legacy_material/valhollide
+	required_material = /obj/item/stack/legacy_material/phoron
 
 	required_energy_min = 300
 	required_energy_max = 500
@@ -370,8 +370,8 @@
 /datum/particle_smasher_recipe/valhollide_supermatter
 	reagents = list("phoron" = 300)
 
-	result = /obj/item/stack/material/supermatter
-	required_material = /obj/item/stack/material/valhollide
+	result = /obj/item/stack/legacy_material/supermatter
+	required_material = /obj/item/stack/legacy_material/valhollide
 
 	required_energy_min = 575
 	required_energy_max = 600

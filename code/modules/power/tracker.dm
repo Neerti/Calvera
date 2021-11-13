@@ -11,7 +11,7 @@
 	anchored = 1
 	density = 1
 	use_power = USE_POWER_OFF
-	var/glass_type = /obj/item/stack/material/glass
+	var/glass_type = /obj/item/stack/legacy_material/glass
 
 	var/id = 0
 	var/sun_angle = 0		// sun angle as set by sun datum

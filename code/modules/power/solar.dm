@@ -24,14 +24,14 @@ GLOBAL_LIST_EMPTY(solars_list)
 	var/ndir = SOUTH // target dir
 	var/turn_angle = 0
 	var/obj/machinery/power/solar_control/control = null
-	var/glass_type = /obj/item/stack/material/glass
+	var/glass_type = /obj/item/stack/legacy_material/glass
 
 /obj/machinery/power/solar/drain_power()
 	return -1
 
 /obj/machinery/power/solar/Initialize(mapload, glass_type)
 	. = ..()
-	if(glass_type == /obj/item/stack/material/glass/reinforced) //if the panel is in reinforced glass
+	if(glass_type == /obj/item/stack/legacy_material/glass/reinforced) //if the panel is in reinforced glass
 		health *= 2
 	update_icon()
 	connect_to_network()
@@ -225,8 +225,8 @@ GLOBAL_LIST_EMPTY(solars_list)
 			playsound(src, W.usesound, 75, 1)
 			return 1
 
-		if(istype(W, /obj/item/stack/material) && (W.get_material_name() == "glass" || W.get_material_name() == "rglass"))
-			var/obj/item/stack/material/S = W
+		if(istype(W, /obj/item/stack/legacy_material) && (W.get_material_name() == "glass" || W.get_material_name() == "rglass"))
+			var/obj/item/stack/legacy_material/S = W
 			if(S.use(2))
 				playsound(src, 'sound/machines/click.ogg', 50, 1)
 				user.visible_message("<span class='notice'>[user] places the glass on the solar assembly.</span>")

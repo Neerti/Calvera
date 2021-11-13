@@ -179,7 +179,7 @@
 		qdel(H)
 		spawn(50)
 			new /obj/item/honey_frame(loc)
-			new /obj/item/stack/material/wax(loc)
+			new /obj/item/stack/legacy_material/wax(loc)
 			honey += processing
 			processing = 0
 			icon_state = "centrifuge"
@@ -234,7 +234,7 @@
 		qdel(src)
 	return
 
-/obj/item/stack/material/wax
+/obj/item/stack/legacy_material/wax
 	name = "wax"
 	singular_name = "wax piece"
 	desc = "Soft substance produced by bees. Used to make candles."
@@ -244,13 +244,13 @@
 	pass_color = TRUE
 	strict_color_stacking = TRUE
 
-/obj/item/stack/material/wax/Initialize()
+/obj/item/stack/legacy_material/wax/Initialize()
 	. = ..()
 	recipes = wax_recipes
 
 /datum/legacy_material/wax
 	name = "wax"
-	stack_type = /obj/item/stack/material/wax
+	stack_type = /obj/item/stack/legacy_material/wax
 	icon_colour = "#fff343"
 	melting_point = T0C+300
 	weight = 1

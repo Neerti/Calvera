@@ -13,7 +13,7 @@
 	persistent = /datum/persistent/storage/smartfridge/sheet_storage/lossy
 
 /obj/machinery/smartfridge/sheets/accept_check(var/obj/item/O)
-	return istype(O, /obj/item/stack/material)
+	return istype(O, /obj/item/stack/legacy_material)
 
 /obj/machinery/smartfridge/sheets/vend(datum/stored_item/stack/I, var/count)
 	var/amount = I.get_amount()

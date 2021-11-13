@@ -34,9 +34,9 @@
 
 /datum/persistent/storage/smartfridge/sheet_storage/generate_items(var/list/L)
 	. = list()
-	for(var/obj/item/stack/material/S as anything in L)
+	for(var/obj/item/stack/legacy_material/S as anything in L)
 		var/real_path = istext(S) ? text2path(S) : S
-		if(!ispath(real_path, /obj/item/stack/material))
+		if(!ispath(real_path, /obj/item/stack/legacy_material))
 			log_debug("Warning: Sheet_storage persistent datum tried to create [S]")
 			continue
 
@@ -46,7 +46,7 @@
 
 		var/count = L[S]
 
-		var/obj/item/stack/material/inst = real_path
+		var/obj/item/stack/legacy_material/inst = real_path
 		var/max_amount = initial(inst.max_amount)
 
 		// Delete some stacks if we want

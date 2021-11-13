@@ -64,35 +64,35 @@
 
 		//Metal (common ore)
 		if(pickednum >= 2)
-			new /obj/item/stack/material/steel(src, rand(common_min, common_max))
+			new /obj/item/stack/legacy_material/steel(src, rand(common_min, common_max))
 
 		//Glass (common ore)
 		if(pickednum >= 5)
-			new /obj/item/stack/material/glass(src, rand(common_min, common_max))
+			new /obj/item/stack/legacy_material/glass(src, rand(common_min, common_max))
 
 		//Plasteel (common ore) Because it has a million more uses then phoron
 		if(pickednum >= 10)
-			new /obj/item/stack/material/plasteel(src, rand(common_min, common_max))
+			new /obj/item/stack/legacy_material/plasteel(src, rand(common_min, common_max))
 
 		//Phoron (rare ore)
 		if(pickednum >= 15)
-			new /obj/item/stack/material/phoron(src, rand(rare_min, rare_max))
+			new /obj/item/stack/legacy_material/phoron(src, rand(rare_min, rare_max))
 
 		//Silver (rare ore)
 		if(pickednum >= 20)
-			new /obj/item/stack/material/silver(src, rand(rare_min, rare_max))
+			new /obj/item/stack/legacy_material/silver(src, rand(rare_min, rare_max))
 
 		//Gold (rare ore)
 		if(pickednum >= 30)
-			new /obj/item/stack/material/gold(src, rand(rare_min, rare_max))
+			new /obj/item/stack/legacy_material/gold(src, rand(rare_min, rare_max))
 
 		//Uranium (rare ore)
 		if(pickednum >= 40)
-			new /obj/item/stack/material/uranium(src, rand(rare_min, rare_max))
+			new /obj/item/stack/legacy_material/uranium(src, rand(rare_min, rare_max))
 
 		//Diamond (rare HONK)
 		if(pickednum >= 45)
-			new /obj/item/stack/material/diamond(src, rand(rare_min, rare_max))
+			new /obj/item/stack/legacy_material/diamond(src, rand(rare_min, rare_max))
 
 		//Jetpack (You hit the jackpot!)
 		if(pickednum == 50)
@@ -103,14 +103,14 @@
 
 /obj/structure/closet/syndicate/resources/everything/Initialize()
 	var/list/resources = list(
-		/obj/item/stack/material/steel,
-		/obj/item/stack/material/glass,
-		/obj/item/stack/material/gold,
-		/obj/item/stack/material/silver,
-		/obj/item/stack/material/phoron,
-		/obj/item/stack/material/uranium,
-		/obj/item/stack/material/diamond,
-		/obj/item/stack/material/plasteel,
+		/obj/item/stack/legacy_material/steel,
+		/obj/item/stack/legacy_material/glass,
+		/obj/item/stack/legacy_material/gold,
+		/obj/item/stack/legacy_material/silver,
+		/obj/item/stack/legacy_material/phoron,
+		/obj/item/stack/legacy_material/uranium,
+		/obj/item/stack/legacy_material/diamond,
+		/obj/item/stack/legacy_material/plasteel,
 		/obj/item/stack/rods
 	)
 

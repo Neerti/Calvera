@@ -378,7 +378,7 @@
 					!istype(O, /obj/item/weapon/grown) && \
 					!istype(O, /obj/item/slime_extract) && \
 					!istype(O, /obj/item/organ) && \
-					!istype(O, /obj/item/stack/material) \
+					!istype(O, /obj/item/stack/legacy_material) \
 				)
 				return 1
 		return 0

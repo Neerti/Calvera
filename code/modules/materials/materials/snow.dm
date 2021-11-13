@@ -1,6 +1,6 @@
 /datum/legacy_material/snow
 	name = MAT_SNOW
-	stack_type = /obj/item/stack/material/snow
+	stack_type = /obj/item/stack/legacy_material/snow
 	flags = MATERIAL_BRITTLE
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
@@ -19,7 +19,7 @@
 /datum/legacy_material/snow/generate_recipes()
 	recipes = list(
 		new /datum/stack_recipe("snowball", /obj/item/weapon/material/snow/snowball, 1, time = 10, recycle_material = "[name]"),
-		new /datum/stack_recipe("snow brick", /obj/item/stack/material/snowbrick, 2, time = 10, recycle_material = "[name]"),
+		new /datum/stack_recipe("snow brick", /obj/item/stack/legacy_material/snowbrick, 2, time = 10, recycle_material = "[name]"),
 		new /datum/stack_recipe("snowman", /obj/structure/snowman, 2, time = 15, recycle_material = "[name]"),
 		new /datum/stack_recipe("snow robot", /obj/structure/snowman/borg, 2, time = 10, recycle_material = "[name]"),
 		new /datum/stack_recipe("snow spider", /obj/structure/snowman/spider, 3, time = 20, recycle_material = "[name]")
@@ -28,7 +28,7 @@
 /datum/legacy_material/snowbrick //only slightly stronger than snow, used to make igloos mostly
 	name = "packed snow"
 	flags = MATERIAL_BRITTLE
-	stack_type = /obj/item/stack/material/snowbrick
+	stack_type = /obj/item/stack/legacy_material/snowbrick
 	icon_base = "stone"
 	icon_reinf = "reinf_stone"
 	icon_colour = "#D8FDFF"

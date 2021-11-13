@@ -8,7 +8,7 @@
 		turf/simulated/wall
 		obj/item/weapon/material
 		obj/structure/barricade
-		obj/item/stack/material
+		obj/item/stack/legacy_material
 		obj/structure/table
 
 	VALID ICONS

@@ -558,7 +558,7 @@
 	result = null
 	required_reagents = list("frostoil" = 5, "iron" = REAGENTS_PER_SHEET)
 	result_amount = 1
-	var/sheet_to_give = /obj/item/stack/material/iron
+	var/sheet_to_give = /obj/item/stack/legacy_material/iron
 
 /decl/chemical_reaction/instant/solidification/on_reaction(var/datum/reagents/holder, var/created_volume)
 	new sheet_to_give(get_turf(holder.my_atom), created_volume)
@@ -569,42 +569,42 @@
 	name = "Solid Phoron"
 	id = "solidphoron"
 	required_reagents = list("frostoil" = 5, "phoron" = REAGENTS_PER_SHEET)
-	sheet_to_give = /obj/item/stack/material/phoron
+	sheet_to_give = /obj/item/stack/legacy_material/phoron
 
 
 /decl/chemical_reaction/instant/solidification/silver
 	name = "Solid Silver"
 	id = "solidsilver"
 	required_reagents = list("frostoil" = 5, "silver" = REAGENTS_PER_SHEET)
-	sheet_to_give = /obj/item/stack/material/silver
+	sheet_to_give = /obj/item/stack/legacy_material/silver
 
 
 /decl/chemical_reaction/instant/solidification/gold
 	name = "Solid Gold"
 	id = "solidgold"
 	required_reagents = list("frostoil" = 5, "gold" = REAGENTS_PER_SHEET)
-	sheet_to_give = /obj/item/stack/material/gold
+	sheet_to_give = /obj/item/stack/legacy_material/gold
 
 
 /decl/chemical_reaction/instant/solidification/platinum
 	name = "Solid Platinum"
 	id = "solidplatinum"
 	required_reagents = list("frostoil" = 5, "platinum" = REAGENTS_PER_SHEET)
-	sheet_to_give = /obj/item/stack/material/platinum
+	sheet_to_give = /obj/item/stack/legacy_material/platinum
 
 
 /decl/chemical_reaction/instant/solidification/uranium
 	name = "Solid Uranium"
 	id = "soliduranium"
 	required_reagents = list("frostoil" = 5, "uranium" = REAGENTS_PER_SHEET)
-	sheet_to_give = /obj/item/stack/material/uranium
+	sheet_to_give = /obj/item/stack/legacy_material/uranium
 
 
 /decl/chemical_reaction/instant/solidification/hydrogen
 	name = "Solid Hydrogen"
 	id = "solidhydrogen"
 	required_reagents = list("frostoil" = 100, "hydrogen" = REAGENTS_PER_SHEET)
-	sheet_to_give = /obj/item/stack/material/mhydrogen
+	sheet_to_give = /obj/item/stack/legacy_material/mhydrogen
 
 
 // These are from Xenobio.
@@ -612,14 +612,14 @@
 	name = "Solid Steel"
 	id = "solidsteel"
 	required_reagents = list("frostoil" = 5, "steel" = REAGENTS_PER_SHEET)
-	sheet_to_give = /obj/item/stack/material/steel
+	sheet_to_give = /obj/item/stack/legacy_material/steel
 
 
 /decl/chemical_reaction/instant/solidification/plasteel
 	name = "Solid Plasteel"
 	id = "solidplasteel"
 	required_reagents = list("frostoil" = 10, "plasteel" = REAGENTS_PER_SHEET)
-	sheet_to_give = /obj/item/stack/material/plasteel
+	sheet_to_give = /obj/item/stack/legacy_material/plasteel
 
 
 /decl/chemical_reaction/instant/plastication
@@ -630,7 +630,7 @@
 	result_amount = 1
 
 /decl/chemical_reaction/instant/plastication/on_reaction(var/datum/reagents/holder, var/created_volume)
-	new /obj/item/stack/material/plastic(get_turf(holder.my_atom), created_volume)
+	new /obj/item/stack/legacy_material/plastic(get_turf(holder.my_atom), created_volume)
 	return
 
 /* Grenade reactions */

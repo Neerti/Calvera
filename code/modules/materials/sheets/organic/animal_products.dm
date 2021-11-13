@@ -1,4 +1,4 @@
-/obj/item/stack/material/chitin
+/obj/item/stack/legacy_material/chitin
 	name = "chitin"
 	desc = "The by-product of mob grinding."
 	icon_state = "chitin"

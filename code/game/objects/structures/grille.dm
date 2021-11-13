@@ -108,8 +108,8 @@
 			return
 
 	//window placing begin //TODO CONVERT PROPERLY TO MATERIAL DATUM
-	else if(istype(W,/obj/item/stack/material))
-		var/obj/item/stack/material/ST = W
+	else if(istype(W,/obj/item/stack/legacy_material))
+		var/obj/item/stack/legacy_material/ST = W
 		if(!ST.legacy_material.created_window)
 			return 0
 

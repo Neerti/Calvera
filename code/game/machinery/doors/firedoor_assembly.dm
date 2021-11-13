@@ -69,7 +69,7 @@ obj/structure/firedoor_assembly/attackby(obj/item/C, mob/user as mob)
 									"<span class='notice'>You start to weld the glass panel out of \the [src].</span>")
 				if(do_after(user, 40 * WT.toolspeed, src) && WT.isOn())
 					to_chat(user, "<span class='notice'>You welded the glass panel out!</span>")
-					new /obj/item/stack/material/glass/reinforced(drop_location())
+					new /obj/item/stack/legacy_material/glass/reinforced(drop_location())
 					glass = FALSE
 					update_icon()
 				return
@@ -78,12 +78,12 @@ obj/structure/firedoor_assembly/attackby(obj/item/C, mob/user as mob)
 				if(do_after(user, 40 * WT.toolspeed, src) && WT.isOn())
 					user.visible_message("<span class='warning'>[user] has dissassembled \the [src].</span>",
 										"You have dissassembled \the [src].")
-					new /obj/item/stack/material/steel(drop_location(), 2)
+					new /obj/item/stack/legacy_material/steel(drop_location(), 2)
 					qdel(src)
 				return
 		else
 			to_chat(user, "<span class='notice'>You need more welding fuel.</span>")
-	else if(istype(C, /obj/item/stack/material) && C.get_material_name() == "rglass" && !glass)
+	else if(istype(C, /obj/item/stack/legacy_material) && C.get_material_name() == "rglass" && !glass)
 		var/obj/item/stack/S = C
 		if (S.get_amount() >= 1)
 			playsound(src, 'sound/items/Crowbar.ogg', 100, 1)

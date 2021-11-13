@@ -294,7 +294,7 @@
 		if(cupholder)
 			playsound(src, I.usesound, 50, 1)
 			to_chat(user, "<span class='notice'>You take the cup dispenser off.</span>")
-			new /obj/item/stack/material/plastic( src.loc )
+			new /obj/item/stack/legacy_material/plastic( src.loc )
 			if(cups)
 				for(var/i = 0 to cups)
 					new /obj/item/weapon/reagent_containers/food/drinks/sillycup(src.loc)
@@ -307,7 +307,7 @@
 			to_chat(user, "<span class='notice'>You start taking the water-cooler apart.</span>")
 			if(do_after(user, 20 * I.toolspeed) && !bottle && !cupholder)
 				to_chat(user, "<span class='notice'>You take the water-cooler apart.</span>")
-				new /obj/item/stack/material/plastic( src.loc, 4 )
+				new /obj/item/stack/legacy_material/plastic( src.loc, 4 )
 				qdel(src)
 		return
 
@@ -331,10 +331,10 @@
 			to_chat(user, "<span class='warning'>There is already a bottle there!</span>")
 		return 1
 
-	if(istype(I, /obj/item/stack/material/plastic))
+	if(istype(I, /obj/item/stack/legacy_material/plastic))
 		if(!cupholder)
 			if(anchored)
-				var/obj/item/stack/material/plastic/P = I
+				var/obj/item/stack/legacy_material/plastic/P = I
 				src.add_fingerprint(user)
 				to_chat(user, "<span class='notice'>You start to attach a cup dispenser onto the water-cooler.</span>")
 				playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)

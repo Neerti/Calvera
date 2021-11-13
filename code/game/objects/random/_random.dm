@@ -52,7 +52,7 @@ var/list/random_useful_
 		random_useful_ += /obj/item/weapon/pen/red
 		random_useful_ += /obj/item/weapon/pen/multi
 		random_useful_ += /obj/item/weapon/storage/box/matches
-		random_useful_ += /obj/item/stack/material/cardboard
+		random_useful_ += /obj/item/stack/legacy_material/cardboard
 	return pick(random_useful_)
 
 /proc/get_random_junk_type()

@@ -2,7 +2,7 @@
 /decl/material/solid
 	// Filler values.
 	high_energy_transition_temperature = 1000
-	//default_solid_form = /obj/item/stack/material2/brick
+	//default_solid_form = /obj/item/stack/legacy_material2/brick
 
 /*
 /decl/material/solid
@@ -13,6 +13,6 @@
 	icon_base = 'icons/turf/walls/stone.dmi'
 	table_icon_base = "stone"
 	icon_reinf = 'icons/turf/walls/reinforced_stone.dmi'
-	default_solid_form = /obj/item/stack/material/brick
+	default_solid_form = /obj/item/stack/legacy_material/brick
 */
 

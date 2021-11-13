@@ -370,7 +370,7 @@
 		var/datum/legacy_material/M = get_material_by_name(mat)
 		if(!istype(M))
 			continue
-		var/obj/item/stack/material/S = new M.stack_type(get_turf(src))
+		var/obj/item/stack/legacy_material/S = new M.stack_type(get_turf(src))
 		if(stored_material[mat] > S.perunit)
 			S.amount = round(stored_material[mat] / S.perunit)
 		else

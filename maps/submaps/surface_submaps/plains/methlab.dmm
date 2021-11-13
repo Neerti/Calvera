@@ -112,7 +112,7 @@
 "Wp" = (/obj/structure/loot_pile/maint/trash,/turf/template_noop,/area/submap/methlab)
 "Xi" = (/turf/simulated/wall,/area/submap/methlab)
 "Xo" = (/obj/effect/floor_decal/rust,/obj/random/maintenance/engineering,/turf/simulated/floor/tiled/old_tile/green,/area/submap/methlab)
-"Xr" = (/obj/item/stack/material/phoron{amount = 5},/obj/item/stack/material/phoron{amount = 5},/obj/item/weapon/extinguisher,/obj/item/weapon/storage/box/lights/mixed,/turf/simulated/floor,/area/submap/methlab)
+"Xr" = (/obj/item/stack/legacy_material/phoron{amount = 5},/obj/item/stack/legacy_material/phoron{amount = 5},/obj/item/weapon/extinguisher,/obj/item/weapon/storage/box/lights/mixed,/turf/simulated/floor,/area/submap/methlab)
 "Yz" = (/obj/machinery/portable_atmospherics/hydroponics,/obj/item/seeds/ambrosiavulgarisseed,/obj/effect/floor_decal/industrial/hatch/yellow,/turf/simulated/floor/tiled/old_tile/white,/area/submap/methlab)
 "Zp" = (/obj/structure/grille/rustic,/obj/item/weapon/material/shard{pixel_x = 5; pixel_y = 3},/turf/simulated/floor/tiled/old_tile/green,/area/submap/methlab)
 "Zt" = (/obj/structure/salvageable/autolathe,/obj/effect/floor_decal/rust/color_rustedfull,/turf/simulated/floor/tiled/steel_dirty,/area/submap/methlab)

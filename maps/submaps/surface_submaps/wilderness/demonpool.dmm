@@ -134,7 +134,7 @@
 "jt" = (
 /obj/structure/loot_pile/surface/bones,
 /obj/item/clothing/head/culthood/alt,
-/obj/item/stack/material/silver{
+/obj/item/stack/legacy_material/silver{
 	amount = 15
 	},
 /turf/simulated/floor/cult,

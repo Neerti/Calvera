@@ -51,7 +51,7 @@ var/global/list/datum/stack_recipe/rods_recipes = list( \
 			return
 
 		if(WT.remove_fuel(0,user))
-			var/obj/item/stack/material/steel/new_item = new(usr.loc)
+			var/obj/item/stack/legacy_material/steel/new_item = new(usr.loc)
 			new_item.add_to_stacks(usr)
 			for (var/mob/M in viewers(src))
 				M.show_message("<span class='notice'>[src] is shaped into metal by [user.name] with the weldingtool.</span>", 3, "<span class='notice'>You hear welding.</span>", 2)

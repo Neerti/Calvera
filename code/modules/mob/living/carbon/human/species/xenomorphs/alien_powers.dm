@@ -252,7 +252,7 @@
 		if("resin nest")
 			O = new /obj/structure/bed/nest(loc)
 		if("resin blob")
-			O = new /obj/item/stack/material/resin(loc)
+			O = new /obj/item/stack/legacy_material/resin(loc)
 
 	if(O)
 		O.color = "#321D37"

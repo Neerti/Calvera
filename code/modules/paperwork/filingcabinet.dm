@@ -48,7 +48,7 @@
 		if(do_after(user, 10 * P.toolspeed))
 			playsound(src, P.usesound, 50, 1)
 			to_chat(user, "<span class='notice'>You take the [name] apart.</span>")
-			new /obj/item/stack/material/steel( src.loc, 4 )
+			new /obj/item/stack/legacy_material/steel( src.loc, 4 )
 			for(var/obj/item/I in contents)
 				I.forceMove(loc)
 			qdel(src)

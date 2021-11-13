@@ -283,8 +283,8 @@
 		user.drop_from_inventory(src)
 		qdel(src)
 		return
-	else if(istype(D, /obj/item/stack/material) && D.get_material_name() == DEFAULT_WALL_MATERIAL)
-		var/obj/item/stack/material/M = D
+	else if(istype(D, /obj/item/stack/legacy_material) && D.get_material_name() == DEFAULT_WALL_MATERIAL)
+		var/obj/item/stack/legacy_material/M = D
 		if (M.use(1))
 			var/obj/item/weapon/secbot_assembly/edCLN_assembly/B = new /obj/item/weapon/secbot_assembly/edCLN_assembly
 			B.loc = get_turf(src)

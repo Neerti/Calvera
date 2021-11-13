@@ -2,7 +2,7 @@
 /datum/legacy_material/supermatter
 	name = "supermatter"
 	icon_colour = "#FFFF00"
-	stack_type = /obj/item/stack/material/supermatter
+	stack_type = /obj/item/stack/legacy_material/supermatter
 	shard_type = SHARD_SHARD
 	radioactivity = 20
 	stack_type = null

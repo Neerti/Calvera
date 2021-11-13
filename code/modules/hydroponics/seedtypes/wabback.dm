@@ -7,7 +7,7 @@
 	chems = list("nutriment" = list(1,10), "protein" = list(1,5), "enzyme" = list(0,3))
 	kitchen_tag = "wabback"
 	mutants = list("blackwabback","wildwabback")
-	has_item_product = /obj/item/stack/material/cloth
+	has_item_product = /obj/item/stack/legacy_material/cloth
 
 /datum/seed/wabback/New()
 	..()

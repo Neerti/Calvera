@@ -1,6 +1,6 @@
 // Stacked resources. They use a material datum for a lot of inherited values.
 // If you're adding something here, make sure to add it to fifty_spawner_mats.dm as well
-/obj/item/stack/material
+/obj/item/stack/legacy_material
 	force = 5.0
 	throwforce = 5
 	w_class = ITEMSIZE_NORMAL
@@ -20,7 +20,7 @@
 	drop_sound = 'sound/items/drop/axe.ogg'
 	pickup_sound = 'sound/items/pickup/axe.ogg'
 
-/obj/item/stack/material/Initialize()
+/obj/item/stack/legacy_material/Initialize()
 	. = ..()
 
 	randpixel_xy()
@@ -45,10 +45,10 @@
 	matter = legacy_material.get_matter()
 	update_strings()
 
-/obj/item/stack/material/get_material()
+/obj/item/stack/legacy_material/get_material()
 	return legacy_material
 
-/obj/item/stack/material/proc/update_strings()
+/obj/item/stack/legacy_material/proc/update_strings()
 	// Update from material datum.
 	singular_name = legacy_material.sheet_singular_name
 
@@ -61,13 +61,13 @@
 		desc = "A [legacy_material.sheet_singular_name] of [legacy_material.use_name]."
 		gender = NEUTER
 
-/obj/item/stack/material/use(var/used)
+/obj/item/stack/legacy_material/use(var/used)
 	. = ..()
 	update_strings()
 	return
 
-/obj/item/stack/material/transfer_to(obj/item/stack/S, var/tamount=null, var/type_verified)
-	var/obj/item/stack/material/M = S
+/obj/item/stack/legacy_material/transfer_to(obj/item/stack/S, var/tamount=null, var/type_verified)
+	var/obj/item/stack/legacy_material/M = S
 	if(!istype(M) || legacy_material.name != M.legacy_material.name)
 		return 0
 	var/transfer = ..(S,tamount,1)
@@ -75,11 +75,11 @@
 	if(M) M.update_strings()
 	return transfer
 
-/obj/item/stack/material/attack_self(var/mob/user)
+/obj/item/stack/legacy_material/attack_self(var/mob/user)
 	if(!legacy_material.build_windows(user, src))
 		..()
 
-/obj/item/stack/material/attackby(var/obj/item/W, var/mob/user)
+/obj/item/stack/legacy_material/attackby(var/obj/item/W, var/mob/user)
 	if(istype(W,/obj/item/stack/cable_coil))
 		legacy_material.build_wired_product(user, W, src)
 		return

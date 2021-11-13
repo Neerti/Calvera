@@ -66,7 +66,7 @@
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
-		/obj/item/stack/material/glass{amount = 5} = 90,
+		/obj/item/stack/legacy_material/glass{amount = 5} = 90,
 		/obj/item/trash/material/circuit = 60,
 		/obj/item/trash/material/metal = 60,
 		/obj/item/weapon/stock_parts/capacitor = 60,
@@ -107,13 +107,13 @@ obj/structure/salvageable/computer/Initialize()
 		/obj/item/weapon/stock_parts/micro_laser/high = 20,
 		/obj/item/weapon/stock_parts/matter_bin/adv = 20,
 		/obj/item/weapon/stock_parts/matter_bin/adv = 20,
-		/obj/item/stack/material/steel{amount = 20} = 40,
-		/obj/item/stack/material/glass{amount = 20} = 40,
-		/obj/item/stack/material/plastic{amount = 20} = 40,
-		/obj/item/stack/material/plasteel{amount = 10} = 40,
-		/obj/item/stack/material/silver{amount = 10} = 20,
-		/obj/item/stack/material/gold{amount = 10} = 20,
-		/obj/item/stack/material/phoron{amount = 10} = 20
+		/obj/item/stack/legacy_material/steel{amount = 20} = 40,
+		/obj/item/stack/legacy_material/glass{amount = 20} = 40,
+		/obj/item/stack/legacy_material/plastic{amount = 20} = 40,
+		/obj/item/stack/legacy_material/plasteel{amount = 10} = 40,
+		/obj/item/stack/legacy_material/silver{amount = 10} = 20,
+		/obj/item/stack/legacy_material/gold{amount = 10} = 20,
+		/obj/item/stack/legacy_material/phoron{amount = 10} = 20
 	)
 
 /obj/structure/salvageable/implant_container
@@ -131,9 +131,9 @@ obj/structure/salvageable/computer/Initialize()
 		/obj/item/weapon/implant/chem = 10,
 		/obj/item/weapon/implantcase = 30,
 		/obj/item/weapon/implanter = 30,
-		/obj/item/stack/material/steel{amount = 10} = 30,
-		/obj/item/stack/material/glass{amount = 10} = 30,
-		/obj/item/stack/material/silver{amount = 10} = 30
+		/obj/item/stack/legacy_material/steel{amount = 10} = 30,
+		/obj/item/stack/legacy_material/glass{amount = 10} = 30,
+		/obj/item/stack/legacy_material/silver{amount = 10} = 30
 	)
 
 obj/structure/salvageable/implant_container/Initialize()
@@ -146,7 +146,7 @@ obj/structure/salvageable/implant_container/Initialize()
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
-		/obj/item/stack/material/glass{amount = 5} = 90,
+		/obj/item/stack/legacy_material/glass{amount = 5} = 90,
 		/obj/item/trash/material/circuit = 60,
 		/obj/item/trash/material/metal = 60,
 		/obj/item/weapon/computer_hardware/network_card = 40,
@@ -174,7 +174,7 @@ obj/structure/salvageable/data/Initialize()
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
-		/obj/item/stack/material/glass{amount = 5} = 90,
+		/obj/item/stack/legacy_material/glass{amount = 5} = 90,
 		/obj/item/trash/material/circuit = 60,
 		/obj/item/trash/material/metal = 60,
 		/obj/item/weapon/computer_hardware/network_card = 40,
@@ -204,7 +204,7 @@ obj/structure/salvageable/server/Initialize()
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 90,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
-		/obj/item/stack/material/glass{amount = 5} = 70,
+		/obj/item/stack/legacy_material/glass{amount = 5} = 70,
 		/obj/item/trash/material/circuit = 60,
 		/obj/item/trash/material/metal = 60,
 		/obj/item/weapon/computer_hardware/network_card = 60,
@@ -270,7 +270,7 @@ obj/structure/salvageable/bliss/Initialize()
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
-		/obj/item/stack/material/glass{amount = 5} = 90,
+		/obj/item/stack/legacy_material/glass{amount = 5} = 90,
 		/obj/item/weapon/stock_parts/capacitor = 60,
 		/obj/item/weapon/stock_parts/capacitor = 60,
 		/obj/item/weapon/computer_hardware/processor_unit/photonic = 40,
@@ -301,7 +301,7 @@ obj/structure/salvageable/bliss/Initialize()
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 90,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
-		/obj/item/stack/material/glass{amount = 5} = 90,
+		/obj/item/stack/legacy_material/glass{amount = 5} = 90,
 		/obj/item/weapon/computer_hardware/processor_unit/small = 60,
 		/obj/item/weapon/computer_hardware/processor_unit/photonic = 50,
 		/obj/item/weapon/computer_hardware/hard_drive/super = 50,
@@ -316,7 +316,7 @@ obj/structure/salvageable/bliss/Initialize()
 	salvageable_parts = list(
 		/obj/item/weapon/stock_parts/console_screen = 80,
 		/obj/item/stack/cable_coil{amount = 5} = 90,
-		/obj/item/stack/material/glass{amount = 5} = 90,
+		/obj/item/stack/legacy_material/glass{amount = 5} = 90,
 		/obj/item/weapon/computer_hardware/network_card/wired = 40,
 		/obj/item/weapon/computer_hardware/network_card/wired = 40,
 		/obj/item/weapon/computer_hardware/processor_unit = 40,

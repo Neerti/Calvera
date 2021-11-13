@@ -10,7 +10,7 @@
 	value = 1.5
 	high_energy_transition_temperature = T0C+300
 //	high_energy_transition_material = /decl/material/solid/charcoal
-//	default_solid_form = /obj/item/stack/material/plank
+//	default_solid_form = /obj/item/stack/legacy_material/plank
 
 /*
 /decl/material/solid/wood
@@ -52,7 +52,7 @@
 	reflectiveness = MAT_VALUE_DULL
 	wall_support_value = MAT_VALUE_NORMAL
 	fuel_value = 0.8
-	default_solid_form = /obj/item/stack/material/plank
+	default_solid_form = /obj/item/stack/legacy_material/plank
 */
 
 /decl/material/solid/wood/mahogany

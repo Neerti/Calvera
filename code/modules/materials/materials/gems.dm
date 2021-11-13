@@ -1,6 +1,6 @@
 /datum/legacy_material/phoron
 	name = "phoron"
-	stack_type = /obj/item/stack/material/phoron
+	stack_type = /obj/item/stack/legacy_material/phoron
 	ignition_point = PHORON_MINIMUM_BURN_TEMPERATURE
 	icon_base = "stone"
 	icon_colour = "#FC2BC5"
@@ -31,7 +31,7 @@
 
 /datum/legacy_material/diamond
 	name = "diamond"
-	stack_type = /obj/item/stack/material/diamond
+	stack_type = /obj/item/stack/legacy_material/diamond
 	flags = MATERIAL_UNMELTABLE
 	cut_delay = 60
 	icon_colour = "#00FFE1"
@@ -50,7 +50,7 @@
 	display_name = "quartz"
 	use_name = "quartz"
 	icon_colour = "#e6d7df"
-	stack_type = /obj/item/stack/material/quartz
+	stack_type = /obj/item/stack/legacy_material/quartz
 	tableslam_noise = 'sound/effects/Glasshit.ogg'
 	sheet_singular_name = "crystal"
 	sheet_plural_name = "crystals"
@@ -61,7 +61,7 @@
 	display_name = "painite"
 	use_name = "painite"
 	icon_colour = "#6b4947"
-	stack_type = /obj/item/stack/material/painite
+	stack_type = /obj/item/stack/legacy_material/painite
 	flags = MATERIAL_UNMELTABLE
 	reflectivity = 0.3
 	tableslam_noise = 'sound/effects/Glasshit.ogg'
@@ -74,7 +74,7 @@
 	display_name = "void opal"
 	use_name = "void opal"
 	icon_colour = "#0f0f0f"
-	stack_type = /obj/item/stack/material/void_opal
+	stack_type = /obj/item/stack/legacy_material/void_opal
 	flags = MATERIAL_UNMELTABLE
 	cut_delay = 60
 	reflectivity = 0
@@ -90,7 +90,7 @@
 // Particle Smasher and other exotic materials.
 /datum/legacy_material/valhollide
 	name = MAT_VALHOLLIDE
-	stack_type = /obj/item/stack/material/valhollide
+	stack_type = /obj/item/stack/legacy_material/valhollide
 	icon_base = "stone"
 	door_icon_base = "stone"
 	icon_reinf = "reinf_mesh"
@@ -111,7 +111,7 @@
 
 /datum/legacy_material/verdantium
 	name = MAT_VERDANTIUM
-	stack_type = /obj/item/stack/material/verdantium
+	stack_type = /obj/item/stack/legacy_material/verdantium
 	icon_base = "metal"
 	door_icon_base = "metal"
 	icon_reinf = "reinf_metal"
@@ -132,7 +132,7 @@
 
 /datum/legacy_material/morphium
 	name = MAT_MORPHIUM
-	stack_type = /obj/item/stack/material/morphium
+	stack_type = /obj/item/stack/legacy_material/morphium
 	icon_base = "metal"
 	door_icon_base = "metal"
 	icon_colour = "#37115A"

@@ -71,7 +71,7 @@
 /obj/structure/noticeboard/proc/dismantle()
 	for(var/thing in notices)
 		remove_paper(thing, skip_icon_update = TRUE)
-	new /obj/item/stack/material/wood(get_turf(src))
+	new /obj/item/stack/legacy_material/wood(get_turf(src))
 	qdel(src)
 
 /obj/structure/noticeboard/Destroy()

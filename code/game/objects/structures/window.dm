@@ -293,7 +293,7 @@
 		else
 			playsound(src, W.usesound, 75, 1)
 			visible_message("<span class='notice'>[user] dismantles \the [src].</span>")
-			var/obj/item/stack/material/mats = new glasstype(loc)
+			var/obj/item/stack/legacy_material/mats = new glasstype(loc)
 			if(is_fulltile())
 				mats.amount = 4
 			qdel(src)
@@ -493,7 +493,7 @@
 	desc = "It looks thin and flimsy. A few knocks with... almost anything, really should shatter it."
 	icon_state = "window"
 	basestate = "window"
-	glasstype = /obj/item/stack/material/glass
+	glasstype = /obj/item/stack/legacy_material/glass
 	maximal_heat = T0C + 100
 	damage_per_fire_tick = 2.0
 	maxhealth = 12.0
@@ -510,7 +510,7 @@
 	basestate = "phoronwindow"
 	icon_state = "phoronwindow"
 	shardtype = /obj/item/weapon/material/shard/phoron
-	glasstype = /obj/item/stack/material/glass/phoronglass
+	glasstype = /obj/item/stack/legacy_material/glass/phoronglass
 	maximal_heat = T0C + 2000
 	damage_per_fire_tick = 1.0
 	maxhealth = 40.0
@@ -527,7 +527,7 @@
 	basestate = "phoronrwindow"
 	icon_state = "phoronrwindow"
 	shardtype = /obj/item/weapon/material/shard/phoron
-	glasstype = /obj/item/stack/material/glass/phoronrglass
+	glasstype = /obj/item/stack/legacy_material/glass/phoronrglass
 	reinf = 1
 	maximal_heat = T0C + 4000
 	damage_per_fire_tick = 1.0 // This should last for 80 fire ticks if the window is not damaged at all. The idea is that borosilicate windows have something like ablative layer that protects them for a while.
@@ -548,7 +548,7 @@
 	reinf = 1
 	maximal_heat = T0C + 750
 	damage_per_fire_tick = 2.0
-	glasstype = /obj/item/stack/material/glass/reinforced
+	glasstype = /obj/item/stack/legacy_material/glass/reinforced
 	force_threshold = 6
 
 /obj/structure/window/reinforced/full

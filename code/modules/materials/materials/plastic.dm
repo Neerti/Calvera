@@ -1,6 +1,6 @@
 /datum/legacy_material/plastic
 	name = "plastic"
-	stack_type = /obj/item/stack/material/plastic
+	stack_type = /obj/item/stack/legacy_material/plastic
 	flags = MATERIAL_BRITTLE
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
@@ -35,7 +35,7 @@
 
 /datum/legacy_material/cardboard
 	name = "cardboard"
-	stack_type = /obj/item/stack/material/cardboard
+	stack_type = /obj/item/stack/legacy_material/cardboard
 	flags = MATERIAL_BRITTLE
 	integrity = 10
 	icon_base = "solid"

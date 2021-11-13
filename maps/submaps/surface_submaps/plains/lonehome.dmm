@@ -103,7 +103,7 @@
 "Gm" = (/obj/machinery/button/windowtint{id = "h_kitchen"},/turf/simulated/wall/wood,/area/submap/lonehome)
 "Gr" = (/obj/structure/table/bench/marble,/obj/structure/window/reinforced/polarized{id = "h_master"},/obj/structure/flora/pottedplant/bamboo{pixel_y = 7},/turf/simulated/floor/wood,/area/submap/lonehome)
 "GA" = (/obj/item/weapon/reagent_containers/food/snacks/ghostmuffin/poison,/obj/structure/table/sifwooden_reinforced,/turf/simulated/floor/wood,/area/submap/lonehome)
-"GS" = (/obj/structure/table/steel,/obj/item/stack/material/phoron{amount = 5},/obj/item/stack/material/phoron{amount = 5},/obj/fiftyspawner/wood,/obj/fiftyspawner/steel,/turf/simulated/floor,/area/submap/lonehome)
+"GS" = (/obj/structure/table/steel,/obj/item/stack/legacy_material/phoron{amount = 5},/obj/item/stack/legacy_material/phoron{amount = 5},/obj/fiftyspawner/wood,/obj/fiftyspawner/steel,/turf/simulated/floor,/area/submap/lonehome)
 "Hc" = (/obj/effect/decal/cleanable/blood/gibs,/obj/structure/kitchenspike,/obj/effect/rune,/turf/simulated/floor,/area/submap/lonehome)
 "Hu" = (/obj/item/frame/apc,/obj/machinery/light_switch{pixel_x = 11; pixel_y = 22},/obj/random/junk,/turf/simulated/floor,/area/submap/lonehome)
 "Im" = (/obj/structure/window/reinforced/tinted/frosted{dir = 8},/turf/simulated/floor/wood,/area/submap/lonehome)

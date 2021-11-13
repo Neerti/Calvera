@@ -197,7 +197,7 @@
 	if(istype(src.occupant,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = occupant
 		slab_name = src.occupant.real_name
-		slab_type = H.isSynthetic() ? /obj/item/stack/material/steel : H.species.meat_type
+		slab_type = H.isSynthetic() ? /obj/item/stack/legacy_material/steel : H.species.meat_type
 
 	// Small mobs don't give as much nutrition.
 	if(issmall(src.occupant))

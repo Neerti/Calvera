@@ -110,7 +110,7 @@
 					 		"backkey"=IS_CROWBAR,
 					 		"desc"="External armor is installed."),
 					 //3
-					 list("key"=/obj/item/stack/material/plasteel,
+					 list("key"=/obj/item/stack/legacy_material/plasteel,
 					 		"backkey"=/obj/item/weapon/weldingtool,
 					 		"desc"="Internal armor is welded."),
 					 //4
@@ -122,7 +122,7 @@
 					 		"backkey"=IS_CROWBAR,
 					 		"desc"="Internal armor is installed"),
 					 //6
-					 list("key"=/obj/item/stack/material/steel,
+					 list("key"=/obj/item/stack/legacy_material/steel,
 					 		"backkey"=IS_SCREWDRIVER,
 					 		"desc"="Peripherals control module is secured"),
 					 //7
@@ -238,7 +238,7 @@
 				holder.icon_state = "ripley10"
 			else
 				user.visible_message("[user] pries internal armor layer from [holder].", "You prie internal armor layer from [holder].")
-				var/obj/item/stack/material/steel/MS = new /obj/item/stack/material/steel(get_turf(holder))
+				var/obj/item/stack/legacy_material/steel/MS = new /obj/item/stack/legacy_material/steel(get_turf(holder))
 				MS.amount = 5
 				holder.icon_state = "ripley8"
 		if(4)
@@ -261,7 +261,7 @@
 				holder.icon_state = "ripley13"
 			else
 				user.visible_message("[user] pries external armor layer from [holder].", "You prie external armor layer from [holder].")
-				var/obj/item/stack/material/plasteel/MS = new /obj/item/stack/material/plasteel(get_turf(holder))
+				var/obj/item/stack/legacy_material/plasteel/MS = new /obj/item/stack/legacy_material/plasteel(get_turf(holder))
 				MS.amount = 5
 				holder.icon_state = "ripley11"
 		if(1)
@@ -333,7 +333,7 @@
 					 		"backkey"=IS_CROWBAR,
 					 		"desc"="Internal armor is installed"),
 					 //6
-					 list("key"=/obj/item/stack/material/steel,
+					 list("key"=/obj/item/stack/legacy_material/steel,
 					 		"backkey"=IS_SCREWDRIVER,
 					 		"desc"="Advanced capacitor is secured"),
 					 //7
@@ -521,7 +521,7 @@
 				holder.icon_state = "gygax16"
 			else
 				user.visible_message("[user] pries internal armor layer from [holder].", "You prie internal armor layer from [holder].")
-				var/obj/item/stack/material/steel/MS = new /obj/item/stack/material/steel(get_turf(holder))
+				var/obj/item/stack/legacy_material/steel/MS = new /obj/item/stack/legacy_material/steel(get_turf(holder))
 				MS.amount = 5
 				holder.icon_state = "gygax14"
 		if(4)
@@ -605,7 +605,7 @@
 					 		"backkey"=IS_CROWBAR,
 					 		"desc"="External armor is installed."),
 					 //3
-					 list("key"=/obj/item/stack/material/plasteel,
+					 list("key"=/obj/item/stack/legacy_material/plasteel,
 					 		"backkey"=/obj/item/weapon/weldingtool,
 					 		"desc"="Internal armor is welded."),
 					 //4
@@ -617,7 +617,7 @@
 					 		"backkey"=IS_CROWBAR,
 					 		"desc"="Internal armor is installed"),
 					 //6
-					 list("key"=/obj/item/stack/material/steel,
+					 list("key"=/obj/item/stack/legacy_material/steel,
 					 		"backkey"=IS_SCREWDRIVER,
 					 		"desc"="Advanced capacitor is secured"),
 					 //7
@@ -805,7 +805,7 @@
 				holder.icon_state = "gygax16"
 			else
 				user.visible_message("[user] pries internal armor layer from [holder].", "You pry the internal armor layer from [holder].")
-				var/obj/item/stack/material/steel/MS = new /obj/item/stack/material/steel(get_turf(holder))
+				var/obj/item/stack/legacy_material/steel/MS = new /obj/item/stack/legacy_material/steel(get_turf(holder))
 				MS.amount = 5
 				holder.icon_state = "gygax14"
 		if(4)
@@ -828,7 +828,7 @@
 				holder.icon_state = "gygax19-s"
 			else
 				user.visible_message("[user] pries the external armor layer from [holder].", "You pry the external armor layer from [holder].")
-				var/obj/item/stack/material/plasteel/MS = new /obj/item/stack/material/plasteel(get_turf(holder)) // Fixes serenity giving Gygax Armor Plates for the reverse action...
+				var/obj/item/stack/legacy_material/plasteel/MS = new /obj/item/stack/legacy_material/plasteel(get_turf(holder)) // Fixes serenity giving Gygax Armor Plates for the reverse action...
 				MS.amount = 5
 				holder.icon_state = "gygax17"
 		if(1)
@@ -891,11 +891,11 @@
 					 		"backkey"=IS_CROWBAR,
 					 		"desc"="External armor is installed."),
 					 //3
-					 list("key"=/obj/item/stack/material/plasteel,
+					 list("key"=/obj/item/stack/legacy_material/plasteel,
 					 		"backkey"=IS_CROWBAR,
 					 		"desc"="External armor is being installed."),
 					 //4
-					 list("key"=/obj/item/stack/material/plasteel,
+					 list("key"=/obj/item/stack/legacy_material/plasteel,
 					 		"backkey"=/obj/item/weapon/weldingtool,
 					 		"desc"="Internal armor is welded."),
 					 //5
@@ -907,7 +907,7 @@
 					 		"backkey"=IS_CROWBAR,
 					 		"desc"="Internal armor is installed"),
 					 //7
-					 list("key"=/obj/item/stack/material/plasteel,
+					 list("key"=/obj/item/stack/legacy_material/plasteel,
 					 		"backkey"=IS_SCREWDRIVER,
 					 		"desc"="Peripherals control module is secured"),
 					 //8
@@ -1023,7 +1023,7 @@
 				holder.icon_state = "fireripley10"
 			else
 				user.visible_message("[user] pries internal armor layer from [holder].", "You prie internal armor layer from [holder].")
-				var/obj/item/stack/material/plasteel/MS = new /obj/item/stack/material/plasteel(get_turf(holder))
+				var/obj/item/stack/legacy_material/plasteel/MS = new /obj/item/stack/legacy_material/plasteel(get_turf(holder))
 				MS.amount = 5
 				holder.icon_state = "fireripley8"
 		if(5)
@@ -1046,7 +1046,7 @@
 				holder.icon_state = "fireripley13"
 			else
 				user.visible_message("[user] removes the external armor from [holder].", "You remove the external armor from [holder].")
-				var/obj/item/stack/material/plasteel/MS = new /obj/item/stack/material/plasteel(get_turf(holder))
+				var/obj/item/stack/legacy_material/plasteel/MS = new /obj/item/stack/legacy_material/plasteel(get_turf(holder))
 				MS.amount = 5
 				holder.icon_state = "fireripley11"
 		if(2)
@@ -1055,7 +1055,7 @@
 				holder.icon_state = "fireripley14"
 			else
 				user.visible_message("[user] pries external armor layer from [holder].", "You prie external armor layer from [holder].")
-				var/obj/item/stack/material/plasteel/MS = new /obj/item/stack/material/plasteel(get_turf(holder))
+				var/obj/item/stack/legacy_material/plasteel/MS = new /obj/item/stack/legacy_material/plasteel(get_turf(holder))
 				MS.amount = 5
 				holder.icon_state = "fireripley12"
 		if(1)
@@ -1127,7 +1127,7 @@
 					 		"backkey"=IS_CROWBAR,
 					 		"desc"="Internal armor is installed"),
 					 //6
-					 list("key"=/obj/item/stack/material/steel,
+					 list("key"=/obj/item/stack/legacy_material/steel,
 					 		"backkey"=IS_SCREWDRIVER,
 					 		"desc"="Advanced capacitor is secured"),
 					 //7
@@ -1316,7 +1316,7 @@
 				holder.icon_state = "durand16"
 			else
 				user.visible_message("[user] pries internal armor layer from [holder].", "You prie internal armor layer from [holder].")
-				var/obj/item/stack/material/steel/MS = new /obj/item/stack/material/steel(get_turf(holder))
+				var/obj/item/stack/legacy_material/steel/MS = new /obj/item/stack/legacy_material/steel(get_turf(holder))
 				MS.amount = 5
 				holder.icon_state = "durand14"
 		if(4)
@@ -1399,7 +1399,7 @@
 					 		"backkey"=IS_CROWBAR,
 					 		"desc"="External armor is installed."),
 					 //3
-					 list("key"=/obj/item/stack/material/plasteel,
+					 list("key"=/obj/item/stack/legacy_material/plasteel,
 					 		"backkey"=/obj/item/weapon/weldingtool,
 					 		"desc"="Internal armor is welded."),
 					 //4
@@ -1411,7 +1411,7 @@
 					 		"backkey"=IS_CROWBAR,
 					 		"desc"="Internal armor is installed"),
 					 //6
-					 list("key"=/obj/item/stack/material/steel,
+					 list("key"=/obj/item/stack/legacy_material/steel,
 					 		"backkey"=IS_SCREWDRIVER,
 					 		"desc"="Peripherals control module is secured"),
 					 //7
@@ -1527,7 +1527,7 @@
 				holder.icon_state = "odysseus10"
 			else
 				user.visible_message("[user] pries internal armor layer from [holder].", "You prie internal armor layer from [holder].")
-				var/obj/item/stack/material/steel/MS = new /obj/item/stack/material/steel(get_turf(holder))
+				var/obj/item/stack/legacy_material/steel/MS = new /obj/item/stack/legacy_material/steel(get_turf(holder))
 				MS.amount = 5
 				holder.icon_state = "odysseus8"
 		if(4)
@@ -1549,7 +1549,7 @@
 				user.visible_message("[user] secures external armor layer.", "You secure external reinforced armor layer.")
 				holder.icon_state = "odysseus13"
 			else
-				var/obj/item/stack/material/plasteel/MS = new /obj/item/stack/material/plasteel(get_turf(holder))
+				var/obj/item/stack/legacy_material/plasteel/MS = new /obj/item/stack/legacy_material/plasteel(get_turf(holder))
 				MS.amount = 5
 				user.visible_message("[user] pries [MS] from [holder].", "You prie [MS] from [holder].")
 				holder.icon_state = "odysseus11"
@@ -1611,7 +1611,7 @@
 							"backkey"=IS_CROWBAR,
 							"desc"="External armor is installed."),
 					//3
-					list("key"=/obj/item/stack/material/plasteel,
+					list("key"=/obj/item/stack/legacy_material/plasteel,
 							"backkey"=/obj/item/weapon/weldingtool,
 							"desc"="Internal armor is welded."),
 					//4
@@ -1623,7 +1623,7 @@
 							"backkey"=IS_CROWBAR,
 							"desc"="Internal armor is installed"),
 					//6
-					list("key"=/obj/item/stack/material/steel,
+					list("key"=/obj/item/stack/legacy_material/steel,
 							"backkey"=IS_SCREWDRIVER,
 							"desc"="Hand teleporter is secured"),
 					//7
@@ -1810,7 +1810,7 @@
 				holder.icon_state = "phazon20"
 			else
 				user.visible_message("[user] pries the internal armor layer from [holder].", "You pry the internal armor layer from [holder].")
-				var/obj/item/stack/material/steel/MS = new /obj/item/stack/material/steel(get_turf(holder))
+				var/obj/item/stack/legacy_material/steel/MS = new /obj/item/stack/legacy_material/steel(get_turf(holder))
 				MS.amount = 5
 				holder.icon_state = "phazon14"
 		if(4)
@@ -1833,7 +1833,7 @@
 				holder.icon_state = "phazon23"
 			else
 				user.visible_message("[user] pries the external armor layer from [holder].", "You pry external armor layer from [holder].")
-				var/obj/item/stack/material/plasteel/MS = new /obj/item/stack/material/plasteel(get_turf(holder))
+				var/obj/item/stack/legacy_material/plasteel/MS = new /obj/item/stack/legacy_material/plasteel(get_turf(holder))
 				MS.amount = 5
 				holder.icon_state = "phazon21"
 		if(1)
@@ -1893,7 +1893,7 @@
 							"backkey"=IS_CROWBAR,
 							"desc"="External armor is attached."),
 					//3
-					list("key"=/obj/item/stack/material/morphium,
+					list("key"=/obj/item/stack/legacy_material/morphium,
 							"backkey"=/obj/item/weapon/weldingtool,
 							"desc"="Internal armor is welded"),
 					//4
@@ -1905,7 +1905,7 @@
 							"backkey"=IS_CROWBAR,
 							"desc"="Internal armor is attached."),
 					//6
-					list("key"=/obj/item/stack/material/durasteel,
+					list("key"=/obj/item/stack/legacy_material/durasteel,
 							"backkey"=IS_SCREWDRIVER,
 							"desc"="Durand auxiliary board is secured."),
 					//7
@@ -2116,7 +2116,7 @@
 				holder.icon_state = "janus18"
 			else
 				user.visible_message("[user] pries the internal armor layer from [holder].", "You pry the internal armor layer from [holder].")
-				var/obj/item/stack/material/durasteel/MS = new /obj/item/stack/material/durasteel(get_turf(holder))
+				var/obj/item/stack/legacy_material/durasteel/MS = new /obj/item/stack/legacy_material/durasteel(get_turf(holder))
 				MS.amount = 5
 				holder.icon_state = "janus16"
 		if(4)
@@ -2139,7 +2139,7 @@
 				holder.icon_state = "janus21"
 			else
 				user.visible_message("[user] pries the external armor layer from [holder].", "You pry external armor layer from [holder].")
-				var/obj/item/stack/material/morphium/MS = new /obj/item/stack/material/morphium(get_turf(holder))
+				var/obj/item/stack/legacy_material/morphium/MS = new /obj/item/stack/legacy_material/morphium(get_turf(holder))
 				MS.amount = 5
 				holder.icon_state = "janus19"
 		if(1)

@@ -70,12 +70,12 @@
 			to_chat(user, "<span class='notice'>You remove the glass.</span>")
 			glass = !glass
 			icon_state = "mirror_frame"
-			new /obj/item/stack/material/glass( src.loc, 2 )
+			new /obj/item/stack/legacy_material/glass( src.loc, 2 )
 			return
 
-	if(istype(I, /obj/item/stack/material/glass))
+	if(istype(I, /obj/item/stack/legacy_material/glass))
 		if(!glass)
-			var/obj/item/stack/material/glass/G = I
+			var/obj/item/stack/legacy_material/glass/G = I
 			if (G.get_amount() < 2)
 				to_chat(user, "<span class='warning'>You need two sheets of glass to add them to the frame.</span>")
 				return

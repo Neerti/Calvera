@@ -132,7 +132,7 @@
 	display_name = "tower caps"
 	chems = list("woodpulp" = list(10,1))
 	mutants = list("redcap")
-	has_item_product = /obj/item/stack/material/log
+	has_item_product = /obj/item/stack/legacy_material/log
 
 /datum/seed/mushroom/towercap/New()
 	..()

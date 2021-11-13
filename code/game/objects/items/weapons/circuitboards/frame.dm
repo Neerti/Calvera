@@ -202,7 +202,7 @@
 	origin_tech = list(TECH_MAGNET = 2, TECH_BIO = 2)
 	req_components = list(
 							/obj/item/weapon/stock_parts/scanning_module = 3,
-							/obj/item/stack/material/glass/reinforced = 2)
+							/obj/item/stack/legacy_material/glass/reinforced = 2)
 
 /obj/item/weapon/circuitboard/sleeper
 	name = T_BOARD("sleeper")
@@ -214,7 +214,7 @@
 							/obj/item/weapon/stock_parts/scanning_module = 1,
 							/obj/item/weapon/reagent_containers/glass/beaker = 3,
 							/obj/item/weapon/reagent_containers/syringe = 3,
-							/obj/item/stack/material/glass/reinforced = 2)
+							/obj/item/stack/legacy_material/glass/reinforced = 2)
 
 /obj/item/weapon/circuitboard/vr_sleeper
 	name = T_BOARD("VR sleeper")
@@ -223,7 +223,7 @@
 	origin_tech = list(TECH_MAGNET = 2, TECH_BIO = 2)
 	req_components = list(
 							/obj/item/weapon/stock_parts/scanning_module = 1,
-							/obj/item/stack/material/glass/reinforced = 2)
+							/obj/item/stack/legacy_material/glass/reinforced = 2)
 
 /obj/item/weapon/circuitboard/dna_analyzer
 	name = T_BOARD("dna analyzer")

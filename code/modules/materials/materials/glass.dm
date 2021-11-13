@@ -1,6 +1,6 @@
 /datum/legacy_material/glass
 	name = "glass"
-	stack_type = /obj/item/stack/material/glass
+	stack_type = /obj/item/stack/legacy_material/glass
 	flags = MATERIAL_BRITTLE
 	icon_colour = "#00E1FF"
 	opacity = 0.3
@@ -17,7 +17,7 @@
 	window_options = list("One Direction" = 1, "Full Window" = 4, "Windoor" = 2)
 	created_window = /obj/structure/window/basic
 	created_fulltile_window = /obj/structure/window/basic/full
-	rod_product = /obj/item/stack/material/glass/reinforced
+	rod_product = /obj/item/stack/legacy_material/glass/reinforced
 
 /datum/legacy_material/glass/build_windows(var/mob/living/user, var/obj/item/stack/used_stack)
 
@@ -96,7 +96,7 @@
 /datum/legacy_material/glass/reinforced
 	name = "rglass"
 	display_name = "reinforced glass"
-	stack_type = /obj/item/stack/material/glass/reinforced
+	stack_type = /obj/item/stack/legacy_material/glass/reinforced
 	flags = MATERIAL_BRITTLE
 	icon_colour = "#00E1FF"
 	opacity = 0.3
@@ -116,7 +116,7 @@
 /datum/legacy_material/glass/phoron
 	name = "borosilicate glass"
 	display_name = "borosilicate glass"
-	stack_type = /obj/item/stack/material/glass/phoronglass
+	stack_type = /obj/item/stack/legacy_material/glass/phoronglass
 	flags = MATERIAL_BRITTLE
 	integrity = 100
 	icon_colour = "#FC2BC5"
@@ -125,12 +125,12 @@
 	created_window = /obj/structure/window/phoronbasic
 	created_fulltile_window = /obj/structure/window/phoronbasic/full
 	wire_product = null
-	rod_product = /obj/item/stack/material/glass/phoronrglass
+	rod_product = /obj/item/stack/legacy_material/glass/phoronrglass
 
 /datum/legacy_material/glass/phoron/reinforced
 	name = "reinforced borosilicate glass"
 	display_name = "reinforced borosilicate glass"
-	stack_type = /obj/item/stack/material/glass/phoronrglass
+	stack_type = /obj/item/stack/legacy_material/glass/phoronrglass
 	stack_origin_tech = list(TECH_MATERIAL = 5)
 	composite_material = list() //todo
 	window_options = list("One Direction" = 1, "Full Window" = 4)

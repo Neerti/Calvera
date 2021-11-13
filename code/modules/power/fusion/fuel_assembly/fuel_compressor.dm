@@ -48,8 +48,8 @@
 	if(default_part_replacement(user, thing))
 		return
 
-	if(istype(thing, /obj/item/stack/material))
-		var/obj/item/stack/material/M = thing
+	if(istype(thing, /obj/item/stack/legacy_material))
+		var/obj/item/stack/legacy_material/M = thing
 		var/datum/legacy_material/mat = M.get_material()
 		if(!mat.is_fusion_fuel)
 			to_chat(user, "<span class='warning'>It would be pointless to make a fuel rod out of [mat.use_name].</span>")
