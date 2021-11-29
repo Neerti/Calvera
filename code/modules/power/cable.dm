@@ -504,7 +504,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	w_class = ITEMSIZE_SMALL
 	throw_speed = 2
 	throw_range = 5
-	matter = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 20)
+	matter_legacy = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 20)
 	slot_flags = SLOT_BELT
 	item_state = "coil"
 	attack_verb = list("whipped", "lashed", "disciplined", "flogged")
@@ -517,7 +517,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	name = "cable coil synthesizer"
 	desc = "A device that makes cable."
 	gender = NEUTER
-	matter = null
+	matter_legacy = null
 	uses_charge = 1
 	charge_costs = list(1)
 
@@ -952,7 +952,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	w_class = ITEMSIZE_SMALL
 	throw_speed = 2
 	throw_range = 5
-	matter = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 20)
+	matter_legacy = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 20)
 	slot_flags = SLOT_BELT
 	attack_verb = list("whipped", "lashed", "disciplined", "flogged")
 	stack_merge_type = null

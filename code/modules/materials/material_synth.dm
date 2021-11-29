@@ -4,13 +4,13 @@
 	uses_charge = 1
 	charge_costs = list(1000)
 	gender = NEUTER
-	matter = null // Don't shove it in the autholathe.
+	matter_legacy = null // Don't shove it in the autholathe.
 
 /obj/item/stack/legacy_material/cyborg/Initialize()
 	. = ..()
 	name = "[legacy_material.display_name] synthesiser"
 	desc = "A device that synthesises [legacy_material.display_name]."
-	matter = null
+	matter_legacy = null
 
 /obj/item/stack/legacy_material/cyborg/update_strings()
 	return

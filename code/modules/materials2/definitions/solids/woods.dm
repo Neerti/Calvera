@@ -10,7 +10,7 @@
 	reflectiveness = MATERIAL_REFLECTIVITY_DULL
 	value = 1.5
 	high_energy_transition_temperature = T0C+300
-	high_energy_transition_material = /decl/material/solid/charcoal
+	high_energy_transition_material = /decl/material/solid/coal/charcoal
 	heat_of_combustion = 21.70
 	default_solid_form = /obj/item/stack/material/plank
 	damaged_adjectives = list(

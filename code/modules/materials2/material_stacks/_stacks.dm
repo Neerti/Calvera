@@ -43,7 +43,7 @@
 	max_amount = 60
 	randpixel = 3
 	icon = 'icons/obj/materials.dmi'
-	matter = null
+	matter_legacy = null
 	pickup_sound = 'sound/foley/tooldrop3.ogg'
 	drop_sound = 'sound/foley/tooldrop2.ogg'
 	singular_name = "sheet"
@@ -58,17 +58,17 @@
 */
 /obj/item/stack/material/get_material()
 	return material
-/*
+
 /obj/item/stack/material/update_matter()
 	create_matter()
 
 /obj/item/stack/material/create_matter()
-	matter = list()
+	matter_legacy = list()
 	if(istype(material))
 		matter[material.type] = MATTER_AMOUNT_PRIMARY * get_matter_amount_modifier()
 	if(istype(reinf_material))
 		matter[reinf_material.type] = MATTER_AMOUNT_REINFORCEMENT * get_matter_amount_modifier()
-*/
+
 /obj/item/stack/material/proc/update_strings()
 	if(amount > 1)
 		set_name("[material.use_name] [plural_name]")
@@ -108,7 +108,7 @@
 	max_amount = 60
 	randpixel = 3
 	icon = 'icons/obj/materials.dmi'
-	matter = null
+	matter_legacy = null
 	pickup_sound = 'sound/foley/tooldrop3.ogg'
 	drop_sound = 'sound/foley/tooldrop2.ogg'
 	singular_name = "sheet"
@@ -145,7 +145,7 @@
 	create_matter()
 
 /obj/item/stack/material/create_matter()
-	matter = list()
+	matter_legacy = list()
 	if(istype(material))
 		matter[material.type] = MATTER_AMOUNT_PRIMARY * get_matter_amount_modifier()
 	if(istype(reinf_material))

@@ -10,11 +10,11 @@ var/datum/category_collection/autolathe/autolathe_recipes
 		log_debug("[name] created an Autolathe design without an assigned path.")
 		return
 
-	if(I.matter && !resources)
+	if(I.matter_legacy && !resources)
 		resources = list()
-		for(var/material in I.matter)
+		for(var/material in I.matter_legacy)
 			var/coeff = (no_scale ? 1 : 1.25) //most objects are more expensive to produce than to recycle
-			resources[material] = I.matter[material]*coeff // but if it's a sheet or RCD cartridge, it's 1:1
+			resources[material] = I.matter_legacy[material]*coeff // but if it's a sheet or RCD cartridge, it's 1:1
 	if(is_stack)
 		if(istype(I, /obj/item/stack))
 			var/obj/item/stack/IS = I

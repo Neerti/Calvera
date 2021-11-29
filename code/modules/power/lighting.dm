@@ -843,7 +843,7 @@ var/global/list/light_type_cache = list()
 	var/status = 0		// LIGHT_OK, LIGHT_BURNED or LIGHT_BROKEN
 	var/base_state
 	var/switchcount = 0	// number of times switched
-	matter = list(DEFAULT_WALL_MATERIAL = 60)
+	matter_legacy = list(DEFAULT_WALL_MATERIAL = 60)
 	var/rigged = 0		// true if rigged to explode
 	var/broken_chance = 2
 
@@ -863,7 +863,7 @@ var/global/list/light_type_cache = list()
 	icon_state = "ltube"
 	base_state = "ltube"
 	item_state = "c_tube"
-	matter = list("glass" = 100)
+	matter_legacy = list("glass" = 100)
 	brightness_range = 7	// luminosity when on, also used in power calculation
 	brightness_power = 6
 
@@ -882,7 +882,7 @@ var/global/list/light_type_cache = list()
 	icon_state = "lbulb"
 	base_state = "lbulb"
 	item_state = "contvapour"
-	matter = list("glass" = 100)
+	matter_legacy = list("glass" = 100)
 	brightness_range = 5
 	brightness_power = 4
 	brightness_color = LIGHT_COLOR_INCANDESCENT_BULB
@@ -905,7 +905,7 @@ var/global/list/light_type_cache = list()
 	icon_state = "fbulb"
 	base_state = "fbulb"
 	item_state = "egg4"
-	matter = list("glass" = 100)
+	matter_legacy = list("glass" = 100)
 
 // update the icon state and description of the light
 /obj/item/weapon/light/on_update_icon()

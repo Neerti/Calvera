@@ -17,7 +17,12 @@
 	drop_sound = 'sound/items/drop/multitool.ogg'
 	pickup_sound = 'sound/items/pickup/multitool.ogg'
 
-	matter = list(DEFAULT_WALL_MATERIAL = 50,"glass" = 20)
+	matter_legacy = list(DEFAULT_WALL_MATERIAL = 50,"glass" = 20)
+	material = /decl/material/solid/plastic
+	matter = list(
+		/decl/material/solid/fiberglass = MATTER_AMOUNT_REINFORCEMENT,
+		/decl/material/solid/metal/steel = MATTER_AMOUNT_TRACE
+	)
 
 	var/mode_index = 1
 	var/toolmode = MULTITOOL_MODE_STANDARD

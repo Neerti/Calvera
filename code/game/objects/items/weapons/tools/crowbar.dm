@@ -14,7 +14,7 @@
 	item_state = "crowbar"
 	w_class = ITEMSIZE_SMALL
 	origin_tech = list(TECH_ENGINEERING = 1)
-	matter = list(DEFAULT_WALL_MATERIAL = 50)
+	matter_legacy = list(DEFAULT_WALL_MATERIAL = 50)
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
 	usesound = 'sound/items/crowbar.ogg'
 	drop_sound = 'sound/items/drop/crowbar.ogg'
@@ -73,7 +73,7 @@
 	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a prying head."
 	icon_state = "jaws_pry"
 	item_state = "jawsoflife"
-	matter = list(MAT_METAL=150, MAT_SILVER=50)
+	matter_legacy = list(MAT_METAL=150, MAT_SILVER=50)
 	origin_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
 	usesound = 'sound/items/jaws_pry.ogg'
 	force = 15

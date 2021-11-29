@@ -13,7 +13,7 @@
 	throw_range = 9
 	w_class = ITEMSIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
-	matter = list(DEFAULT_WALL_MATERIAL = 80)
+	matter_legacy = list(DEFAULT_WALL_MATERIAL = 80)
 	attack_verb = list("pinched", "nipped")
 	hitsound = 'sound/items/wirecutter.ogg'
 	usesound = 'sound/items/wirecutter.ogg'
@@ -91,7 +91,7 @@
 	icon_state = "jaws_cutter"
 	item_state = "jawsoflife"
 	origin_tech = list(TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
-	matter = list(MAT_METAL=150, MAT_SILVER=50)
+	matter_legacy = list(MAT_METAL=150, MAT_SILVER=50)
 	usesound = 'sound/items/jaws_cut.ogg'
 	force = 15
 	toolspeed = 0.25

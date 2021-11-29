@@ -216,7 +216,7 @@
 	name = "metal strut synthesizer"
 	desc = "A device that makes metal strut."
 	gender = NEUTER
-	matter = null
+	matter_legacy = null
 	uses_charge = 1
 	charge_costs = list(500)
 	material = /decl/material/solid/metal/steel

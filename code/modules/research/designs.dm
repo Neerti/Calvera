@@ -68,13 +68,13 @@ other types of metals and chemistry for reagents).
 	var/obj/item/I = ..()
 
 	if(LAZYLEN(materials))
-		if(!LAZYLEN(I.matter))
-			I.matter = list()
+		if(!LAZYLEN(I.matter_legacy))
+			I.matter_legacy = list()
 		else
-			I.matter.Cut()
+			I.matter_legacy.Cut()
 
 		for(var/matname in materials)
-			I.matter[matname] = materials[matname]
+			I.matter_legacy[matname] = materials[matname]
 
 	var/obj/item/weapon/cell/C = I.get_cell()
 	if(C)

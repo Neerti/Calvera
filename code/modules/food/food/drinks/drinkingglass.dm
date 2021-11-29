@@ -8,7 +8,7 @@
 	volume = 30
 	unacidable = 1 //glass
 	center_of_mass = list("x"=16, "y"=10)
-	matter = list("glass" = 500)
+	matter_legacy = list("glass" = 500)
 
 	on_reagent_change()
 		/*if(reagents.reagent_list.len > 1 )
@@ -115,7 +115,7 @@
 	icon_state = "shotglass"
 	amount_per_transfer_from_this = 10
 	volume = 10
-	matter = list("glass" = 175)
+	matter_legacy = list("glass" = 175)
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/shotglass/on_reagent_change()
 	overlays.Cut()
@@ -139,7 +139,7 @@
 	desc = "Big enough to contain enough protein to get perfectly swole. Don't mind the bits."
 	icon_state = "fitness-cup_black"
 	volume = 100
-	matter = list("plastic" = 2000)
+	matter_legacy = list("plastic" = 2000)
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/fitnessflask/Initialize()
 	. = ..()

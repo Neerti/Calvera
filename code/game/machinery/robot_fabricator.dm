@@ -22,7 +22,7 @@
 					if(!M.get_amount())
 						return
 					while(metal_amount < 150000 && M.amount)
-						metal_amount += O.matter[DEFAULT_WALL_MATERIAL] /*O:height * O:width * O:length * 100000.0*/
+						metal_amount += O.matter_legacy[DEFAULT_WALL_MATERIAL] /*O:height * O:width * O:length * 100000.0*/
 						M.use(1)
 						count++
 

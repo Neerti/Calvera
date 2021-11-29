@@ -14,7 +14,7 @@
 	throw_range = 5
 	w_class = ITEMSIZE_NORMAL
 	origin_tech = list(TECH_ENGINEERING = 4, TECH_MATERIAL = 2)
-	matter = list(DEFAULT_WALL_MATERIAL = 50000)
+	matter_legacy = list(DEFAULT_WALL_MATERIAL = 50000)
 	preserve_item = TRUE // RCDs are pretty important.
 	var/datum/effect/effect/system/spark_spread/spark_system
 	var/stored_matter = 0
@@ -303,12 +303,12 @@
 	item_state = "rcdammo"
 	w_class = ITEMSIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 2)
-	matter = list(DEFAULT_WALL_MATERIAL = 30000,"glass" = 15000)
+	matter_legacy = list(DEFAULT_WALL_MATERIAL = 30000,"glass" = 15000)
 	var/remaining = RCD_MAX_CAPACITY / 3
 
 /obj/item/weapon/rcd_ammo/large
 	name = "high-capacity matter cartridge"
 	desc = "Do not ingest."
-	matter = list(DEFAULT_WALL_MATERIAL = 45000,"glass" = 22500)
+	matter_legacy = list(DEFAULT_WALL_MATERIAL = 45000,"glass" = 22500)
 	origin_tech = list(TECH_MATERIAL = 4)
 	remaining = RCD_MAX_CAPACITY

@@ -213,6 +213,6 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 		var/obj/new_item = D.Fabricate(src, src)
 		new_item.loc = loc
 		if(mat_efficiency != 1) // No matter out of nowhere
-			if(new_item.matter && new_item.matter.len > 0)
-				for(var/i in new_item.matter)
-					new_item.matter[i] = new_item.matter[i] * mat_efficiency
+			if(new_item.matter_legacy && new_item.matter_legacy.len > 0)
+				for(var/i in new_item.matter_legacy)
+					new_item.matter_legacy[i] = new_item.matter_legacy[i] * mat_efficiency

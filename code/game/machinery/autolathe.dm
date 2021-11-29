@@ -175,7 +175,7 @@
 			to_chat(user, "\The [speedloader] is too hazardous to put back into the autolathe while there's ammunition inside of it!")
 			return
 		else
-			speedloader.matter = list(DEFAULT_WALL_MATERIAL = 75) // It's just a hunk of scrap metal now.
+			speedloader.matter_legacy = list(DEFAULT_WALL_MATERIAL = 75) // It's just a hunk of scrap metal now.
 	if(istype(O,/obj/item/ammo_magazine)) // This was just for immersion consistency with above.
 		var/obj/item/ammo_magazine/mag = O
 		if(mag.stored_ammo)
@@ -184,7 +184,7 @@
 
 	//Resources are being loaded.
 	var/obj/item/eating = O
-	if(!eating.matter)
+	if(!eating.matter_legacy)
 		to_chat(user, "\The [eating] does not contain significant amounts of useful materials and cannot be accepted.")
 		return
 
@@ -192,7 +192,7 @@
 	var/total_used = 0     // Amount of material used.
 	var/mass_per_sheet = 0 // Amount of material constituting one sheet.
 
-	for(var/material in eating.matter)
+	for(var/material in eating.matter_legacy)
 
 		if(isnull(stored_material[material]) || isnull(storage_capacity[material]))
 			continue
@@ -200,7 +200,7 @@
 		if(stored_material[material] >= storage_capacity[material])
 			continue
 
-		var/total_material = eating.matter[material]
+		var/total_material = eating.matter_legacy[material]
 
 		//If it's a stack, we eat multiple sheets.
 		if(istype(eating,/obj/item/stack))
@@ -215,7 +215,7 @@
 
 		stored_material[material] += total_material
 		total_used += total_material
-		mass_per_sheet += eating.matter[material]
+		mass_per_sheet += eating.matter_legacy[material]
 
 	if(!filltype)
 		to_chat(user, "<span class='notice'>\The [src] is full. Please remove material from the autolathe in order to insert more.</span>")
@@ -308,13 +308,13 @@
 		//Create the desired item.
 		var/obj/item/I = new making.path(src.loc)
 
-		if(LAZYLEN(I.matter))	// Sadly we must obey the laws of equivalent exchange.
-			I.matter.Cut()
+		if(LAZYLEN(I.matter_legacy))	// Sadly we must obey the laws of equivalent exchange.
+			I.matter_legacy.Cut()
 		else
-			I.matter = list()
+			I.matter_legacy = list()
 
 		for(var/material in making.resources)	// Handle the datum's autoscaling for waste, so we're properly wasting material, but not so much if we have efficiency.
-			I.matter[material] = round(making.resources[material] / (making.no_scale ? 1 : 1.25)) * (making.no_scale ? 1 : mat_efficiency)
+			I.matter_legacy[material] = round(making.resources[material] / (making.no_scale ? 1 : 1.25)) * (making.no_scale ? 1 : mat_efficiency)
 
 		flick("[initial(icon_state)]_finish", src)
 		if(multiplier > 1)
@@ -326,14 +326,14 @@
 					I = new making.path(src.loc)
 
 // We've already deducted the cost of multiple items. Process the matter the same.
-					if(LAZYLEN(I.matter))
-						I.matter.Cut()
+					if(LAZYLEN(I.matter_legacy))
+						I.matter_legacy.Cut()
 
 					else
-						I.matter = list()
+						I.matter_legacy = list()
 
 					for(var/material in making.resources)
-						I.matter[material] = round(making.resources[material] / (making.no_scale ? 1 : 1.25)) * (making.no_scale ? 1 : mat_efficiency)
+						I.matter_legacy[material] = round(making.resources[material] / (making.no_scale ? 1 : 1.25)) * (making.no_scale ? 1 : mat_efficiency)
 
 	updateUsrDialog()
 

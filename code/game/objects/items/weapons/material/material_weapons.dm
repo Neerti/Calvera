@@ -35,11 +35,11 @@
 		qdel(src)
 		return
 
-	matter = legacy_material.get_matter()
-	if(matter.len)
-		for(var/material_type in matter)
-			if(!isnull(matter[material_type]))
-				matter[material_type] *= force_divisor // May require a new var instead.
+	matter_legacy = legacy_material.get_matter_legacy()
+	if(matter_legacy.len)
+		for(var/material_type in matter_legacy)
+			if(!isnull(matter_legacy[material_type]))
+				matter_legacy[material_type] *= force_divisor // May require a new var instead.
 
 	if(!(legacy_material.conductive))
 		src.flags |= NOCONDUCT

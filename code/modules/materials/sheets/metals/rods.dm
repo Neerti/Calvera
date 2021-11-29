@@ -10,7 +10,7 @@
 	throw_range = 20
 	drop_sound = 'sound/items/drop/metalweapon.ogg'
 	pickup_sound = 'sound/items/pickup/metalweapon.ogg'
-	matter = list(DEFAULT_WALL_MATERIAL = SHEET_MATERIAL_AMOUNT / 2)
+	matter_legacy = list(DEFAULT_WALL_MATERIAL = SHEET_MATERIAL_AMOUNT / 2)
 	max_amount = 60
 	attack_verb = list("hit", "bludgeoned", "whacked")
 
@@ -20,7 +20,7 @@
 	name = "metal rod synthesizer"
 	desc = "A device that makes metal rods."
 	gender = NEUTER
-	matter = null
+	matter_legacy = null
 	uses_charge = 1
 	charge_costs = list(500)
 	stack_merge_type = /obj/item/stack/rods

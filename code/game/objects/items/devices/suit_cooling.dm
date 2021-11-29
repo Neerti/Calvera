@@ -13,7 +13,7 @@
 	throw_range = 4
 	action_button_name = "Toggle Heatsink"
 
-	matter = list("steel" = 15000, "glass" = 3500)
+	matter_legacy = list("steel" = 15000, "glass" = 3500)
 	origin_tech = list(TECH_MAGNET = 2, TECH_MATERIAL = 2)
 
 	var/on = 0				//is it turned on?

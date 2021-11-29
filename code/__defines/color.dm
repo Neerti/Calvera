@@ -131,7 +131,7 @@
 #define WOOD_COLOR_SIF         "#0099cc"
 
 #define GLASS_COLOR            "#74c1ee"
-#define GLASS_COLOR_PHORON     "#7c3a9a"
+#define GLASS_COLOR_SILICATE   "#7c3a9a"
 #define GLASS_COLOR_TINTED     "#222222"
 #define GLASS_COLOR_FROSTED    "#ffffff"
 

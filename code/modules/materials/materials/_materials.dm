@@ -183,7 +183,7 @@ var/list/name_to_material
 	return weight //todo
 
 // Return the matter comprising this material.
-/datum/legacy_material/proc/get_matter()
+/datum/legacy_material/proc/get_matter_legacy()
 	var/list/temp_matter = list()
 	if(islist(composite_material))
 		for(var/material_string in composite_material)

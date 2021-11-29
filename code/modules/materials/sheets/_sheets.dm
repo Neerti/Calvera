@@ -42,7 +42,7 @@
 	if(!legacy_material.conductive)
 		flags |= NOCONDUCT
 
-	matter = legacy_material.get_matter()
+	matter_legacy = legacy_material.get_matter_legacy()
 	update_strings()
 
 /obj/item/stack/legacy_material/get_material()

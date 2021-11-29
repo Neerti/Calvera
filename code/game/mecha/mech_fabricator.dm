@@ -233,9 +233,9 @@
 		var/obj/new_item = D.Fabricate(get_step(get_turf(src), src.dir), src)
 		visible_message("\The [src] pings, indicating that \the [D] is complete.", "You hear a ping.")
 		if(mat_efficiency != 1)
-			if(new_item.matter && new_item.matter.len > 0)
-				for(var/i in new_item.matter)
-					new_item.matter[i] = new_item.matter[i] * mat_efficiency
+			if(new_item.matter_legacy && new_item.matter_legacy.len > 0)
+				for(var/i in new_item.matter_legacy)
+					new_item.matter_legacy[i] = new_item.matter_legacy[i] * mat_efficiency
 	remove_from_queue(1)
 
 /obj/machinery/mecha_part_fabricator/proc/get_queue_names()

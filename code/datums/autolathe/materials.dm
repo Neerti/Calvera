@@ -6,14 +6,14 @@
 	if(istype(mat, /obj/item/stack/legacy_material))
 		var/obj/item/stack/legacy_material/M = mat
 		name = M.name
-		resources = M.matter.Copy()
+		resources = M.matter_legacy.Copy()
 		max_stack = M.max_amount
 		path = M.type
 	else if(istype(mat, /datum/legacy_material))
 		var/datum/legacy_material/M = mat
 		var/obj/item/stack/legacy_material/S = M.stack_type
 		name = initial(S.name)
-		resources = M.get_matter()
+		resources = M.get_matter_legacy()
 		max_stack = initial(S.max_amount)
 		path = S
 	. = ..()

@@ -5,7 +5,7 @@
 	reflectiveness = MATERIAL_REFLECTIVITY_DULL
 	weight = MATERIAL_WEIGHT_EXTREMELY_LIGHT
 	hardness = MATERIAL_HARDNESS_SOFT
-	default_solid_form = /obj/item/stack/legacy_material/bolt
+	default_solid_form = /obj/item/stack/material/bolt
 	damaged_adjectives = list(
 		MATERIAL_DAMAGE_ADJ_LIGHT    = "ripped", 
 		MATERIAL_DAMAGE_ADJ_MEDIUM   = "torn", 

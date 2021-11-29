@@ -11,7 +11,7 @@
 	throw_range = 3
 	drop_sound = 'sound/items/drop/clothing.ogg'
 	pickup_sound = 'sound/items/pickup/clothing.ogg'
-	matter = list(MAT_CLOTH = SHEET_MATERIAL_AMOUNT * 2)
+	matter_legacy = list(MAT_CLOTH = SHEET_MATERIAL_AMOUNT * 2)
 	max_amount = 30
 	attack_verb = list("hit", "bludgeoned", "pillowed")
 	no_variants = TRUE
@@ -25,7 +25,7 @@
 	name = "sandbag synthesizer"
 	desc = "A device that makes filled sandbags. Don't ask how."
 	gender = NEUTER
-	matter = null
+	matter_legacy = null
 	uses_charge = 1
 	charge_costs = list(500)
 	stack_merge_type = /obj/item/stack/sandbags
@@ -81,15 +81,15 @@ var/global/list/datum/stack_recipe/sandbag_recipes = list( \
 		if(istype(O, /obj))
 			var/obj/Ob = O
 
-			if(LAZYLEN(Ob.matter))	// Law of equivalent exchange.
-				Ob.matter.Cut()
+			if(LAZYLEN(Ob.matter_legacy))	// Law of equivalent exchange.
+				Ob.matter_legacy.Cut()
 
 			else
-				Ob.matter = list()
+				Ob.matter_legacy = list()
 
 			var/mattermult = istype(Ob, /obj/item) ? min(2000, 400 * Ob.w_class) : 2000
 
-			Ob.matter[recipe.use_material] = mattermult / produced * required
+			Ob.matter_legacy[recipe.use_material] = mattermult / produced * required
 
 		O.set_dir(user.dir)
 		O.add_fingerprint(user)

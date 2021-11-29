@@ -209,9 +209,9 @@
 		var/obj/new_item = D.Fabricate(src, src)
 		new_item.loc = loc
 		if(mat_efficiency != 1) // No matter out of nowhere
-			if(new_item.matter && new_item.matter.len > 0)
-				for(var/i in new_item.matter)
-					new_item.matter[i] = new_item.matter[i] * mat_efficiency
+			if(new_item.matter_legacy && new_item.matter_legacy.len > 0)
+				for(var/i in new_item.matter_legacy)
+					new_item.matter_legacy[i] = new_item.matter_legacy[i] * mat_efficiency
 
 /obj/machinery/r_n_d/protolathe/proc/eject_materials(var/material, var/amount) // 0 amount = 0 means ejecting a full stack; -1 means eject everything
 	var/recursive = amount == -1 ? 1 : 0

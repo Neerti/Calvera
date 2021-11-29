@@ -9,7 +9,7 @@
 	slot_flags = SLOT_HOLSTER
 	throw_speed = 7
 	throw_range = 15
-	matter = list(DEFAULT_WALL_MATERIAL = 60)
+	matter_legacy = list(DEFAULT_WALL_MATERIAL = 60)
 	pressure_resistance = 2
 	attack_verb = list("stamped")
 	drop_sound = 'sound/items/drop/device.ogg'

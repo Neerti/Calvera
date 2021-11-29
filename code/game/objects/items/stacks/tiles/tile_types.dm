@@ -129,7 +129,7 @@
 	desc = "A metal tile fit for covering a section of floor."
 	icon_state = "tile"
 	force = 6.0
-	matter = list(DEFAULT_WALL_MATERIAL = SHEET_MATERIAL_AMOUNT / 4)
+	matter_legacy = list(DEFAULT_WALL_MATERIAL = SHEET_MATERIAL_AMOUNT / 4)
 	throwforce = 15.0
 	throw_speed = 5
 	throw_range = 20
@@ -158,21 +158,21 @@
 	name = "steel floor tile"
 	singular_name = "steel floor tile"
 	icon_state = "tile_steel"
-	matter = list("plasteel" = SHEET_MATERIAL_AMOUNT / 4)
+	matter_legacy = list("plasteel" = SHEET_MATERIAL_AMOUNT / 4)
 	no_variants = FALSE
 
 /obj/item/stack/tile/floor/steel
 	name = "steel floor tile"
 	singular_name = "steel floor tile"
 	icon_state = "tile_steel"
-	matter = list("plasteel" = SHEET_MATERIAL_AMOUNT / 4)
+	matter_legacy = list("plasteel" = SHEET_MATERIAL_AMOUNT / 4)
 	no_variants = FALSE
 
 /obj/item/stack/tile/floor/white
 	name = "white floor tile"
 	singular_name = "white floor tile"
 	icon_state = "tile_white"
-	matter = list("plastic" = SHEET_MATERIAL_AMOUNT / 4)
+	matter_legacy = list("plastic" = SHEET_MATERIAL_AMOUNT / 4)
 	no_variants = FALSE
 
 /obj/item/stack/tile/floor/yellow
@@ -186,21 +186,21 @@
 	name = "dark floor tile"
 	singular_name = "dark floor tile"
 	icon_state = "tile_steel"
-	matter = list("plasteel" = SHEET_MATERIAL_AMOUNT / 4)
+	matter_legacy = list("plasteel" = SHEET_MATERIAL_AMOUNT / 4)
 	no_variants = FALSE
 
 /obj/item/stack/tile/floor/freezer
 	name = "freezer floor tile"
 	singular_name = "freezer floor tile"
 	icon_state = "tile_freezer"
-	matter = list("plastic" = SHEET_MATERIAL_AMOUNT / 4)
+	matter_legacy = list("plastic" = SHEET_MATERIAL_AMOUNT / 4)
 	no_variants = FALSE
 
 /obj/item/stack/tile/floor/cyborg
 	name = "floor tile synthesizer"
 	desc = "A device that makes floor tiles."
 	gender = NEUTER
-	matter = null
+	matter_legacy = null
 	uses_charge = 1
 	charge_costs = list(250)
 	stack_merge_type = /obj/item/stack/tile/floor

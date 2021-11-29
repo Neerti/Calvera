@@ -1,18 +1,18 @@
 /obj/item/trash/material
 	icon = 'icons/obj/material_trash.dmi'
-	matter = list()
+	matter_legacy = list()
 	var/matter_chances = list()	//List of lists: list(mat_name, chance, amount)
 
 
 /obj/item/trash/material/Initialize()
 	. = ..()
-	if(!matter)
-		matter = list()
+	if(!matter_legacy)
+		matter_legacy = list()
 
 	for(var/list/L in matter_chances)
 		if(prob(L[2]))
-			matter |= L[1]
-			matter[L[1]] += max(0, L[3] + rand(-2,2))
+			matter_legacy |= L[1]
+			matter_legacy[L[1]] += max(0, L[3] + rand(-2,2))
 
 
 
