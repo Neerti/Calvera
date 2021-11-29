@@ -128,6 +128,7 @@
 #define WOOD_COLOR_BLACK       "#332521"
 #define WOOD_COLOR_CHOCOLATE   "#543c30"
 #define WOOD_COLOR_YELLOW      "#e3994e"
+#define WOOD_COLOR_SIF         "#0099cc"
 
 #define GLASS_COLOR            "#74c1ee"
 #define GLASS_COLOR_PHORON     "#7c3a9a"

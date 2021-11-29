@@ -1,71 +1,91 @@
 /decl/material/solid/textile/fabric
 	name = "cotton"
+	classification = "Fabric"
 	color = "#ffffff"
-	lore_text = "Cotton is a soft fabric, frequently used for the production of clothing."
+	lore_text = "Fabrics are frequently used for the production of clothing."
+	
 
 // Color variants, for things like chairs or curtains.
 /decl/material/solid/textile/fabric/pink
-	name = "pink"
-	use_name = "pink cloth"
-	color = "#e36262"
+	name = "pink fabric"
+	adjective_name = "pink"
+	color = "#eb9999"
 
 /decl/material/solid/textile/fabric/red
-	name = "red"
-	use_name = "red cloth"
-	color = "#9d2300"
+	name = "red fabric"
+	adjective_name = "red"
+	//color = "#9d2300"
+	color = "#DA020A"
 
 /decl/material/solid/textile/fabric/orange
-	name = "orange"
-	use_name = "orange cloth"
-	color = "#e39349"
+	name = "orange fabric"
+	adjective_name = "orange"
+	//color = "#e39349"
+	color = "#E3BF49"
 
 /decl/material/solid/textile/fabric/yellow
-	name = "yellow"
-	use_name = "yellow cloth"
-	color = "#ffbf00"
+	name = "yellow fabric"
+	adjective_name = "yellow"
+	//color = "#ffbf00"
+	color = "#EEF573"
 
 /decl/material/solid/textile/fabric/green
-	name = "green"
-	use_name = "green cloth"
-	color = "#b7f27d"
+	name = "green fabric"
+	adjective_name = "green"
+	//color = "#b7f27d"
+	color = "#01C608"
 
 /decl/material/solid/textile/fabric/lime
-	name = "lime"
-	use_name = "lime cloth"
-	color = "#62e36c"
+	name = "lime fabric"
+	adjective_name = "lime"
+	//color = "#62e36c"
+	color = "#62E36C"
 
 /decl/material/solid/textile/fabric/teal
-	name = "teal"
-	use_name = "teal cloth"
-	color = "#00e1ff"
+	name = "teal fabric"
+	adjective_name = "teal"
+	//color = "#00e1ff"
+	color = "#00eafa"
 
 /decl/material/solid/textile/fabric/blue
-	name = "blue"
-	use_name = "blue cloth"
-	color = "#46698c"
+	name = "blue fabric"
+	adjective_name = "blue"
+	//color = "#46698c"
+	color = "#6B6FE3"
 
 /decl/material/solid/textile/fabric/purple
-	name = "purple"
-	use_name = "purple cloth"
-	color = "#9933ff"
+	name = "purple fabric"
+	adjective_name = "purple"
+	//color = "#9933ff"
+	color = "#9C56C4"
 
 /decl/material/solid/textile/fabric/black
-	name = "black"
-	use_name = "black cloth"
+	name = "black fabric"
+	adjective_name = "black"
 	color = "#505050"
 
 /decl/material/solid/textile/fabric/grey
-	name = "grey"
-	use_name = "grey cloth"
+	name = "grey fabric"
+	adjective_name = "grey"
 	color = "#909090"
 
 /decl/material/solid/textile/fabric/beige
-	name = "beige"
-	use_name = "beige cloth"
-	color = "#ceb689"
+	name = "beige fabric"
+	adjective_name = "beige"
+	//color = "#ceb689"
+	color = "#E8E7C8"
 
 
 /decl/material/solid/textile/fabric/wool
 	name = "wool"
-	color = "#aaaaaa"
+	color = "#bababa"
 	lore_text = "A kind of fabric that is obtained by sheering an animal. Wools are often used to make warm clothing."
+
+
+/decl/material/solid/textile/fabric/silk
+	name = "silk"
+	lore_text = "Silk is a natural protein fiber created by various animals, such as silkworms, or spiders. \
+	It has a smooth texture, and the fibers are quite strong. Silk has been used by humans as a textile material for millennia."
+	reflectiveness = MATERIAL_REFLECTIVITY_SHINY - 10
+	value = 1.2
+	// TODO

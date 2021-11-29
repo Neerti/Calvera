@@ -3,10 +3,11 @@
 as an umbrella term for materials that are generally used to make clothing, bags, or upholstry.*/
 /decl/material/solid/textile/leather
 	name = "leather"
+	classification = "Leather"
 	color = "#5c4831"
 	hardness = MATERIAL_HARDNESS_FLEXIBLE
 	reflectiveness = MATERIAL_REFLECTIVITY_MATTE
-	// default_solid_form = /obj/item/stack/legacy_material/skin
+	default_solid_form = /obj/item/stack/material/skin
 
 /decl/material/solid/textile/leather/synth
 	name = "synthleather"

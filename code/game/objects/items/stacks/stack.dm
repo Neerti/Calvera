@@ -16,10 +16,17 @@
 	randpixel = 7
 	center_of_mass = null
 	var/list/datum/stack_recipe/recipes
-	var/singular_name
+	/// The name used if only one amount is in the stack. e.g. "ingot".
+	var/singular_name = null
+	/// The name used if there is more than one amount in the stack. e.g. "ingots".
+	var/plural_name = null
+
+	/// How much of something is in a stack.
 	var/amount = 1
+
+	/// The cap to `amount`.
 	var/max_amount //also see stack recipes initialisation, param "max_res_amount" must be equal to this max_amount
-	var/stacktype //determines whether different stack types can merge
+
 	var/build_type = null //used when directly applied to a turf
 	var/uses_charge = 0
 	var/list/charge_costs = null
@@ -29,13 +36,34 @@
 	var/pass_color = FALSE // Will the item pass its own color var to the created item? Dyed cloth, wood, etc.
 	var/strict_color_stacking = FALSE // Will the stack merge with other stacks that are different colors? (Dyed cloth, wood, etc)
 
-/obj/item/stack/Initialize(var/ml, var/amount)
-	. = ..()
-	if(!stacktype)
-		stacktype = type
-	if(amount)
+	/// Determines whether different stack types can merge toogether.
+	var/stack_merge_type = null
+
+	/// Icon state used if the stack is between one and one-thirds full. Also acts as a fallback if other icon state vars are unset.
+	var/base_state = null
+
+	/// Icon state used if the stack if between one-thirds full and two-thirds full.
+	var/medium_icon_state = null
+
+	/// Icon state used if the stack is between two-thirds full and completely full.
+	var/high_icon_state = null
+
+	/// Icon state used if the stack is full.
+	var/max_icon_state = null
+
+/obj/item/stack/Initialize(mapload, amount, material)
+	if(ispath(amount, /decl/material))
+		PRINT_STACK_TRACE("Stack initialized with material ([amount]) instead of amount.")
+		material = amount
+	if(isnum(amount) && amount >= 1)
 		src.amount = amount
-	update_icon()
+	. = ..(mapload, material)
+	if(!stack_merge_type)
+		stack_merge_type = type
+	if(!singular_name)
+		singular_name = "sheet"
+	if(!plural_name)
+		plural_name = "[singular_name]s"
 
 /obj/item/stack/Destroy()
 	if(uses_charge)
@@ -274,7 +302,7 @@
 /obj/item/stack/proc/transfer_to(obj/item/stack/S, var/tamount=null, var/type_verified)
 	if (!get_amount())
 		return 0
-	if ((stacktype != S.stacktype) && !type_verified)
+	if ((stack_merge_type != S.stack_merge_type) && !type_verified)
 		return 0
 	if ((strict_color_stacking || S.strict_color_stacking) && S.color != color)
 		return 0

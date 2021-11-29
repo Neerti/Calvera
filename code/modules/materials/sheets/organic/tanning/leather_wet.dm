@@ -12,7 +12,6 @@
 	var/drying_threshold_temperature = 500 //Kelvin to start drying
 	no_variants = FALSE
 	max_amount = 20
-	stacktype = "wetleather"
 
 	var/dry_type = /obj/item/stack/legacy_material/leather
 

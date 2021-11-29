@@ -1,5 +1,6 @@
 /decl/material/solid/wood
 	name = "wood"
+	classification = "Wood"
 	lore_text = "A fibrous structural material harvested from an indeterminable plant. Don't get a splinter."
 	adjective_name = "wooden"
 	color = WOOD_COLOR_GENERIC
@@ -9,8 +10,15 @@
 	reflectiveness = MATERIAL_REFLECTIVITY_DULL
 	value = 1.5
 	high_energy_transition_temperature = T0C+300
-//	high_energy_transition_material = /decl/material/solid/charcoal
-//	default_solid_form = /obj/item/stack/legacy_material/plank
+	high_energy_transition_material = /decl/material/solid/charcoal
+	heat_of_combustion = 21.70
+	default_solid_form = /obj/item/stack/material/plank
+	damaged_adjectives = list(
+		MATERIAL_DAMAGE_ADJ_LIGHT    = "scratched", 
+		MATERIAL_DAMAGE_ADJ_MEDIUM   = "chipped", 
+		MATERIAL_DAMAGE_ADJ_HEAVY    = "cracked", 
+		MATERIAL_DAMAGE_ADJ_CRITICAL = "splintered"
+	)
 
 /*
 /decl/material/solid/wood
@@ -104,3 +112,12 @@
 	The yew tree can live for nearly a thousand years thanks to its natural disease resistance."
 	color = WOOD_COLOR_YELLOW
 	value = 1.8
+
+/decl/material/solid/wood/sif
+	name = "sifwood"
+	lore_text = "'Sifwood' is a wood-like material with a distinct blue hue, sourced from glowing trees that are ubiquitous on Sif. \
+	It has become the go-to material for construction on the planet, as getting more traditional varieties of wood typically require importing \
+	from off-world sources."
+	color = WOOD_COLOR_SIF
+	construction_difficulty = MATERIAL_DIFFICULTY_EASY
+	value = 0.8 // A common material.

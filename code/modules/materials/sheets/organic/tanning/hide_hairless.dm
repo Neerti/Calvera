@@ -9,7 +9,6 @@
 	icon_state = "sheet-hairlesshide"
 	no_variants = FALSE
 	max_amount = 20
-	stacktype = "hairlesshide"
 
 /obj/item/stack/hairlesshide/examine(var/mob/user)
 	. = ..()

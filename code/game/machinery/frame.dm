@@ -586,7 +586,7 @@
 							var/obj/item/stack/ST = P
 							if(ST.get_amount() > 1)
 								var/camt = min(ST.amount, req_components[I]) // amount of stack to take, idealy amount required, but limited by amount provided
-								var/obj/item/stack/NS = new ST.stacktype(src)
+								var/obj/item/stack/NS = new ST.stack_merge_type(src)
 								NS.amount = camt
 								NS.update_icon()
 								ST.use(camt)

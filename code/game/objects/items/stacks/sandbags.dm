@@ -15,7 +15,7 @@
 	max_amount = 30
 	attack_verb = list("hit", "bludgeoned", "pillowed")
 	no_variants = TRUE
-	stacktype = /obj/item/stack/sandbags
+	stack_merge_type = /obj/item/stack/sandbags
 
 	pass_color = TRUE
 
@@ -28,7 +28,7 @@
 	matter = null
 	uses_charge = 1
 	charge_costs = list(500)
-	stacktype = /obj/item/stack/sandbags
+	stack_merge_type = /obj/item/stack/sandbags
 
 	bag_material = MAT_SYNCLOTH
 
@@ -126,7 +126,7 @@ var/global/list/datum/stack_recipe/sandbag_recipes = list( \
 
 	strict_color_stacking = TRUE
 	max_amount = 30
-	stacktype = /obj/item/stack/emptysandbag
+	stack_merge_type = /obj/item/stack/emptysandbag
 
 	pass_color = TRUE
 

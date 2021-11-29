@@ -23,7 +23,7 @@
 	matter = null
 	uses_charge = 1
 	charge_costs = list(500)
-	stacktype = /obj/item/stack/rods
+	stack_merge_type = /obj/item/stack/rods
 	no_variants = TRUE
 
 /obj/item/stack/rods/Initialize()

@@ -156,7 +156,7 @@
 	max_amount = 10
 	icon = 'icons/obj/mining.dmi'
 	var/upright = 0
-	var/base_state
+	var/flag_base_state
 
 /obj/item/stack/flag/Initialize()
 	. = ..()
@@ -192,7 +192,7 @@
 /obj/item/stack/flag/attack_hand(user as mob)
 	if(upright)
 		upright = 0
-		icon_state = base_state
+		icon_state = flag_base_state
 		anchored = 0
 		src.visible_message("<b>[user]</b> knocks down [src].")
 	else
@@ -216,6 +216,6 @@
 	newflag.upright = 1
 	newflag.anchored = 1
 	newflag.name = newflag.singular_name
-	newflag.icon_state = "[newflag.base_state]_open"
+	newflag.icon_state = "[newflag.flag_base_state]_open"
 	newflag.visible_message("<b>[user]</b> plants [newflag] firmly in the ground.")
 	src.use(1)

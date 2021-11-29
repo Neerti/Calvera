@@ -68,7 +68,7 @@ Second is what multiplier value is being used as the 'baseline'.*/
 #define MATERIAL_FORCE_SCALING(FORCE_VALUE, MATERIAL_MULTIPLIER) (FORCE_VALUE / MATERIAL_MULTIPLIER) / 100
 
 
-//Arbitrary weight thresholds
+// Arbitrary weight thresholds
 #define MATERIAL_WEIGHT_EXTREMELY_LIGHT	10
 #define MATERIAL_WEIGHT_VERY_LIGHT		20
 #define MATERIAL_WEIGHT_LIGHT			30
@@ -77,13 +77,13 @@ Second is what multiplier value is being used as the 'baseline'.*/
 #define MATERIAL_WEIGHT_VERY_HEAVY		80
 #define MATERIAL_WEIGHT_EXTREMELY_HEAVY	100
 
-//Construction difficulty
+// Construction difficulty
 #define MATERIAL_DIFFICULTY_EASY		0
 #define MATERIAL_DIFFICULTY_NORMAL		1
 #define MATERIAL_DIFFICULTY_HARD		2
 #define MATERIAL_DIFFICULTY_VERY_HARD	3
 
-//Arbitrary hardness thresholds
+// Arbitrary hardness thresholds
 #define MATERIAL_HARDNESS_SOFT				10
 #define MATERIAL_HARDNESS_FLEXIBLE			20
 #define MATERIAL_HARDNESS_RIGID				30
@@ -104,3 +104,19 @@ Second is what multiplier value is being used as the 'baseline'.*/
 // but instead are the values for the 'default material', which is steel.
 #define DEFAULT_MATERIAL_HARDNESS MATERIAL_WEIGHT_HEAVY
 #define DEFAULT_MATERIAL_WEIGHT MATERIAL_WEIGHT_NORMAL
+
+#define MATERIAL_SHEET_VOLUME			200	// cm^3. A full (50) stack is 10L.
+#define MATERIAL_REAGENT_UNIT_VOLUME	10	// cm^3. A full beaker (120u) is 1.2L.
+#define REAGENT_UNITS_PER_SHEET			MATERIAL_SHEET_VOLUME / MATERIAL_REAGENT_UNIT_VOLUME // u
+
+#define MATTER_AMOUNT_PRIMARY		MATERIAL_SHEET_VOLUME
+#define MATTER_AMOUNT_SECONDARY		(MATTER_AMOUNT_PRIMARY * 0.75)
+#define MATTER_AMOUNT_REINFORCEMENT	(MATTER_AMOUNT_PRIMARY * 0.5)
+#define MATTER_AMOUNT_TRACE			(MATTER_AMOUNT_PRIMARY * 0.1)
+
+// Indices for damaged material object adjectives.
+// Between 100%-80% health doesn't show a damage adjective.
+#define MATERIAL_DAMAGE_ADJ_LIGHT		"light"		// Between 80%-60% health.
+#define MATERIAL_DAMAGE_ADJ_MEDIUM		"moderate"	// Between 60%-40% health.
+#define MATERIAL_DAMAGE_ADJ_HEAVY		"heavy"		// Between 40%-20% health.
+#define MATERIAL_DAMAGE_ADJ_CRITICAL	"critical"	// Between 20%-0% health.

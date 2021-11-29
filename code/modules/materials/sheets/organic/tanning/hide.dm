@@ -7,7 +7,6 @@
 	pickup_sound = 'sound/items/pickup/cloth.ogg'
 	amount = 1
 	max_amount = 20
-	stacktype = "hide"
 	no_variants = TRUE
 // This needs to be very clearly documented for players. Whether it should stay in the main description is up for debate.
 /obj/item/stack/animalhide/examine(var/mob/user)
@@ -52,39 +51,33 @@
 	no_variants = FALSE
 	drop_sound = 'sound/items/drop/leather.ogg'
 	pickup_sound = 'sound/items/pickup/leather.ogg'
-	stacktype = "hide-human"
 
 /obj/item/stack/animalhide/corgi
 	name = "corgi hide"
 	desc = "The by-product of corgi farming."
 	singular_name = "corgi hide piece"
 	icon_state = "sheet-corgi"
-	stacktype = "hide-corgi"
 
 /obj/item/stack/animalhide/cat
 	name = "cat hide"
 	desc = "The by-product of cat farming."
 	singular_name = "cat hide piece"
 	icon_state = "sheet-cat"
-	stacktype = "hide-cat"
 
 /obj/item/stack/animalhide/monkey
 	name = "monkey hide"
 	desc = "The by-product of monkey farming."
 	singular_name = "monkey hide piece"
 	icon_state = "sheet-monkey"
-	stacktype = "hide-monkey"
 
 /obj/item/stack/animalhide/lizard
 	name = "lizard skin"
 	desc = "Sssssss..."
 	singular_name = "lizard skin piece"
 	icon_state = "sheet-lizard"
-	stacktype = "hide-lizard"
 
 /obj/item/stack/animalhide/xeno
 	name = "alien hide"
 	desc = "The skin of a terrible creature."
 	singular_name = "alien hide piece"
 	icon_state = "sheet-xeno"
-	stacktype = "hide-xeno"

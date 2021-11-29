@@ -63,3 +63,19 @@
 	icon_state += "[rand(1,2)]" // To have two variants of lightning sprites.
 	animate(src, alpha = 0, time = time_to_die - 1)
 	. = ..()
+
+/obj/effect/temporary_effect/sparkle
+	name = "sparkle"
+	desc = "Shiny!"
+	icon_state = "shiny_sparkle"
+	time_to_die = 0.6 SECONDS
+	plane = ABOVE_MOB_PLANE
+	var/sparkle_margin = 2 // Pixels.
+
+/obj/effect/temporary_effect/sparkle/Initialize()
+//	pixel_x = rand(-sparkle_margin, WORLD_ICON_SIZE + -sparkle_margin)
+//	pixel_y = rand(-sparkle_margin, WORLD_ICON_SIZE + -sparkle_margin)
+	pixel_x = rand(8, 24)
+	pixel_y = rand(8, 24)
+	flick(icon_state, src) // flick() forces the animation to always begin at the start.
+	. = ..()

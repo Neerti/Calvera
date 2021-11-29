@@ -16,7 +16,6 @@
 	singular_name = "alien chitin piece"
 	icon = 'icons/mob/alien.dmi'
 	icon_state = "chitin"
-	stacktype = "hide-chitin"
 
 /obj/item/xenos_claw
 	name = "alien claw"

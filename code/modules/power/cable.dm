@@ -508,7 +508,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	slot_flags = SLOT_BELT
 	item_state = "coil"
 	attack_verb = list("whipped", "lashed", "disciplined", "flogged")
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	drop_sound = 'sound/items/drop/accessory.ogg'
 	pickup_sound = 'sound/items/pickup/accessory.ogg'
 	tool_qualities = list(TOOL_CABLE_COIL)
@@ -839,84 +839,84 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	update_wclass()
 
 /obj/item/stack/cable_coil/yellow
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_YELLOW
 
 /obj/item/stack/cable_coil/blue
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_BLUE
 
 /obj/item/stack/cable_coil/green
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_LIME
 
 /obj/item/stack/cable_coil/pink
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_PINK
 
 /obj/item/stack/cable_coil/orange
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_ORANGE
 
 /obj/item/stack/cable_coil/cyan
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_CYAN
 
 /obj/item/stack/cable_coil/white
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_WHITE
 
 /obj/item/stack/cable_coil/silver
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_SILVER
 
 /obj/item/stack/cable_coil/gray
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_GRAY
 
 /obj/item/stack/cable_coil/black
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_BLACK
 
 /obj/item/stack/cable_coil/maroon
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_MAROON
 
 /obj/item/stack/cable_coil/olive
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_OLIVE
 
 /obj/item/stack/cable_coil/lime
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_LIME
 
 /obj/item/stack/cable_coil/teal
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_TEAL
 
 /obj/item/stack/cable_coil/navy
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_NAVY
 
 /obj/item/stack/cable_coil/purple
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_PURPLE
 
 /obj/item/stack/cable_coil/beige
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_BEIGE
 
 /obj/item/stack/cable_coil/brown
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = COLOR_BROWN
 
 /obj/item/stack/cable_coil/random/New()
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = pick(COLOR_RED, COLOR_BLUE, COLOR_LIME, COLOR_WHITE, COLOR_PINK, COLOR_YELLOW, COLOR_CYAN, COLOR_SILVER, COLOR_GRAY, COLOR_BLACK, COLOR_MAROON, COLOR_OLIVE, COLOR_LIME, COLOR_TEAL, COLOR_NAVY, COLOR_PURPLE, COLOR_BEIGE, COLOR_BROWN)
 	..()
 
 /obj/item/stack/cable_coil/random_belt/New()
-	stacktype = /obj/item/stack/cable_coil
+	stack_merge_type = /obj/item/stack/cable_coil
 	color = pick(COLOR_RED, COLOR_YELLOW, COLOR_ORANGE)
 	amount = 30
 	..()
@@ -955,7 +955,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 	matter = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 20)
 	slot_flags = SLOT_BELT
 	attack_verb = list("whipped", "lashed", "disciplined", "flogged")
-	stacktype = null
+	stack_merge_type = null
 	toolspeed = 0.25
 
 /obj/item/stack/cable_coil/alien/New(loc, length = MAXCOIL, var/param_color = null)		//There has to be a better way to do this.

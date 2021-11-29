@@ -32,7 +32,7 @@
 		return INITIALIZE_HINT_QDEL
 
 	recipes = legacy_material.get_recipes()
-	stacktype = legacy_material.stack_type
+	stack_merge_type = legacy_material.stack_type
 	if(islist(legacy_material.stack_origin_tech))
 		origin_tech = legacy_material.stack_origin_tech.Copy()
 
