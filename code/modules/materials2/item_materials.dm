@@ -200,3 +200,65 @@
 	if(item_flags & ITEM_FLAG_HOLLOW)
 		. *= HOLLOW_OBJECT_MATTER_MULTIPLIER
 */
+
+
+/*
+	if(hasHUD(user, HUD_SCIENCE)) //Mob has a research scanner active.
+		desc_comp += "<BR>*--------* <BR>"
+
+		if(origin_tech)
+			desc_comp += SPAN_NOTICE("Testing potentials:<BR>")
+			var/list/techlvls = cached_json_decode(origin_tech)
+			for(var/T in techlvls)
+				var/decl/research_field/field = SSfabrication.get_research_field_by_id(T)
+				desc_comp += "Tech: Level [techlvls[T]] [field.name] <BR>"
+		else
+			desc_comp += "No tech origins detected.<BR>"
+
+		if(LAZYLEN(matter))
+			desc_comp += SPAN_NOTICE("Extractable materials:<BR>")
+			for(var/mat in matter)
+				var/decl/material/M = GET_DECL(mat)
+				desc_comp += "[capitalize(M.solid_name)]<BR>"
+		else
+			desc_comp += SPAN_DANGER("No extractable materials detected.<BR>")
+		desc_comp += "*--------*"
+*/
+// WIP
+/obj/item/examine(mob/user)
+	. = ..()
+	. += material_examine(user)
+
+/obj/item/proc/material_examine(mob/user)
+	var/list/output = list()
+	if(material)
+		output += "Primary material: <b>[material.name]</b>"
+		if(material.symbol_html)
+			output += " ([material.symbol_html])"
+		output += "<br>"
+		
+		if(material.classification)
+			output += "[material.classification]<br>"
+		
+		if(material.density && LAZYLEN(matter))
+			output += "Mass: [get_mass()] g<br>"
+
+		if(material.density)
+			output += "Density: [material.density] g/cm<super>3</super><br>"
+		
+		if(material.specific_heat_capacity)
+			output += "Specific Heat Capacity: [material.specific_heat_capacity] J/°K<br>"
+		
+		if(material.thermal_conductivity)
+			output += "Thermal Conductivity: [material.thermal_conductivity] W/(m*K)<br>"
+		
+		if(material.ferromagnetic)
+			output += "Can be attrached by magnets.<br>"
+
+	if(LAZYLEN(matter))
+		output += "Material composition:<br>"
+		for(var/mat in matter)
+			var/decl/material/M = GET_DECL(mat)
+			output+= "[capitalize(M.name)] - [matter[mat]] cm<super>3</super><br>"
+		
+	return output.Join("")

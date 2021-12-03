@@ -184,6 +184,7 @@
 	if(radioactivity > 0)
 		// TODO: Calculate mass and scale radiation from that?
 		SSradiation.radiate(holder, radioactivity * 0.1)
+//		holder.get_mass()
 	// TODO maybe use an overlay instead
 	/*
 	if(reflectiveness >= MATERIAL_REFLECTIVITY_SHINY && prob(20))

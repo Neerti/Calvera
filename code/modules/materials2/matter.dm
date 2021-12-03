@@ -1,6 +1,10 @@
 /obj
 	var/list/matter = null
 
+/obj/Initialize(mapload)
+	. = ..()
+	create_matter()
+
 /obj/proc/create_matter()
 	if(length(matter))
 		for(var/mat in matter)
@@ -29,3 +33,12 @@
 			matter[reinf_material.type] = max(matter[reinf_material.type], round(MATTER_AMOUNT_REINFORCEMENT * matter_mult))
 		UNSETEMPTY(matter)
 */
+/// Returns an object's estimated mass, in grams.
+/atom/proc/get_mass()
+	return 0
+
+/obj/get_mass()
+	. = 0
+	for(var/mat in matter)
+		var/decl/material/M = GET_DECL(mat)
+		. += matter[mat] * M.density

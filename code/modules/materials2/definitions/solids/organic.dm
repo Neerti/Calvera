@@ -1,3 +1,28 @@
+/decl/material/solid/plastic
+	name = "plastic"
+	uid = "solid_plastic"
+	lore_text = "A generic polymeric material. Probably the most flexible and useful substance ever created by human science; mostly used to make disposable cutlery."
+//	flags = MAT_FLAG_BRITTLE
+//	icon_base = 'icons/turf/walls/plastic.dmi'
+//	icon_reinf = 'icons/turf/walls/reinforced.dmi'
+//	wall_flags = 0
+//	use_reinf_state = null
+	color = COLOR_EGGSHELL
+//	door_icon_base = "plastic"
+	hardness = MATERIAL_HARDNESS_FLEXIBLE
+	weight = MATERIAL_WEIGHT_LIGHT
+//	melting_point = T0C+371 //assuming heat resistant plastic
+//	stack_origin_tech = "{'materials':3}"
+//	conductive = 0
+	construction_difficulty = MATERIAL_DIFFICULTY_NORMAL
+	reflectiveness = MATERIAL_REFLECTIVITY_SHINY
+//	wall_support_value = MAT_VALUE_EXTREMELY_LIGHT
+	taste_description = "plastic"
+//	fuel_value = 0.6
+//	burn_product = /decl/material/gas/carbon_monoxide // placeholder for more appropriate toxins
+//	dooropen_noise = 'sound/effects/doorcreaky.ogg'
+	default_solid_form = /obj/item/stack/material/sheet
+
 /decl/material/solid/meat
 	name = "meat"
 	classification = "Organic"

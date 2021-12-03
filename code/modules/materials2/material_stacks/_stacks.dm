@@ -58,10 +58,10 @@
 */
 /obj/item/stack/material/get_material()
 	return material
-
+/*
 /obj/item/stack/material/update_matter()
 	create_matter()
-
+*/
 /obj/item/stack/material/create_matter()
 	matter_legacy = list()
 	if(istype(material))
