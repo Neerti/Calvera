@@ -292,6 +292,13 @@ var/list/_client_preferences_by_type
 	enabled_description = "Popup On Login"
 	disabled_description = "Do Nothing"
 
+/datum/client_preference/inquisitive_examine
+	description = "Show additional information in atom examine (codex, etc)"
+	key = "INQUISITIVE_EXAMINE"
+//	options = list(PREF_ON, PREF_OFF)
+	enabled_description = "Inquisitive"
+	disabled_description = "Regular"
+
 /********************
 * Staff Preferences *
 ********************/
