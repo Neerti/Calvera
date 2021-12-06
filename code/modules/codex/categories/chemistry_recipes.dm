@@ -1,0 +1,144 @@
+/decl/codex_category/reactions
+	name = "Reactions"
+	desc = "Chemical reactions with mundane, interesting or spectacular effects."
+	guide_name = "Chemistry"
+	guide_strings = list("chemist", "reactions")
+
+/decl/codex_category/reactions/Initialize()
+	guide_html = {"
+		<h1>Chemistry Basics</h1>
+		<p>
+		Some basic tips for being an effective chemist:
+		<ul>
+			<li>Use a dropper for precise reagent measurements.</li>
+			<li>Grind solid sheets of materials, pills, or other reagent-bearing objects in the grinder to convert them into a usable form.</li>
+			<li>Chem grenades make use of a variety of reactions that produce effects like smoke or foam rather than a new chemical.</li>
+		</ul>
+		</p>
+		<h3>Reactions</h3>
+		<table border = '1px'>
+		<tr>
+			<td>
+				<b>Product name</b>
+			</td>
+			<td>
+				<b>Product amount</b>
+			</td>
+			<td>
+				<b>Required reagents</b>
+			</td>
+			<td>
+				<b>Catalysts</b>
+			</td>
+			<td>
+				<b>Inhibitors</b>
+			</td>
+			<td>
+				<b>Notes</b>
+			</td>
+		</tr>"}
+
+	var/list/entries_to_register = list()
+	var/list/all_reactions = decls_repository.get_decls_of_subtype(/decl/chemical_reaction)
+	for(var/reaction_type in all_reactions)
+		var/decl/chemical_reaction/reaction = all_reactions[reaction_type]
+		if(!reaction || !reaction.name || reaction.hidden_from_codex)
+			// Deliberately leaving drink/food reactions since filtering them would be a pain and they're gonna get replaced eventually.
+			continue
+		
+		// Mechanics text.
+		var/mechanics_text = "This reaction requires the following reagents:<br>"
+		if(reaction.mechanics_text)
+			mechanics_text = "[reaction.mechanics_text]<br>[mechanics_text]"
+		
+		// Required reagents.
+		var/list/reactant_values = list()
+		// Sadly Polaris-code still use strings as reagent IDs instead of decl typepaths.
+//		for(var/reactant_id in reaction.required_reagents)
+//			var/decl/material/reactant = GET_DECL(reactant_id)
+//			var/reactant_name = "<span codexlink='[reactant.name] (substance)'>[reactant.name]</span>"
+//			reactant_values += "[reaction.required_reagents[reactant_id]]u [reactant_name]"
+		for(var/reactant_string in reaction.required_reagents)
+			reactant_values += "[reaction.required_reagents[reactant_string]]u [reactant_string]"
+		mechanics_text += " [jointext(reactant_values, " + ")]"
+		var/list/inhibitors = list()
+
+		// Inhibitors.
+//		for(var/inhibitor_id in reaction.inhibitors)
+//			var/decl/material/inhibitor = GET_DECL(inhibitor_id)
+//			var/inhibitor_name = "<span codexlink='[inhibitor.name] (substance)'>[inhibitor.name]</span>"
+//			inhibitors += inhibitor_name
+		for(var/inhibitor_string in reaction.inhibitors)
+			inhibitors += inhibitor_string
+		if(length(inhibitors))
+			mechanics_text += " (inhibitors: [jointext(inhibitors, ", ")])"
+
+		var/list/catalysts = list()
+//		for(var/catalyst_id in reaction.catalysts)
+//			var/decl/material/catalyst = GET_DECL(catalyst_id)
+//			var/catalyst_name = "<span codexlink='[catalyst.name] (substance)'>[catalyst.name]</span>"
+//			catalysts += "[reaction.catalysts[catalyst_id]]u [catalyst_name]"
+		for(var/catalyst_string in reaction.catalysts)
+			catalysts += "[reaction.catalysts[catalyst_string]]u [catalyst_string]"
+		if(length(catalysts))
+			mechanics_text += " (catalysts: [jointext(catalysts, ", ")])"
+
+		var/produces
+		if(reaction.result && reaction.result_amount)
+//			var/decl/material/product = GET_DECL(reaction.result)
+//			produces = product.name
+			produces = reaction.result
+			mechanics_text += "<br>It will produce [reaction.result_amount]u [reaction.result]."
+
+//		if(reaction.maximum_temperature != INFINITY)
+//			mechanics_text += "<br>The reaction will not occur if the temperature is above [reaction.maximum_temperature]K."
+
+//		if(reaction.minimum_temperature > 0)
+//			mechanics_text += "<br>The reaction will not occur if the temperature is below [reaction.minimum_temperature]K."
+
+		var/reaction_name = produces || lowertext(reaction.name)
+		if(produces)
+			guide_html += "<tr><td>[capitalize(produces)]</td>"
+		else
+			guide_html += "<tr><td>[capitalize(reaction_name)]</td>"
+		guide_html += "<td>[reaction.result_amount || "N/A"]</td>"
+		guide_html += "<td>[jointext(reactant_values, "<br>")]</td>"
+		if(length(catalysts))
+			guide_html += "<td>[jointext(catalysts, "<br>")]</td>"
+		else
+			guide_html += "<td>No catalysts.</td>"
+		if(length(inhibitors))
+			guide_html += "<td>[jointext(inhibitors, "<br>")]</td>"
+		else
+			guide_html += "<td>No inhibitors.</td>"
+//		if(reaction.minimum_temperature > 0 && reaction.minimum_temperature < INFINITY)
+//			guide_html += "<td>[reaction.minimum_temperature]K</td>"
+//		else
+//			guide_html += "<td>Any</td>"
+//		if(reaction.maximum_temperature > 0 && reaction.maximum_temperature < INFINITY)
+//			guide_html += "<td>[reaction.maximum_temperature]K</td>"
+//		else
+//			guide_html += "<td>Any</td>"
+		guide_html += "<td>"
+		if(reaction.mechanics_text)
+			guide_html += reaction.mechanics_text
+			if(reaction.lore_text)
+				guide_html += "<br>"
+		if(reaction.lore_text)
+			guide_html += reaction.lore_text
+
+		guide_html += "</td></tr>"
+
+		entries_to_register += new /datum/codex_entry(                                   \
+		 _display_name =       "[reaction_name] (reaction)",                             \
+		 _associated_strings = list(lowertext(reaction.name), lowertext(reaction_name)), \
+		 _lore_text =          reaction.lore_text,                                       \
+		 _mechanics_text =     mechanics_text                                            \
+		)
+	guide_html += "</table>"
+
+	for(var/datum/codex_entry/entry in entries_to_register)
+		SScodex.add_entry_by_string(entry.name, entry)
+		items |= entry.name
+
+	. = ..()

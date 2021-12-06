@@ -31,11 +31,11 @@
 /datum/codex_entry/nexus
 	name = "Nexus"
 	associated_strings = list("nexus")
-	mechanics_text = "The place to start with <span codexlink='codex'>The Codex</span><br>" 
+	mechanics_text = "The place to start with " + CODEX_LINK("codex", "The Codex") + "."
 
 /datum/codex_entry/nexus/get_text(var/mob/presenting_to)
 	var/list/dat = list(get_header(presenting_to))
-	dat += "[mechanics_text]"
+	dat += "[mechanics_text]<br>"
 	dat += "<h3>Categories</h3>"
 	var/list/category_strings
 	var/list/categories = decls_repository.get_decls_of_subtype(/decl/codex_category)
@@ -46,7 +46,8 @@
 		var/key = "[initial(C.name)] (category)"
 		var/datum/codex_entry/entry = SScodex.get_codex_entry(key)
 		if(entry)
-			LAZYADD(category_strings, "<li><span codexlink='[key]'>[initial(C.name)]</span> - [initial(C.desc)]")
+			var/line = "<li>" + CODEX_LINK(key, initial(C.name)) + " - [initial(C.desc)]"
+			LAZYADD(category_strings, line)
 	dat += jointext(category_strings, " ")
 	return "<font color = '[CODEX_COLOR_MECHANICS]'>[jointext(dat, null)]</font>"
 

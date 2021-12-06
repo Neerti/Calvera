@@ -15,7 +15,7 @@
 		var/datum/codex_entry/entry = new(_display_name = "[name] (category)")
 		entry.lore_text = desc + "<hr>"
 		if(guide_name && guide_html)
-			entry.lore_text += "This category has <span codexlink='Guide to [capitalize(guide_name || name)]'>an associated guide</span>.<hr>"
+			entry.lore_text += "This category has " + CODEX_LINK("Guide to [capitalize(guide_name || name)]", "an associated guide") + ".<hr>"
 		var/list/links = list()
 		for(var/item in items)
 			links+= "<l>[item]</l>"

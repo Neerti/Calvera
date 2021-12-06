@@ -14,6 +14,8 @@
 	var/name = null
 	var/id = null
 	var/result = null
+	/// If TRUE, the Codex won't display this reaction.
+	var/hidden_from_codex = FALSE
 	var/list/required_reagents = list()
 	var/list/catalysts = list()
 	var/list/inhibitors = list()
@@ -33,7 +35,14 @@
 	var/mix_message = "The solution begins to bubble."
 	var/reaction_sound = 'sound/effects/bubbles.ogg'
 
-	var/log_is_important = 0 // If this reaction should be considered important for logging. Important recipes message admins when mixed, non-important ones just log to file.
+	/// If this reaction should be considered important for logging. Important recipes message admins when mixed, non-important ones just log to file.
+	var/log_is_important = FALSE
+
+	/// Fluff information about this reaction, shown in the Codex.
+	var/lore_text = null
+
+	/// Mechanical information about this reaction, shown in the Codex.
+	var/mechanics_text = null
 
 /decl/chemical_reaction/proc/can_happen(var/datum/reagents/holder)
 	//check that all the required reagents are present

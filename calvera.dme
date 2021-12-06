@@ -1716,6 +1716,7 @@
 #include "code\modules\codex\codex_client.dm"
 #include "code\modules\codex\codex_mob.dm"
 #include "code\modules\codex\categories\_codex_category.dm"
+#include "code\modules\codex\categories\chemistry_recipes.dm"
 #include "code\modules\codex\categories\species.dm"
 #include "code\modules\codex\entries\_codex_entry.dm"
 #include "code\modules\codex\entries\codex.dm"
