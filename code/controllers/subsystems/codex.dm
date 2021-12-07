@@ -10,6 +10,9 @@ SUBSYSTEM_DEF(codex)
 	var/list/search_cache =      list()
 	var/list/categories =        list()
 
+	/// If a codex links fail to resolve to a page that exists, it will be added onto this list.
+	var/list/dead_links =        list()
+
 /datum/controller/subsystem/codex/Initialize()
 	// Codex link syntax is such: 
 	// <l>keyword</l> when keyword is mentioned verbatim, 
@@ -55,6 +58,8 @@ SUBSYSTEM_DEF(codex)
 		var/replacement = linkRegex.group[4]
 		if(linked_entry)
 			replacement = "<a href='?src=\ref[SScodex];show_examined_info=\ref[linked_entry];show_to=\ref[viewer]'>[replacement]</a>"
+		else
+			dead_links += key
 		string = replacetextEx(string, linkRegex.match, replacement)
 	return string
 

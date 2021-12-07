@@ -3230,6 +3230,7 @@
 #include "code\unit_tests\new_tests\_includes.dm"
 #include "code\unit_tests\new_tests\unit_test.dm"
 #include "code\unit_tests\new_tests\tests\area_tests.dm"
+#include "code\unit_tests\new_tests\tests\codex_tests.dm"
 #include "code\unit_tests\new_tests\tests\equipment_tests.dm"
 #include "code\unit_tests\new_tests\tests\language_tests.dm"
 #include "code\unit_tests\new_tests\tests\map_tests.dm"
