@@ -32,8 +32,8 @@
 	var/list/dat = list()
 	var/datum/codex_entry/linked_entry = SScodex.get_entry_by_string("nexus")
 	dat += href(SScodex, list("show_examined_info" = linked_entry, "show_to" = presenting_to), "Home")
-	dat += href(presenting_to.client, list("codex_search" = 1), "Search Codex")
-	dat += href(presenting_to.client, list("codex_index" = 1), "List All Entries")
+	dat += href(presenting_to?.client, list("codex_search" = 1), "Search Codex")
+	dat += href(presenting_to?.client, list("codex_index" = 1), "List All Entries")
 	dat += "<hr><h2>[name]</h2>"
 	return jointext(dat, null)
 
@@ -44,7 +44,7 @@
 	if(mechanics_text)
 		dat += "<h3>OOC Information</h3>"
 		dat += "<font color='[CODEX_COLOR_MECHANICS]'>[mechanics_text]</font>"
-	if(antag_text && presenting_to.mind && player_is_antag(presenting_to.mind))
+	if(antag_text && presenting_to?.mind && player_is_antag(presenting_to.mind))
 		dat += "<h3>Antagonist Information</h3>"
 		dat += "<font color='[CODEX_COLOR_ANTAG]'>[antag_text]</font>"
 	return jointext(dat, null)
