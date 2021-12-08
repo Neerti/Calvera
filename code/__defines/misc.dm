@@ -455,4 +455,7 @@ GLOBAL_LIST_INIT(all_volume_channels, list(
 #endif
 
 /// Used to make links inside of Codex pages in a slightly easier way.
-#define CODEX_LINK(TARGET, TEXT) "<span codexlink='" + TARGET + "'>" + TEXT + "</span>"
+#define CODEX_LINK(TARGET) "<span codexlink='" + TARGET + "'>" + TARGET + "</span>"
+
+/// Used to make links inside of Codex pages in a slightly easier way, with the ability to have the link text differ from the link key.
+#define CODEX_LINK_ADV(TARGET, TEXT) "<span codexlink='" + TARGET + "'>" + TEXT + "</span>"

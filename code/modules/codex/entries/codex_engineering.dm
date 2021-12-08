@@ -116,18 +116,18 @@
 	Setting up a solar array requires solar panel assemblies, glass sheets, cables, tracker electronics, \
 	and all the parts to make a solar panel control computer. All of the panels and the tracker must be \
 	outside (exposed to the sun) but the computer can be inside, and probably should be.<BR> \
-	1.) Lay down the "+ CODEX_LINK("cables", "cables") + ". The computer and all the solar assemblies must \
+	1.) Lay down the " + CODEX_LINK("cables") + ". The computer and all the solar assemblies must \
 	each have a cable 'knot' underneath, so make sure there is a knot for everything you plan. \
 	All the cables must lead back to the computer (and of course the rest of the power network).<BR> \
 	2.) Place solar panel assemblies upon the knots, and then wrench the assemblies into place.<BR> \
 	3.) Insert the tracker electronics into one of the solar panel assemblies. <BR> \
 	4.) Add glass to every solar panel assembly, including the one with the tracker electronics.<BR> \
-	5.) Make a <span codexlink='computer'>computer</span> using a circuit board (solar control console).<BR> \
+	5.) Make a computer using a circuit board (solar control console).<BR> \
 	If at any point you need to move a solar panel, use a crowbar to remove the glass, a wrench to unsecure the assembly, and a wirecutter to remove the cables."
 
 /datum/codex_entry/cable
 	associated_paths = list(/obj/structure/cable, /obj/item/stack/cable_coil)
-	associated_strings = list("cables")
+	associated_strings = list("cables", "cable")
 	mechanics_text = "Cable are used to transfer power and form power networks. \
 	Usually power is transfered via cables from a SMES to an APC for the majority of the ship/station. \
 	Cables also serve a purpose in constructing machinery, as a component. <BR>\

@@ -43,7 +43,7 @@
 	<br>\
 	The bag protects the patient in two different ways. First, the bag itself isolates the patient from their environment, \
 	with an air-tight seal and integrated oxygen supply. This will even protect them from vacuum exposure or toxic gases. \
-	Second, the stasis bag, as the name implies, will apply a " + CODEX_LINK("stasis", "stasis") + " effect onto the patient inside, \
+	Second, the stasis bag, as the name implies, will apply a " + CODEX_LINK("stasis") + " effect onto the patient inside, \
 	slowing their bodily processes, and buying more time for them. A stasis bag slows the occupent's physiology by approximately \
 	%STASIS_PERCENT percent.<br>\
 	<br>\
@@ -58,7 +58,7 @@
 	You can use a health analyzer to scan the occupant's vitals without opening the bag by clicking the occupied bag with the analyzer.<br>\
 	<br>\
 	Stasis bags can accept a syringe, which will be used to automatically inject the occupant when entering the bag. \
-	To remove an unused syringe, use a " + CODEX_LINK("screwdriver", "screwdriver") + "."
+	To remove an unused syringe, use a " + CODEX_LINK("screwdriver") + "."
 
 /datum/codex_entry/cryobag/New()
 	..()
