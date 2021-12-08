@@ -12,7 +12,6 @@
 /obj/structure/fence
 	name = "fence"
 	desc = "A chain link fence. Not as effective as a wall, but generally it keeps people out."
-	description_info = "Projectiles can freely pass fences."
 	density = TRUE
 	anchored = TRUE
 

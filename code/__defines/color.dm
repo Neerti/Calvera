@@ -173,3 +173,9 @@
 #define COLOR_WEBHOOK_GOOD		0x2ECC71 // "#2ECC71"
 #define COLOR_WEBHOOK_POOR		0xE67E22 // "#E67E22"
 #define COLOR_WEBHOOK_BAD		0xE74C3C // "#E74C3C"
+
+
+// Codex category colours.
+#define CODEX_COLOR_LORE      "#abdb9b"
+#define CODEX_COLOR_MECHANICS "#9ebcd8"
+#define CODEX_COLOR_ANTAG     "#e5a2a2"
