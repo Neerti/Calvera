@@ -35,6 +35,7 @@
 /datum/species/human/vatgrown
 	name = SPECIES_HUMAN_VATBORN
 	name_plural = "Vatborn"
+	hidden_from_codex = FALSE
 	blurb = "With cloning on the forefront of human scientific advancement, cheap mass production \
 	of bodies is a very real and rather ethically grey industry. Vat-grown or Vatborn humans tend to be \
 	paler than baseline, with no appendix and fewer inherited genetic disabilities, but a more aggressive metabolism."
