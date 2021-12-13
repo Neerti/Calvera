@@ -8,6 +8,8 @@
 	weight = MATERIAL_WEIGHT_NORMAL
 	hardness = MATERIAL_HARDNESS_FLEXIBLE + 10
 	density = 8.96
+	specific_heat_capacity = 0.385
+	thermal_conductivity = 401
 
 /decl/material/solid/metal/aluminium
 	name = "aluminium"
@@ -112,7 +114,7 @@
 //	explosion_resistance = 200 // Hull plating.
 	hardness = MATERIAL_HARDNESS_EXTREMELY_HARD * 5
 	weight = MATERIAL_WEIGHT_VERY_HEAVY
-//	hidden_from_codex = TRUE
+	hidden_from_codex = TRUE
 	value = 3
 	default_solid_form = /obj/item/stack/material/cubes
 

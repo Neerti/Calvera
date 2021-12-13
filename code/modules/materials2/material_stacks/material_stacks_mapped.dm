@@ -113,7 +113,7 @@ STACK_SUBTYPES(yew_log,        "yew log",                       solid/wood/yew, 
 STACK_SUBTYPES(sif,            "sif",                           solid/wood/sif,             plank,      null)
 STACK_SUBTYPES(sif_log,        "sif log",                       solid/wood/sif,             log,        null)
 
-//STACK_SUBTYPES(cardboard,      "cardboard",                     solid/cardboard,            cardstock,  null)
+STACK_SUBTYPES(cardboard,      "cardboard",                     solid/paper/cardboard,      cardstock,  null)
 
 // Leathers
 //STACK_SUBTYPES(leather,        "leather",                       solid/leather,              skin,       null)

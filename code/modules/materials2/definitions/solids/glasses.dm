@@ -1,6 +1,7 @@
 /decl/material/solid/glass
 	name = "glass"
 	uid = "solid_glass"
+	classification = "Glass"
 	lore_text = "A brittle, transparent material made from molten silicates. It is generally not a liquid."
 //	flags = MAT_FLAG_BRITTLE
 	color = GLASS_COLOR

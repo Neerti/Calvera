@@ -58,7 +58,7 @@
 	uid = "solid_stone_cult"
 	color = "#402821"
 	construction_difficulty = MATERIAL_DIFFICULTY_NORMAL
-//	hidden_from_codex = TRUE
+	hidden_from_codex = TRUE
 	reflectiveness = MATERIAL_REFLECTIVITY_DULL
 
 /decl/material/solid/stone/cult/reinforced

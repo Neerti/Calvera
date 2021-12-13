@@ -41,9 +41,11 @@
 
 /decl/material/solid/cellulose
 	name = "cellulose"
+	classification = "Organic"
 
 /decl/material/solid/slime
 	name = "slime"
+	classification = "Organic"
 	hardness = MATERIAL_HARDNESS_SOFT
 	weight = MATERIAL_WEIGHT_EXTREMELY_LIGHT
 	color = "#88aa88"
@@ -83,6 +85,7 @@
 /decl/material/solid/skin
 	name = "skin"
 	uid = "solid_skin"
+	classification = "Skin"
 	color = "#9e8c72"
 //	ignition_point = T0C+300
 //	melting_point = T0C+300
@@ -117,35 +120,43 @@
 /decl/material/solid/skin/fur
 	name = "fur"
 	uid = "solid_fur"
+	classification = "Fur"
 	color = "#7a726d"
 //	tans_to = /decl/material/solid/leather/fur
 	default_solid_form = /obj/item/stack/material/skin/pelt
 
 /decl/material/solid/skin/fur/gray
+	name = "gray fur"
 	uid = "solid_fur_gray"
 
 /decl/material/solid/skin/fur/white
+	name = "white fur"
 	uid = "solid_fur_white"
 
 /decl/material/solid/skin/fur/orange
-	color = COLOR_ORANGE
+	name = "orange fur"
 	uid = "solid_fur_orange"
+	color = COLOR_ORANGE
 
 /decl/material/solid/skin/fur/black
-	color = COLOR_GRAY20
+	name = "black fur"
 	uid = "solid_fur_black"
+	color = COLOR_GRAY20
 
 /decl/material/solid/skin/fur/heavy
-	color = COLOR_GUNMETAL
+	name = "heavy fur"
 	uid = "solid_fur_heavy"
+	color = COLOR_GUNMETAL
 
 /decl/material/solid/skin/goat
-	color = COLOR_SILVER
+	name = "goatskin"
 	uid = "solid_skin_goat"
+	color = COLOR_SILVER
 
 /decl/material/solid/skin/cow
-	color = COLOR_GRAY40
+	name = "cowskin"
 	uid = "solid_skin_cow"
+	color = COLOR_GRAY40
 
 /decl/material/solid/skin/shark
 	name = "sharkskin"
@@ -158,8 +169,9 @@
 	uid = "solid_skin_fish"
 
 /decl/material/solid/skin/fish/purple
-	color = COLOR_PALE_PURPLE_GRAY
+	name = "purple fishskin"
 	uid = "solid_skin_carp"
+	color = COLOR_PALE_PURPLE_GRAY
 
 /decl/material/solid/skin/feathers
 	name = "feathers"
@@ -168,28 +180,34 @@
 	default_solid_form = /obj/item/stack/material/skin/feathers
 
 /decl/material/solid/skin/feathers/purple
-	color = COLOR_PALE_PURPLE_GRAY
+	name = "purple feathers"
 	uid = "solid_feathers_purple"
+	color = COLOR_PALE_PURPLE_GRAY
 
 /decl/material/solid/skin/feathers/blue
-	color = COLOR_SKY_BLUE
+	name = "blue feathers"
 	uid = "solid_feathers_blue"
+	color = COLOR_SKY_BLUE
 
 /decl/material/solid/skin/feathers/green
-	color = COLOR_BOTTLE_GREEN
+	name = "green feathers"
 	uid = "solid_feathers_green"
+	color = COLOR_BOTTLE_GREEN
 
 /decl/material/solid/skin/feathers/brown
-	color = COLOR_BEASTY_BROWN
+	name = "brown feathers"
 	uid = "solid_feathers_brown"
+	color = COLOR_BEASTY_BROWN
 
 /decl/material/solid/skin/feathers/red
-	color = COLOR_RED
+	name = "red feathers"
 	uid = "solid_feathers_red"
+	color = COLOR_RED
 
 /decl/material/solid/skin/feathers/black
-	color = COLOR_GRAY15
+	name = "black feathers"
 	uid = "solid_feathers_black"
+	color = COLOR_GRAY15
 
 /decl/material/solid/bone
 	name = "bone"
@@ -198,8 +216,7 @@
 	color = "#f0edc7"
 //	ignition_point = T0C+1100
 //	melting_point = T0C+1800
-//	conductive = 0
-//	hidden_from_codex = TRUE
+	conductive = FALSE
 	construction_difficulty = MATERIAL_DIFFICULTY_NORMAL
 	integrity = 75
 	hardness = MATERIAL_HARDNESS_RIGID

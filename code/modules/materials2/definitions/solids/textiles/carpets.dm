@@ -1,30 +1,31 @@
 /decl/material/solid/textile/carpet
-	name = "red"
+	name = "red carpet"
 	use_name = "red carpet"
+	classification = "Carpet"
 	color = "#9d2300"
 
 /decl/material/solid/textile/carpet/black
-	name = "black"
+	name = "black carpet"
 	use_name = "black carpet"
 
 /decl/material/solid/textile/carpet/blue
-	name = "blue"
+	name = "blue carpet"
 	use_name = "blue carpet"
 
 /decl/material/solid/textile/carpet/silver_blue
-	name = "silver blue"
+	name = "silver blue carpet"
 	use_name = "silver blue carpet"
 
 /decl/material/solid/textile/carpet/purple
-	name = "purple"
+	name = "purple carpet"
 	use_name = "purple carpet"
 
 /decl/material/solid/textile/carpet/orange
-	name = "orange"
+	name = "orange carpet"
 	use_name = "orange carpet"
 
 /decl/material/solid/textile/carpet/teal
-	name = "teal"
+	name = "teal carpet"
 	use_name = "teal carpet"
 
 /*

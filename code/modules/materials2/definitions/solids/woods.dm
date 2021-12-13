@@ -78,10 +78,13 @@
 
 /decl/material/solid/wood/ebony
 	name = "ebony"
+	lore_text = "Ebony is the name for a group of dark coloured, extremely dense, and fine grained hardwoods."
+	/*
 	lore_text = "Ebony is the name for a group of dark coloured, extremely dense, and fine grained hardwoods. \
 				Despite gene modification to produce larger source trees and ample land to plant them on, \
 				genuine ebony remains a luxury for the very wealthy thanks to the price fixing efforts of intergalactic luxuries cartels. \
 				Most people will only ever touch ebony in small items, such as chess pieces, or the accent pieces of a fine musical instrument."
+	*/
 	color = WOOD_COLOR_BLACK
 	weight = MATERIAL_WEIGHT_HEAVY
 	integrity = 100

@@ -1,6 +1,21 @@
+/// Generally the 'default' material.
+/decl/material/solid/metal/steel
+	name = "steel"
+	lore_text = "A strong, flexible alloy of iron and carbon, it has become a ubiquitous substance in human space."
+	mechanics_text = "Steel is commonly used for building solid structures and objects."
+	weight = DEFAULT_MATERIAL_WEIGHT
+	hardness = DEFAULT_MATERIAL_HARDNESS
+	construction_difficulty = MATERIAL_DIFFICULTY_EASY
+	integrity = 150
+	ferromagnetic = TRUE
+	color = COLOR_STEEL
+	value = 1.1
+	default_solid_form = /obj/item/stack/material/sheet
+
 /decl/material/solid/metal/plasteel
 	name = "plasteel"
 	uid = "solid_plasteel"
+	classification = "Metal Alloy"
 //	lore_text = "An alloy of steel and platinum. When regular high-tensile steel isn't tough enough to get the job done, the smart consumer turns to frankly absurd alloys of steel and platinum."
 	lore_text = "An alloy of steel and platinum. At the cost of increased weight, the alloy is much more resilient compared to steel or titanium individually."
 	integrity = 400
@@ -22,6 +37,7 @@
 /// Very rare alloy that is reflective, should be used sparingly.
 /decl/material/solid/metal/durasteel
 	name = "durasteel"
+	classification = "Metal Alloy"
 	lore_text = "Durasteel is a combination of steel, platinum, and diamond. \
 	The result is an alloy that is very strong, very reflective, and very expensive."
 	integrity = 600
@@ -55,6 +71,7 @@
 /decl/material/solid/metal/bronze
 	name = "bronze"
 	uid = "solid_bronze"
+	classification = "Metal Alloy"
 //	lore_text = "An alloy of copper and tin. Once used in weapons and laboring tools."
 	lore_text = "An alloy of copper and tin. The first alloy to be used by humanity."
 	symbol = "CuSn"
@@ -66,6 +83,7 @@
 /decl/material/solid/metal/blackbronze
 	name = "black bronze"
 	uid = "solid_black_bronze"
+	classification = "Metal Alloy"
 	symbol = "CuAg"
 	lore_text = "An alloy of copper and silver. Used in ancient ceremonial gear."
 	color = "#3f352a"
@@ -76,6 +94,7 @@
 /decl/material/solid/metal/redgold
 	name = "red gold"
 	uid = "solid_red_gold"
+	classification = "Metal Alloy"
 	symbol = "AuCu"
 	lore_text = "An alloy of copper and gold. A soft metal used for its ornamental properties."
 	color = "#ff7a59"
@@ -85,6 +104,7 @@
 /decl/material/solid/metal/brass
 	name = "brass"
 	uid = "solid_brass"
+	classification = "Metal Alloy"
 	symbol = "CuZn"
 	lore_text = "An alloy of copper and zinc. Renowned for its golden color."
 	color = "#dab900"
@@ -95,6 +115,7 @@
 /decl/material/solid/metal/stainlesssteel
 	name = "stainless steel"
 	uid = "solid_stainless_steel"
+	classification = "Metal Alloy"
 	lore_text = "A reflective alloy of steel and chromium. Used for its reflective and sturdy properties."
 	integrity = 175
 	color = "#a5a5a5"

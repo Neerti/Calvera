@@ -54,6 +54,7 @@ var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_G
 // The numbers just define the ordering, they are meaningless otherwise.
 #define INIT_ORDER_WEBHOOKS		50
 #define INIT_ORDER_SQLITE		40
+#define INIT_ORDER_MATERIALS	35
 #define INIT_ORDER_CHEMISTRY	35
 #define INIT_ORDER_SKYBOX		30
 #define INIT_ORDER_MAPPING		25
@@ -101,6 +102,7 @@ var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_G
 #define FIRE_PRIORITY_OBJ			40
 #define FIRE_PRIORITY_PROCESS		45
 #define FIRE_PRIORITY_DEFAULT		50
+#define FIRE_PRIORITY_MATERIALS		55
 #define FIRE_PRIORITY_TICKER		60
 #define FIRE_PRIORITY_PLANETS		75
 #define FIRE_PRIORITY_MACHINES		100

@@ -25,6 +25,9 @@
 	/// Optional text based on what bad and evil things players could do with stuff made out of this material.
 	var/antag_text = null
 
+	/// If `TRUE`, this material won't be searchable in the Codex.
+	var/hidden_from_codex = FALSE
+
 	/** The element symbol, or formula for this material, with no frills, such as CO2.*/
 	/** If null, and `symbol_html` is defined, it will be populated with `symbol_html`, with the html stripped out, instead.*/
 	var/symbol = null
@@ -35,6 +38,9 @@
 
 	/// What color the material is, which things made out of that material will generally adopt the color of. Note that some objects can choose to not use this.
 	var/color = null
+
+	/// Some materials can glow. If so, this determines what color it will glow at.
+	var/glow_color = "#ffffff"
 
 	/// If ingested, this describes how the material tastes. Leave null if it is tasteless.
 	var/taste_description = null
@@ -56,6 +62,9 @@
 
 	/// If true, magnets can attrach things made out of this material.
 	var/ferromagnetic = FALSE
+
+	/// If `FALSE`, objects made from this material should not conduct electricity.
+	var/conductive = TRUE
 
 	/** How much light can get through this material.
 	If less than or equal to 0.5, structures and such will not be `opaque`.
@@ -111,7 +120,7 @@
 	/// °K. Used to artificially prevent the material from oscillating between two phases constantly.
 	var/thermodynamic_hysteresis = 2
 
-	/** J/°K. Amount of energy that one gram of the material must absorb or lose to change its temperature by one degree kelvin/celcius.
+	/** J/(g*°K). Amount of energy that one gram of the material must absorb or lose to change its temperature by one degree kelvin/celcius.
 	A high heat capacity makes a material able to 'hold onto' more heat, and thus slower to change temperature.*/
 	var/specific_heat_capacity = null
 
@@ -123,6 +132,9 @@
 	Note that this uses higher heating value (or gross heat) as opposed 
 	to lower heating value (or net heat).*/
 	var/heat_of_combustion = null
+
+	/// When burned, some materials may create other matter
+	var/list/combustion_products = null
 
 /*
 // Make sure we have a use name and shard icon even if they aren't explicitly set.
@@ -195,147 +207,37 @@
 				S.color = color
 	*/
 
+// Weapons handle applying a divisor for this value locally.
+/decl/material/proc/get_blunt_damage()
+	return weight //todo
 
-/*
-// Material definition and procs follow.
-/decl/material
-	var/name                      // Prettier name for display.
-	var/adjective_name
-	var/solid_name
-	var/gas_name
-	var/liquid_name
-	var/use_name
-	var/wall_name = "wall"                // Name given to walls of this material
-	var/flags = 0                         // Various status modifiers.
-	var/hidden_from_codex
-	var/lore_text
-	var/mechanics_text
-	var/antag_text
-	var/default_solid_form = /obj/item/stack/legacy_material/sheet
-	var/affect_blood_on_ingest = TRUE
-	var/narcosis = 0 // Not a great word for it. Constant for causing mild confusion when ingested.
-	var/toxicity = 0 // Organ damage from ingestion.
-	var/toxicity_targets_organ // Bypass liver/kidneys when ingested, harm this organ directly (using BP_FOO defines).
-	// Shards/tables/structures
-	var/shard_type = SHARD_SHRAPNEL       // Path of debris object.
-	var/shard_icon                        // Related to above.
-	var/shard_can_repair = 1              // Can shards be turned into sheets with a welder?
-	var/list/recipes                      // Holder for all recipes usable with a sheet of this material.
-	var/destruction_desc = "breaks apart" // Fancy string for barricades/tables/objects exploding.
-	// Icons
-	var/icon_base = 'icons/turf/walls/solid.dmi'
-	var/icon_stripe = 'icons/turf/walls/stripes.dmi'
-	var/icon_base_natural = 'icons/turf/walls/natural.dmi'
-	var/icon_reinf = 'icons/turf/walls/reinforced_metal.dmi'
-	var/use_reinf_state = "full"
-	var/door_icon_base = "metal"                         // Door base icon tag. See header.
-	var/table_icon_base = "metal"
-	var/table_reinf = "reinf_metal"
-	var/list/stack_origin_tech = "{'materials':1}" // Research level for stacks.
-	// Attributes
-	var/cut_delay = 0            // Delay in ticks when cutting through this wall.
-	var/radioactivity            // Radiation var. Used in wall and object processing to irradiate surroundings.
-	var/ignition_point           // K, point at which the material catches on fire.
-	var/melting_point = 1800     // K, walls will take damage if they're next to a fire hotter than this
-	var/boiling_point = 3000     // K, point that material will become a gas.
-	var/brute_armor = 2	 		 // Brute damage to a wall is divided by this value if the wall is reinforced by this material.
-	var/burn_armor				 // Same as above, but for Burn damage type. If blank brute_armor's value is used.
-	var/integrity = 150          // General-use HP value for products.
-	var/opacity = 1              // Is the material transparent? 0.5< makes transparent walls/doors.
-	var/explosion_resistance = 5 // Only used by walls currently.
-	var/conductive = 1           // Objects with this var add CONDUCTS to flags on spawn.
-	var/luminescence
-	var/wall_support_value = 30
-	var/sparse_material_weight
-	var/rich_material_weight
-	var/min_fluid_opacity = FLUID_MIN_ALPHA
-	var/max_fluid_opacity = FLUID_MAX_ALPHA
-	// Damage values.
-	var/hardness = MAT_VALUE_HARD            // Prob of wall destruction by hulk, used for edge damage in weapons.
-	var/reflectiveness = MAT_VALUE_DULL
-	var/weight = MAT_VALUE_NORMAL             // Determines blunt damage/throwforce for weapons.
-	// Noise when someone is faceplanted onto a table made of this material.
-	var/tableslam_noise = 'sound/weapons/tablehit1.ogg'
-	// Noise made when a simple door made of this material opens or closes.
-	var/dooropen_noise = 'sound/effects/stonedoor_openclose.ogg'
-	// Noise made when you hit structure made of this material.
-	var/hitsound = 'sound/weapons/genhit.ogg'
-	// Wallrot crumble message.
-	var/rotting_touch_message = "crumbles under your touch"
-	// Modifies skill checks when constructing with this material.
-	var/construction_difficulty = MAT_VALUE_EASY_DIY
-	// Determines what is used to remove or dismantle this material.
-	var/removed_by_welder
-	// Mining behavior.
-	var/ore_name
-	var/ore_desc
-	var/ore_smelts_to
-	var/ore_compresses_to
-	var/ore_result_amount
-	var/ore_spread_chance
-	var/ore_scan_icon
-	var/ore_icon_overlay
-	var/ore_type_value
-	var/ore_data_value
-	var/value = 1
-	// Xenoarch behavior.
-	var/xarch_source_mineral = /decl/material/solid/metal/iron
-	// Gas behavior.
-	var/gas_overlay_limit
-	var/gas_specific_heat
-	var/gas_molar_mass
-	var/gas_symbol_html
-	var/gas_symbol
-	var/gas_flags = 0
-	var/gas_tile_overlay = "generic"
-	var/gas_condensation_point = 0
-	var/gas_metabolically_inert = FALSE // If false, material will move into the bloodstream when breathed.
-	// Armor values generated from properties
-	var/list/basic_armor
-	var/armor_degradation_speed
-	// Copied reagent values. Todo: integrate.
-	var/taste_description = "old rotten bandaids"
-	var/taste_mult = 1 //how this taste compares to others. Higher values means it is more noticable
-	var/metabolism = REM // This would be 0.2 normally
-	var/ingest_met = 0
-	var/touch_met = 0
-	var/overdose = 0
-	var/scannable = 0 // Shows up on health analyzers.
-	var/color = COLOR_BEIGE
-	var/color_weight = 1
-	var/cocktail_ingredient
-	var/defoliant
-	var/fruit_descriptor // String added to fruit desc if this chemical is present.
-	var/dirtiness = DIRTINESS_NEUTRAL // How dirty turfs are after being exposed to this material. Negative values cause a cleaning/sterilizing effect.
-	var/solvent_power = MAT_SOLVENT_NONE
-	var/solvent_melt_dose = 0
-	var/solvent_max_damage  = 0
-	var/slipperiness
-	var/euphoriant // If set, ingesting/injecting this material will cause the rainbow high overlay/behavior.
-	var/glass_icon = DRINK_ICON_DEFAULT
-	var/glass_name = "something"
-	var/glass_desc = "It's a glass of... what, exactly?"
-	var/list/glass_special = null // null equivalent to list()
-	// Matter state data.
-	var/dissolve_message = "dissolves in"
-	var/dissolve_sound = 'sound/effects/bubbles.ogg'
-	var/dissolves_in = MAT_SOLVENT_STRONG
-	var/list/dissolves_into	// Used with the grinder and a solvent to extract other materials.
-	var/chilling_point
-	var/chilling_message = "crackles and freezes!"
-	var/chilling_sound = 'sound/effects/bubbles.ogg'
-	var/list/chilling_products
-	var/bypass_cooling_products_for_root_type
-	var/heating_point
-	var/heating_message = "begins to boil!"
-	var/heating_sound = 'sound/effects/bubbles.ogg'
-	var/list/heating_products
-	var/bypass_heating_products_for_root_type
-	var/fuel_value = 0
-	var/burn_product
-	var/list/vapor_products // If splashed, releases these gasses in these proportions. // TODO add to unit test after solvent PR is merged
-	var/scent //refer to _scent.dm
-	var/scent_intensity = /decl/scent_intensity/normal
-	var/scent_descriptor = SCENT_DESC_SMELL
-	var/scent_range = 1
-*/
+// As above.
+/decl/material/proc/get_edge_damage()
+	return hardness //todo
+
+// Generic material product (sheets, bricks, etc). Used ALL THE TIME.
+// May return an instance list, a single instance, or nothing if there is no instance produced.
+/decl/material/proc/create_object(var/atom/target, var/amount = 1, var/object_type, var/reinf_type)
+	if(!object_type)
+		object_type = default_solid_form
+
+	if(!ispath(object_type, /atom/movable))
+		CRASH("Non-movable path '[object_type || "NULL"]' supplied to [type] create_object()")
+
+	if(ispath(object_type, /obj/item/stack))
+		var/obj/item/stack/stack_type = object_type
+		var/divisor = initial(stack_type.max_amount)
+		while(amount >= divisor)
+			LAZYADD(., new object_type(target, divisor, type, reinf_type))
+			amount -= divisor
+		if(amount >= 1)
+			LAZYADD(., new object_type(target, amount, type, reinf_type))
+	else
+		for(var/i = 1 to amount)
+			var/atom/movable/placed = new object_type(target, type, reinf_type)
+			if(istype(placed))
+				LAZYADD(., placed)
+
+	if(istype(target) && LAZYLEN(.))
+		for(var/atom/movable/placed in .)
+			placed.dropInto(target)

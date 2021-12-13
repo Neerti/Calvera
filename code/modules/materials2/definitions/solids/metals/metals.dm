@@ -13,20 +13,6 @@
 		MATERIAL_DAMAGE_ADJ_CRITICAL = "shattered"
 	)
 
-/// Generally the 'default' material.
-/decl/material/solid/metal/steel
-	name = "steel"
-	lore_text = "A strong, flexible alloy of iron and carbon, it has become a ubiquitous substance in human space."
-	mechanics_text = "Steel is commonly used for building solid structures and objects."
-	weight = DEFAULT_MATERIAL_WEIGHT
-	hardness = DEFAULT_MATERIAL_HARDNESS
-	construction_difficulty = MATERIAL_DIFFICULTY_EASY
-	integrity = 150
-	ferromagnetic = TRUE
-	color = COLOR_STEEL
-	value = 1.1
-	default_solid_form = /obj/item/stack/material/sheet
-
 /decl/material/solid/metal/iron
 	name = "iron"
 	symbol = "Fe"
@@ -37,6 +23,7 @@
 	ferromagnetic = TRUE
 	taste_description = "metal"
 	density = 7.874
+	specific_heat_capacity = 0.449
 
 /decl/material/solid/metal/gold
 	name = "gold"
@@ -51,6 +38,7 @@
 	hardness = MATERIAL_HARDNESS_NORMAL
 	high_energy_transition_temperature = 1337 // This is really what it is.
 	density = 19.30
+	specific_heat_capacity = 0.129
 
 /decl/material/solid/metal/silver
 	name = "silver"
@@ -85,6 +73,9 @@
 //	burn_armor = 8
 	integrity = 200
 //	melting_point = 3000
+	high_energy_transition_temperature = 1941
+//	high_energy_transition_material = /decl/material/liquid/titanium
+	specific_heat_capacity = 0.523
 	weight = MATERIAL_WEIGHT_LIGHT
 	hardness = MATERIAL_HARDNESS_VERY_HARD
 	reflectiveness = MATERIAL_REFLECTIVITY_MATTE
