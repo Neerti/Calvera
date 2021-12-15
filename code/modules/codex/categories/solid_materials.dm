@@ -69,9 +69,9 @@
 			var/list/material_info = list(mat.mechanics_text)
 
 			if(mat.symbol_html)
-				material_info += "([mat.symbol_html])"
+				material_info += "<br>([mat.symbol_html])"
 			else if(mat.symbol)
-				material_info += "([mat.symbol])"
+				material_info += "<br>([mat.symbol])"
 
 			material_info += "<br>This substance has the following properties in standard temperature and pressure:<ul>"
 

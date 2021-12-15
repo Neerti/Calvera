@@ -17,7 +17,7 @@
 	weight = MATERIAL_WEIGHT_EXTREMELY_LIGHT - 5
 	hardness = MATERIAL_HARDNESS_SOFT
 	reflectiveness = MATERIAL_REFLECTIVITY_DULL
-	integrity = 5
+	integrity = 10
 	value = 0.3
 	high_energy_transition_material = /decl/material/solid/ash
 	high_energy_transition_temperature = T0C+232
