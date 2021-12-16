@@ -24,8 +24,7 @@
 	<br><br> \
 	OOC information on various mechanics and interactions is marked by <b><font color = '[CODEX_COLOR_MECHANICS]'>blue</font></b> text. \
 	<br><br> \
-	Information for antagonists will not be shown unless you are an antagonist, \
-	and is marked by <b><font color = '[CODEX_COLOR_ANTAG]'>red</font></b> text."
+	Information for antagonists is marked by <b><font color = '[CODEX_COLOR_ANTAG]'>red</font></b> text."
 	..()
 
 /datum/codex_entry/nexus
