@@ -315,13 +315,29 @@ var/global/list/##LIST_NAME = list();\
 
 #define send_link(target, url) target << link(url)
 
+#define SPAN_ITALIC(X) "<span class='italic'>[X]</span>"
+
+#define SPAN_BOLD(X) "<span class='bold'>[X]</span>"
+
 #define SPAN_NOTICE(X) "<span class='notice'>[X]</span>"
 
 #define SPAN_WARNING(X) "<span class='warning'>[X]</span>"
 
+#define SPAN_STYLE(style, X) "<span style=\"[style]\">[X]</span>"
+
 #define SPAN_DANGER(X) "<span class='danger'>[X]</span>"
 
 #define SPAN_OCCULT(X) "<span class='cult'>[X]</span>"
+
+#define SPAN_MFAUNA(X) "<span class='mfauna'>[X]</span>"
+
+#define SPAN_SUBTLE(X) "<span class='subtle'>[X]</span>"
+
+#define SPAN_INFO(X) "<span class='info'>[X]</span>"
+
+#define STYLE_SMALLFONTS_OUTLINE(X, S, C1, C2) "<span style=\"font-family: 'Small Fonts'; color: [C1]; -dm-text-outline: 1 [C2]; font-size: [S]px\">[X]</span>"
+
+#define FONT_COLORED(color, text) "<font color='[color]'>[text]</font>"
 
 #define FONT_SMALL(X) "<font size='1'>[X]</font>"
 
@@ -332,6 +348,8 @@ var/global/list/##LIST_NAME = list();\
 #define FONT_HUGE(X) "<font size='4'>[X]</font>"
 
 #define FONT_GIANT(X) "<font size='5'>[X]</font>"
+
+#define PRINT_STACK_TRACE(X) get_stack_trace(X, __FILE__, __LINE__)
 
 // Volume Channel Defines
 

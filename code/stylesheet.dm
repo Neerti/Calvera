@@ -72,18 +72,27 @@ h1.alert, h2.alert		{color: #000000;}
 /* Game Messages */
 
 .attack					{color: #ff0000;}
-.moderate				{color: #CC0000;}
+.moderate				{color: #cc0000;}
 .disarm					{color: #990000;}
 .passive				{color: #660000;}
 
 .critical				{color: #ff0000; font-weight: bold; font-size: 150%;}
+.italic					{font-style: italic;}
+.bold					{font-weight: bold;}
 .danger					{color: #ff0000; font-weight: bold;}
+.bigdanger				{color: #ff0000; font-weight: bold; font-size: 115%;}
 .warning				{color: #ff0000; font-style: italic;}
+.bigwarning				{color: #ff0000; font-style: italic; font-size: 115%;}
+.boldannounce			{color: #ff0000; font-weight: bold;}
 .rose					{color: #ff5050;}
-.info					{color: #0000CC;}
+.info					{color: #0000cc;}
 .notice					{color: #000099;}
+.subtle					{color: #000099; font-size: 75%; font-style: italic;}
 .alium					{color: #00ff00;}
 .cult					{color: #800080; font-weight: bold; font-style: italic;}
+.cultannounce			{color: #800080; font-style: italic; font-size: 175%;}
+.mfauna					{color: #884422; font-weight: bold; font-size: 125%;}
+.antagdesc				{color: #ff0033; font-size: 125%}
 
 .reflex_shoot			{color: #000099; font-style: italic;}
 
